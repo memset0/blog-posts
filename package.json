@@ -1,0 +1,18 @@
+{
+  "name": "mem-blog-source",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/memset0/blog.git",
+  "author": "memset0 <memset0@outlook.com>",
+  "license": "AGPL-v3.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"nodemon --watch . -e md .vitepress/collect.ts\" vitepress dev",
+    "build": "ts-node collect-data.ts && vitepress build",
+    "serve": "ts-node collect-data.ts && vitepress serve"
+  },
+  "workspaces": [
+    ".vitepress"
+  ],
+  "dependencies": {}
+}
