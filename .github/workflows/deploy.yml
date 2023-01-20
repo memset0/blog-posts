@@ -1,0 +1,18 @@
+name: Deploy
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Dispatch CI of main repository
+        uses: mvasigh/dispatch-action@main
+        with:
+          owner: memset0
+          repo: blog
+          token: ${{ secrets.GH_TOKEN }}
+          event_type: content-update
