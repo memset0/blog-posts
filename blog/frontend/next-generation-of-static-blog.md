@@ -5,6 +5,7 @@ title: 下一代静态博客的选择——Gatsby.js
 cover: https://memset0.cn/background.png
 tags:
   - 博客开发日志
+publish: true
 ---
 
 # 测试博客
