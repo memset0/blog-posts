@@ -6,6 +6,7 @@ tags:
   - 分块
   - 根号分治
 cover: /cover/60.jpg
+publish: true
 ---
 
 分块，可以看做一个度数为 $\sqrt n$，只有三层的树。

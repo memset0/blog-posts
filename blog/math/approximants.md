@@ -4,6 +4,7 @@ date: 2022-07-16 18:54:00
 category: 高中数学
 cover: /cover/39.jpg
 tags: [导数]
+publish: true
 ---
 
 ## 切线放缩

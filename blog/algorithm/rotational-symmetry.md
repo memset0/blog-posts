@@ -6,6 +6,7 @@ tags:
   - 五边形数
   - 组合数学
 cover: /cover/59.jpg
+publish: true
 ---
 
 五边形数生成函数即欧拉函数：

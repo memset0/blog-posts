@@ -5,6 +5,7 @@ category: OI 算法
 tags:
   - 多项式
 cover: /cover/50.jpg
+publish: true
 ---
 
 ## 多点求值
