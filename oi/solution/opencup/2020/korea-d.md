@@ -2,9 +2,11 @@
 title: 「XX Open Cup. GP of Korea」Container
 link: gym102391d
 date: 2020-08-02 17:24:44
-category: OI 题解
 cover: 22.webp
-tags: [格路问题, 网络流]
+tags:
+  - 格路问题
+  - 网络流
+publish: true
 ---
 
 > 给定两个长度 $n$ 的序列 $s,t$，每一位是 $1$ 或者 $2$。每一次你可以翻转长度 $\leq 3$ 的区间，代价为区间和加上常数 $c$。问从 $s$ 变换到 $t$ 的最小代价。

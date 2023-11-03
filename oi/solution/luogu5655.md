@@ -1,9 +1,11 @@
 ---
 title: 「洛谷5655」基础数论函数练习题
 date: 2019-11-21 22:13:00
-category: OI 题解
-tags: [数论, 莫队]
+tags:
+  - 数论
+  - 莫队
 cover: 4.png
+publish: true
 ---
 
 > 给定一个长度为 $n$ 的数组 $\{a_i\}_{i=1}^n$，$Q$ 次询问，每次给定 $l$ 和 $r$ 查询 $\operatorname{lcm}(\{a_i\}_{i=l}^r)$，答案对 $10^9+7$ 取模。
@@ -27,7 +29,7 @@ cover: 4.png
 
 ## 代码
 
-一度 TLE，后来被 zx2003 哥哥卡了半天卡进去了。
+> 一度获得 TLE 的好成绩，后来在 zx2003 哥哥的帮助下卡了半天终于卡进去了。
 
 ```cpp
 #include<bits/stdc++.h>

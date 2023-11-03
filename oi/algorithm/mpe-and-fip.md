@@ -1,7 +1,6 @@
 ---
 title: 多项式多点求值与快速插值学习笔记
 date: 2019-02-24 08:41:00
-category: OI 算法
 tags:
   - 多项式
 cover: 50.jpg

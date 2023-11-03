@@ -1,9 +1,9 @@
 ---
 title: "「CometOJ Round #7 F」最简单的题"
+date: 2020-10-10 14:51:56
 tags: [分块, 分散层叠, 并查集]
 cover: 25.webp
-category: OI 题解
-date: 2020-10-10 14:51:56
+publish: true
 ---
 
 > 维护序列 $a_{1\ldots n}$，支持以下操作 $m$ 次：
@@ -32,14 +32,16 @@ date: 2020-10-10 14:51:56
 
 ## 卡常
 
-实现上由于分散层叠的常数有点大，还是需要一些卡常技巧的。
+实现上由于分散层叠的常数有点大，我们需要一些卡常的小技巧。
 
 1. 内存连续，而且注意到直接开的话内存空余会很大，可以手动分配内存。
-2. 关于往后扫四次的这个操作，可以写成这样 `k+=arr[k+2]<=x?2:0,k+=arr[k+1]<=x`，然后在 `arr` 里多丢两个 $+\infty$。
+2. 关于往后扫四次的这个操作，可以写成这样 `k+=arr[k+2]<=x?2:0,k+=arr[k+1]<=x`，然后在 `arr` 里多丢两个 $+\infty$。这样可以少很多分支条件。
 
 ## 代码
 
-**二分查找（$O(n \sqrt {n\log n})$）**
+### 二分查找版本
+
+时间复杂度：$O(n \sqrt {n\log n})$
 
 ```cpp
 #include<bits/stdc++.h>
@@ -613,7 +615,9 @@ int main(){
 }
 ```
 
-**分散层叠（$O(n \sqrt n)$）**
+### 分散层叠版本
+
+时间复杂度：$O(n \sqrt n)$
 
 ```cpp
 #pragma GCC target("sse,sse2,sse3,ssse3,sse4,sse4.1,sse4.2,popcnt,abm,mmx,avx,avx2,fma,tune=native") 

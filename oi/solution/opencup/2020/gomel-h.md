@@ -1,10 +1,15 @@
 ---
 title: 「XX Open Cup. GP of Gomel」Hit
-link: https://official.contest.yandex.ru/opencupXX/contest/17209/problems/H/
-tags: [结论题, 贪心, 扫描线]
+link:
+  - https://official.contest.yandex.ru/opencupXX/contest/17209/problems/H/
+  - qoj1429
+tags:
+  - 结论题
+  - 贪心
+  - 扫描线
 date: 2020-07-31 23:20:10
 cover: 21.webp
-category: OI 题解
+publish: true
 ---
 
 > 给出 $n$ 个区间 $[l_i, r_i]$ ，你需要放下**至多** $n$ 个点，使得每个区间里至少包含一个点。并且区间里点个数的最大值要尽可能小。

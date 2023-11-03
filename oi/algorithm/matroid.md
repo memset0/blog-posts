@@ -1,7 +1,6 @@
 ---
 title: 拟阵与拟阵交学习笔记
 date: 2019-09-27 15:50:00
-category: OI 算法
 tags:
   - 拟阵
   - 拟阵交
@@ -103,4 +102,5 @@ $$|I| = |I \cap U| + |I \cap (S \setminus U)| \leq r_1(U) + r_2(S \setminus U)$$
 
 * 集训队论文 2018
 * https://zhuanlan.zhihu.com/p/74887308
+
 <!-- * https://c.memset0.cn/data/User/admin/home/OI/Library/%E5%A4%9A%E6%A0%A1%E9%9B%86%E8%AE%AD/2019%E6%9D%AD%E7%94%B5ACM/R6/Editorial.pdf -->

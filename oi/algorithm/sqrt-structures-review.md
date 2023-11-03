@@ -1,12 +1,11 @@
 ---
 title: 根号数据结构复习
 date: 2020-02-24 16:08:00
-category: OI 算法
 tags:
   - 分块
   - 根号分治
 cover: 60.jpg
-publish: true
+# publish: true
 ---
 
 分块，可以看做一个度数为 $\sqrt n$，只有三层的树。
