@@ -25,7 +25,7 @@ cover: 8.png
 >
 > $1 \leq n \leq 3,\ 1 \leq k \leq 65536$。
 
-<!--more-->
+<!-- more -->
 
 
 对于 $n=1$ 的情况，考虑令 $a = w_{1, 1}$ ，用 $f_i$ 表示跳了 $i$ 步的答案，则 $f_i = a^i \binom n i$ 。

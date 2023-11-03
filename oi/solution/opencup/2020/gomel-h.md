@@ -16,7 +16,7 @@ publish: true
 > 
 > $1 \le n \le 10^5, 10^9 \le l_i < r_i \le 10^9$ 。
 
-<!--more-->
+<!-- more -->
 
 ## 题解
 

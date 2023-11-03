@@ -13,7 +13,7 @@ publish: true
 > 
 > $n \leq 500$。
 
-<!--more-->
+<!-- more -->
 
 ## 题解
 

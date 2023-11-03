@@ -14,7 +14,7 @@ $$
 \varphi(x) = \prod_{n=1}^\infty (1 - x^n)
 $$
 
-<!--more-->
+<!-- more -->
 
 ## 推导
 

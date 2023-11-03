@@ -17,7 +17,7 @@ publish: true
 > 
 > $n \leq 10^5$。
 
-<!--more-->
+<!-- more -->
 
 ## 题解
 

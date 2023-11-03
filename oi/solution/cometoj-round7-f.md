@@ -13,7 +13,7 @@ publish: true
 > 
 > $n,m \leq 3 \times 10^5$。
 
-<!--more-->
+<!-- more -->
 
 ## 题解
 

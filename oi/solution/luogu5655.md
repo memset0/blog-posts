@@ -12,7 +12,7 @@ publish: true
 > 
 > **多组数据**，$T,n,Q \leq 300,\ a_i \leq 10^{18}$。
 
-<!--more-->
+<!-- more -->
 
 ## 题解
 

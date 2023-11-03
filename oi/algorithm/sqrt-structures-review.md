@@ -14,7 +14,7 @@ cover: 60.jpg
 
 所以如果在分治结构上很难快速合并某些信息，我们就可以利用分块来做。
 
-<!--more-->
+<!-- more -->
 
 <style>
 b, strong, .mark { background: yellow; }

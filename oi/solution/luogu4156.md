@@ -12,7 +12,7 @@ publish: true
 > 
 > $n \leq 5 \times 10^5,\ w \leq 10^{18}$。
 
-<!--more-->
+<!-- more -->
 
 ## 题解
 

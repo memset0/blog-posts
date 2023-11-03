@@ -15,7 +15,7 @@ publish: true
 > 
 > $1\leq n,m\leq 10^5$，$1\leq x,A_i \leq 10^4$。
 
-<!--more-->
+<!-- more -->
 
 ## 题解
 
