@@ -14,4 +14,4 @@ jobs:
         with:
           repository: memset0/gatsby-blog
           token: ${{ secrets.GH_TOKEN }}
-          event_type: content-update
+          event-type: content-update
