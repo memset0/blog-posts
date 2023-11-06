@@ -19,7 +19,7 @@ cover: https://static.memset0.cn/img/v6/2023/11/07/K3pfcvZY.jpg
 
 火车上在知乎上水 chenjb 前辈的赛前毒奶，感慨这场确实是高手云集。除了来自北京大学的“重生之我是菜狗”和清华大学的“有手有脚”的两支知名强队，来自南京邮电大学的“Cirtrus”、东北大学的“天狐座”、哈尔滨工业大学的“玩原神玩的”等等队伍都有着非常强大的实力。
 
-![听名字很上流的《国际酒店》|md](https://s2.loli.net/2023/11/06/6As1IGfDeNgoFwd.jpg)
+![听名字很上流的《国际酒店》|md](https://static.memset0.cn/img/v6/2023/11/07/efYripY6.jpg)
 
 和生病的 Sugar 哥哥分到了一个房间，有点关心他的身体状况，又有点担心自己被传染。
 
