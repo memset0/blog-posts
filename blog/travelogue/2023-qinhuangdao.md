@@ -1,5 +1,5 @@
 ---
-title: 2023 · 秦皇岛 · CCPC
+title: "华丽开场 @ 秦皇岛2023"
 date: 2022-11-02 21:19:00
-publish: true
+publish: false
 ---
