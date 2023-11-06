@@ -9,10 +9,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Dispatch CI of main repository
-        uses: mvasigh/dispatch-action@main
+      - name: Dispatch CI
+        uses: peter-evans/repository-dispatch@v2
         with:
-          owner: memset0
-          repo: blog
+          repository: memset0/gatsby-blog
           token: ${{ secrets.GH_TOKEN }}
           event_type: content-update
