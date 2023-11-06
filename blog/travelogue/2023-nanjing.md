@@ -94,5 +94,5 @@ xry 很稳地通过了 K，可 E 还是调不出来。等到最后十分钟，xr
 
 好美啊，紫金港的落日。
 
-![md](https://static.memset0.cn/img/v6/2023/11/06/uFqKlIHn.jpeg)
+![|md](https://static.memset0.cn/img/v6/2023/11/06/uFqKlIHn.jpeg)
 
