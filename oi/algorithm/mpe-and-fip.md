@@ -4,7 +4,7 @@ date: 2019-02-24 08:41:00
 tags:
   - 多项式
 cover: 50.jpg
-publish: true
+publish: false
 ---
 
 ## 多点求值
