@@ -1,7 +1,8 @@
 ---
 title: 「XX Open Cup. GP of Korea」Container
-link: gym102391d
-link: qoj3040
+link: 
+  - gym102391d
+  - qoj3040
 date: 2020-08-02 17:24:44
 cover: 22.webp
 tags:
