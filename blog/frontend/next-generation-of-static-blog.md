@@ -2,7 +2,7 @@
 slug: next-generation-of-static-blog
 date: 2023-01-20
 title: 下一代静态博客的选择——Gatsby.js
-cover: https://memset0.cn/background.png
+# cover: https://memset0.cn/background.png
 tags:
   - 博客开发日志
 # publish: true
