@@ -52,97 +52,123 @@ $$
 ## 代码
 
 ```cpp
-#include<bits/stdc++.h>
-template<class T> inline void read(T &x){
-  x=0; register char c=getchar(); register bool f=0;
-  while(!isdigit(c))f^=c=='-',c=getchar();
-  while(isdigit(c))x=x*10+c-'0',c=getchar(); if(f)x=-x;
+#include <bits/stdc++.h>
+template <class T> inline void read(T &x) {
+  x = 0;
+  register char c = getchar();
+  register bool f = 0;
+  while (!isdigit(c)) f ^= c == '-', c = getchar();
+  while (isdigit(c)) x = x * 10 + c - '0', c = getchar();
+  if (f) x = -x;
 }
-template<class T> inline void print(T x){
-  if(x<0)putchar('-'),x=-x;
-  if(x>9)print(x/10); putchar(x%10+'0');
+template <class T> inline void print(T x) {
+  if (x < 0) putchar('-'), x = -x;
+  if (x > 9) print(x / 10);
+  putchar(x % 10 + '0');
 }
-template<class T> inline void print(T x,char c){print(x),putchar(c);}
-const int N=1e5+10,mod=998244353;
-int n,m;
+template <class T> inline void print(T x, char c) { print(x), putchar(c); }
+const int N = 1e5 + 10, mod = 998244353;
+int n, m;
 struct z {
   int x;
-  z(int x=0):x(x){}
-  friend inline z operator*(z a,z b){return (long long)a.x*b.x%mod;}
-  friend inline z operator-(z a,z b){return (a.x-=b.x)<0?a.x+mod:a.x;}
-  friend inline z operator+(z a,z b){return (a.x+=b.x)>=mod?a.x-mod:a.x;}
-}a[N],p[N],ans[N],fac[N],ifac[N],inv[N];
-inline z fpow(z a,int b){z s=1;for(;b;b>>=1,a=a*a)if(b&1)s=s*a;return s;}
-void init(int n){
-  n+=5,inv[0]=inv[1]=fac[0]=ifac[0]=1;
-  for(int i=2;i<n;i++)inv[i]=(mod-mod/i)*inv[mod%i];
-  for(int i=1;i<n;i++)fac[i]=fac[i-1]*i,ifac[i]=ifac[i-1]*inv[i];
+  z(int x = 0) : x(x) {}
+  friend inline z operator*(z a, z b) { return (long long)a.x * b.x % mod; }
+  friend inline z operator-(z a, z b) { return (a.x -= b.x) < 0 ? a.x + mod : a.x; }
+  friend inline z operator+(z a, z b) { return (a.x += b.x) >= mod ? a.x - mod : a.x; }
+} a[N], p[N], ans[N], fac[N], ifac[N], inv[N];
+inline z fpow(z a, int b) {
+  z s = 1;
+  for (; b; b >>= 1, a = a * a)
+    if (b & 1) s = s * a;
+  return s;
 }
-namespace poly{//polynomial
-  int len=1,rev[N<<2]; z w[N<<2];
-  struct vec:std::vector<z>{
-    using std::vector<z>::vector;
-    inline void input(int n){resize(n);for(int i=0;i<n;i++)read(this->operator[](i).x);}
-    inline void output(){for(int i=0;i<size();i++)print(this->operator[](i).x," \n"[i+1==size()]);}
-  };
-  int init(int n){
-    int lim=1,k=0; while(lim<n)lim<<=1,++k;
-    for(int i=0;i<lim;i++)rev[i]=(rev[i>>1]>>1)|((i&1)<<(k-1));
-    for(;len<lim;len<<=1){
-      z wn=fpow(3,(mod-1)/(len<<1)); w[len]=1;
-      for(int i=1;i<len;i++)w[i+len]=w[i+len-1]*wn;
-    }return lim;
-  }
-  void dft(vec &a,int lim){
-    a.resize(lim);
-    for(int i=0;i<lim;i++)if(i<rev[i])std::swap(a[i],a[rev[i]]);
-    for(int len=1;len<lim;len<<=1)
-      for(int i=0;i<lim;i+=(len<<1))
-        for(int j=0;j<len;j++){
-          z x=a[i+j],y=a[i+j+len]*w[j+len];
-          a[i+j]=x+y,a[i+j+len]=x-y;
-        }
-  }
-  void idft(vec &a,int lim){
-    dft(a,lim),std::reverse(&a[1],&a[lim]); z inv=fpow(lim,mod-2);
-    for(int i=0;i<lim;i++)a[i]=a[i]*inv;
-  }
-  inline vec mul(vec a,vec b,int l=-1){
-    int len=~l?l:a.size()+b.size()-1,lim=init(a.size()+b.size()-1);
-    dft(a,lim),dft(b,lim);
-    for(int i=0;i<lim;i++)a[i]=a[i]*b[i];
-    return idft(a,lim),a.resize(len),a;
-  }
-  namespace extra{
-    using namespace poly;
-    vec mulT(vec a,vec b){
-      int al=a.size(),bl=b.size(),lim=init(al);
-      dft(a,lim),std::reverse(b.begin(),b.end()),dft(b,lim);
-      for(int i=0;i<lim;i++)a[i]=a[i]*b[i];
-      return idft(a,lim),vec(&a[bl-1],&a[al]);
-    }
-  }
+void init(int n) {
+  n += 5, inv[0] = inv[1] = fac[0] = ifac[0] = 1;
+  for (int i = 2; i < n; i++) inv[i] = (mod - mod / i) * inv[mod % i];
+  for (int i = 1; i < n; i++) fac[i] = fac[i - 1] * i, ifac[i] = ifac[i - 1] * inv[i];
 }
-poly::vec F[N<<2],G[N<<2];
-void dfs1(int u,int l,int r){
-  if(l==r){F[u]={1-p[l],p[l]}; return;}
-  dfs1(u<<1,l,(l+r)>>1),dfs1(u<<1|1,((l+r)>>1)+1,r);
-  F[u]=poly::mul(F[u<<1],F[u<<1|1]);
+namespace poly { // polynomial
+int len = 1, rev[N << 2];
+z w[N << 2];
+struct vec : std::vector<z> {
+  using std::vector<z>::vector;
+  inline void input(int n) {
+    resize(n);
+    for (int i = 0; i < n; i++) read(this->operator[](i).x);
+  }
+  inline void output() {
+    for (int i = 0; i < size(); i++) print(this->operator[](i).x, " \n"[i + 1 == size()]);
+  }
+};
+int init(int n) {
+  int lim = 1, k = 0;
+  while (lim < n) lim <<= 1, ++k;
+  for (int i = 0; i < lim; i++) rev[i] = (rev[i >> 1] >> 1) | ((i & 1) << (k - 1));
+  for (; len < lim; len <<= 1) {
+    z wn = fpow(3, (mod - 1) / (len << 1));
+    w[len] = 1;
+    for (int i = 1; i < len; i++) w[i + len] = w[i + len - 1] * wn;
+  }
+  return lim;
 }
-void dfs2(int u,int l,int r){
-  if(l==r){ans[l]=G[u][0]; return;}
-  G[u<<1]=poly::extra::mulT(G[u],F[u<<1|1]);
-  G[u<<1|1]=poly::extra::mulT(G[u],F[u<<1]);
-  dfs2(u<<1,l,(l+r)>>1),dfs2(u<<1|1,((l+r)>>1)+1,r);
+void dft(vec &a, int lim) {
+  a.resize(lim);
+  for (int i = 0; i < lim; i++)
+    if (i < rev[i]) std::swap(a[i], a[rev[i]]);
+  for (int len = 1; len < lim; len <<= 1)
+    for (int i = 0; i < lim; i += (len << 1))
+      for (int j = 0; j < len; j++) {
+        z x = a[i + j], y = a[i + j + len] * w[j + len];
+        a[i + j] = x + y, a[i + j + len] = x - y;
+      }
 }
-int main(){
+void idft(vec &a, int lim) {
+  dft(a, lim), std::reverse(&a[1], &a[lim]);
+  z inv = fpow(lim, mod - 2);
+  for (int i = 0; i < lim; i++) a[i] = a[i] * inv;
+}
+inline vec mul(vec a, vec b, int l = -1) {
+  int len = ~l ? l : a.size() + b.size() - 1, lim = init(a.size() + b.size() - 1);
+  dft(a, lim), dft(b, lim);
+  for (int i = 0; i < lim; i++) a[i] = a[i] * b[i];
+  return idft(a, lim), a.resize(len), a;
+}
+namespace extra {
+using namespace poly;
+vec mulT(vec a, vec b) {
+  int al = a.size(), bl = b.size(), lim = init(al);
+  dft(a, lim), std::reverse(b.begin(), b.end()), dft(b, lim);
+  for (int i = 0; i < lim; i++) a[i] = a[i] * b[i];
+  return idft(a, lim), vec(&a[bl - 1], &a[al]);
+}
+} // namespace extra
+} // namespace poly
+poly::vec F[N << 2], G[N << 2];
+void dfs1(int u, int l, int r) {
+  if (l == r) {
+    F[u] = {1 - p[l], p[l]};
+    return;
+  }
+  dfs1(u << 1, l, (l + r) >> 1), dfs1(u << 1 | 1, ((l + r) >> 1) + 1, r);
+  F[u] = poly::mul(F[u << 1], F[u << 1 | 1]);
+}
+void dfs2(int u, int l, int r) {
+  if (l == r) {
+    ans[l] = G[u][0];
+    return;
+  }
+  G[u << 1] = poly::extra::mulT(G[u], F[u << 1 | 1]);
+  G[u << 1 | 1] = poly::extra::mulT(G[u], F[u << 1]);
+  dfs2(u << 1, l, (l + r) >> 1), dfs2(u << 1 | 1, ((l + r) >> 1) + 1, r);
+}
+int main() {
 #ifdef memset0
-  freopen("1.in","r",stdin);
+  freopen("1.in", "r", stdin);
 #endif
   read(n);
-  for(int i=0;i<n;i++)read((int&)a[i]);
-  for(int i=0,x,y;i<n;i++)read(x),read(y),p[i]=x*fpow(y,mod-2);
-  dfs1(1,0,n-1),G[1]=poly::vec(a,a+n),dfs2(1,0,n-1);
-  for(int i=0;i<n;i++)print(ans[i].x," \n"[i==n]);
+  for (int i = 0; i < n; i++) read((int &)a[i]);
+  for (int i = 0, x, y; i < n; i++) read(x), read(y), p[i] = x * fpow(y, mod - 2);
+  dfs1(1, 0, n - 1), G[1] = poly::vec(a, a + n), dfs2(1, 0, n - 1);
+  for (int i = 0; i < n; i++) print(ans[i].x, " \n"[i == n]);
 }
 ```
