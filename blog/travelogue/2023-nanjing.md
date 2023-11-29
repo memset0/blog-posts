@@ -1,5 +1,5 @@
 ---
-title: '沉吟数载，且试锋芒 @ 南京 2023'
+title: '2023 ICPC 南京站游记'
 date: 2023-11-06 00:25:00
 publish: true
 cover: https://static.memset0.cn/img/v6/2023/11/07/K3pfcvZY.jpg
