@@ -3,10 +3,10 @@ title: 课程笔记 @ZJU
 nav:
   - 导航: 'index.md'
   - 通识课程:
-    - 微积分: 'calculus/index.md'
-    - 线性代数: 'linear-algebra/index.md'
+    - "!微积分": 'calculus/index.md'
+    - "!线性代数": 'linear-algebra/index.md'
   - 个性修读课程:
-    - 汇编程序设计基础: 'fasm/index.md'
+    - "!汇编程序设计基础": 'fasm/index.md'
 ---
 
 **培养方案**：[浙江大学 2023 级计算机科学与技术专业培养方案](http://zdbk.zju.edu.cn/jwglxt/js/plugins/pdfjs/web/viewer.htm?file=/jwglxt/pyfagl/pyfayl_cxPyfaylPdf.html%3Fid%3D20232112%26doType%3Dquery)
