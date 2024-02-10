@@ -1,3 +1,272 @@
 ---
-title: 速通笔记
+title: 一站式速通笔记
 ---
+
+
+## 1. 类型
+
+### 1.1. 隐式类型转换
+
+![Pasted image 20240103225015](https://static.memset0.cn/img/v6/2024/02/08/350EXKIx.png)
+- 水平方向：自动转换
+- 垂直方向：低->高（短->长，有符号->无符号）
+
+#### 1.1.1. 整型提升
+
+#### 1.1.2. 有符号数与无符号数混合运算
+
+## 2. 运算符
+
+### 2.1. 优先级
+![Pasted image 20240103225527](https://static.memset0.cn/img/v6/2024/02/08/eu54EX0G.png)
+
+![Pasted image 20240107140228](https://static.memset0.cn/img/v6/2024/02/08/kpoaJNvm.png)
+
+![Pasted image 20240107140239](https://static.memset0.cn/img/v6/2024/02/08/P8WtKyi5.png)
+
+## 3. 函数
+
+### 3.1. 静态局部变量
+
+```c
+double calc(int n) {
+	static int count = 1;
+	++count;
+	return n == 1 ? 1 : calc(n - 1) * n;
+}
+```
+
+- 静态局部变量如果在定义时没有赋初值，系统将自动赋 `0`（类似与全局变量）。
+- 赋初值只在函数第一次调用时起作用，以后都不会自动修改他的值。
+- 静态变量与全局变量一样，生命周期贯穿整个程序执行过程。
+
+
+## 4. 数组
+
+### 4.1. 静态全局变量与外部变量
+
+```c
+// file1.c
+int x;
+```
+
+```c
+// file2.c
+extern int x; // 声明在file1.c中定义的变量x，而不是重新定义
+static int y; // 定义仅在file2.c中使用的变量y
+```
+
+## 5. 指针
+
+### 5.1. 动态内存分配
+![Pasted image 20240103225305](https://static.memset0.cn/img/v6/2024/02/08/bRKOoSDg.png)
+
+### 5.2. 指针数组
+
+#### 5.2.1. 指针数组的应用
+
+1. 给字符串 / 二维数组排序
+2. 二维数组，但是第二维的空间大小不固定，需要动态分配
+#### 5.2.2. 指针数组 vs 二维数组
+
+```cpp
+char ccolor[ ][7] = {"red", "blue", "yellow", "green", "black"};
+const char *pcolor[ ] = {"red", "blue", "yellow", "green", "black"};
+// ccolor[0] = "white" 不可以但 pcolor[0] = "white" 可以
+// ccolor[0][0] = 'x' 可以但 pcolor[0][0] = 'x' 不可以
+```
+
+![Pasted image 20240103210052](https://static.memset0.cn/img/v6/2024/02/08/qgsofRUX.png)
+
+#### 5.2.3. 命令行参数
+```cpp
+int main(int argc, char **argv) {
+  ...
+}
+```
+
+这里 `argc` 表示接受的参数个数，` argv ` 表示接受的参数列表（注意指令名本身也算一个参数，存储在 `argv[0]`）
+
+### 5.3. 二级指针
+
+`T **p` 定义一个指向 `T *` 类型的指针（指向另一个指针的指针）。
+
+#### 5.3.1. 使用二级指针
+
+```cpp
+char color[][7] = {"red", "blue", "yellow", "green", "black"};
+char **pc = color;
+*pc <=> color[0]
+*pc+i <=> color[0]+i
+*(pc+i) <=> color[i]
+**pc <=> *color[0] <=> color[0][0]
+**(pc+i) <=> *color[i] <=> color[i][0]
+```
+
+### 5.4. 指针数组 vs 数组指针
+
+| 指针数组 | vs | 数组指针 |
+| :--: | :--: | :--: |
+| `char *color1[5]` <br>**一个数组**，包含 5 个 `char*` | (`[]` 的优先级高于 `*`）     | `char (*color2)[5]` <br>**一个指针**，指向 5 个 `char` 元素的数组 |
+
+**注意这里的声明方式比较反直觉**。
+
+如何理解 `[]` 的优先级比 `*` 高？`char *color1[5]` 说明了 `color1` 一定是一个数组，`char (*color2)[5]` 说明了 `color2` 一定是一个指针。
+
+```cpp
+int a[3][4];
+a <=> &a[0] int (*)[4]
+a+i <=> &a[i] int (*)[4]
+*(a+i) <=> a[i] <=> &a[i][0] int *
+*(a+i)+j <=> a[i]+j <=> &a[i][j] int *
+**(a+i) <=> *a[i] <=> a[i][0] <=> int
+*(*(a+i)+j) <=> *(a[i]+j) <=> a[i][j] <=> int
+```
+
+### 5.5. 将二维数组作为函数参数
+
+编译器改写规则：将（最外层的）数组改写为指针。
+
+![Pasted image 20240103221019](https://static.memset0.cn/img/v6/2024/02/08/TtgN226c.png)
+
+```cpp
+int a[10][20];
+void func(int **a);       // CE: int (*)[20]与int **类型不匹配
+void func(int a[][]);     // CE: 数组不能包含此类型（int[]）的元素
+void func(int a[10][]);   // CE: 数组不能包含此类型（int[]）的元素
+void func(int a[][20]);   // √
+void func(int a[10][20]); // √
+void func(int (*a)[20]);  // √
+```
+
+### 5.6. 指向函数的指针
+
+定义方式：`返回值类型 (*指针名)(参数类型表)`。
+
+调用方式：`指针名(参数表)` 或 `(*指针名)(参数表)`。
+## 6. 文件操作
+
+### 6.1. 打开文件
+
+- 使用 `FILE *fopen(char *文件名, char *模式)` 打开文件，返回对应的文件指针。如果返回值为 `NULL` 说明文件打开失败。
+- 使用 `int fclose(FILE *文件指针)` 关闭文件，如果返回值非 0 说明文件关闭失败。
+
+![Pasted image 20240103222346](https://static.memset0.cn/img/v6/2024/02/08/PCJUQXDp.png)
+
+![Pasted image 20240103222444](https://static.memset0.cn/img/v6/2024/02/08/lsb9VGdd.png)
+
+### 6.2. 文件读写
+
+- 使用 `char fgetc(FILE* file)` **读取单个字符**。
+- 使用 `void fputc(char c, FILE* file)` **写入单个字符**。
+
+```cpp
+// 示例代码：一直读入字符直到文件结束
+// 这样写法的前提是文件本身没有存储EOF字符，否则应用feof函数判断
+while ((ch = fgetc(file1)) != EOF) {
+	fputc(ch, file2);
+}
+```
+
+* 使用 `char *fgets(char *s, int n, FILE* file)` **读取字符串**：
+	* 连续读取至多 n-1 个字符并将其保存到 s 中。
+	* 如果遇到换行符（会保留换行符）或 EOF（不保留）则截止，并自动往末尾添加 `\0`。
+	* 执行成功时返回读取到的字符串，否则返回 NULL。
+* 使用 `char *fputs(char *s, FILE *file)` **写入字符串**：
+
+还可以使用 `fscanf` 与 `fprintf`，第一个参数是文件指针，后面参数和 `scanf` 与 `printf` 的使用方法相同。
+
+### 6.3. 二进制文件读写
+
+- 使用 `fread(void* 数据块(首)地址, size_t 单个数据块字节数, size_t 要读入的数据块个数, FILE* 文件指针)` 来从以**二进制模式**打开的文件中**读取**数据。
+- 使用 `fwrite(void* 数据块(首)地址, size_t 单个数据块字节数, size_t 要读入的数据块个数, FILE* 文件指针)` 来往以**二进制模式**打开的文件中**写入**数据。
+
+### 6.4. 其他相关函数
+
+- 使用 `int feof(FILE* 文件指针)` 判断文件尾是否已经被**尝试读取**。(如 `fgetc` 已经返回 EOF 而不是将要返回 EOF)
+- 使用 `rewind(FILE* 文件指针)` 使得文件读写指针恢复到打开文件时所指向的位置（**字节**数）。
+- 使用 `fseek(FILE* 文件指针, size_t 偏移量, int 起始位置)` 来移动读写指针，其中起始位置可选值为 0（SEEK_SET）、1（SEEK_CUR）、2（SEEK_END） 分别对应文件头、当前位置、文件尾。
+- 使用 `ftell(FILE* 文件指针)` 获取文件指针的位置（**字节**数），即相对于文件开头的偏移量。
+
+## 7. 多文件编程
+### 7.1. 文件包含 `#include`
+
+Usage 1：`#include <filename>` 仅检索库文件夹  
+Usage 2：`#include "filename"` 检索库文件夹和当前文件夹
+
+在编译期编译器会把要包含的源代码直接拼接到对应为止。
+
+### 7.2. 头文件保护
+
+在编写头文件时，常用宏来避免头文件被重复包含。否则会引起**链接期**的编译错误。
+
+```cpp
+// student.h
+#ifndef _STUDENT_H_
+#define _STUDENT_H_
+#include <stdio.h>
+struct student {
+	int num;
+	char name[10];
+	int computer, english, math;
+	double average;
+}
+...
+#endif
+```
+
+### 7.3. 文件模块间的通信
+```c
+static int x; // 静态全局变量，只能在当前文件中访问
+extern int y; // 外部全局变量，可以在其他文件中访问
+static void f(); // 静态全局函数，只能在当前文件中访问
+extern void g(); // 外部全局函数，可以在其他文件中访问
+```
+
+## 8. 一些零散知识点
+
+### 8.1. 面经
+
+1. C 语言的优点：结构化语言、简洁紧凑方便灵活、易于移植、处理能力强、效率高。
+2. C 语言的缺点：数据类型检查不严格、表达式有二义性、不检测数据越界、运算符的优先级与结合性相对复杂
+
+### 8.2. 格式化输入输出函数
+
+| 类型 | 格式字符串 | 说明 |
+| ---- | ---- | ---- |
+| 整型 | `%d`<br />`%o`<br />`%x`<br />`%u` | 有符号十进制整数<br />无符号八进制整数<br />无符号十六进制整数<br />无符号十进制整数 |
+| 浮点型 | `%f`<br />`%e`<br />`%g` | 以小数形式输出，默认小数位数为6位<br />以指数形式输出，数字部分默认为6位<br />以优化的小数或指数形式输出（去掉无意义的零后所占宽度较小的） |
+| 字符型 | `%c`<br />`%s` | 输出字符<br />输出字符串 |
+
+![Pasted image 20240107140109](https://static.memset0.cn/img/v6/2024/02/08/TJjvwgCW.png)
+
+![Pasted image 20240107140130](https://static.memset0.cn/img/v6/2024/02/08/y0nSA3kD.png)
+
+### 8.3. `abs()` 函数与 C++ 不同
+
+- C 中在 `stdlib.h` 中提供了整数的 `abs()`，在 `math.h` 中提供了浮点的 `fabs()`。所以如果在 C 中调用 `abs(-0.1)` 会被隐式类型转换。
+- 而 C++ 中还在 `cmath` 中重载了支持浮点数的 `abs()` 函数，不存在这个问题。
+
+## 9. 一些细节
+
+### 9.1. 多个 if-else 的匹配问题
+
+### 9.2. 省略长度的数组声明方式
+
+### 9.3. 初始化列表
+### 9.4. 变量的存储类型
+
+对于局部变量存储类型的缺省值是 `auto`，对于全局变量存储的缺省值是 `extern`。
+
+| 变量类型 | 初始化 | 作用范围 | 生命周期 |
+| ---- | ---- | ---- | ---- |
+| 函数的局部变量 auto register | 随机值 | 函数内部 | 函数调用时分配，函数调用结束时自动回收 |
+| 函数的静态全局变量 static | 默认 0，函数第一次调用时赋初值 | 函数内部 | 程序开始直到程序结束 |
+| 全局变量 extern | 默认 0，main 函数被调用前赋初值 | 文件内部，可以跨文件使用 | 程序开始直到程序结束 |
+| 静态全局变量 static  | 默认 0，main 函数被调用前赋初值 | 文件内部，不能跨文件使用 | 程序开始直到程序结束 |
+
+## 10. 一些坑点
+
+1. 按照课本要求，可变长的数组为语法错误（`int n=5; int a[n];` ×）。
+2. 带参数的宏没给参数加括号可能带来隐患。
+3. `typedef` 不是简单的类型替换。如 `typedef int *int_p; int_p p1, p2;` 等价于 `int *p1, *p2;`。
