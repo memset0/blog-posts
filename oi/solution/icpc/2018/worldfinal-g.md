@@ -9,7 +9,7 @@ publish: true
 
 > 给定一个 $n$ 个点的简单多边形（不保证是凸的），你需要确定一个半径 $r$，然后在每个端点画一个半径为 $r$ 的圆，要求能覆盖简单多边形的全部面积。
 > 
-> ![center](https://static.memset0.cn/img/v2/20201018160521.png)
+> ![center](https://static.memset0.cn/img/v6/2024/02/11/9Mz2vSQn.png)
 > 
 > 你需要确定这个 $r$ 最小是多少，精度要求 $10^{-6}$。
 > 

@@ -79,7 +79,7 @@ $$
 
 下图由 Geogebra 绘制，可以发现我们的精度在 $x=0.1$ 处可谓绰绰有余。
 
-![](https://static.memset0.cn/img/v5/2022/09/04/63148d36e50f9.png)
+![](https://static.memset0.cn/img/v6/2024/02/11/mx5MafKR.png)
 
 #### 应用：手算 $\ln(x)$ 的值
 

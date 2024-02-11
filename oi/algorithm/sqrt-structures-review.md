@@ -10,7 +10,7 @@ cover: 60.jpg
 
 分块，可以看做一个度数为 $\sqrt n$，只有三层的树。
 
-![](https://static.memset0.cn/img/v4/2021/09/23/sxC2OuHu.png)
+![](https://static.memset0.cn/img/v6/2023/11/20/fbrf7H7g.png)
 
 所以如果在分治结构上很难快速合并某些信息，我们就可以利用分块来做。
 

@@ -32,7 +32,7 @@ publish: true
 
 求出所有合法点后，若 $min_{i=1}^n (l_i)$ 是合法的，答案为 $t-1$ ，否则答案为 $t$ 。
 
-![](https://static.memset0.cn/img/v1/20200731225233.png)
+![](https://static.memset0.cn/img/v6/2024/02/11/vZ3u4ZK7.png)
 
 （附图：考虑我们是要让每个形如 $x_1$ 的贡献都丢到外面去，但是 $x'_1$ 能取的范围只能在 $[x'_l; x'_r]$ ，否则就不能完整覆盖内部线段）
 
