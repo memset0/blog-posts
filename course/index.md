@@ -13,7 +13,7 @@ nav:
 
 &emsp;&emsp;此处存放的是博主在浙江大学求学期间所记录的电子笔记，特此与各位朋友共享。若您在阅读过程中发现任何疑问或问题，请通过电子邮件 memset0#outlook.com 或 QQ、Telegram 等社交媒体与我取得联系。
 
-&emsp;&emsp;部分笔记是从博主的 Obsidian 笔记中迁移而来，故使用了 remark.js 暂不支持的 callouts 语法，导致目前阅读体验较差。我将在近日修改代码以支持这一功能。
+&emsp;&emsp;Stored here are the electronic notes I took down during my studies at Zhejiang University, which I am delighted to share with everyone. If you encounter any questions or problems during your reading, please contact me via email at memset0#outlook.com or through social media platforms like QQ or Telegram.
 
 **培养方案**：[浙江大学 2023 级计算机科学与技术专业培养方案](http://zdbk.zju.edu.cn/jwglxt/js/plugins/pdfjs/web/viewer.htm?file=/jwglxt/pyfagl/pyfayl_cxPyfaylPdf.html%3Fid%3D20232112%26doType%3Dquery)
 
