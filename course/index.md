@@ -5,7 +5,7 @@ nav:
   - 通识课程:
     - 微积分: 'calculus/index.md'
     - 线性代数: 'linear-algebra/index.md'
-    - C 程序设计基础: 'c-programming/index.md'
+    - C 语言程序设计: 'c-programming/index.md'
   - 个性修读课程:
     - 汇编程序设计基础: 'fasm/index.md'
 ---
