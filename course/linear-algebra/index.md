@@ -9,9 +9,9 @@ props:
 nav:
   - 课程简介: index.md
   - 纠错本:
-      - correction/1.md
-      - correction/2.md
-      - correction/3.md
+      - "I 线性方程组与矩阵": correction/1.md
+      - "II 线性空间与欧氏空间": correction/2.md
+      - "III 相似对角化与二次型": correction/3.md
 sync: /course/linear-algebra/index.md
 ---
 
