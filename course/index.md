@@ -46,6 +46,8 @@ Stored here are the electronic notes I took down during my studies at Zhejiang U
 > - [咸鱼暄的代码空间](https://xuan-insr.github.io/)
 > - [Isshiki修's Notebook](https://note.isshikih.top/)
 > - [Bowling's TechStack](https://note.bowling233.top/)（机器学习、体系结构、数学建模、离散数学、计算机图形学、HPC）
-> - [Mini Babel Library @ruoxining](https://ruoxining.github.io/OBvault/)（C、C++、汇编、OS、体系结构、机器学习、NLP、语法学）
+> - [Mini Babel Library @ruoxining](https://ruoxining.github.io/OBvault/)（C、C++、汇编、OS、体系结构、机器学习、NLP、语言学）
+> - [Kaleo's Headspace](https://kaleo996.github.io/)（NLP、语言学）
 > - [一些浙大课程笔记 @Kaleo](https://www.yuque.com/linguisty/zju_courses/)（计算理论、超算短学期、数学建模、离散）
+> - [Jiepeng's notes](https://note.jiepeng.tech/CS/)（数值分析、人工智能初步、数逻、图像信息处理、FDS）
 
