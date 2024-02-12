@@ -25,6 +25,7 @@ sync: /course/fasm/index.md
 
 这门课的给分较为良好。作业分占比 50%，除了最后的一个贪吃蛇 Lab 外的作业都放在 PTA 上，支持多次提交，只要不抄袭作业分都能刷满（没有“互评”这种遥遥领先的评分形式）。期末考虽然按小白老师的原话讲有“为班里学过汇编语言专业课的高手准备的高手题”，但以我的实际体验来说掌握了上课讲的基础的东西就已经够用了。不过这门课对于编程方面基础较差的同学来说可能就比较吃力了，期末考签到的时候发现点名册上过半的都是退课或弃修的同学。
 
+
 ## 2. 复习经验
 
 博主因为平时上课没有好好听讲，因此大约提前一个月就开始复习这门课。发现小白老师的配套教材写的挺好，就跟着教材学习，遇到看不懂的地方就在智云课堂上找对应回放。个人感觉这也是这门课最为高效的应试手段了，如果要真正掌握汇编语言，还是需要多写代码、多使用调试器。
@@ -35,10 +36,9 @@ sync: /course/fasm/index.md
 - cbw, cwd, add, adc, sub, sbb, inc, dec
 - mul, div, imul, idiv, xlat, in, out, 
 - and, or, xor, not, neg, shl, shr, sal, sar, rol, ror, rcl, rcr
-- test, cmp
-- jxx（条件跳转指令）: ja, jb , jae, jbe, jc jnc jz jnz js jns jo jno 
+- test, cmp, jxx（条件跳转指令）: ja, jb, jae, jbe, jc jnc jz jnz js jns jo jno 
 - loop
-- clc stc cli sti cld std
+- clc, stc, cli, sti, cld, std
 - call, ret（近调用和近返回）
 - call far ptr, retf（远调用和远返回）
 - int, iret
