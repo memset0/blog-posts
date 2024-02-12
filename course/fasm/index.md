@@ -46,7 +46,7 @@ sync: /course/fasm/index.md
 - jmp dword ptr
 - 字符串指令：repne/repe scasb, repe/repne cmpsb, rep movsb, lodsb, stosb, rep stosb
 - 用堆栈传递参数时, 如何用 `[bp+?]` 实现对参数的引用
-- 调试器的使用（Tubro Debug、Soft-ICE）
+- 调试器的使用（Debug、Tubro Debug、Soft-ICE）
 
 > [!quote] Useful Links
 > - [x86汇编 - Mini Babel Library (ruoxining.github.io)](https://ruoxining.github.io/OBvault/CS/x86assm/)
