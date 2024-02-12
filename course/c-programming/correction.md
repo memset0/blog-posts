@@ -1,5 +1,6 @@
 ---
 title: 错题集
+sync: /course/c-programming/correction.md
 ---
 
 ## 1. 语法基础
