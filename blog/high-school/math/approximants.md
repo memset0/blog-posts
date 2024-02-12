@@ -114,15 +114,3 @@ $$
 > * [第二章 : 函数放缩问题●实洛朗级数 - 高考数学呆哥, zhihu.com](https://zhuanlan.zhihu.com/p/339473156)
 > * [【升级の高中数学／导数】函数逼近的三种方法——泰勒展开、帕德逼近与洛朗级数 - 霜夏, zhihu.com](https://zhuanlan.zhihu.com/p/530933700)
 
-
-## 4. 参考资料
-
-
-
-
-<style>
-    table { table-layout: fixed !important; }
-    table tr th, table tr td { text-align: center; }
-    table tr td small { display: block; }
-    table tr th:first-child, table tr td:first-child { max-width: 160px !important; }
-</style>
