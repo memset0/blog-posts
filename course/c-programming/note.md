@@ -8,7 +8,7 @@ sync: /course/c-programming/note.md
 
 ### 1.1. 隐式类型转换
 
-<img src=" https://static.memset0.cn/img/v6/2024/02/08/350EXKIx.png" alt="Pasted image 20240103225015" style="max-width: 35em">
+<img src=" https://static.memset0.cn/img/v6/2024/02/08/350EXKIx.png" alt="Pasted image 20240103225015" style="width: 35em">
 
 - 水平方向：自动转换
 - 垂直方向：低->高（短->长，有符号->无符号）
@@ -62,7 +62,7 @@ static int y; // 定义仅在file2.c中使用的变量y
 
 ### 5.1. 动态内存分配
 
-<img src="https://static.memset0.cn/img/v6/2024/02/08/bRKOoSDg.png" alt="Pasted image 20240103225305" style="max-width: 22em">
+<img src="https://static.memset0.cn/img/v6/2024/02/08/bRKOoSDg.png" alt="Pasted image 20240103225305" style="width: 22em">
 
 ### 5.2. 指针数组
 
@@ -154,10 +154,10 @@ void func(int (*a)[20]);  // √
 - 使用 `FILE *fopen(char *文件名, char *模式)` 打开文件，返回对应的文件指针。如果返回值为 `NULL` 说明文件打开失败。
 - 使用 `int fclose(FILE *文件指针)` 关闭文件，如果返回值非 0 说明文件关闭失败。
 
-<img src="https://static.memset0.cn/img/v6/2024/02/08/PCJUQXDp.png" alt="Pasted image 20240103222346" style="max-width: 31em">
+<img src="https://static.memset0.cn/img/v6/2024/02/08/PCJUQXDp.png" alt="Pasted image 20240103222346" style="width: 31em">
 
 
-<img alt="Pasted image 20240103222444" src="https://static.memset0.cn/img/v6/2024/02/08/lsb9VGdd.png" style="max-width: 33em">
+<img alt="Pasted image 20240103222444" src="https://static.memset0.cn/img/v6/2024/02/08/lsb9VGdd.png" style="width: 33em">
 
 ### 6.2. 文件读写
 
