@@ -3,9 +3,13 @@ title: 课程笔记 @ZJU
 nav:
   - 导航: index.md
   - 通识课程:
-      - 微积分: calculus/index.md
+#      - 微积分: calculus/index.md
       - 线性代数: linear-algebra/index.md
       - C 语言程序设计: c-programming/index.md
+  - 专业基础课程:
+      - 数字逻辑设计: dd/index.md
+  - 专业必修课程:
+      - 高级数据结构与算法分析: ads/index.md
   - 个性修读课程:
       - 汇编程序设计基础: fasm/index.md
 sync: /course/index.md
@@ -37,17 +41,20 @@ Stored here are the electronic notes I took down during my studies at Zhejiang U
 ## 2. 专业基础课程
 
 - 🎯 离散数学及其应用 - 林兰芬 - 大一春夏
-- 🎯 数据结构基础 - 李松 - 大一春夏
-- 🎯 数字逻辑设计 - 刘海风/何晓飞 - 大一春夏
+- [🎯 数据结构基础 - 李松 - 大一春夏](/course/fds/)
+- [🎯 数字逻辑设计 - 刘海风/何晓飞 - 大一春夏](/course/dd/)
 - 面向对象程序设计
 
 ## 3. 专业必修课程
 
-- 🎯 高级数据结构与算法分析 - 王灿 - 大一春夏
+- [🎯 高级数据结构与算法分析 - 王灿 - 大一春夏](/course/ads/)
 
-## 4. 个性修读课程（通识选修课程）
+## 4. 个性修读课程（通选课）
 
 - [🔮 汇编程序设计基础 - 白洪欢 - 大一秋冬 - 5.0(99)](./fasm/)
+
+
+
 
 
 
