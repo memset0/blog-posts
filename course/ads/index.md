@@ -1,5 +1,5 @@
 ---
-title: 高级数据结构与算法分析
+title: 高级数据结构与算法分析 ADS
 section: 高级数据结构与算法分析
 sync: /course/ads/index.md
 ---
