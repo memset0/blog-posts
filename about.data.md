@@ -19,7 +19,7 @@ props:
         - 2023 - 2024 International Collegiate Programming Contest, Nanjing Site
       award:
         - 季军、金奖
-        - 2nd Place, Gold Metal
+        - 3nd Place, Gold Metal
     - type: award
       date: 10/2023
       href: https://board.xcpcio.com/ccpc/9th/qinhuangdao
