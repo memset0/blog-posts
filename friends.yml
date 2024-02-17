@@ -50,10 +50,10 @@
   name: abc1763613206
   bio: Student / Noob / Web Developer
   avatarUrl: https://static.memset0.cn/img/v6/2024/02/11/wkGeEx9Q.png
-# - link: https://keep.moe/links/index.html
-#   name: Makito
-#   bio: A cat girl's observation diary
-#   avatarUrl:
+- link: https://keep.moe/
+  name: Makito
+  bio: A cat girl's observation diary
+  avatarUrl: https://static.memset0.cn/img/v6/2024/02/17/caPjHCrW.png
 - link: https://zigzagk.top/
   name: ZigZagK
   bio: Never give up fighting!
@@ -114,3 +114,7 @@
   name: 66666a
   bio: 草率了，年轻了，naive了
   avatarUrl: https://static.memset0.cn/img/v6/2024/02/16/BXBvaPra.png
+- link: https://note.jiepeng.tech/
+  name: Jiepeng
+  bio: Cold_ink 的笔记本！
+  avatarUrl: https://static.memset0.cn/img/v6/2024/02/17/cPCmOKdn.png
