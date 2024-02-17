@@ -41,7 +41,7 @@ Stored here are the electronic notes I took down during my studies at Zhejiang U
 
 ## 2. 专业基础课程
 
-- 🎯 离散数学及其应用 - 林兰芬 - 大一春夏
+- [🎯 离散数学及其应用 - 林兰芬 - 大一春夏](/course/dm/)
 - [🎯 数据结构基础 - 李松 - 大一春夏](/course/fds/)
 - [🎯 数字逻辑设计 - 刘海风/何晓飞 - 大一春夏](/course/dd/)
 - 面向对象程序设计
@@ -58,22 +58,28 @@ Stored here are the electronic notes I took down during my studies at Zhejiang U
 
 
 
-
 <br>
 
 > [!quote] Useful Links
-> 以下是学长们的笔记链接。它们启发了这个文档站的建立，同时也是我学习过程中宝贵的参考资料：
+> 以下是学长们的笔记链接。它们启发了这个文档站的建立，也是我学习过程中宝贵的参考资料：
+>
+> **独立博客**：
+>
 > - [咸鱼暄的代码空间](https://xuan-insr.github.io/)（C++、OS、计组、编译原理、密码学、计算理论、编译语言原理、大物实验报告）
 > - [Isshiki修's Notebook](https://note.isshikih.top/)（人工智能、机器学习、C、概率论、数逻、CV、科学文章写作、计组、ADS、OS、计算机网络、计算理论）
 > - [Bowling's TechStack](https://note.bowling233.top/)（机器学习、体系结构、数学建模、离散数学、计算机图形学、HPC）
 > - [Mini Babel Library @ruoxining](https://ruoxining.github.io/OBvault/)（C、C++、汇编、OS、体系结构、机器学习、NLP、语言学）
+> - [小角龙的学习空间](https://zhang-each.github.io/My-CS-Notebook/)（机器学习、FDS、ADS、计原、计网、数据库、OS）
 > - [Kaleo's Headspace](https://kaleo996.github.io/)（NLP、语言学）
-> - [一些浙大课程笔记 @Kaleo](https://www.yuque.com/linguisty/zju_courses/)（计算理论、超算短学期、数学建模、离散）
+> - [克瑞奇（Chritch）的笔记本](https://notes.zerokei.top/course/)（密码学、数据库、ADS）
 > - [Jiepeng's notes](https://note.jiepeng.tech/CS/)（数值分析、人工智能初步、数逻、图像信息处理、FDS）
+> - [Oneko Zone](https://oneko.zone/) （离散）
+>
+> **语雀文档**：
+>
 > - [玩电脑大师！@咸鱼暄](https://www.yuque.com/xianyuxuan/coding/)（FDS、ADS、离散、概率论、大物实验报告、OOP、密码学、编译原理）
 > - [【芝士】记不住笔记 @Isshiki修](https://www.yuque.com/isshikixiu/notes)（微积分、线性代数、数学分析、概率论、普物）
 > - [Something @oneko](https://www.yuque.com/oneko/something/)（离散、C、FDS、OS、OOP、软件工程、ADS、数据库、计网、离散）
 > - [算法 · 运筹 · 组合优化 @27rabbit](https://www.yuque.com/27rabbit/gi2sf3/)（ADS）
-> - [克瑞奇（Chritch）的笔记本](https://notes.zerokei.top/course/)（密码学、数据库、ADS）
-> - [Oneko Zone](https://oneko.zone/) （离散）
+> - [一些浙大课程笔记 @Kaleo](https://www.yuque.com/linguisty/zju_courses/)（计算理论、超算短学期、数学建模、离散）
 
