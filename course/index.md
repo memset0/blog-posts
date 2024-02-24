@@ -22,7 +22,7 @@ Stored here are the electronic notes I took down during my studies at Zhejiang U
 
 **培养方案**：[浙江大学 2023 级计算机科学与技术专业培养方案](https://github.com/memset0/shared-files/blob/master/2024/02/12/%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A62023%E7%BA%A7%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%8E%E6%8A%80%E6%9C%AF%E4%B8%93%E4%B8%9A%E5%9F%B9%E5%85%BB%E6%96%B9%E6%A1%88.pdf)
 
-**当前学期**：大一春夏（2024.2.26 开学后）
+**当前学期**：大一春夏
 
 | 🔮 | ✨ | 💖 | 🎯 | 🚧 |
 | ---- | ---- | ---- | ---- | ---- |
