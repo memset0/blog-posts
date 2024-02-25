@@ -3,14 +3,15 @@ title: 课程笔记 @ZJU
 nav:
   - 导航: index.md
   - 通识课程:
-#      - 微积分: calculus/index.md
+      #      - 微积分: calculus/index.md
       - 线性代数: linear-algebra/index.md
       - C 语言程序设计: c-programming/index.md
-#  - 专业基础课程:
-#      - 数字逻辑设计: fds/index.md
-#      - 数字逻辑设计: dd/index.md
-#  - 专业必修课程:
-#      - 高级数据结构: ads/index.md
+  - 专业基础课程:
+      - 数据结构基础: fds/index.md
+      - 离散数学: dm/index.md
+      - 数字逻辑设计: dd/index.md
+  - 专业必修课程:
+      - 高级数据结构: ads/index.md
   - 个性修读课程:
       - 汇编程序设计基础: fasm/index.md
 sync: /course/index.md
@@ -24,8 +25,8 @@ Stored here are the electronic notes I took down during my studies at Zhejiang U
 
 **当前学期**：大一春夏
 
-| 🔮 | ✨ | 💖 | 🎯 | 🚧 |
-| ---- | ---- | ---- | ---- | ---- |
+| 🔮         | ✨       | 💖               | 🎯      | 🚧     |
+| ---------- | ------- | ---------------- | ------- | ------ |
 | 较为完善、系统的笔记 | 不太完善的笔记 | 没有笔记但有修读感受、复习经验等 | 正在编写的笔记 | 待上传的笔记 |
 
 ## 1. 通识课程
@@ -54,10 +55,6 @@ Stored here are the electronic notes I took down during my studies at Zhejiang U
 
 - [🔮 汇编程序设计基础 - 白洪欢 - 大一秋冬 - 5.0(99)](./fasm/)
 
-
-
-
-
 <br>
 
 > [!quote] Useful Links
@@ -66,7 +63,7 @@ Stored here are the electronic notes I took down during my studies at Zhejiang U
 > **独立博客**：
 >
 > - [咸鱼暄的代码空间](https://xuan-insr.github.io/)（C++、OS、计组、编译原理、密码学、计算理论、编译语言原理、大物实验报告）
-> - [Isshiki修's Notebook](https://note.isshikih.top/)（人工智能、机器学习、C、概率论、数逻、CV、科学文章写作、计组、ADS、OS、计算机网络、计算理论）
+> - [Isshiki 修's Notebook](https://note.isshikih.top/)（人工智能、机器学习、C、概率论、数逻、CV、科学文章写作、计组、ADS、OS、计算机网络、计算理论）
 > - [Bowling's TechStack](https://note.bowling233.top/)（机器学习、体系结构、数学建模、离散数学、计算机图形学、HPC）
 > - [Mini Babel Library @ruoxining](https://ruoxining.github.io/OBvault/)（C、C++、汇编、OS、体系结构、机器学习、NLP、语言学）
 > - [小角龙的学习空间](https://zhang-each.github.io/My-CS-Notebook/)（机器学习、FDS、ADS、计原、计网、数据库、OS）
@@ -78,8 +75,7 @@ Stored here are the electronic notes I took down during my studies at Zhejiang U
 > **语雀文档**：
 >
 > - [玩电脑大师！@咸鱼暄](https://www.yuque.com/xianyuxuan/coding/)（FDS、ADS、离散、概率论、大物实验报告、OOP、密码学、编译原理）
-> - [【芝士】记不住笔记 @Isshiki修](https://www.yuque.com/isshikixiu/notes)（微积分、线性代数、数学分析、概率论、普物）
+> - [【芝士】记不住笔记 @Isshiki 修](https://www.yuque.com/isshikixiu/notes)（微积分、线性代数、数学分析、概率论、普物）
 > - [Something @oneko](https://www.yuque.com/oneko/something/)（离散、C、FDS、OS、OOP、软件工程、ADS、数据库、计网、离散）
 > - [算法 · 运筹 · 组合优化 @27rabbit](https://www.yuque.com/27rabbit/gi2sf3/)（ADS）
 > - [一些浙大课程笔记 @Kaleo](https://www.yuque.com/linguisty/zju_courses/)（计算理论、超算短学期、数学建模、离散）
-
