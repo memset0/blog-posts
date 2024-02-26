@@ -8,9 +8,7 @@ nav:
       - note/1.md
 ---
 
-## 1. 课程信息
-
-### 1.1. 分数占比
+## 1. 分数占比
 
 - Homework 10%
 - Discussions 10%
@@ -21,7 +19,9 @@ nav:
 - Midterm 10%*
 	- 可以被期末考覆盖
 - Final Exam 40%
-### 1.2. 教材
+
+
+## 2. 教材
 
 1. Data Structures and Algorithm Analysis in C（数据结构与算法分析 C 语言版本）*Mark Allen Weiss*
 2. Introduction to Algorithms（算法导论）*Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest and Clifford Stein*
