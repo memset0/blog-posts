@@ -8,9 +8,13 @@ nav:
       - note/1.md
 ---
 
-## 1. 课程信息
+## 1. 分数占比
 
-“第 7 章的知识会在概统里讲，第 12 章会在数逻里面讲，第 13 章会在计组里面讲，所以这门课跳过了这些章节。”—— [@Kaleo](https://www.yuque.com/linguisty/zju_courses/discrete)
+TBD
+
+## 2. 教材
+
+> “第 7 章的知识会在概统里讲，第 12 章会在数逻里面讲，第 13 章会在计组里面讲，所以这门课跳过了这些章节。”—— [@Kaleo](https://www.yuque.com/linguisty/zju_courses/discrete)
 
 > [!quote] Useful Links
 >

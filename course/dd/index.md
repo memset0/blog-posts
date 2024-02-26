@@ -7,8 +7,11 @@ nav:
   - 笔记:
       - note/1.md
 ---
+## 1. 分数占比
 
-## 1. 重要资料
+TBD
+
+## 2. 重要资料
 
 - [词汇表 - Jiepeng's notes](https://note.jiepeng.tech/CS/DigitalDesign/glossary/)
 
