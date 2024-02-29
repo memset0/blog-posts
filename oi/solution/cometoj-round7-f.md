@@ -7,10 +7,10 @@ publish: true
 ---
 
 > 维护序列 $a_{1\ldots n}$，支持以下操作 $m$ 次：
-> 
+>
 > 1. 给 $x,y$，将 $x$ 位置的值修改为 $y$；
 > 2. 给 $l,r,x$，查询区间$[l,r]$中有多少子区间的最大值小于或等于 $x$。
-> 
+>
 > $n,m \leq 3 \times 10^5$。
 
 <!-- more -->
@@ -27,8 +27,8 @@ publish: true
 
 考虑 `maintain` 操作，每次只保留下标是 $3$ 的倍数的位置。
 
-* 对于修改操作，暴力 `maintain` 上去，时间复杂度 $O(\sqrt n + \frac 2 3 \sqrt n + \frac 4 9 \sqrt n + \cdots) = O(\sqrt n)$。
-* 对于查询操作，DFS 遍历整棵树，递归到下一层的时候指针只会右移至多 $2$ 次，是常数级别的，故时间复杂度为总节点数，即 $O(\sqrt n)$。
+- 对于修改操作，暴力 `maintain` 上去，时间复杂度 $O(\sqrt n + \frac 2 3 \sqrt n + \frac 4 9 \sqrt n + \cdots) = O(\sqrt n)$。
+- 对于查询操作，DFS 遍历整棵树，递归到下一层的时候指针只会右移至多 $2$ 次，是常数级别的，故时间复杂度为总节点数，即 $O(\sqrt n)$。
 
 ## 卡常
 
@@ -73,7 +73,7 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
         func(float)                    \
         func(double)                   \
         func(long double)
-    
+
     namespace stdval{
   #ifdef MEM_STDVAL
       using i32=int;
@@ -89,7 +89,7 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
     #endif
   #endif
     }
-    
+
     namespace utils{
   #ifdef MEM_UTILS
       using std::cin;
@@ -112,34 +112,34 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
       using std::min_element;
   #endif
     }
-    
+
     namespace random{
   #ifdef MEM_RANDOM
       const int LuckyNumber=20040726; // Kanbe Kotori's Birthday
       std::mt19937 rng(LuckyNumber^std::chrono::steady_clock::now().time_since_epoch().count());
       std::mt19937_64 rng64(LuckyNumber^std::chrono::steady_clock::now().time_since_epoch().count());
-      
+
       template<class T> inline T rand(T l,T r){return std::uniform_int_distribution<T>(l,r)(rng);}
       template<class T> inline T rand64(T l,T r){return std::uniform_int_distribution<T>(l,r)(rng);}
   #endif
     }
-    
+
     namespace modint{
   #ifdef MEM_MODINT
       template<const int mod> struct Z{
         int x;
         inline Z(){x=0;}
         inline Z(int t){x=t;}
-        
+
         inline void operator-=(Z a){(x-=a.x)<0&&(x+=mod);}
         inline void operator+=(Z a){(x+=a.x)>=mod&&(x-=mod);}
         inline void operator*=(Z a){x=(long long)x*a.x%mod;}
-        
+
         friend inline Z operator*(Z a,Z b){return (long long)a.x*b.x%mod;}
         friend inline Z operator-(Z a,Z b){return ((a.x-=b.x)<0&&(a.x+=mod)),a;}
         friend inline Z operator+(Z a,Z b){return ((a.x+=b.x)>=mod&&(a.x-=mod)),a;}
       };
-      
+
       template<const int mod> inline Z<mod> finv(Z<mod> x){
         if(x.x<2)return x;
         return (mod-mod/x.x)*finv(mod%x.x);
@@ -150,7 +150,7 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
           if(b&1)s=s*a;
         return s;
       }
-      
+
       template<const int mod> inline void init_inverse(int n,Z<mod> *inv){
         inv[0]=inv[1]=1;
         for(int i=2;i<n;i++)inv[i]=(mod-mod/i)*inv[mod%i];
@@ -160,13 +160,13 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
         for(int i=1;i<n;i++)fac[i]=fac[i-1]*i,ifac[i]=ifac[i-1]*ifac[i];
       }
     }
-    
+
     namespace io{
       template<const int mod> inline void read(modint::Z<mod> &x){read(x.x);}
       template<const int mod> inline void print(modint::Z<mod> x){print(x.x);}
   #endif
     }
-    
+
     namespace math{
   #ifdef MEM_MATH
       using std::max;
@@ -174,11 +174,11 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
       template<class T> inline T abs(T x){return x<0?-x:x;}
       template<class T> inline T gcd(T n,T m){return m?gcd(m,n%m):n;}
       template<class T> inline T lcm(T n,T m){return n/gcd(n,m)*m;}
-      
+
       template<const stdval::u64 p> struct FastDiv{
         stdval::u64 t,i;
         inline FastDiv():t(stdval::u64(-1)/p),i(mul_inv(p)){}
-        
+
         inline bool divide(stdval::u64 n){return n*i<=t;}
         inline bool divide(stdval::i64 n){return stdval::u64(n<0?-n:n)*i<=t;}
         inline stdval::u64 mul_inv(stdval::u64 n){
@@ -187,12 +187,12 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
           return x;
         }
       };
-    
+
     #ifdef MEM_INT128
       template<const stdval::u64 b> struct FastMod{
         stdval::u64 m;
         inline FastMod():m(stdval::u64((stdval::u128(1)<<64)/b)){}
-        
+
         inline stdval::u64 reduce(stdval::u64 a){
           stdval::u64 q=(stdval::u64)((stdval::u128(m)*a)>>64);
           stdval::u64 r=a-q*b;
@@ -202,7 +202,7 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
     #endif
   #endif
     }
-    
+
     namespace container{
   #ifdef MEM_CONTAINER
       using std::pair;
@@ -211,34 +211,34 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
       using std::unordered_set;
       using std::map;
       using std::unordered_map;
-      
+
       using std::tie;
       using std::make_pair;
       using std::make_tuple;
-      
+
       template<class T> struct vector:std::vector<T>{
         using std::vector<T>::vector;
         vector():std::vector<T>(){}
         vector(const std::vector<T> &plain):std::vector<T>(plain){}
-        
+
         inline void sort(){std::sort(this->begin(),this->end());}
         inline void concat(const vector &rhs){this->insert(this->end(),rhs.begin(),rhs.end());}
         inline bool includes(const T &x) const{return std::find(this->begin(),this->end(),x)!=this->end();}
         template<class Function> inline void forEach(Function func){for(const auto &it:*this)func(it);}
-        
+
         inline vector slice(int l,int r) const{
           if(l>r)return {};
           if(r<this->size())return vector(this->begin()+l,this->begin()+r);
           vector<int> rsp=(this->begin()+l,this->end());
           return rsp.resize(r-l),rsp;
         }
-        
+
         inline void from(const std::set<T> &src){
           this->resize(src.size());
           auto it=this->begin();
           for(const T e:src)*it++=e;
         }
-        
+
         template<class R,class Function> inline vector<R> _map(Function func) const{
           vector <R> res(this->size());
           for(size_t i=0;i<this->size();i++)
@@ -248,14 +248,14 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
         template<class R> inline vector<R> map(R func(T)) const{return this->_map<R>(func);}
         template<class R> inline vector<R> map(const std::function<R(T)> &func) const{return this->_map<R>(func);}
       };
-      
+
       struct string:std::string{
         using std::string::string;
         string():std::string(""){}
         string(const std::string &plain):std::string(plain){}
-        
+
         template<class T> inline string join(const vector<T> &vet) const;
-        
+
         vector<string> split(const string &dim) const{
           if(this->empty())return {};
           char *src=new char[this->length()+1];
@@ -269,7 +269,7 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
           delete[] tar;
           return rsp;
         }
-        
+
         template<class... Args> static inline string format(const char *fm,Args... args){
           int len=snprintf(nullptr,0,fm,args...);
           char *buf=new char[len+1];
@@ -282,7 +282,7 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
           return format(fm.c_str(),args...);
         }
       };
-    
+
     #define __to_string(T)                 \
       inline string to_string(const T &x){ \
         return std::to_string(x);          \
@@ -290,13 +290,13 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
       __float_mapper(__to_string)
       __integer_mapper(__to_string)
     #undef __to_string
-      
+
       inline string to_string(const string &s){return s;}
       inline string to_string(const char *s){return string(s);}
       inline string to_string(const std::string &s){return string(s);}
-      
+
       template<const int mod> inline string to_string(const mem::modint::Z<mod> &v){return std::to_string(v.x);}
-      
+
       template<class T> inline string to_string(const vector<T> &ctn){return "["+string(",").join(ctn)+"]";}
       template<class T> inline string to_string(const set<T> &ctn){
         string result="{";
@@ -318,7 +318,7 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
         }
         return result+"}";
       }
-      
+
       template<class T> inline string string::join(const vector<T> &vet) const{
         if(!vet.size())return "";
         string res=to_string(vet[0]);
@@ -328,14 +328,14 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
         }
         return res;
       }
-      
+
       inline string operator "" _s(const char *s){return string(s);}
       inline string operator "" _s(const char *s,size_t len){return string(s,len);}
       inline string operator "" _s(long double x){return to_string(x);}
       inline string operator "" _s(unsigned long long int x){return to_string(x);}
   #endif
     }
-    
+
     namespace io{
   #ifdef MEM_IO
     #ifdef MEM_FASTIO
@@ -367,7 +367,7 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
       inline int getc(){return getchar();}
       inline void putc(int c){putchar(c);}
     #endif
-      
+
       template<class T> inline void readDigit(T &x){
         x=getc();
         while(!isdigit(x))x=getc();
@@ -386,7 +386,7 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
         readAlpha(x);
         return x;
       }
-    
+
     #define __read(T)                             \
         inline void read(T &x) {                  \
           x=0; bool f=0; char c=getc();           \
@@ -396,7 +396,7 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
         }
       __integer_mapper(__read)
     #undef __read
-      
+
       inline void read(char &x){x=getc();}
       inline void read(char *s){
         char c=getc();
@@ -408,7 +408,7 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
         s="";
         while(~c&&!isspace(c))s+=c,c=getc();
       }
-      
+
       template<class T=int> inline T read(){
         T x;
         read(x);
@@ -417,7 +417,7 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
       template<class T,class... Args> inline void read(T &x,Args &... args){
         read(x),read(args...);
       }
-    
+
     #define __print(T)           \
         inline void print(T x){  \
           if(x<0)putc('-'),x=-x; \
@@ -426,7 +426,7 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
         }
       __integer_mapper(__print)
     #undef __print
-      
+
       inline void print(char x){putc(x);}
       inline void print(const char *s){
         int len=strlen(s);
@@ -435,14 +435,14 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
       inline void print(const container::string &s){
         for(int i=0;i<s.length();i++)putc(s[i]);
       }
-      
+
       template<class T,class... Args> inline void print(const T &x,Args... args){
         print(x),print(args...);
       }
       template<class... Args> inline void println(Args... args){
         print(args...),putc('\n');
       }
-      
+
       template<class... Args> inline void printfm(const char *formatter,Args... arguments){
         print(container::string().format(formatter,arguments...));
       }
@@ -451,7 +451,7 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
       }
   #endif
     }
-    
+
     namespace logger{
   #ifdef MEM_LOGGER
       enum ConsoleColor{
@@ -493,7 +493,7 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
   #undef __float_mapper
   #undef __string_mapper
   #undef __string_join_mapper
-    
+
     using namespace io;
     using namespace math;
     using namespace utils;
@@ -581,7 +581,7 @@ struct block{
 }s[N/sqn+5];
 
 int main(){
-#ifdef memset0 
+#ifdef memset0
   freopen("1.in","r",stdin);
   freopen("1.out","w",stdout);
 #endif
@@ -620,7 +620,7 @@ int main(){
 时间复杂度：$O(n \sqrt n)$
 
 ```cpp
-#pragma GCC target("sse,sse2,sse3,ssse3,sse4,sse4.1,sse4.2,popcnt,abm,mmx,avx,avx2,fma,tune=native") 
+#pragma GCC target("sse,sse2,sse3,ssse3,sse4,sse4.1,sse4.2,popcnt,abm,mmx,avx,avx2,fma,tune=native")
 #include<bits/stdc++.h>
 
 namespace mem{ //v2.1.2 => size: 14.19KiB
@@ -650,7 +650,7 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
         func(float)                    \
         func(double)                   \
         func(long double)
-    
+
     namespace stdval{
   #ifdef MEM_STDVAL
       using i32=int;
@@ -666,7 +666,7 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
     #endif
   #endif
     }
-    
+
     namespace utils{
   #ifdef MEM_UTILS
       using std::cin;
@@ -689,34 +689,34 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
       using std::min_element;
   #endif
     }
-    
+
     namespace random{
   #ifdef MEM_RANDOM
       const int LuckyNumber=20040726; // Kanbe Kotori's Birthday
       std::mt19937 rng(LuckyNumber^std::chrono::steady_clock::now().time_since_epoch().count());
       std::mt19937_64 rng64(LuckyNumber^std::chrono::steady_clock::now().time_since_epoch().count());
-      
+
       template<class T> inline T rand(T l,T r){return std::uniform_int_distribution<T>(l,r)(rng);}
       template<class T> inline T rand64(T l,T r){return std::uniform_int_distribution<T>(l,r)(rng);}
   #endif
     }
-    
+
     namespace modint{
   #ifdef MEM_MODINT
       template<const int mod> struct Z{
         int x;
         inline Z(){x=0;}
         inline Z(int t){x=t;}
-        
+
         inline void operator-=(Z a){(x-=a.x)<0&&(x+=mod);}
         inline void operator+=(Z a){(x+=a.x)>=mod&&(x-=mod);}
         inline void operator*=(Z a){x=(long long)x*a.x%mod;}
-        
+
         friend inline Z operator*(Z a,Z b){return (long long)a.x*b.x%mod;}
         friend inline Z operator-(Z a,Z b){return ((a.x-=b.x)<0&&(a.x+=mod)),a;}
         friend inline Z operator+(Z a,Z b){return ((a.x+=b.x)>=mod&&(a.x-=mod)),a;}
       };
-      
+
       template<const int mod> inline Z<mod> finv(Z<mod> x){
         if(x.x<2)return x;
         return (mod-mod/x.x)*finv(mod%x.x);
@@ -727,7 +727,7 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
           if(b&1)s=s*a;
         return s;
       }
-      
+
       template<const int mod> inline void init_inverse(int n,Z<mod> *inv){
         inv[0]=inv[1]=1;
         for(int i=2;i<n;i++)inv[i]=(mod-mod/i)*inv[mod%i];
@@ -737,13 +737,13 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
         for(int i=1;i<n;i++)fac[i]=fac[i-1]*i,ifac[i]=ifac[i-1]*ifac[i];
       }
     }
-    
+
     namespace io{
       template<const int mod> inline void read(modint::Z<mod> &x){read(x.x);}
       template<const int mod> inline void print(modint::Z<mod> x){print(x.x);}
   #endif
     }
-    
+
     namespace math{
   #ifdef MEM_MATH
       using std::max;
@@ -751,11 +751,11 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
       template<class T> inline T abs(T x){return x<0?-x:x;}
       template<class T> inline T gcd(T n,T m){return m?gcd(m,n%m):n;}
       template<class T> inline T lcm(T n,T m){return n/gcd(n,m)*m;}
-      
+
       template<const stdval::u64 p> struct FastDiv{
         stdval::u64 t,i;
         inline FastDiv():t(stdval::u64(-1)/p),i(mul_inv(p)){}
-        
+
         inline bool divide(stdval::u64 n){return n*i<=t;}
         inline bool divide(stdval::i64 n){return stdval::u64(n<0?-n:n)*i<=t;}
         inline stdval::u64 mul_inv(stdval::u64 n){
@@ -764,12 +764,12 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
           return x;
         }
       };
-    
+
     #ifdef MEM_INT128
       template<const stdval::u64 b> struct FastMod{
         stdval::u64 m;
         inline FastMod():m(stdval::u64((stdval::u128(1)<<64)/b)){}
-        
+
         inline stdval::u64 reduce(stdval::u64 a){
           stdval::u64 q=(stdval::u64)((stdval::u128(m)*a)>>64);
           stdval::u64 r=a-q*b;
@@ -779,7 +779,7 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
     #endif
   #endif
     }
-    
+
     namespace container{
   #ifdef MEM_CONTAINER
       using std::pair;
@@ -788,34 +788,34 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
       using std::unordered_set;
       using std::map;
       using std::unordered_map;
-      
+
       using std::tie;
       using std::make_pair;
       using std::make_tuple;
-      
+
       template<class T> struct vector:std::vector<T>{
         using std::vector<T>::vector;
         vector():std::vector<T>(){}
         vector(const std::vector<T> &plain):std::vector<T>(plain){}
-        
+
         inline void sort(){std::sort(this->begin(),this->end());}
         inline void concat(const vector &rhs){this->insert(this->end(),rhs.begin(),rhs.end());}
         inline bool includes(const T &x) const{return std::find(this->begin(),this->end(),x)!=this->end();}
         template<class Function> inline void forEach(Function func){for(const auto &it:*this)func(it);}
-        
+
         inline vector slice(int l,int r) const{
           if(l>r)return {};
           if(r<this->size())return vector(this->begin()+l,this->begin()+r);
           vector<int> rsp=(this->begin()+l,this->end());
           return rsp.resize(r-l),rsp;
         }
-        
+
         inline void from(const std::set<T> &src){
           this->resize(src.size());
           auto it=this->begin();
           for(const T e:src)*it++=e;
         }
-        
+
         template<class R,class Function> inline vector<R> _map(Function func) const{
           vector <R> res(this->size());
           for(size_t i=0;i<this->size();i++)
@@ -825,14 +825,14 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
         template<class R> inline vector<R> map(R func(T)) const{return this->_map<R>(func);}
         template<class R> inline vector<R> map(const std::function<R(T)> &func) const{return this->_map<R>(func);}
       };
-      
+
       struct string:std::string{
         using std::string::string;
         string():std::string(""){}
         string(const std::string &plain):std::string(plain){}
-        
+
         template<class T> inline string join(const vector<T> &vet) const;
-        
+
         vector<string> split(const string &dim) const{
           if(this->empty())return {};
           char *src=new char[this->length()+1];
@@ -846,7 +846,7 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
           delete[] tar;
           return rsp;
         }
-        
+
         template<class... Args> static inline string format(const char *fm,Args... args){
           int len=snprintf(nullptr,0,fm,args...);
           char *buf=new char[len+1];
@@ -859,7 +859,7 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
           return format(fm.c_str(),args...);
         }
       };
-    
+
     #define __to_string(T)                 \
       inline string to_string(const T &x){ \
         return std::to_string(x);          \
@@ -867,13 +867,13 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
       __float_mapper(__to_string)
       __integer_mapper(__to_string)
     #undef __to_string
-      
+
       inline string to_string(const string &s){return s;}
       inline string to_string(const char *s){return string(s);}
       inline string to_string(const std::string &s){return string(s);}
-      
+
       template<const int mod> inline string to_string(const mem::modint::Z<mod> &v){return std::to_string(v.x);}
-      
+
       template<class T> inline string to_string(const vector<T> &ctn){return "["+string(",").join(ctn)+"]";}
       template<class T> inline string to_string(const set<T> &ctn){
         string result="{";
@@ -895,7 +895,7 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
         }
         return result+"}";
       }
-      
+
       template<class T> inline string string::join(const vector<T> &vet) const{
         if(!vet.size())return "";
         string res=to_string(vet[0]);
@@ -905,14 +905,14 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
         }
         return res;
       }
-      
+
       inline string operator "" _s(const char *s){return string(s);}
       inline string operator "" _s(const char *s,size_t len){return string(s,len);}
       inline string operator "" _s(long double x){return to_string(x);}
       inline string operator "" _s(unsigned long long int x){return to_string(x);}
   #endif
     }
-    
+
     namespace io{
   #ifdef MEM_IO
     #ifdef MEM_FASTIO
@@ -944,7 +944,7 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
       inline int getc(){return getchar();}
       inline void putc(int c){putchar(c);}
     #endif
-      
+
       template<class T> inline void readDigit(T &x){
         x=getc();
         while(!isdigit(x))x=getc();
@@ -963,7 +963,7 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
         readAlpha(x);
         return x;
       }
-    
+
     #define __read(T)                             \
         inline void read(T &x) {                  \
           x=0; bool f=0; char c=getc();           \
@@ -973,7 +973,7 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
         }
       __integer_mapper(__read)
     #undef __read
-      
+
       inline void read(char &x){x=getc();}
       inline void read(char *s){
         char c=getc();
@@ -985,7 +985,7 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
         s="";
         while(~c&&!isspace(c))s+=c,c=getc();
       }
-      
+
       template<class T=int> inline T read(){
         T x;
         read(x);
@@ -994,7 +994,7 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
       template<class T,class... Args> inline void read(T &x,Args &... args){
         read(x),read(args...);
       }
-    
+
     #define __print(T)           \
         inline void print(T x){  \
           if(x<0)putc('-'),x=-x; \
@@ -1003,7 +1003,7 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
         }
       __integer_mapper(__print)
     #undef __print
-      
+
       inline void print(char x){putc(x);}
       inline void print(const char *s){
         int len=strlen(s);
@@ -1012,14 +1012,14 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
       inline void print(const container::string &s){
         for(int i=0;i<s.length();i++)putc(s[i]);
       }
-      
+
       template<class T,class... Args> inline void print(const T &x,Args... args){
         print(x),print(args...);
       }
       template<class... Args> inline void println(Args... args){
         print(args...),putc('\n');
       }
-      
+
       template<class... Args> inline void printfm(const char *formatter,Args... arguments){
         print(container::string().format(formatter,arguments...));
       }
@@ -1028,7 +1028,7 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
       }
   #endif
     }
-    
+
     namespace logger{
   #ifdef MEM_LOGGER
       enum ConsoleColor{
@@ -1070,7 +1070,7 @@ namespace mem{ //v2.1.2 => size: 14.19KiB
   #undef __float_mapper
   #undef __string_mapper
   #undef __string_join_mapper
-    
+
     using namespace io;
     using namespace math;
     using namespace utils;
@@ -1195,7 +1195,7 @@ void locate(int x,int l,int r){
 }
 
 int main(){
-#ifdef memset0 
+#ifdef memset0
   freopen("1.in","r",stdin);
   freopen("1.out","w",stdout);
 #endif

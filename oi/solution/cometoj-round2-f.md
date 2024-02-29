@@ -1,5 +1,5 @@
 ---
-title: '「CometOJ Round #2 F」真实无妄她们的人生之路'
+title: "「CometOJ Round #2 F」真实无妄她们的人生之路"
 category: OI 题解
 cover: 36.webp
 tags:
@@ -10,11 +10,11 @@ publish: true
 ---
 
 > 有 $n$ 种操作，第 $i$ 种操作使用后有 $p_i$ 的概率升级，$(1-p_i)$ 的概率不升级。
-> 
+>
 > 进行若干次操作后，如果主人公的等级为 $i$，就能产生 $a_i$ 的贡献。
-> 
+>
 > 对于每个 $i \in [1;n]$ 求出，使用 $j \neq i$ 的所有操作 $j$，主人公产生等级贡献的期望。
-> 
+>
 > $n \leq 10^5$。
 
 <!-- more -->

@@ -9,7 +9,7 @@ publish: true
 ---
 
 > 给定一个长度为 $n$ 的数组 $\{a_i\}_{i=1}^n$，$Q$ 次询问，每次给定 $l$ 和 $r$ 查询 $\operatorname{lcm}(\{a_i\}_{i=l}^r)$，答案对 $10^9+7$ 取模。
-> 
+>
 > **多组数据**，$T,n,Q \leq 300,\ a_i \leq 10^{18}$。
 
 <!-- more -->
@@ -117,13 +117,13 @@ int buc[L][65],mx[L];
 int tot=1,zcnt;
 inline void add(const std::vector<pair> &vet){
 	for(auto it:vet){
-		if(mx[it.first]){	
+		if(mx[it.first]){
 			if(ls[it.first])tot=tot*ipw[it.first][mx[it.first]]%mod;
 				else --zcnt;
 		}
 		++buc[it.first][it.second];
 		mx[it.first]=std::max(mx[it.first],it.second);
-		if(mx[it.first]){	
+		if(mx[it.first]){
 			if(ls[it.first])tot=tot*pw[it.first][mx[it.first]]%mod;
 				else ++zcnt;
 		}
@@ -131,13 +131,13 @@ inline void add(const std::vector<pair> &vet){
 }
 inline void del(const std::vector<pair> &vet){
 	for(auto it:vet){
-		if(mx[it.first]){	
+		if(mx[it.first]){
 			if(ls[it.first])tot=tot*ipw[it.first][mx[it.first]]%mod;
 				else --zcnt;
 		}
 		--buc[it.first][it.second];
 		for(mx[it.first]=p[it.first];mx[it.first] && !buc[it.first][mx[it.first]];--mx[it.first]);
-		if(mx[it.first]){	
+		if(mx[it.first]){
 			if(ls[it.first])tot=tot*pw[it.first][mx[it.first]]%mod;
 				else ++zcnt;
 		}

@@ -7,7 +7,7 @@ cover: 3.png
 ---
 
 > 给定 $n$ 和长度为 $n$ 的数组 $\{a_i \} _{i=1}^n$ ，求满足 $\forall i \in [1, n], c_i | b_i, b_i | a_i$ 并且 $\prod_{i=1}^n c_i^2  \leq \prod_{i=1}^n b_i$ 的 $\{b_i\}_{i=1}^n$ 和 $\{c_i\}_{i=1}^n$ 的方案数。
-> 
+>
 > $n \leq 100,\ a_i \leq 10^9$。
 
 <!-- more -->
