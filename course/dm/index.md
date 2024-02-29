@@ -14,7 +14,7 @@ TBD
 
 ## 2. 教材
 
-- Discrete Mathmatics and Its Applications *Kenneth H.Rosen* 离散数学及其应用（英文第八版）
+- Discrete Mathmatics and Its Applications *Kenneth H.Rosen* 离散数学及其应用（第七/八版均可）[download(en)](https://pan.memset0.cn/Share/2024/02/29/Discrete%20Mathematics%20and%20Its%20Applications%20(Eighth%20Edition)%20-%20Kenneth%20Rosen.pdf) | [download(cn)](https://pan.memset0.cn/Share/2024/02/29/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8(%E5%8E%9F%E4%B9%A6%E7%AC%AC%E5%85%AB%E7%89%88)%20-%20Kenneth%20Rosen%20-%20%E6%9C%BA%E6%A2%B0%E5%B7%A5%E4%B8%9A%E5%87%BA%E7%89%88%E7%A4%BE.pdf)
 
 > “第 7 章的知识会在概统里讲，第 12 章会在数逻里面讲，第 13 章会在计组里面讲，所以这门课跳过了这些章节。”—— [@Kaleo](https://www.yuque.com/linguisty/zju_courses/discrete)
 
