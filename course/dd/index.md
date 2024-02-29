@@ -20,14 +20,14 @@ nav:
 
 ## 2. 教材
 
-- Logic and Computer Design Fundamental (Fifth Edition)
+- Logic and Computer Design Fundamental (Fifth Edition) [download(en)](https://pan.memset0.cn/Share/Textbooks/Logic%20and%20computer%20design%20fundamentals,%20Fifth%20Edition%20-%20M.%20Morris%20R.%20Mano,%20Charles%20R.%20Kime,%20Tom%20Martin.pdf) | [download(cn)](https://pan.memset0.cn/Share/Textbooks/%E9%80%BB%E8%BE%91%E4%B8%8E%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80%EF%BC%88%E5%8E%9F%E4%B9%A6%E7%AC%AC5%E7%89%88%EF%BC%89%20-%20M.Morris%20Mano,%20Charles%20Kime.pdf)
 
 ## 3. 实验室要求
 
 - 实验文档：[Github Pages](https://guahao31.github.io/2024_DD/)
 - 学习 Verilog HDL 语言，熟悉硬件实验平台、实验仪器操作等
 - 用 Verilog HDL 语言做仿真实验时，要求**先编写好代码**
-- 严禁抄袭，若发现两个人都记零分
+- 严禁抄袭，若被发现两个人都记零分
 
 ## 4. 重要资料
 
