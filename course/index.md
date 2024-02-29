@@ -7,8 +7,8 @@ nav:
       - 线性代数: linear-algebra/index.md
       - C 语言程序设计: c-programming/index.md
   - 专业基础课程:
-      - 数据结构基础: fds/index.md
-      - 离散数学: dm/index.md
+      # - 数据结构基础: fds/index.md
+      - 离散数学及其应用: dm/index.md
       - 数字逻辑设计: dd/index.md
   - 专业必修课程:
       - 高级数据结构: ads/index.md
