@@ -1,10 +1,10 @@
 ---
-title: 数字逻辑设计 Digital Design
+title: 数字逻辑设计
 section: 数字逻辑设计
 sync: /course/dd/index.md
 nav:
-  - 课程简介: index.md
-  - 笔记:
+  - Intro: index.md
+  - Notes:
       - note/1.md
 ---
 ## 1. 分数组成
