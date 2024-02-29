@@ -3,8 +3,8 @@ title: 离散数学及其应用 Discrete Mathematics and Its Applications
 section: 离散数学及其应用
 sync: /course/dm/index.md
 nav:
-  - 课程简介: index.md
-  - 笔记:
+  - Intro: index.md
+  - Notes:
       - note/1.md
 ---
 
