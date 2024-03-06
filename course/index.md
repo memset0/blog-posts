@@ -38,7 +38,7 @@ Stored here are the electronic notes I took down during my studies at Zhejiang U
 - 中国近现代史纲要 - 何惧 - 大一秋冬 - 4.8(92)
 - 大学英语 III - 杨建平 - 大一秋冬 - 3.6(80)
 - 大学英语 IV - 李航 - 大一春夏
-- 🎯 大学物理（乙）Ⅰ - 金洪英 - 大一春夏
+- [🎯 大学物理（乙）Ⅰ - 金洪英 - 大一春夏](/course/physics/)
 
 ## 2. 专业基础课程
 
