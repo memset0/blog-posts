@@ -6,6 +6,7 @@ nav:
   - Intro: index.md
   - Notes:
       - note/1.md
+      - note/2.md
 ---
 ## 1. 分数组成
 

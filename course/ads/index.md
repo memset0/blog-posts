@@ -6,6 +6,7 @@ nav:
   - 课程简介: index.md
   - 笔记:
       - note/1.md
+      - note/2.md
   - 错题本: correction.md
 ---
 

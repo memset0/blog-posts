@@ -10,7 +10,15 @@ nav:
 
 ## 1. 分数占比
 
-TBD
+- Homework 10%
+	- Two assignments per week and both are due at the beginning of the following Tuesday class
+	- **NO LATE SUBMISSION ALLOWED UNLESS INFORMED IN ADVANCE**
+- Quizzes 20%
+	- Quiz 1 **on April 2nd**
+	- Quiz 2 **on May 28th**
+- Midterm exam 20%
+	- Midterm **on May 7th**
+- Final 50%
 
 ## 2. 教材
 
