@@ -1,5 +1,5 @@
 ---
-title: Logisim Evolution Tutorial
+title: Logisim Evolution
 sync: /course/dd/tool/logisim.md
 ---
 

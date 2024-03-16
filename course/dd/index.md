@@ -8,7 +8,7 @@ nav:
       - note/1.md
       - note/2.md
       - note/3.md
-  - Tools:
+  - "Tools & Tutorials":
       - tool/logisim.md
       - tool/vivado.md
 ---
