@@ -7,6 +7,10 @@ nav:
   - Notes:
       - note/1.md
       - note/2.md
+      - note/3.md
+  - Tools:
+      - tool/logisim.md
+      - tool/vivado.md
 ---
 ## 1. 分数组成
 
