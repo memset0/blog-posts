@@ -3,11 +3,12 @@ title: 高级数据结构与算法分析
 section: 高级数据结构与算法分析
 sync: /course/ads/index.md
 nav:
-  - 课程简介: index.md
-  - 笔记:
+  - Intro: index.md
+  - Correction: correction.md
+  - Notes:
       - note/1.md
       - note/2.md
-  - 错题本: correction.md
+      - note/3.md
 ---
 
 ## 1. 分数占比
