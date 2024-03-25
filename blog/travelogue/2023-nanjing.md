@@ -1,5 +1,5 @@
 ---
-title: '2023 ICPC 南京站游记'
+title: "2023 ICPC 南京站游记"
 date: 2023-11-06 00:25:00
 publish: true
 cover: https://static.memset0.cn/img/v6/2023/11/07/K3pfcvZY.jpg
@@ -79,7 +79,7 @@ cover: https://static.memset0.cn/img/v6/2023/11/07/K3pfcvZY.jpg
 
 ![这样的一盘我连干三碗|md](https://static.memset0.cn/img/v6/2023/11/06/Y4ELL6ve.jpeg)
 
-得知发的发票可以在食堂二楼换饮料，我也去整了点。
+得知发的饭票可以在食堂二楼换饮料，我也去整了点。
 
 ![搞了整整十八瓶|md](https://static.memset0.cn/img/v6/2023/11/07/8mUDghqE.jpg)
 
