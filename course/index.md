@@ -19,7 +19,7 @@ sync: /course/index.md
 
 此处存放的是博主在浙江大学学习期间所记录的电子笔记，非常高兴能与大家分享。若您在阅读过程中发现任何问题，或笔记内容侵犯了您或他人的知识产权，请通过评论或电子邮件的方式与我取得联系。
 
-Stored here are the electronic notes I took down during my studies at Zhejiang University, which I am delighted to share with everyone. If you encounter any questions or problems during your reading, or if the content of the notes infringes upon your or others' intellectual property rights, please contact me through comments or email.
+Stored here are the electronic notes I took down during my studies at Zhejiang University, which I am delighted to share with everyone. If you encounter any questions or problems during your reading, or if the content of the notes infringes upon your or others' intellectual property rights, please contact me via comments or email.
 
 **培养方案**：主修 [计算机科学与技术](https://pan.memset0.cn/Share/2024/02/12/%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A62023%E7%BA%A7%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%8E%E6%8A%80%E6%9C%AF%E4%B8%93%E4%B8%9A%E5%9F%B9%E5%85%BB%E6%96%B9%E6%A1%88.pdf) | 辅修 [人工智能](https://pan.memset0.cn/Share/2024/03/21/%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A6%202023%20%E7%BA%A7%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD%E4%B8%93%E4%B8%9A%E5%9F%B9%E5%85%BB%E6%96%B9%E6%A1%88.pdf)（2023 级）
 
