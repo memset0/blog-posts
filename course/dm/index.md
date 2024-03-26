@@ -7,6 +7,8 @@ nav:
   - Notes:
       - note/1.md
       - note/2.md
+      - note/3.md
+      - note/4.md
 ---
 
 ## 1. 分数占比
