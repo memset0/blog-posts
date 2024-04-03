@@ -15,9 +15,13 @@ sync: /course/fds/peer-review.md
 
 ![正常|675](https://static.memset0.cn/img/v6/2024/04/03/D3MwY3Vs.png)
 
+---
+
 ## 不看代码闭眼打分
 
 ![Correctness testing is “missing”|800](https://static.memset0.cn/img/v6/2024/04/02/5fWohsaA.png)
+
+---
 
 ## 欲加之罪何患无辞
 

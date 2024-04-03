@@ -3,7 +3,7 @@ title: 大学物理（乙）I
 sync: /course/physics/index.md
 nav:
   - 课程简介: index.md
-  - 笔记：
+  - 笔记:
       - note/1.md
       - note/2.md
 ---
