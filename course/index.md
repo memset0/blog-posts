@@ -17,6 +17,9 @@ nav:
 sync: /course/index.md
 ---
 
+> [!important] UPDATE: 欢迎评论
+> 如果你对于笔记的内容有疑问或建议，欢迎通过评论的方式与我联系，让我们一同构建这个笔记站点！
+
 此处存放的是博主在浙江大学学习期间所记录的电子笔记，非常高兴能与大家分享。若您在阅读过程中发现任何问题，或笔记内容侵犯了您或他人的知识产权，请通过评论或电子邮件的方式与我取得联系。
 
 Stored here are the electronic notes I took down during my studies at Zhejiang University, which I am delighted to share with everyone. If you encounter any questions or problems during your reading, or if the content of the notes infringes upon your or others' intellectual property rights, please contact me via comments or email.
@@ -25,8 +28,8 @@ Stored here are the electronic notes I took down during my studies at Zhejiang U
 
 **当前学期**：大一春夏（2024.2）
 
-| 🔮         | ✨       | 💖               | 🎯      | 🚧     |
-| ---------- | ------- | ---------------- | ------- | ------ |
+| 🔮                   | ✨             | 💖                               | 🎯             | 🚧           |
+| -------------------- | -------------- | -------------------------------- | -------------- | ------------ |
 | 较为完善、系统的笔记 | 不太完善的笔记 | 没有笔记但有修读感受、复习经验等 | 正在编写的笔记 | 待上传的笔记 |
 
 ## 1. 通识课程
