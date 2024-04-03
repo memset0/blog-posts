@@ -6,6 +6,7 @@ nav:
   - 笔记:
       - note/1.md
       - note/2.md
+      - note/3.md
 ---
 
 ## 1. 评分标准
