@@ -21,6 +21,10 @@ sync: /course/fds/peer-review.md
 
 ---
 
+![Well done.|305](https://static.memset0.cn/img/v6/2024/04/03/CcGRa3yN.png)
+
+---
+
 ![正常|675](https://static.memset0.cn/img/v6/2024/04/03/D3MwY3Vs.png)
 
 ---
