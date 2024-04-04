@@ -5,6 +5,7 @@ date: 2023-11-29 19:08:00
 publish: false
 cover: https://static.memset0.cn/img/v6/2023/11/29/1ndAyF7Q.jpeg
 travelogue-title: "2023 · 合肥"
+hide: true
 ---
 
 大一新生的第二次 ICPC 区域赛。
