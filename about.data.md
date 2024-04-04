@@ -1,5 +1,6 @@
 ---
 title: 关于（页面数据）
+hide: true
 props:
   timeline:
     - type: award

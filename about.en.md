@@ -1,3 +1,7 @@
+---
+hide: true
+---
+
 ### Hello, this is mem👋
 
 * 📚 Zhejiang University undergrad, year 1
