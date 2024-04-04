@@ -5,9 +5,11 @@ sync: /course/fds/peer-review.md
 
 ![f06745d08d63d888356b3e2b8c4d6e1.jpg](https://static.memset0.cn/img/v6/2024/04/02/uYndXRZf.jpg)
 
+Peer review 的初衷是让我们相互学习进步的，希望有些人能尊重自己得到的那点评价别人的能力。
+
 ---
 
-## 在批作文
+## 高考作文
 
 ![Well done!|720](https://static.memset0.cn/img/v6/2024/04/02/KjYay74j.png)
 
@@ -27,7 +29,13 @@ sync: /course/fds/peer-review.md
 
 ## 沉默是金
 
+![](https://static.memset0.cn/img/v6/2024/04/04/DB8DAmOs.png)
+
+![](https://static.memset0.cn/img/v6/2024/04/04/0gBxca6w.png)
+
 ![|600](https://static.memset0.cn/img/v6/2024/04/04/iKs7xu7h.png)
+
+---
 
 To be continued...
 
