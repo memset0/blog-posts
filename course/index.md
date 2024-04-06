@@ -62,7 +62,7 @@ Stored here are the electronic notes I took down during my studies at Zhejiang U
 
 <br>
 
-> [!quote] Useful Links
+> [!quote]- Useful Links
 > 以下是学长们的笔记链接。它们启发了这个文档站的建立，也是我学习过程中宝贵的参考资料：
 >
 > **独立博客**：
