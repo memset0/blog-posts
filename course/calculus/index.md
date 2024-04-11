@@ -13,4 +13,6 @@ props:
   推荐修读学期（II）: 大一春夏
 nav:
   - 课程简介: index.md
+  - 错题本（II）:
+      - correction/2-2.md
 ---

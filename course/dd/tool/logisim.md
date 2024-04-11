@@ -3,21 +3,17 @@ title: Logisim Evolution
 sync: /course/dd/tool/logisim.md
 ---
 
-> [!quote] Useful Links
-> - [Logisim 教程 @USTC](https://vlab.ustc.edu.cn/guide/doc_logisim.html)
-
 ## 1. 编辑
 
 ### 1.1. 快捷键
 
 `Ctrl + 1/2/.../9` 对应工具栏的常用工具，参见下图
-  
-  ![|500](https://static.memset0.cn/img/v6/2024/03/16/SgAO9fzz.png)
+
+![|500](https://static.memset0.cn/img/v6/2024/03/16/SgAO9fzz.png)
 
 ### 1.2. 自定义器件
 
 一个 Logisim 工程中可以有多个线路，点击左侧选中已经创建好的线路可以作为模块插入到别的线路中。
-
 
 ### 1.3. 特殊元件
 
@@ -45,4 +41,10 @@ sync: /course/dd/tool/logisim.md
 - 选择状态栏 `FPGA > Synthesize & Download`
 - 修改 Target Board 为 `FPGA4U`
 - 点击 `Settings` 按钮，修改 Hardware discription language used for FPGA commander 为 `Verilog`
-- 点击 `Execute` 并在随后的弹出窗口中点击 `Done` 完成。*可以忽略这一步给出的 Design is not completely mapped 的警告。—— [TA](https://guahao31.github.io/2024_DD/warmup/lab4/)*
+- 点击 `Execute` 并在随后的弹出窗口中点击 `Done` 完成。_可以忽略这一步给出的 Design is not completely mapped 的警告。—— [TA](https://guahao31.github.io/2024_DD/warmup/lab4/)_
+
+<br />
+
+> [!quote] Useful Links
+>
+> - [Logisim 教程 @USTC](https://vlab.ustc.edu.cn/guide/doc_logisim.html)
