@@ -3,6 +3,10 @@ title: ADS 错题本
 sync: /course/ads/correction.md
 ---
 
+## 算法分析
+
+### 群友求助
+
 
 ## 1. 平衡树
 

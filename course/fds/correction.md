@@ -5,7 +5,7 @@ sync: /course/fds/correction.md
 
 ## 1. 算法分析
 
-### 1.1. HW1  2-3
+### 1.1. HW1 2-3
 
 The recurrent equations for the time complexities of programs P1 and P2 are:
 
@@ -27,7 +27,7 @@ Then the correct conclusion about their time complexities is:
 
 ### 1.2. HW1 2-6
 
-The Fibonacci number sequence {$F_N$} is defined as: $F_0=0$, $F_1=1$, $F_N=F_{N-1}+F_{N-2}$, $N$ =2, 3, ....  The space complexity of the function which calculates $F_N$ **recursively(递归地)** is:
+The Fibonacci number sequence {$F_N$} is defined as: $F_0=0$, $F_1=1$, $F_N=F_{N-1}+F_{N-2}$, $N$ =2, 3, .... The space complexity of the function which calculates $F_N$ **recursively(递归地)** is:
 
 - A. $O(\log N)$
 - B. $O(N)$
@@ -39,3 +39,27 @@ The Fibonacci number sequence {$F_N$} is defined as: $F_0=0$, $F_1=1$, $F_N=F_{N
 
 > [!quote]- 答案
 > B
+
+## 线性结构
+
+## 树
+
+### HW5 2-5
+
+Among the following binary trees, which one can possibly be the decision tree (the external nodes are excluded) for binary search?
+
+A. ![](https://static.memset0.cn/img/v6/2024/04/22/ugWFnaZK.png)
+
+B. ![](https://static.memset0.cn/img/v6/2024/04/22/93XpIbur.png)
+
+C. ![](https://static.memset0.cn/img/v6/2024/04/22/rb8ZMzpo.png)
+
+D. ![](https://static.memset0.cn/img/v6/2024/04/22/L3GYCJ2U.png)
+
+> [!quote]- 答案
+>
+> A
+
+## 堆
+
+## 并查集
