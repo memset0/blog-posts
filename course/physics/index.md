@@ -8,6 +8,9 @@ nav:
       - note/2.md
       - note/3.md
       - note/4.md
+  - 错题本:
+      - correction/1.md
+      - correction/2.md
 ---
 
 ## 1. 评分标准
