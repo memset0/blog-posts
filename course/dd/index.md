@@ -8,6 +8,8 @@ nav:
       - note/1.md
       - note/2.md
       - note/3.md
+      - note/4.md
+      - note/6.md
   - "Tools & Tutorials":
       - tool/logisim.md
       - tool/vivado.md
@@ -16,13 +18,13 @@ nav:
 ## 1. 分数组成
 
 - Homework & Quiz 20%
-  - **Random, with no notification**, 4 - 5 times
-  - Topics from textbook and home assignments
-  - **Class performance**
+    - **Random, with no notification**, 4 - 5 times
+    - Topics from textbook and home assignments
+    - **Class performance**
 - Project 10%
 - Experiments 30%
 - Final 40%
-  - 最终成绩比例由老师在期末决定
+    - 最终成绩比例由老师在期末决定
 
 ## 2. 教材
 
@@ -37,12 +39,12 @@ nav:
 
 ## 4. 参考资料
 
-- [词汇表 - Jiepeng's notes](https://note.jiepeng.tech/CS/DigitalDesign/glossary/
+- [词汇表 - Jiepeng's notes](https://note.jiepeng.tech/CS/DigitalDesign/glossary/)
 
 <br />
 
 > [!quote] Useful Links
 >
-> - [Isshiki 修's Notebook](https://note.isshikih.top/cour_note/D2QD_DigitalDesign/)
-> - [Jiepeng's notes](https://note.jiepeng.tech/CS/DigitalDesign/)
-> - [MinJoker's Notebook](https://note.minjoker.top/cs/system/digital_logic/)
+> -   [Isshiki 修's Notebook](https://note.isshikih.top/cour_note/D2QD_DigitalDesign/)
+> -   [Jiepeng's notes](https://note.jiepeng.tech/CS/DigitalDesign/)
+> -   [MinJoker's Notebook](https://note.minjoker.top/cs/system/digital_logic/)
