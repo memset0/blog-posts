@@ -10,6 +10,8 @@ nav:
       - note/3.md
       - note/4.md
       - note/6.md
+  - Quizzes:
+      - quiz/1.md
   - "Tools & Tutorials":
       - tool/logisim.md
       - tool/vivado.md
