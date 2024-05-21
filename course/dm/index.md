@@ -11,18 +11,20 @@ nav:
       - note/4.md
       - note/5.md
       - note/6.md
+      - note/7.md
+      - note/8.md
 ---
 
 ## 1. 分数占比
 
 - Homework 10%
-  - Two assignments per week and both are due at the beginning of the following Tuesday class
-  - **NO LATE SUBMISSION ALLOWED UNLESS INFORMED IN ADVANCE**
+    - Two assignments per week and both are due at the beginning of the following Tuesday class
+    - **NO LATE SUBMISSION ALLOWED UNLESS INFORMED IN ADVANCE**
 - Quizzes 20%
-  - Quiz 1 **on April 2nd**
-  - Quiz 2 **on May 28th**
+    - Quiz 1 **on April 2nd**
+    - Quiz 2 **on May 28th**
 - Midterm exam 20%
-  - Midterm **on May 7th**
+    - Midterm **on May 7th**
 - Final 50%
 
 ## 2. 教材
@@ -33,4 +35,4 @@ nav:
 
 > [!quote] Useful Links
 >
-> - [离散数学及其应用 (yuque.com)](https://www.yuque.com/linguisty/zju_courses/discrete)
+> -   [离散数学及其应用 (yuque.com)](https://www.yuque.com/linguisty/zju_courses/discrete)
