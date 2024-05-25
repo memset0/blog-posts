@@ -40,7 +40,7 @@ Stored here are the notes I took down during my studies at Zhejiang University, 
 - [✨ C 程序设计基础及实验 - 陶煜波 - 大一秋冬 - 5.0(98)](./c-programming/)
 - 🈚 思想道德与法治 - 梁清华 - 大一秋冬 - 4.8(94)
 - 🈚 中国近现代史纲要 - 何惧 - 大一秋冬 - 4.8(92)
-- 🈚 大学英语 III - 杨建平 - 大一秋冬 - 3.6(80)
+- 🈚 大学英语 III - 杨建平 - 大一秋冬
 - 🎯 大学英语 IV - 李航 - 大一春夏
 - [🎯 大学物理（乙）Ⅰ - 金洪英 - 大一春夏](/course/physics/)
 
@@ -85,10 +85,10 @@ Stored here are the notes I took down during my studies at Zhejiang University, 
 ## 6. 通识选修课程
 
 - [🔮 汇编程序设计基础 - 白洪欢 - 大一秋冬 - 5.0(99)](./fasm/)
-- 🈚 职业生涯规划 - 郑玲玲 - 大一春 - 4.8(93)
+- 🈚 职业生涯规划 - 郑玲玲 - 大一春
 - 🎯 视唱练耳 - 陈曦 - 大一春夏
-
-<br>
+- 🈚 机器学习在数据分析上的实际运用（国际化课程）- 大一春夏
+    <br>
 
 > [!quote]- Useful Links
 > 以下是学长们的笔记链接。它们启发了这个文档站的建立，也是我学习过程中宝贵的参考资料：
