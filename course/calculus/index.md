@@ -31,3 +31,7 @@ nav:
       - correction/2-2.md
       - correction/2-3.md
 ---
+
+## 1. 笔记
+
+我的微积分笔记使用 Typst 编写，开源在 [mem-courses/calculus: 微积分(甲) - 浙江大学 (github.com)](https://github.com/mem-courses/calculus) 上。在博客中（请通过侧边栏导航切换）可以查看预渲染的 SVG。如遇到格式问题请参考 Github 上的版本。
