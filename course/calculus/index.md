@@ -7,6 +7,7 @@ props:
   任课教师（Ⅰ）: 叶兴德
   修读学期（Ⅰ）: 大一秋冬
   推荐修读学期（Ⅰ）: 大一秋冬
+  绩点（Ⅱ）: '??'
   学分（Ⅱ）: '5.0'
   任课教师（Ⅱ）: 童雯雯
   修读学期（Ⅱ）: 大一春夏
@@ -25,13 +26,20 @@ nav:
       - note/2-2.md
       - note/2-3.md
       - note/2-4.md
-  - 错题本（Ⅰ）: correction/1.md
-  - 错题本（Ⅱ）:
-      - correction/2-1.md
-      - correction/2-2.md
-      - correction/2-3.md
+      - note/2-5.md
+  - 错题本（Ⅰ）: correction/1.md 
+  - 错题本（Ⅱ）: correction/2.md
 ---
 
 ## 1. 笔记
 
-我的微积分笔记使用 Typst 编写，开源在 [mem-courses/calculus: 微积分(甲) - 浙江大学 (github.com)](https://github.com/mem-courses/calculus) 上。在博客中（请通过侧边栏导航切换）可以查看预渲染的 SVG。如遇到格式问题请参考 Github 上的版本。
+我的微积分笔记使用 Typst 编写，开源在 [mem-courses/calculus: 微积分(甲) - 浙江大学 (github.com)](https://github.com/mem-courses/calculus) 上。在博客中（请通过侧边栏导航切换）可以查看预渲染的 SVG。如遇到显示问题请以 Github 上的版本为准，有任何问题欢迎在评论区反馈。
+
+## 2. 评分标准
+
+一般来说微积分 I 和微积分 II 的评分标准均为：
+
+- 平时分 20%（作业、出勤）
+- 两次小测，共 20%
+- 期中考 20%
+- 期末考 40%
