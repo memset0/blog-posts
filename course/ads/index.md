@@ -1,15 +1,14 @@
 ---
-title: 高级数据结构与算法分析
+title: 高级数据结构与算法分析 ADS
 section: 高级数据结构与算法分析
 sync: /course/ads/index.md
 nav:
   - Intro: index.md
-  - Correction: correction.md
   - Notes:
       - note/1.md
       - note/2.md
       - note/3.md
-      - note/4.md
+  - Correction: correction.md
 ---
 
 ## 1. 分数占比
