@@ -13,6 +13,7 @@ nav:
       - note/6.md
       - note/7.md
       - note/8.md
+  - Quick Review: quick-review.md
 ---
 
 ## 1. 分数占比
