@@ -26,6 +26,11 @@ sync: /course/ads/correction.md
 > [!quote]- Answer
 > B。如果叶子数量小于 2，需要一直向上寻求合并。
 
+![](https://static.memset0.cn/img/v6/2024/07/03/YIoXQK9I.png)
+
+> [!quote]- Answer
+> F。应为 $2^{2bh(x)}-1$。因为 $2bh(x)\ge h(x)$ 对红黑树成立。
+
 ## Ch04 Leftist Heap & Skew Heap
 
 ![](https://static.memset0.cn/img/v6/2024/06/24/oEA4HMI4.png)

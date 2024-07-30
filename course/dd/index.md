@@ -15,6 +15,7 @@ nav:
   - "Tools & Tutorials":
       - tool/logisim.md
       - tool/vivado.md
+      - tool/verilog.md
 ---
 
 ## 1. 分数组成
