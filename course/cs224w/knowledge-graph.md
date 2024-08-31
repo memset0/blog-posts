@@ -101,18 +101,18 @@ $$
 实体和关系都表示为 $\mathbb{R}^{k}$ 上的向量。取评分函数
 
 $$
-f_{r}(h,t) =  \textless \mathbf{h},\mathbf{r},\mathbf{t}\textgreater = \sum_{i=1}^{k} \mathbf{h}_{i} \cdot \mathbf{r}_{i} \cdot \mathbf{t}_{i}
+f_{r}(h,t) =  \text{<} \mathbf{h},\mathbf{r},\mathbf{t}\text{>} = \sum_{i=1}^{k} \mathbf{h}_{i} \cdot \mathbf{r}_{i} \cdot \mathbf{t}_{i}
 $$
 
 评分函数可以看做是 $\mathbf{h}\cdot \mathbf{r}$ 与 $\mathbf{t}$ 之间的 cosine similarity —— $\mathbf{h} \cdot \mathbf{t}$ 与 $\mathbf{t}$ 同侧且靠近时 score 高。
 
 ![kq0d6sTq.png|281](https://static.memset0.cn/img/v6/2024/08/30/kq0d6sTq.png)
 
-- 在 antisymmetric relations 上失效：在 $f_r(h,t)=\textless \mathbf{h},\mathbf{r},\mathbf{t} \textgreater = \textless \mathbf{t},\mathbf{r},\mathbf{h} \textgreater = f_r(t,h)$ 永远成立。
-- 在 inverse relations 上失效：欲使 $\textless \mathbf{h},\mathbf{r}_{1},\mathbf{t} \textgreater = \textless \mathbf{h}, \mathbf{r}_{2}, \mathbf{t} \textgreater$ 成立，必须有 $\mathbf{r}_{1} = \mathbf{r}_{2}$，而这显然没有意义。
+- 在 antisymmetric relations 上失效：在 $f_r(h,t)=\text{<} \mathbf{h},\mathbf{r},\mathbf{t} \text{>} = \text{<} \mathbf{t},\mathbf{r},\mathbf{h} \text{>} = f_r(t,h)$ 永远成立。
+- 在 inverse relations 上失效：欲使 $\text{<} \mathbf{h},\mathbf{r}_{1},\mathbf{t} \text{>} = \text{<} \mathbf{h}, \mathbf{r}_{2}, \mathbf{t} \text{>}$ 成立，必须有 $\mathbf{r}_{1} = \mathbf{r}_{2}$，而这显然没有意义。
 - 在 composition relations 上失效：对多跳关系产生的超平面的联合（如 $(\mathbf{r}_{1},\mathbf{r}_{2})$）无法用单一超平面（$\mathbf{r}_{3}$）表示。
 
-    ![O7tAoGeG.png|118](https://static.memset0.cn/img/v6/2024/08/30/O7tAoGeG.png)
+  ![O7tAoGeG.png|118](https://static.memset0.cn/img/v6/2024/08/30/O7tAoGeG.png)
 
 ### 3.4. ComplEx
 
