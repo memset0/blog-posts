@@ -4,10 +4,10 @@ sync: /course/cs224w/index.md
 nav:
   - Intro: index.md
   - Notes:
-      - note/1.md
-      - note/2.md
-      - note/3.md
+      - note/graph-neural-networks.md
       - note/graph-augmentation.md
+      - note/knowledge-graph.md
+      - note/subgraph-mining.md
 ---
 
 ## 学习进度
@@ -25,6 +25,12 @@ nav:
 | 16. Advanced Topics on GNNs                  |                                  |
 | 17. Scaling Up GNNs<br>                      |                                  |
 | 19. GNNs for Science                         |                                  |
+
+## 课程介绍
+
+摘自官网。
+
+> Complex data can be represented as a graph of relationships between objects. Such networks are a fundamental tool for modeling social, technological, and biological systems. This course focuses on the computational, algorithmic, and modeling challenges specific to the analysis of massive graphs. By means of studying the underlying graph structure and its features, students are introduced to machine learning techniques and data mining tools apt to reveal insights on a variety of networks. 复杂数据可以表示为对象之间关系的图形。这样的网络是建模社会、技术和生物系统的基本工具。本课程侧重于计算、算法和建模挑战。针对大规模图的分析。通过研究底层图结构及其特征，学生将介绍机器学习技术和数据挖掘工具，以揭示各种网络的见解。
 
 ## 1. 参考资料
 
