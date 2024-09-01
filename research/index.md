@@ -11,4 +11,5 @@ nav:
       - nndl/rnn.md
       - nndl/attention.md
       - nndl/rl.md
+      - nndl/generative-model.md
 ---

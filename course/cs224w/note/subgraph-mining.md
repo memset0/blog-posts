@@ -3,7 +3,7 @@ title: 子图挖掘
 sync: /course/cs224w/note/subgraph-mining.md
 ---
 
-## 1. 图论回顾
+## 1. 基本概念
 
 ### 1.1. 子图
 
@@ -21,7 +21,7 @@ sync: /course/cs224w/note/subgraph-mining.md
 
 **图级别的子图频率(graph-level subgraph frequency)**：设 $G_{Q}=(V_{Q}, E_{Q})$ 是小图，$G_{T}=(V_{T}, E_{T})$ 是目标图，即统计 $V\subseteq V_{T}$ 的数量满足 $V$ 的导出子图与 $G_{Q}$ 同构。
 
-![1vQ9qsUP.png|511](https://static.memset0.cn/img/v6/2024/09/01/1vQ9qsUP.png)
+![1vQ9qsUP.png|493](https://static.memset0.cn/img/v6/2024/09/01/1vQ9qsUP.png)
 
 **节点级别的子图频率(node-level subgraph frequency)**：$G_{Q}=(V_{Q}, E_{Q})$ 是小图，$v\in V_{Q}$ 是选定一点，$G_{T}=(V_{T}, E_{T})$ 是目标图，即统计 $u\in V_{T}$ 的数量满足 $G_{T}$ 的一个子图与 $G_{Q}$ 同构且双射关系中 $u$ 被对应到 $v$。
 
@@ -46,7 +46,7 @@ sync: /course/cs224w/note/subgraph-mining.md
 可以用 **Z-score** 来评价一个 motifs 是否显著，即是否不是随机出现的。
 
 $$
-Z_i=\dfrac{N_i^\text{real}{-}\overline{N}_i^\text{rand}}{\text{std}(N_i^\text{rand})}
+Z_i=\dfrac{N_i^\text{real}{-}\overline{N}_i^\text{rand}}{\text{std}(\overline{N}_i^\text{rand})}
 $$
 
 其中 $N_{i}^{\text{real}}$ 是 $\#(\text{motifs }i)$ 在 $G^{\text{real}}$ 中的频率，$\overline{N}_{i}^{\text{rand}}$ 是 $\#(\text{motifs }i)$ 在随机图上的平均频率。
@@ -63,7 +63,7 @@ $$
 
 用 GNN 解决 **子图匹配(subgraph matching)** 问题：给定一个以节点 $q$ 为锚点的查询图 $G_{q}$，以节点 $v$ 为锚点的目标图 $G_{T}$，预测是否存在一个同构映射，将 $G_{T}$ 的子图映射到 $G_{Q}$，使得同构映射将 $v$ 映射到 $q$。
 
-- 用带 **锚点(anchor)** 的子图（node-level subgraph）匹配是为了方别做 node-level embedding。
+- 用带 **锚点(anchor)** 的子图（node-level subgraph）匹配是为了方别做 node-level embedding。且这样不光能判断 $G_{Q}$ 是否为 $G_{T}$ 的子图，还能得到对应的节点对。
 
 ### 3.1. 主要过程
 
@@ -92,8 +92,8 @@ $$
 - 生成 $G_{Q}$：
     - 随机选取锚点 $v$，初始 $S=\{ v \},\ V=\varnothing$。
     - 每次采样 $\mathcal{N}(S)\setminus V$ 中 10% 的节点放入 $S$，其余放入 $V$。
-    - 重复做 $K$ 次得到 $G_{Q}$。这里 $G_{Q}$ 一定是 $G_{T}$ 的子图故作为正样本。
-    - 对 $G_{Q}$ 添加一定的扰动（如增加/移动一些节点/边）使得 $G_{Q}$ 一定不是 $G_{T}$ 的子图从而作为负样本。
+    - 重复做 $K$ 次得到 $G_{Q}$。这里 $G_{Q}$ 一定是 $G_{T}$ 的子图，故作为正样本。
+    - 对 $G_{Q}$ 添加一定的扰动（如增加/移动一些节点/边）得到 $G'_{Q}$，使得 $G'_{Q}$ 一定不是 $G_{T}$ 的子图，从而作为负样本。
 
 可以防止模型学习将嵌入不断移动到更远处的退化策略
 
@@ -101,15 +101,17 @@ $$
 
 **频繁子图挖掘(frequent subgraphs mining)** 问题：给定 $G_{T}$，参数 $k,r$，找出在所有 $k$ 个节点的图中，在 $G_{T}$ 中出现频率最高的 $r$ 个子图。
 
-### 频率统计方法
+### 4.1. 频率统计方法
 
-采样一系列 $G_{T}$ 的子图 $G_{N_{i}}$，统计 $G_{Q}$ 作为 $G_{N_{i}}$ 的子图的次数。——可以大大降低计算复杂度。
+用上文的 BFS 方法采样一系列 $G_{T}$ 的子图 $G_{N_{i}}$（论文中称为 decompose input graph into neighborhoods），然后只统计 $G_{Q}$ 作为 $G_{N_{i}}$ 的子图的次数，作为在原图中出现次数的预估。——可以大大降低计算复杂度。
 
-![EsSBOymW.png|265](https://static.memset0.cn/img/v6/2024/09/01/EsSBOymW.png)
+![EsSBOymW.png|271](https://static.memset0.cn/img/v6/2024/09/01/EsSBOymW.png)
 
 ### 4.2. Search Procedure
 
-Search Procedures 是模型 SPMiner 提出的创新方法。
+Search Procedures 是模型 SPMiner 提出的创新方法，其从随机选择的一个节点作为**锚点**开始，每次增加一个节点要求最大化红色阴影区域的点数。在 $k$ 次迭代后，就挖掘出了一个大小为 $k$ 的 motifs。
+
+![Walk in Embedding Space|515](https://static.memset0.cn/img/v6/2024/09/01/UXAPfDNd.png)
 
 ## 5. 参考资料
 

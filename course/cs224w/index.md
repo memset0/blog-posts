@@ -8,23 +8,24 @@ nav:
       - note/graph-augmentation.md
       - note/knowledge-graph.md
       - note/subgraph-mining.md
+      - note/community-detection.md
 ---
 
 ## 学习进度
 
-| 课程                                         | 学习进度                         |
-| -------------------------------------------- | -------------------------------- |
-| 8. Applications of Graph Neural Networks     | 图增强部分完成，预测头部分未学。 |
-| 9. Theory of Graph Neural Networks           |                                  |
-| 10. Knowledge Graph Embeddings               | √                                |
-| 11. Reasoning over Knowledge Graphs          | 看不懂啊                         |
-| 12. Frequent Subgraph Mining with GNNs       |                                  |
-| 13. Community Structure in Networks          |                                  |
-| 14. Traditional Generative Models for Graphs |                                  |
-| 15. Deep Generative Models for Graphs        |                                  |
-| 16. Advanced Topics on GNNs                  |                                  |
-| 17. Scaling Up GNNs<br>                      |                                  |
-| 19. GNNs for Science                         |                                  |
+| 课程                                         | 学习进度           |
+| -------------------------------------------- | ------------------ |
+| 8. Applications of Graph Neural Networks     | 图增强 √，预测头 × |
+| 9. Theory of Graph Neural Networks           |                    |
+| 10. Knowledge Graph Embeddings               | √                  |
+| 11. Reasoning over Knowledge Graphs          | 看不懂啊           |
+| 12. Frequent Subgraph Mining with GNNs       | √                  |
+| 13. Community Structure in Networks          | Louvain 算法 ×     |
+| 14. Traditional Generative Models for Graphs |                    |
+| 15. Deep Generative Models for Graphs        |                    |
+| 16. Advanced Topics on GNNs                  |                    |
+| 17. Scaling Up GNNs<br>                      |                    |
+| 19. GNNs for Science                         |                    |
 
 ## 课程介绍
 
