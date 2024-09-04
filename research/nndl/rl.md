@@ -1,4 +1,5 @@
 ---
+title: 强化学习
 sync: /research/nndl/rl.md
 sticker: emoji//1f9be
 ---
