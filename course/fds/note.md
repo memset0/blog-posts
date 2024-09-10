@@ -1,7 +1,12 @@
 ---
 title: FDS Notes
+published-title: 「数据结构基础」速通笔记
 sync: /course/fds/note.md
 ---
+
+> 本篇笔记概括了「数据结构基础」课程中的重要概念，包括算法分析、线性结构、树、堆、排序、哈希、并查集和图等内容。每个章节详细介绍了相关的定义、特性和操作，帮助读者理解和掌握数据结构的基本知识和应用。<small style="font-style: italic; opacity: 0.5">（由 gpt-4o-mini 生成摘要）</small>
+
+<!-- more -->
 
 ## Ch02 Algorithm Analysis
 
@@ -46,7 +51,7 @@ sync: /course/fds/note.md
 
 - List Representation：一般的链表
 - FirstChild-NextSibling Representation：左孩子右兄弟
-    - 可以用来把普通的树转为二叉树表示。
+  - 可以用来把普通的树转为二叉树表示。
 
 ### Binary Trees
 
@@ -123,12 +128,12 @@ Most Significant Digit：高位到低位排序。每次桶排完对每个桶分�
 **开放地址法(open addressing)**：寻找下一空的单元存放，枚举 $i$ 直到位置 $\text{hash}(x)+f(i)\bmod TableSize$ 可放（注意都是对 table size 取模）。
 
 - linear probing：$f(i)=i$
-    - 导致 primary clustering：形成较大的 cluster，从而大大降低插入和查询的性能。
+  - 导致 primary clustering：形成较大的 cluster，从而大大降低插入和查询的性能。
 - quadratic problem：$f(i)=i^2$
-    - 可以证明：如果 $TableSize$ 是质数，那么在插入不超过 $\lfloor TableSize/2\rfloor$ 个数的情况，一定能找到位置放。
-    - 可以证明：如果 $TableSize$ 是形如 $4k+3$ 的质数，那么哈希表在没满之前，都一定能找到位置放。
+  - 可以证明：如果 $TableSize$ 是质数，那么在插入不超过 $\lfloor TableSize/2\rfloor$ 个数的情况，一定能找到位置放。
+  - 可以证明：如果 $TableSize$ 是形如 $4k+3$ 的质数，那么哈希表在没满之前，都一定能找到位置放。
 - double hashing：和正常理解的双哈希不太一样，这里是指 probing 函数是 $f(i)=i\times \text{hash}_2(x)$。
-    - 可以使用 $\text{hash}_2(x)=R-(x\%R)$，这里 $R$ 是一个比 $TableSize$ 小的质数。
+  - 可以使用 $\text{hash}_2(x)=R-(x\%R)$，这里 $R$ 是一个比 $TableSize$ 小的质数。
 - 如果需要支持删除操作，只能通过打懒标记的方式。
 
 ### Rehashing
@@ -150,7 +155,7 @@ rehashing 的过程：
 合并策略：
 
 - union-by-size：记录 `S[root] = -size`，合并的时候比较两个根节点的 size，把小的合并到大的上。
-    - $n$ 次 union 操作和 $m$ 次 find 操作的总时间复杂度为 $O(n+m\log n)$（这里 union 操作里的 find 也算在 $m$ 里）。
+  - $n$ 次 union 操作和 $m$ 次 find 操作的总时间复杂度为 $O(n+m\log n)$（这里 union 操作里的 find 也算在 $m$ 里）。
 - union-by-height：记录树高然后根据树高合并。
 - union-by-rank：其实就是 union-by-height，但是由于路径压缩的缘故，可能已经不是真实的 height。
 - 如果比较时两边用于比较的参数相等，那么让第二个参数所在的并查集挂到第一个参数所在的并查集上。
@@ -187,8 +192,8 @@ Dijkstra 算法的不同实现与复杂度：
 >
 > AOE Network 是一种有向无环图，每条边上存储任务和完成时间。
 >
-> -   earliest completion time：最早可以开始做的时间——起点到该点的最长路。
-> -   latest completion time：最晚需要开始做的时间（再晚的话会拖累整体进度）——起点到终点的最长路减掉该点到终点的最长路。
+> - earliest completion time：最早可以开始做的时间——起点到该点的最长路。
+> - latest completion time：最晚需要开始做的时间（再晚的话会拖累整体进度）——起点到终点的最长路减掉该点到终点的最长路。
 
 ### Network Flow
 
@@ -208,5 +213,5 @@ Dijkstra 算法的不同实现与复杂度：
 - $Num(u)$ 记录访问到这个点的时间戳。
 - $Low(u) = \min\{Num(u),\min\{Low(v)|v\text{ 是孩子}\}, \min\{Num(v)|(u,v)\text{ 是返祖边}\}\}$。
 - 一个点是割点当且仅当：
-    - 该点是根节点且子节点数量大于等于 $2$。
-    - 该点是非根节点且存在子树满足子树内没有到当前节点祖先的返祖边（即 $Low(v)\ge Num(u)$）。
+  - 该点是根节点且子节点数量大于等于 $2$。
+  - 该点是非根节点且存在子树满足子树内没有到当前节点祖先的返祖边（即 $Low(v)\ge Num(u)$）。

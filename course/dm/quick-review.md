@@ -9,13 +9,13 @@ sync: /course/dm/quick-review.md
 
 计数思路：分类讨论、递推、**容斥**、生成函数。可代入 corner cases
 
-## Logic & Proofs
+## 1. Logic & Proofs
 
 - $p\rightarrow q$: $p$ only if $q$; $q$ if $p$
 - converse 逆 inverse 反 contrapositive 逆反
 - prenex normal form
 
-## Basic Structures
+## 2. Basic Structures
 
 - $A\subseteq B$: $\forall x(x \in A\rightarrow x \in B)$
 - $A = B$: $A\subseteq B \land B \subseteq A$
@@ -32,14 +32,14 @@ sync: /course/dm/quick-review.md
 - Proof $A$ and $B$ have same cardinality: $|A| \leq |B|$ and $|B| \leq |A|$ (Shroeder-Berenstein Theorem)
 - If $A,B$ is countable, then $A\times B$ is countable. $\Rightarrow$ 可数的可数集合的并是可数的。
 
-## Algorithms
+## 3. Algorithms
 
 - correctness vs effectiveness
 - big-O notation: $|f(x)| \le C|g(x)|$ 如果需要说明，从此定义出发
 
-## Induction and Recursion
+## 4. Induction and Recursion
 
-## Counting
+## 5. Counting
 
 - $\displaystyle{\binom{n+1}{k} = \binom{n}{k-1} + \binom nk}$
 - $\displaystyle{\binom{m+n}{r} = \sum_{k=0}^r \binom{m}{r-k}\binom{n}{k}}$
@@ -53,7 +53,7 @@ sync: /course/dm/quick-review.md
 
 ![](https://static.memset0.cn/img/v6/2024/06/23/wb5HJopD.png)
 
-## Relations
+## 6. Relations
 
 - properties: reflexive, irreflexive, symmetric, antisymmetric, asymmetric, transitive
 - composition of $R$ and $S$ is $S \circ R$: $\{(a,c)\mid a\in A \land c\in C \land \exists b(b\in B\land aRb \land bSc)\}$
@@ -65,10 +65,10 @@ sync: /course/dm/quick-review.md
 - lattice
 - **is relation or set empty?**
 
-## Graph
+## 7. Graph
 
 - 欧拉定理要求联通
 
-## Tree
+## 8. Tree
 
 - 根节点的 depth 为 0
