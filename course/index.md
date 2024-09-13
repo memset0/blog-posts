@@ -6,12 +6,15 @@ nav:
       - 微积分: calculus/index.md
       - 线性代数: linear-algebra/index.md
       - C 语言程序设计: c-programming/index.md
-  - 专业基础课程:
+  - 专业必修课程:
       # - 数据结构基础: fds/index.md
       - 离散数学及其应用: dm/index.md
-      - 数字逻辑设计: dd/index.md
-  - 专业必修课程:
       - 高级数据结构: ads/index.md
+      - 面向对象程序设计: oop/index.md
+      - 数字逻辑设计: dd/index.md
+      - 计算机组成: co/index.md
+ # - 专业选修课程:
+ #     - 高级数据结构: ads/index.md
   - 个性修读课程:
       - 汇编程序设计基础: fasm/index.md
 sync: /course/index.md
