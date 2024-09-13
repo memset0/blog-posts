@@ -1,6 +1,14 @@
 ---
+tags:
+  - courses
+sticker: emoji//1f4c8
 title: 概率论与数理统计
 sync: /course/ptms/index.md
+nav:
+  - 课程简介: index.md
+  - 笔记:
+      - note/1.md
+      - note/2.md
 ---
 
 ## 学习规划
