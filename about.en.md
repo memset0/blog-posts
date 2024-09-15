@@ -2,10 +2,10 @@
 hide: true
 ---
 
-### Hello, this is mem👋
+### Hello, this is _mem_ 👋
 
-* 📚 Zhejiang University undergrad, year 1
-* 🎯 ICPC participant, 2023 Hefei 2nd, Nanjing 3rd
-* 👀 Interested in Web Dev, Software Engineering and TCS
-* ❤️ Favourite languages: C++ / TypeScript / Python / Kotlin
-* 📫 Email me at [i@mem.ac](mailto://i@mem.ac) or [memset0@outlook.com](mailto://memset0@outlook.com)
+- 📚 Zhejiang U undergrad, year 2, majoring in Computer Science
+- 🎯 ICPC participant, Hefei 23' Runner-up, Nanjing 23' 3rd place
+- 📫 Email me at [i@mem.ac](mailto://i@mem.ac) or [memset0@outlook.com](mailto://memset0@outlook.com)
+- 👀 Interested in: Graph Neural Network / Software Engineering
+- ❤️ Favourite languages: C++ / TypeScript / Python / Typst
