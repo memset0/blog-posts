@@ -29,20 +29,22 @@ $$
 \end{aligned}
 $$
 
-指数 = -2，小数部分 = -0.101000000000000000000000
+- 指数部分为 -2，对应补码表示为：111 111 111 110
+- 尾数部分为 -0.101，对应补码表示为：1.011，即：101 100 000 000 000 000 000 000
 
-因此，最终的二进制表示为：
-111111111110 101100000000000000000000
-
-其中：
-
-- 前 12 位 (111111111110) 是以二进制补码表示的指数 -2
-- 后 24 位 (101100000000000000000000) 是以二进制补码表示的小数部分 -0.101
+综上，答案为：111 111 111 110 101 100 000 000 000 000 000 000
 
 ## 3.27
 
-> [20] <§3.5> IEEE 754-2008 contains a half precision that is only 16 bits wide. The leftmost bit is still the sign bit, the exponent is 5 bits wide and has a bias of 15, and the mantissa is 10 bits long. A hidden 1 is assumed. Write down the bit pattern to represent $-1.5625 \times 10^{-1}$ assuming a version of this format, which uses an excess-16 format to store the exponent. Comment on how the range and accuracy of this 16-bit floating point format compares to the single precision IEEE 754 standard.
+> [20] <§3.5> IEEE 754-2008 contains a half precision that is only 16 bits wide. The leftmost bit is still the sign bit, the exponent is 5 bits wide and has a bias of 15, and the mantissa is 10 bits long. A hidden 1 is assumed. Write down the bit pattern to represent $-1.5625 \times 10^{-1}$ assuming a version of this format, which uses an excess-16 format to store the exponent.
+
+由上文可知 $-1.5625 \times 10^{-1} = -0.101 \times 2^{-2}$。
+
+- 指数部分：$15+(-2)=13$，表示为 `01101`
+- 尾数部分：对应补码表示为 $1.011$，忽略小数点后一位可表示为 `11100 00000`
 
 ## 3.32
 
 > [20] <§3.10> Calculate $(3.984375 \times 10^{-1} + 3.4375 \times 10^{-1}) + 1.771 \times 10^{3}$ by hand, assuming each of the values is stored in the 16-bit half precision format described in Exercise 3.27. Assume 1 guard, 1 round bit, and 1 sticky bit, and round to the nearest even. Show all the steps, and write your answer in both the 16-bit floating point format and in decimal.
+
+- $A=3.984375 \times 10^{-1} = 1.10011 \times 2^{-2}$

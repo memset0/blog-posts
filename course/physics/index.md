@@ -3,14 +3,12 @@ title: 大学物理（乙）
 sync: /course/physics/index.md
 nav:
   - 课程简介: index.md
-  - 笔记 I:
-      - note/i-1.md
-      - note/i-2.md
-      - note/i-3.md
-      - note/i-4.md
-      - note/i-5.md
-  - 笔记 II:
-      - note/ii.md
+  - 笔记:
+      - note/1.md
+      - note/2.md
+      - note/3.md
+      - note/4.md
+      - note/5.md
   - 错题本:
       - correction/1.md
       - correction/2.md
