@@ -9,6 +9,8 @@ nav:
       - note/3.md
       - note/4.md
       - note/5.md
+      - note/6.md
+      - note/7.md
   - 错题本:
       - correction/1.md
       - correction/2.md
