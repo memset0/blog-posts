@@ -4,9 +4,10 @@ sticker: emoji//1f9ee
 sync: /course/na/index.md
 tags:
   - courses
+nav: []
 ---
 
-## 分数组成
+## 1. 分数组成
 
 - Lab (36)
 - Class Quiz (4)
