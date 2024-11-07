@@ -7,7 +7,7 @@ sync: /course/physics/correction/i-midterm.md
 
 ### 1.1. 2016-2017 春夏期中【速度的合成】
 
-![|690](https://static.memset0.cn/img/v6/2024/04/25/sOgK0rXK.png)
+当火车静止时，乘客发现雨滴下落方向偏向车头，偏角为 $30^\circ$。当火车以 $35\text{ m/s}$ 的速度水平行驶时，发现雨滴下落方向偏向车尾，偏角为 $45^\circ$。假设雨滴相对于地的速度大小保持不变，则雨滴相对于车的速度大小为（$\quad$）$\text{m/s}$。
 
 > [!error] 仔细读题
 >
@@ -17,9 +17,9 @@ sync: /course/physics/correction/i-midterm.md
 >
 > ![](https://static.memset0.cn/img/v6/2024/04/25/6z48pA8L.png)
 
-### 1.2. 习题 4-4【微积分在变速直线运动中的应用】
+### 1.2. 习题 4-4【微积分的应用】
 
-![|673](https://static.memset0.cn/img/v6/2024/04/25/HP3kL89G.png)
+一质量为 $m=10\text{ kg}$ 的物体在合力 $F=3+4 x\text{ (SI)}$ 的作用下，沿 $x$ 轴运动。该物体开始时静止在坐标原点，求该物体经过 $x=3\text{ m}$ 时的速度。
 
 > [!important] 主要思路
 >

@@ -1,16 +1,16 @@
 ---
-title: "ADS Correction"
+title: 'ADS Correction'
 sync: /course/ads/correction.md
 ---
 
 ## Ch01 AVL
 
-![](https://static.memset0.cn/img/v6/2024/06/23/gF65Huay.png)
+After merging two Leftist Heaps H1 and H2 of different NPL's, the NPL of the resulted Leftist Heap will be no more than max(NPL of H1, NPL of H2)
 
 > [!quote]- Answer
 > F。一个左偏树差一个点满，另一个左偏树只有一个节点，则插入后增加。实际上应有 $NPL(H)=\max\{NPL(H_1),NPL(H_2)\}+1$。
 
-![](https://static.memset0.cn/img/v6/2024/06/23/DgGnFKyL.png)
+There exists an AVL tree of depth 6 (the depth of the root is 0) containing 31 nodes.
 
 > [!quote]- Answer
 > F。设 $f_n$ 为深度为 $n$ 的 AVL 树的最小节点数，则：$a_0=1$；$a_1=2$；$a_n=a_{n-1}+a_{n-2}+1$。
@@ -21,33 +21,43 @@ sync: /course/ads/correction.md
 
 ## Ch02 Red Black Tree & B+ Tree
 
-![eHUnuMzn.png|809](https://static.memset0.cn/img/v6/2024/06/23/eHUnuMzn.png)
+Insert (7, 15, 9, 11, 5, 8, 19, 18) into an initially empty 2-3 tree (with splitting), and then delete 7. Which one of the following statements is FALSE about the resulting tree?
+
+- A. there are 3 leaf nodes
+- B. 13 and 15 are in the same node
+- C. the parent of the node containing 18 has 3 children
+- D. the first key stored in the root is 11
 
 > [!quote]- Answer
 > B。如果叶子数量小于 2，需要一直向上寻求合并。
 
-![](https://static.memset0.cn/img/v6/2024/07/03/YIoXQK9I.png)
+In a red-black tree, the number of internal nodes in the subtree rooted at x is no more than $2^{bh(x)} - 1$ where $bh(x)$ is the black height of x. (T or F)
 
 > [!quote]- Answer
 > F。应为 $2^{2bh(x)}-1$。因为 $2bh(x)\ge h(x)$ 对红黑树成立。
 
 ## Ch04 Leftist Heap & Skew Heap
 
-![](https://static.memset0.cn/img/v6/2024/06/24/oEA4HMI4.png)
+By definition, for a light node $p$ in a skew heap, the number of descendants of $p$'s right subtree is no more than 1/2 of the number of descendants of $p$.
 
 > [!quote]- Answer
 > F。如果刚好等于的话根据定义应该归为重节点。考虑左子树为空右子树大小为 1 的情况。
 
 ## Ch05 Binomial Queue
 
-![](https://static.memset0.cn/img/v6/2024/06/24/05tauNMW.png)
+For a binomial queue, \_\_\_ takes a constant time on average.
+
+- A. merging
+- B. find-max
+- C. delete-min
+- D. insertion
 
 > [!quote]- Answer
 > D。因为是均摊复杂度，考虑进位次数的均摊，可以证明插入操作是均摊 $O(1)$ 的。
 
 ## Ch06 Backtracking
 
-![](https://static.memset0.cn/img/v6/2024/06/23/djPNWHDE.png)
+For the Turnpike reconstruction algorithm of $N$ points, assuming that the distance set $D$ is maintained as an AVL tree, the running time is $O(N^{2} \log n)$ if no backtracking happens.
 
 > [!quote]- Answer
 > T。每一层都需要 $O(n)$（其实总共都有 $\Theta(n^2)$ 对距离要删除）。
@@ -66,7 +76,9 @@ sync: /course/ads/correction.md
 >
 > $$T(n) = \sqrt{n} T(\sqrt{n}) + n \log \sqrt{n} = \dfrac{1}{2} n \log n + \dfrac{1}{4} n \log n + \dfrac{1}{8} n \log n + \cdots =  n\log n$$
 
-![](https://static.memset0.cn/img/v6/2024/06/23/ZrqYg0l3.png)
+Recall that, to solve the cloest pair problem, the first step of the divide-and-conquer algorithm divides the point set into $L$ and $R$ according to hte x-coordinate. Is the following statement true or false?
+
+- In the combine step of this algorithm, it is always to find the closest pair with one point in $L$ and the other in $R$.
 
 > [!quote]- Answer
 > F。只检查了是否会小于 $\delta$，有可能最小的一对比这个大，直接没检查过。
@@ -89,7 +101,9 @@ sync: /course/ads/correction.md
 > [!quote]- Answer
 > A。是直接应用主定理的结果，$a=7$，$b=3$。
 
-![](https://static.memset0.cn/img/v6/2024/06/24/7DboJi92.png)
+Is this asymptotic upper bound for the following recursive $T(n)$ is correct?
+
+- $T(n) = T(n^{1/3}) + T(n^{2/3}) + \log n$. Then $T(n) = O(\log n \log \log n)$.
 
 > [!quote]- Answer
 > T。归纳法。
@@ -100,7 +114,7 @@ sync: /course/ads/correction.md
 
 ## Ch10 NP
 
-![](https://static.memset0.cn/img/v6/2024/06/24/7kB2adIf.png)
+If $L_{1} \leq_{p} L_{2}$ and $L_2 \in NP$, then $L_1 \in NP$. (T/F)
 
 > [!quote]- Answer
 > T。$L_1$ 可能还是 $P$ 问题，但注意 $P$ 问题都是 $NP$ 问题。
@@ -110,7 +124,9 @@ sync: /course/ads/correction.md
 > [!quote]- Answer
 > B。A 选项就是说能在多项式时间内解决 SAT 问题，即 $P=NP$，这样任何 NP 问题都能在多项式时间复杂度内解决，故自然存在对 $Q$ 的多项式复杂度解。但是 B 选项对于问题 $Q$ 就没有这一性质。
 
-![](https://static.memset0.cn/img/v6/2024/06/23/7kv72lkt.png)
+The following problem is in co-NP. (T/F)
+
+- Given a positive integer $k$, is $k$ a prime number?
 
 > [!quote]- Answer
 > T。$\text{P} = \text{co-P}$；$\text{P}\subseteq \text{co-NP}$。
@@ -142,7 +158,12 @@ sync: /course/ads/correction.md
 
 ## Ch14 Parallel
 
-![](https://static.memset0.cn/img/v6/2024/06/23/Mn3ndTFX.png)
+Which one of the following statements about the Maximum Finding is False?
+
+- A. Parallel random sampling algorithm can run with $O(\log n)$ work load.
+- B. Common CRCW can be used to solve the access conflicts in this problem.
+- C. It can be solved by summation algorithm with time complexity being $O(\log n)$.
+- D. There exists parallel algorithm solving the problem in constant time.
 
 > [!quote]- Answer
 > A。
@@ -150,24 +171,34 @@ sync: /course/ads/correction.md
 > -   A 选项 workload 无论怎么说至少得有 $O(n)$
 > -   B 选项会遇到要同时写的问题，但写的数是同一个，所以实际上不会冲突（？）
 
-![](https://static.memset0.cn/img/v6/2024/06/23/Fg56xzNb.png)
+When we solve the summation problem via designing the parallel algorithms, we shorten the aasymptotic time complexity but take more asymptotic work loads comparing with the sequential algorithms.
 
 > [!quote]- Answer
 > F。不一定是 more。
 
-![](https://static.memset0.cn/img/v6/2024/06/23/A2tB0Vtl.png)
+There is an array $A$, $A[i]=i\space (1\leq i\leq1024)$. If we use Balanced Binary Trees Parallel Algorithm to calculate the Prefix-Sum of $A$. Define $C(h,i)=\sum_{k=1}^{\alpha} A(k)$, where $(0,\alpha)$ is the rightmost descendant leaf of node $(h,i)$. Node $(h,i)$ indicates the $i$-th node in height $h$. For example, the root is node $(10,1)$ and leaves are node $(0,i)\space 1\leq i\leq1024$. The value of $C(2,223)$ is
+
+- A. $398278$
+- B. $30708$
+- C. $1701$
+- D. $6796$
 
 > [!quote]- Answer
 > A。相当于 $C(0,932)$。$B(i,j)$ 是对应子树和，$C(i,j)$ 是子树最右端节点前缀和。$B(i,j)$ 的过程从下到上并行合并，$C(i,j)$ 的过程从上到下。
 
 ## Ch15 External Sorting
 
-![](https://static.memset0.cn/img/v6/2024/06/24/bVfh6Ruc.png)
+If only one tape drive is available to perform the external sorting, then the tape access time for any algorithm will be $\Omega(N^2)$ (T/F)
 
 > [!quote]- Answer
 > T。考虑寻道时间从 $O(1)$ 变成 $O(n)$。
 
-![](https://static.memset0.cn/img/v6/2024/06/24/Dwd8mXqa.png)
+Given 100,000,000 records, each 256 bytes, and an internal memory size of 128MB, if a simple 2-way merge is used, how many passes do we have to do?
+
+- A. 10
+- B. 9
+- C. 8
+- D. 7
 
 > [!quote]- Answer
 > B。pass 数量是 log (runs 数量)+1（根据课件公式）
@@ -176,12 +207,27 @@ sync: /course/ads/correction.md
 >
 > ![](https://static.memset0.cn/img/v6/2024/06/24/OuRZm3b0.png)
 
-![](https://static.memset0.cn/img/v6/2024/06/23/MmmG81xz.png)
+We have 4 tapes for 3-way external merge sorting. How shall we distribute 31 runs into 3 tapes, such that the total number of passes is minimized?
+
+- A. 15 runs on Tape 1, 9 runs on Tape 2, and 7 runs on Tape 3.
+- B. 13 runs on Tape 1, 11 runs on Tape 2, and 7 runs on Tape 3.
+- C. 13 runs on Tape 1, 10 runs on Tape 2, and 8 runs on Tape 3.
+- D. 11 runs on Tape 1, 10 runs on Tape 2, and 10 runs on Tape 3.
 
 > [!quote]- Answer
 > B。三阶斐波那契数列为：0,0,1,1,2,4,7,13,24，我们选择 $F_n$，$F_{n-1}+F_{n-2}$，$F_{n-1}$，可以得到一组划分为 7+11+13=31，刚好就是我们想要的总数。如果不能恰好对上的话，应选第一组大于等于的。
 
-![](https://static.memset0.cn/img/v6/2024/06/24/E9XeKIyf.png)
+Suppose we have the internal memory that can handle 12 numbers at a time, and the following two runs on the tapes:
+
+Run 1: 1, 3, 5, 7, 8, 9, 10, 12
+Run 2: 2, 4, 6, 15, 20, 25, 30, 32
+
+Use 2-way merge with 4 input buffers and 2 output buffers for parallel operations. Which of the following three operations are NOT done in parallel?
+
+- A. 1 and 2 are written onto the third tape; 3 and 4 are merged into an output buffer; 6 and 15 are read into an input buffer
+- B. 3 and 4 are written onto the third tape; 5 and 6 are merged into an output buffer; 8 and 9 are read into an input buffer
+- C. 5 and 6 are written onto the third tape; 7 and 8 are merged into an output buffer; 20 and 25 are read into an input buffer
+- D. 7 and 8 are written onto the third tape; 9 and 15 are merged into an output buffer; 10 and 12 are read into an input buffer
 
 > [!quote]- Answer
 > D。大概是懂了，好像又没懂，求大哥评论区教教。
@@ -192,7 +238,12 @@ sync: /course/ads/correction.md
 
 ## Ex01 Amortized Analysis
 
-![](https://static.memset0.cn/img/v6/2024/06/23/S7Wv5EMp.png)
+A $n$-nodes AVL tree $T$ performs insertion or deletion in the worst case that costs $a_0 \lg n + b_0$, $a_1 \lg n + b_1$, respectively, where $a_0, a_1, b_0, b_1$ are constants. Now, we start from an empty tree, perform a sequence of n insertions or deletions in the AVL tree. To analysis the amortized cost per insertion or deletion, we define a potential function $\Phi(T) = a_1 \sum_{i=1}^{n} \lg i$. What is the amortized cost per insertion or deletion?
+
+- A. $O(\lg n)$ for insertion, $O(1)$ for deletion
+- B. $O(1)$ for insertion, $O(\lg n)$ for deletion
+- C. $O(\lg n)$ for insertion, $O(\lg n)$ for deletion
+- D. $O(1)$ for insertion, $O(1)$ for deletion
 
 > [!quote]- Answer
 > A。简单版本的理解是如果一次操作的时间贡献为 $\alpha$，势能贡献为 $\beta$（$\beta$ 可能为负数），那么这次的 amortized cost 为 $\alpha+\beta$，或者直接用 potential method 的柿子：
@@ -224,12 +275,22 @@ sync: /course/ads/correction.md
 
 ## Other Problems
 
-![](https://static.memset0.cn/img/v6/2024/06/23/FTqcg3AU.png)
+Consider a bipartite graph $G(A,B,E)$. (Recall that a graph $G$ is bipartite if the vertex set of $G$ can be partitioned into $A$ and $B$ such that all the edges of $G$ have one endpoint in $A$ and the other in $B$.) A matching in $G$ is a subset $M$ of $E$ such that no two edges in $M$ have a common vertex. A vertex cover is a subset $C$ of $V$, where every edge in $E$ must have at least one endpoint in $C$. Denote by $|S|$ the cardinality of a set $S$. Which of the following statements is true?
+
+- A. For a minimum vertex cover $C$, $|C| = \min\{|A|,|B|\}$.
+- B. Exactly one of the other options is wrong.
+- C. For any vertex cover $C$ and any matching $M$, $|C| \ge |M|$.
+- D. For a minimum vertex cover $C$ and a maximum matching $M$, $|C| = |M|$.
 
 > [!quote]- Answer
 > A。对于 B，考虑一个不与其他点连边的孤立点，只会贡献 $|A|,|B|$ 而不会贡献 $|C|$。对于 C,D，可以利用二分图最大匹配=最小点覆盖分析。
 
-![](https://static.memset0.cn/img/v6/2024/06/24/3FqhraMC.png)
+Consider two disjoint sorted arrays $A[1\ldots n]$ and $B[1\ldots m]$, we would like to compute the $k$-th smallest element in the union of the two arrays, where $k\le \min{m,n}$. Please choose the smallest possible running time among the following options:
+
+- A. $O(\log n)$
+- B. $\min\{O(\log m), O(\log n)\}$
+- C. $O(\log m)$
+- D. $O(\log k)$
 
 > [!quote]- Answer
 > D。脑筋急转弯。注意到 $A,B$ 都是 sorted，所以最后的复杂度肯定和 $n,m$ 无关。

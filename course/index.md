@@ -46,7 +46,7 @@ Stored here are the notes I took down during my studies at Zhejiang University, 
 - 🕊️ 大学英语 Ⅲ - 杨建平 - 大一秋冬
 - 🕊️ 大学英语 Ⅳ - 李航 - 大一春夏
 - ✨ [大学物理（乙）Ⅰ - 金洪英 - 大一春夏](/course/physics/)
-- ✨ [大学物理（乙）Ⅱ - 武慧春 - 大二秋冬](/course/physics/)
+- 🔮 [大学物理（乙）Ⅱ - 武慧春 - 大二秋冬](/course/physics/)
 - 🕊️ 思想道德与法治 - 梁清华 - 大一秋冬
 - 🕊️ 中国近现代史纲要 - 何惧 - 大一秋冬
 
