@@ -62,14 +62,26 @@ For the Turnpike reconstruction algorithm of $N$ points, assuming that the dista
 > [!quote]- Answer
 > T。每一层都需要 $O(n)$（其实总共都有 $\Theta(n^2)$ 对距离要删除）。
 
-![](https://static.memset0.cn/img/v6/2024/06/24/DXKNoAv2.png)
+Given the following game tree, the red node will be pruned with $\alpha$-$\beta$ pruning algorithm if and only if \_\_\_.
+
+![|279](https://static.memset0.cn/img/v6/2024/11/07/713RJSWP.png)
+
+- A. $6\leq x\leq13$
+- B. $x\geq13$
+- C. $6\leq x\leq9$
+- D. $x\ge 9$
 
 > [!quote]- Answer
 > D。其实这里可以剪枝的理由就是，无论其值多小，只能让父亲从 9 变成更小的值。但是如果这里整棵树的根节点已经大于等于 9，那么即使让他变的比 9 更小也已经没有意义，所以可以删除。
 
 ## Ch07 Divide and Conquer
 
-![](https://static.memset0.cn/img/v6/2024/06/23/AUbOD5wI.png)
+Recall that in the merge sort, we divide the input list into two groups of equal size, sort them recursively, and merge them into one sorted list. Now consider a variant of the merge sort. In this variant, we divide the input list into $\sqrt{n}$ groups of equal size, where $n$ is the input size. What is the worst case running time of this variant? (You may use the fact that merging $k$ sorted lists takes $O(m \log k)$ where $m$ is the total number of elements in these lists.)
+
+- A. $O(n \log^2 n)$
+- B. $O(n \log n)$
+- C. None of the other options is correct
+- D. $O(n \log n \log \log n)$
 
 > [!quote]- Answer
 > B。
@@ -96,7 +108,12 @@ Recall that, to solve the cloest pair problem, the first step of the divide-and-
 > [!quote]- Answer
 > A。可以直接应用主定理。
 
-![](https://static.memset0.cn/img/v6/2024/06/23/86wzuNOn.png)
+When solving a problem with input size $N$ by divide and conquer, if at each stage the problem is divided into $7$ sub-problems of equal size $N/3$, and the conquer step takes $O(\log N)$ to form the solution from the sub-solutions, then the overall time complexity is \_\_\_.
+
+- A. $O(N^{\log 7 / \log 3})$
+- B. $O(\log^{2} N)$
+- C. $O(\log N)$
+- D. $O(N)$
 
 > [!quote]- Answer
 > A。是直接应用主定理的结果，$a=7$，$b=3$。
@@ -119,7 +136,12 @@ If $L_{1} \leq_{p} L_{2}$ and $L_2 \in NP$, then $L_1 \in NP$. (T/F)
 > [!quote]- Answer
 > T。$L_1$ 可能还是 $P$ 问题，但注意 $P$ 问题都是 $NP$ 问题。
 
-![](https://static.memset0.cn/img/v6/2024/06/24/jMd7pR9N.png)
+Suppose $Q$ is a problem in $NP$, but not necessarily NP-complete. Which of the following is FALSE?
+
+- A. A polynomial-time algorithm for SAT would sufficiently imply a polynomial-time algorithm for $Q$.
+- B. A polynomial-time algorithm for $Q$ would sufficiently imply a polynomial-time algorithm for SAT.
+- C. If $Q \notin P$, then $P \neq NP$.
+- D. If $Q$ is NP-hard, then $Q$ is NP-complete.
 
 > [!quote]- Answer
 > B。A 选项就是说能在多项式时间内解决 SAT 问题，即 $P=NP$，这样任何 NP 问题都能在多项式时间复杂度内解决，故自然存在对 $Q$ 的多项式复杂度解。但是 B 选项对于问题 $Q$ 就没有这一性质。
@@ -140,7 +162,7 @@ The following problem is in co-NP. (T/F)
 > [!quote]- Answer
 > 2。pre-order 和 post-order 都是可行的。因为最小生成树的边权和一定小于 OPT，而这两种 travelsal 每条边最多走两次，所以是一个 2-approximation。
 
-![](https://static.memset0.cn/img/v6/2024/06/24/rlrSVMQU.png)
+As we know there is a 2-approximation algorithm for the Vertex Cover problem. Then we must be able to obtain a 2-approximation algortithm for the Clique problem, since the Clique problem can be polynomially reduced to the Vertex Cover problem. (T/F)
 
 > [!quote]- Answer
 > F。虽然这两个问题是可以互相规约的，但是计算近视率时除的最优解不同，稍微构造一下即可推翻：
@@ -149,7 +171,12 @@ The following problem is in co-NP. (T/F)
 
 ## Ch12 Local Search
 
-![](https://static.memset0.cn/img/v6/2024/06/24/U0AtUfYH.png)
+Max-cut problem: Given an undirected graph $G = (V, E)$ with positive integer edge weights $w_{e}$, find a node partition $(A, B)$ such that $w(A, B)$, the total weight of edges crossing the cut, is maximized. Let us define $S'$ to be the neighbor of $S$ that can be obtained from $S$ by moving one node from $A$ to $B$, or one from $B$ to $A$. We only choose a node which, when flipped, increases the cut value by at least $w(A, B) / |V|$. Then which of the following is true?
+
+- A. Upon the termination of the algorithm, the algorithm returns a cut $(A, B)$ so that $2.5 w(A, B) \geq w(A^*, B^*)$, where $(A^*, B^*)$ is an optimal partition.
+- B. The algorithm terminates after at most $O(\log |V| \log W)$ flips, where $W$ is the total weight of edges.
+- C. Upon the termination of the algorithm, the algorithm returns a cut $(A, B)$ so that $2w(A, B) \geq w(A^*, B^*)$.
+- D. The algorithm terminates after at most $O(|V|^2)$ flips.
 
 > [!quote]- Answer
 > A。直接代入公式：
@@ -258,12 +285,31 @@ A $n$-nodes AVL tree $T$ performs insertion or deletion in the worst case that c
 > \end{aligned}
 > $$
 
-![](https://static.memset0.cn/img/v6/2024/06/23/VExo3W8A.png)
+We have a binary counter of k bits. Each time we conduct an increment on the counter: $x \equiv x + 1 \pmod{2^k}$ and the cost of the increment is the number of bits we need to flip. For example, when $k = 3$, currently we have $x = 010$, after increment we have $x = 011$. Then this increment costs 1 because only 1 bit flips after increment. If we conduct the increment again, $x = 100$. Then this increment costs 3 because we flip 3 bits. Now we conduct n consecutive increments and estimate the total cost. Which of the following statements are TRUE?
+
+1. If the initial value of the counter is 0, the total cost is $O(n)$
+2. If the initial value of the counter is 0, the total cost is $O(n \log k)$
+3. If n = $\Omega(k)$, the total cost is $O(n)$
+4. If n = $\Omega(k)$, the total cost is $O(n \log k)$
+
+- A. 2 and 4
+- B. 2 and 3
+- C. 1 and 3
+- D. 1 and 4
 
 > [!quote]- Answer
 > C。对于 1，可以直接考虑每一位的反转次数。对于 3，考虑如果不从 $1$ 开始可以用 $O(k)$ 的代价消除影响，然而有 $n=\Omega(k)$，所以有 $O(n+k)=O(n)$。
 
-![](https://static.memset0.cn/img/v6/2024/06/24/nkWFyeWi.png)
+In this problem, we would like to find the amortized cost of insertion in a dynamic table $T$. Initially the size of the table $T$ is 1. The cost of insertion is $1$ if the table is not full. When an item is inserted into a full table, the table $T$ is expanded as a new table of size $5$ times larger. Then, we copy all the elements of the old table into this new table, and insert the item in the new table.
+
+Let $num(T)$ be the number of elements in the table $T$, and $size(T)$ be the total number of slots of the table. Let $D_i$ denote the table after applying the $i$-th operation on $D_{i-1}$.
+
+Which of the following potential function $\Phi(D_i)$ can help us achieve $O(1)$ amortized cost per insertion?
+
+- A. $\Phi(D_{i}) = num(T) + \dfrac{size(T)}{5}$
+- B. $\Phi(D_{i}) = \dfrac{5}{4} \left( num(T) + \dfrac{size(T)}{5} \right)$
+- C. $\Phi(D_{i})=\dfrac{5}{4}(num(T) - \dfrac{size(T)}{5})$
+- D. $\Phi(D_{i}) = num(T) - \dfrac{size(T)}{5}$
 
 > [!quote]- Answer
 > C。可以这样分析，设 $\Phi(D_i)= \alpha \cdot num(T)+\beta \cdot size(T)$。
