@@ -1,5 +1,5 @@
 ---
-title: 期中 I 习题
+title: 期中 I 错题
 sync: /course/physics/correction/i-midterm.md
 ---
 

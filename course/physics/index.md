@@ -11,8 +11,9 @@ nav:
       - note/5.md
       - note/6.md
       - note/7.md
-  - 错题本:
+  - 习题集:
       - correction/i-midterm.md
+      - correction/ii-midterm.md
 ---
 
 ## 1. 评分标准
