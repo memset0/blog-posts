@@ -21,7 +21,7 @@ There exists an AVL tree of depth 6 (the depth of the root is 0) containing 31 n
 
 ## Ch02 Red Black Tree & B+ Tree
 
-Insert (7, 15, 9, 11, 5, 8, 19, 18) into an initially empty 2-3 tree (with splitting), and then delete 7. Which one of the following statements is FALSE about the resulting tree?
+Insert $(7, 15, 9, 11, 5, 8, 19, 18)$ into an initially empty 2-3 tree (with splitting), and then delete 7. Which one of the following statements is FALSE about the resulting tree?
 
 - A. there are 3 leaf nodes
 - B. 13 and 15 are in the same node
