@@ -1,10 +1,10 @@
 ---
 sync: /travelogue/2023-nanjing.md
-title: "2023 ICPC 南京站游记"
+title: '2023 ICPC 南京站游记'
 date: 2023-11-06 00:25:00
 publish: true
-cover: https://static.memset0.cn/img/v6/2023/11/07/K3pfcvZY.jpg
-travelogue-title: "2023 · 南京"
+cover: https://img.memset0.cn/2023/11/07/K3pfcvZY.jpg
+travelogue-title: '2023 · 南京'
 travelogue-publish: true
 ---
 
@@ -22,17 +22,17 @@ travelogue-publish: true
 
 坐动车时在知乎上水到 chenjb 前辈的赛前毒奶，发现这场来了好多高手。不必说来自北京大学的“重生之我是菜狗”和清华大学的“有手有脚”的两支 World Finalist 强队，来自南京邮电大学的“Cirtus”、东北大学的“天狐座”、哈尔滨工业大学的“玩原神玩的”等等队伍都不容小觑。
 
-![听名字很上流的《国际酒店》|md](https://static.memset0.cn/img/v6/2023/11/07/efYripY6.jpg)
+![听名字很上流的《国际酒店》|md](https://img.memset0.cn/2023/11/07/efYripY6.jpg)
 
 入住时和生病的 Sugar 哥哥分到了一个房间，我很关心他的身体状况，但有害怕自己被传染。（内心纠结 os）
 
 晚上约了一群人出去吃饭，选了家看起来有点上流的店，整了个大众点评的套餐。开局直接给我们端上来九只醉蟹，刚准备大快朵颐，却被告知上错了——正确的剧本是，我们六个人只能分三只。
 
-![早知道先拿一个吃了！|md](https://static.memset0.cn/img/v6/2023/11/07/vZMR6bRh.jpeg)
+![早知道先拿一个吃了！|md](https://img.memset0.cn/2023/11/07/vZMR6bRh.jpeg)
 
 不过这个甜豆花味道是真的不错，我连干了三碗。
 
-![|md](https://static.memset0.cn/img/v6/2023/11/07/9vtSDfPX.jpeg)
+![|md](https://img.memset0.cn/2023/11/07/9vtSDfPX.jpeg)
 
 还给 Sugar 哥哥打包了点吃的回去，叫外卖时又特意为他加了一份冰糖雪梨，希望 Sugar 哥哥能快点好起来。
 
@@ -42,47 +42,47 @@ travelogue-publish: true
 
 和队友胡乱谋划一番，决定前往总统府参观。门口卖的塑料小枪支非常有意思，不由花费 20 大洋给自己也整了一个。
 
-![|md](https://static.memset0.cn/img/v6/2023/11/06/InXFjUWy.jpeg)
+![|md](https://img.memset0.cn/2023/11/06/InXFjUWy.jpeg)
 
 进府以后，队友本想看点“走向共和”的历史资料，没想到横竖全是“红旗插上总统府”，一下子兴致全无。
 
-![吊古抚今|md](https://static.memset0.cn/img/v6/2023/11/06/ATCwfcBL.jpeg)
+![吊古抚今|md](https://img.memset0.cn/2023/11/06/ATCwfcBL.jpeg)
 
 原计划打算再去中山陵参观，结果此时三个人都有点玩不动了，遂决定回宾馆睡大觉。在床上才想起来自己把早上买的小手枪落在中午吃饭的地方了 /大哭。
 
-![吃个午饭也逃不开原神|md](https://static.memset0.cn/img/v6/2023/11/06/ihKHBl7U.jpeg)
+![吃个午饭也逃不开原神|md](https://img.memset0.cn/2023/11/06/ihKHBl7U.jpeg)
 
 一起床发现热身赛已经开始，群里被学长和教练疯狂怒斥，匆忙赶往打了最后一小时。本以为能速通四题，没想到表演了一手三线卡题，直接位列倒数。
 
-![|md](https://static.memset0.cn/img/v6/2023/11/06/6swKmcSb.jpeg)
+![|md](https://img.memset0.cn/2023/11/06/6swKmcSb.jpeg)
 
-![什么叫“十发罚时”啊|md](https://static.memset0.cn/img/v6/2023/11/06/qlwCnygw.jpeg)
+![什么叫“十发罚时”啊|md](https://img.memset0.cn/2023/11/06/qlwCnygw.jpeg)
 
 晚上照例是和群友面基，见到了好多先前不认识的大佬。
 
-![|md](https://static.memset0.cn/img/v6/2023/11/07/Go2aQCX7.jpg)
+![|md](https://img.memset0.cn/2023/11/07/Go2aQCX7.jpg)
 
 这时笔记本电脑突然坏了，急得要死。选手群里有个大哥自称会修，于是半夜打个车直达河海大学。
 
-![河海大学|md](https://static.memset0.cn/img/v6/2023/11/07/6bU9Wk40.jpeg)
+![河海大学|md](https://img.memset0.cn/2023/11/07/6bU9Wk40.jpeg)
 
 不得不说，河海大学的宿舍环境非常的好，甚至还配备了电梯。
 
-![宿舍楼入口标语|md](https://static.memset0.cn/img/v6/2023/11/07/qWPy5MIw.jpg)
+![宿舍楼入口标语|md](https://img.memset0.cn/2023/11/07/qWPy5MIw.jpg)
 
 绝活哥拆机研究一番断言已经没救。好在他备有一个固态硬盘盒，可以把 SSD 直接插在里面，这样我周一要交的作业就先抢救出来了。
 
-![“你这里的螺丝呢？” × N|md](https://static.memset0.cn/img/v6/2023/11/07/sEGuepBm.jpeg)
+![“你这里的螺丝呢？” × N|md](https://img.memset0.cn/2023/11/07/sEGuepBm.jpeg)
 
 ## Day 1
 
 可惜晚上被蚊子频繁骚扰，只睡了四个小时。早上起床后在食堂疯狂灌早饭和咖啡，希望能恢复个八成的精神状态。
 
-![这样的一盘我连干三碗|md](https://static.memset0.cn/img/v6/2024/04/04/6Ub9y8Iv.png)
+![这样的一盘我连干三碗|md](https://img.memset0.cn/2024/04/04/6Ub9y8Iv.png)
 
 得知发的饭票可以在食堂二楼换饮料，一口气整了好多。
 
-![搞了整整十八瓶|lg](https://static.memset0.cn/img/v6/2023/11/07/8mUDghqE.jpg)
+![搞了整整十八瓶|lg](https://img.memset0.cn/2023/11/07/8mUDghqE.jpg)
 
 前期开签到题状态一直不错，排名稳在前三，甚至还短暂反超有手有脚。
 
@@ -102,7 +102,7 @@ xry 很稳地通过了 K，可 E 还是调不出来。等到最后十分钟，xr
 
 本着旅游选手的初心，我拿着本题面到处找群友要签名 /舔一舔（）
 
-![非常感谢愿意给我签名的哥哥|md](https://static.memset0.cn/img/v6/2023/11/06/5dJ6Qvwq.jpeg)
+![非常感谢愿意给我签名的哥哥|md](https://img.memset0.cn/2023/11/06/5dJ6Qvwq.jpeg)
 
 过了一段时间被学长提醒乐观榜上我们是第三，才发现先前的罚时算错了，我们似乎能以微弱优势领先南邮。（这么刺激？🥵）
 
@@ -110,23 +110,23 @@ xry 很稳地通过了 K，可 E 还是调不出来。等到最后十分钟，xr
 
 由于沉迷于滚榜没有去领奖处，主办方还以为我们跑路了。我只得大喊一声我们队在这里$\sim$，~~然后把已经走到一半的有手有脚赶了下来。~~
 
-![季杯也是杯|md](https://static.memset0.cn/img/v6/2023/11/06/9aJmjRDK.jpeg)
+![季杯也是杯|md](https://img.memset0.cn/2023/11/06/9aJmjRDK.jpeg)
 
 赛后速通了下南京航空航天大学的食堂，好吃是真的好吃（甚至有点后悔前两天怎么在外面而不是学校吃的了）。空心菜、猪蹄和小螃蟹都很入味，比我们学校是高到不知道哪里去了。😭
 
-![|md](https://static.memset0.cn/img/v6/2023/11/06/cXTO3ltp.jpeg)
+![|md](https://img.memset0.cn/2023/11/06/cXTO3ltp.jpeg)
 
 最后因为堵车差点没赶上高铁，在匆忙中恋恋不舍地离开南京。
 
-![会再见的，南京！|md](https://static.memset0.cn/img/v6/2023/11/06/q5Gkieb2.jpeg)
+![会再见的，南京！|md](https://img.memset0.cn/2023/11/06/q5Gkieb2.jpeg)
 
 ## Day 2+
 
 把收集的徽章挂到宿舍遮光帘上，又回归到日常的学习生活中啦~
 
-![迄今为止收集到的徽章|md](https://static.memset0.cn/img/v6/2023/11/06/LrRegqMR.jpeg)
+![迄今为止收集到的徽章|md](https://img.memset0.cn/2023/11/06/LrRegqMR.jpeg)
 
-![紫金港的落日|md](https://static.memset0.cn/img/v6/2023/11/06/uFqKlIHn.jpeg)
+![紫金港的落日|md](https://img.memset0.cn/2023/11/06/uFqKlIHn.jpeg)
 
 <!--
 

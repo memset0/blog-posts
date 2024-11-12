@@ -15,7 +15,7 @@ sync: /course/physics/correction/i-midterm.md
 
 > [!quote]- 答案
 >
-> ![](https://static.memset0.cn/img/v6/2024/04/25/6z48pA8L.png)
+> ![](https://img.memset0.cn/2024/04/25/6z48pA8L.png)
 
 ### 1.2. 习题 4-4【微积分的应用】
 
@@ -27,7 +27,7 @@ sync: /course/physics/correction/i-midterm.md
 
 > [!quote]- 答案
 >
-> ![](https://static.memset0.cn/img/v6/2024/04/25/tF67vLGc.png)
+> ![](https://img.memset0.cn/2024/04/25/tF67vLGc.png)
 
 ### 1.3. 课件例题
 
@@ -39,9 +39,9 @@ sync: /course/physics/correction/i-midterm.md
 
 > [!quote]- 答案
 >
-> ![|500](https://static.memset0.cn/img/v6/2024/04/24/g6MXgLTt.png)
+> ![|500](https://img.memset0.cn/2024/04/24/g6MXgLTt.png)
 >
-> ![|500](https://static.memset0.cn/img/v6/2024/04/24/wa09Shf3.png)
+> ![|500](https://img.memset0.cn/2024/04/24/wa09Shf3.png)
 
 ### 1.4. 课件例题【均匀物体的质心】
 
@@ -52,11 +52,11 @@ sync: /course/physics/correction/i-midterm.md
 > 注意积分上界的选择。
 
 > [!quote]- 答案
-> ![|500](https://static.memset0.cn/img/v6/2024/04/25/IoQvmhCM.png)
+> ![|500](https://img.memset0.cn/2024/04/25/IoQvmhCM.png)
 
 ### 1.5. 2020-2021 春夏期中【势能曲线】
 
-![|671](https://static.memset0.cn/img/v6/2024/04/27/iqicsNMp.png)
+![|671](https://img.memset0.cn/2024/04/27/iqicsNMp.png)
 
 > [!important] 知识点回顾
 >
@@ -67,7 +67,7 @@ sync: /course/physics/correction/i-midterm.md
 
 ### 1.6. 2020-2021 春夏期中
 
-![|651](https://static.memset0.cn/img/v6/2024/04/27/4rFTkv4o.png)
+![|651](https://img.memset0.cn/2024/04/27/4rFTkv4o.png)
 
 > [!error] 易错点
 >
@@ -82,15 +82,15 @@ sync: /course/physics/correction/i-midterm.md
 
 > [!quote]- 答案
 >
-> ![|500](https://static.memset0.cn/img/v6/2024/04/24/OgclEX8E.png)
+> ![|500](https://img.memset0.cn/2024/04/24/OgclEX8E.png)
 >
-> ![|500](https://static.memset0.cn/img/v6/2024/04/24/BO0wRcpf.png)
+> ![|500](https://img.memset0.cn/2024/04/24/BO0wRcpf.png)
 
 ### 1.8. 课件例题
 
 如图所示，若使邮件沿着地球的某一直径的隧道传递，试求邮件通过地心时的速率。已知地球的半径为 $6.4\times 10^6\text m$，密度约为 $5.5 \times 10^3 \text{kg}/\text{m}^3$。
 
-![eKZQNe7E.png|153](https://static.memset0.cn/img/v6/2024/04/24/eKZQNe7E.png)
+![eKZQNe7E.png|153](https://img.memset0.cn/2024/04/24/eKZQNe7E.png)
 
 > [!important] 重要思想
 >
@@ -104,9 +104,9 @@ sync: /course/physics/correction/i-midterm.md
 
 > [!quote]- 答案
 >
-> ![|500](https://static.memset0.cn/img/v6/2024/04/24/7VazA31F.png)
+> ![|500](https://img.memset0.cn/2024/04/24/7VazA31F.png)
 >
-> ![|500](https://static.memset0.cn/img/v6/2024/04/24/8LRsKDwb.png)
+> ![|500](https://img.memset0.cn/2024/04/24/8LRsKDwb.png)
 
 ### 1.9. 课件例题【微元法与一阶导数定义式的联系】
 
@@ -118,54 +118,54 @@ sync: /course/physics/correction/i-midterm.md
 
 > [!quote]- 答案
 >
-> ![|500](https://static.memset0.cn/img/v6/2024/04/24/9Oc0TLxn.png)
+> ![|500](https://img.memset0.cn/2024/04/24/9Oc0TLxn.png)
 >
-> ![|500](https://static.memset0.cn/img/v6/2024/04/24/JrzDSynu.png)
+> ![|500](https://img.memset0.cn/2024/04/24/JrzDSynu.png)
 >
-> ![|500](https://static.memset0.cn/img/v6/2024/04/24/nJFBkXme.png)
+> ![|500](https://img.memset0.cn/2024/04/24/nJFBkXme.png)
 
 ### 1.10. 课件例题
 
 一根质量为 $m$，长度为 $l$ 的链条，被竖直地悬挂起来，其最低端刚好与秤盘接触。现将链条释放并让它落到秤盘上，如图所示。求链条下落长度为 $x$ 时，秤的读数是多少？
 
-![5j4u1fN4.png|190](https://static.memset0.cn/img/v6/2024/04/25/5j4u1fN4.png)
+![5j4u1fN4.png|190](https://img.memset0.cn/2024/04/25/5j4u1fN4.png)
 
 > [!quote]- 答案
 >
-> ![|500](https://static.memset0.cn/img/v6/2024/04/25/rDMq7Xvq.png)
+> ![|500](https://img.memset0.cn/2024/04/25/rDMq7Xvq.png)
 >
-> ![|500](https://static.memset0.cn/img/v6/2024/04/25/A26LAkOe.png)
+> ![|500](https://img.memset0.cn/2024/04/25/A26LAkOe.png)
 
 ### 1.11. 课件例题【微元法】
 
-![ClUOKr2S.png|391](https://static.memset0.cn/img/v6/2024/03/07/ClUOKr2S.png)
+![ClUOKr2S.png|391](https://img.memset0.cn/2024/03/07/ClUOKr2S.png)
 
 > [!quote]- 答案
 >
-> ![|500](https://static.memset0.cn/img/v6/2024/04/24/sIleE41z.png)
+> ![|500](https://img.memset0.cn/2024/04/24/sIleE41z.png)
 >
-> ![|500](https://static.memset0.cn/img/v6/2024/04/24/HMG4qFsa.png)
+> ![|500](https://img.memset0.cn/2024/04/24/HMG4qFsa.png)
 >
-> ![|500](https://static.memset0.cn/img/v6/2024/04/24/BbG1mWcX.png)
+> ![|500](https://img.memset0.cn/2024/04/24/BbG1mWcX.png)
 
 ## 1. 刚体力学
 
 ### 1.1. 2016-2017 春夏期中
 
-![|704](https://static.memset0.cn/img/v6/2024/04/25/X2ixEzOf.png)
+![|704](https://img.memset0.cn/2024/04/25/X2ixEzOf.png)
 
 > [!error] 注意细节
 >
 > 首先记得对等式两边求导得到微元的形式，将相同变量移到同侧，不要出现低级计算错误！
 
 > [!quote]- 答案
-> ![](https://static.memset0.cn/img/v6/2024/04/25/O3g36ZTW.png)
+> ![](https://img.memset0.cn/2024/04/25/O3g36ZTW.png)
 
 ### 2.1. 课件例题
 
 质量为 $M =2.0\text{kg}$ 的匀质圆盘，半径 $R=0.2\text{m}$，可绕过盘中心且与盘面垂直的水平光滑轴转动，其上挂有质量 $m=4.0\text{kg}$，长为 $l=2.0\text{m}$ 的匀质柔绳。设绳与盘无相对滑动，求圆盘两侧绳长之差 $\Delta l=0.50\text m$ 时，绳的加速度。
 
-![bhnBKEZr.png|121](https://static.memset0.cn/img/v6/2024/04/25/bhnBKEZr.png)
+![bhnBKEZr.png|121](https://img.memset0.cn/2024/04/25/bhnBKEZr.png)
 
 > [!important] 做题思路
 >
@@ -189,17 +189,17 @@ sync: /course/physics/correction/i-midterm.md
 
 > [!quote]- 思考与分析
 >
-> ![|500](https://static.memset0.cn/img/v6/2024/04/25/arlr3XMk.png)
+> ![|500](https://img.memset0.cn/2024/04/25/arlr3XMk.png)
 >
-> ![|500](https://static.memset0.cn/img/v6/2024/04/25/2dLhKPVY.png)
+> ![|500](https://img.memset0.cn/2024/04/25/2dLhKPVY.png)
 
 > [!quote]- 答案
 >
-> ![|500](https://static.memset0.cn/img/v6/2024/04/25/zivDURXg.png)
+> ![|500](https://img.memset0.cn/2024/04/25/zivDURXg.png)
 >
-> ![|500](https://static.memset0.cn/img/v6/2024/04/25/Pfz9TgAh.png)
+> ![|500](https://img.memset0.cn/2024/04/25/Pfz9TgAh.png)
 >
-> ![|500](https://static.memset0.cn/img/v6/2024/04/25/rJOjxMJw.png)
+> ![|500](https://img.memset0.cn/2024/04/25/rJOjxMJw.png)
 
 ### 2.2. 课件例题【打击中心问题】
 
@@ -221,19 +221,19 @@ sync: /course/physics/correction/i-midterm.md
 
 > [!quote]- 答案
 >
-> ![|500](https://static.memset0.cn/img/v6/2024/04/25/x5xKh1BV.png)
+> ![|500](https://img.memset0.cn/2024/04/25/x5xKh1BV.png)
 >
-> ![|500](https://static.memset0.cn/img/v6/2024/04/25/FN6aevK8.png)
+> ![|500](https://img.memset0.cn/2024/04/25/FN6aevK8.png)
 >
-> ![|500](https://static.memset0.cn/img/v6/2024/04/25/zGbzlMCZ.png)
+> ![|500](https://img.memset0.cn/2024/04/25/zGbzlMCZ.png)
 
 ### 2.3. 2016-2017 春夏期中【组合体为刚体时的定轴转动问题】
 
-![|600](https://static.memset0.cn/img/v6/2024/04/25/5lEfTJWt.png)
+![|600](https://img.memset0.cn/2024/04/25/5lEfTJWt.png)
 
 > [!warning] 转动惯量？
 >
 > 本题中杆本身的质量可忽略，而组合体的质量分布在两个小球上，故实际上 $J=3m\left(\dfrac{l}{2}\right)^2$。不要想当然地套用常见刚体的转动惯量公式。
 
 > [!quote]- 答案
-> ![](https://static.memset0.cn/img/v6/2024/04/25/gRui7Hru.png)
+> ![](https://img.memset0.cn/2024/04/25/gRui7Hru.png)

@@ -21,11 +21,11 @@ sync: /course/cs224w/note/subgraph-mining.md
 
 **图级别的子图频率(graph-level subgraph frequency)**：设 $G_{Q}=(V_{Q}, E_{Q})$ 是小图，$G_{T}=(V_{T}, E_{T})$ 是目标图，即统计 $V\subseteq V_{T}$ 的数量满足 $V$ 的导出子图与 $G_{Q}$ 同构。
 
-![1vQ9qsUP.png|493](https://static.memset0.cn/img/v6/2024/09/01/1vQ9qsUP.png)
+![1vQ9qsUP.png|493](https://img.memset0.cn/2024/09/01/1vQ9qsUP.png)
 
 **节点级别的子图频率(node-level subgraph frequency)**：$G_{Q}=(V_{Q}, E_{Q})$ 是小图，$v\in V_{Q}$ 是选定一点，$G_{T}=(V_{T}, E_{T})$ 是目标图，即统计 $u\in V_{T}$ 的数量满足 $G_{T}$ 的一个子图与 $G_{Q}$ 同构且双射关系中 $u$ 被对应到 $v$。
 
-![0TYZ2kRA.png|261](https://static.memset0.cn/img/v6/2024/09/01/0TYZ2kRA.png)
+![0TYZ2kRA.png|261](https://img.memset0.cn/2024/09/01/0TYZ2kRA.png)
 
 ### 1.4. 随机图
 
@@ -39,7 +39,7 @@ sync: /course/cs224w/note/subgraph-mining.md
 
 作用：帮助我们理解图的工作方式；帮助我们对图的缺失部分进行预测。
 
-![CJ3dxBsC.png|405](https://static.memset0.cn/img/v6/2024/09/01/CJ3dxBsC.png)
+![CJ3dxBsC.png|405](https://img.memset0.cn/2024/09/01/CJ3dxBsC.png)
 
 ### 2.1. Z-Score
 
@@ -90,10 +90,10 @@ $$
 - 随机选取锚点 $v$
 - 生成 $G_{T}$：在 $G$ 上直接 BFS 并采样其 $K$ 阶邻居。
 - 生成 $G_{Q}$：
-    - 随机选取锚点 $v$，初始 $S=\{ v \},\ V=\varnothing$。
-    - 每次采样 $\mathcal{N}(S)\setminus V$ 中 10% 的节点放入 $S$，其余放入 $V$。
-    - 重复做 $K$ 次得到 $G_{Q}$。这里 $G_{Q}$ 一定是 $G_{T}$ 的子图，故作为正样本。
-    - 对 $G_{Q}$ 添加一定的扰动（如增加/移动一些节点/边）得到 $G'_{Q}$，使得 $G'_{Q}$ 一定不是 $G_{T}$ 的子图，从而作为负样本。
+  - 随机选取锚点 $v$，初始 $S=\{ v \},\ V=\varnothing$。
+  - 每次采样 $\mathcal{N}(S)\setminus V$ 中 10% 的节点放入 $S$，其余放入 $V$。
+  - 重复做 $K$ 次得到 $G_{Q}$。这里 $G_{Q}$ 一定是 $G_{T}$ 的子图，故作为正样本。
+  - 对 $G_{Q}$ 添加一定的扰动（如增加/移动一些节点/边）得到 $G'_{Q}$，使得 $G'_{Q}$ 一定不是 $G_{T}$ 的子图，从而作为负样本。
 
 可以防止模型学习将嵌入不断移动到更远处的退化策略
 
@@ -105,13 +105,13 @@ $$
 
 用上文的 BFS 方法采样一系列 $G_{T}$ 的子图 $G_{N_{i}}$（论文中称为 decompose input graph into neighborhoods），然后只统计 $G_{Q}$ 作为 $G_{N_{i}}$ 的子图的次数，作为在原图中出现次数的预估。——可以大大降低计算复杂度。
 
-![EsSBOymW.png|271](https://static.memset0.cn/img/v6/2024/09/01/EsSBOymW.png)
+![EsSBOymW.png|271](https://img.memset0.cn/2024/09/01/EsSBOymW.png)
 
 ### 4.2. Search Procedure
 
 Search Procedures 是模型 SPMiner 提出的创新方法，其从随机选择的一个节点作为**锚点**开始，每次增加一个节点要求最大化红色阴影区域的点数。在 $k$ 次迭代后，就挖掘出了一个大小为 $k$ 的 motifs。
 
-![Walk in Embedding Space|515](https://static.memset0.cn/img/v6/2024/09/01/UXAPfDNd.png)
+![Walk in Embedding Space|515](https://img.memset0.cn/2024/09/01/UXAPfDNd.png)
 
 ## 5. 参考资料
 

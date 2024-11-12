@@ -22,13 +22,13 @@ sync: /course/fds/note.md
 
 ### Queue
 
-![V1qGNkCJ.png|647](https://static.memset0.cn/img/v6/2024/06/27/V1qGNkCJ.png)
+![V1qGNkCJ.png|647](https://img.memset0.cn/2024/06/27/V1qGNkCJ.png)
 
 初始状态 `front == 0`，`rear == -1`。
 
 ### Circular Queue
 
-![HPy8ki5c.png|338](https://static.memset0.cn/img/v6/2024/06/27/HPy8ki5c.png)
+![HPy8ki5c.png|338](https://img.memset0.cn/2024/06/27/HPy8ki5c.png)
 
 这种实现要求至少留一个空位置。
 
@@ -98,7 +98,7 @@ pivot 的选取策略：
 - 随机选取：但是生成随机数的代价比较高。
 - Median-of-Three Partitioning：从左边、中间、右边的三个数中选一个中位数来当 pivot。
 
-![7KT30VFI.png|552](https://static.memset0.cn/img/v6/2024/06/27/7KT30VFI.png)
+![7KT30VFI.png|552](https://img.memset0.cn/2024/06/27/7KT30VFI.png)
 
 需要注意的细节：
 
@@ -106,7 +106,7 @@ pivot 的选取策略：
 - 把 pivot 放在 `A[Right - 1]` 的位置。
 - 只需要对 `A[Left + 1]` 到 `A[Right - 2]` 的部分进行排序。
 
-![7yEdVvWP.png|621](https://static.memset0.cn/img/v6/2024/06/27/7yEdVvWP.png)
+![7yEdVvWP.png|621](https://img.memset0.cn/2024/06/27/7yEdVvWP.png)
 
 ### Radix Sort
 
@@ -115,7 +115,7 @@ Most Significant Digit：高位到低位排序。每次桶排完对每个桶分�
 
 ## Ch07 Hashing
 
-![HWRyGLbv.png|268](https://static.memset0.cn/img/v6/2024/06/27/HWRyGLbv.png)
+![HWRyGLbv.png|268](https://img.memset0.cn/2024/06/27/HWRyGLbv.png)
 
 - **标识符密度(identifier density)**：$\dfrac{n}{T}$。
 - **加载密度(loading density)**：$\lambda=\dfrac{n}{s\cdot b}$。当 $\lambda =1$ 时哈希表满，再插入数会发生 overflow。
@@ -169,7 +169,7 @@ rehashing 的过程：
 
 ### Graph Terminologies
 
-![ZszVmCL4.png|452](https://static.memset0.cn/img/v6/2024/06/27/ZszVmCL4.png)
+![ZszVmCL4.png|452](https://img.memset0.cn/2024/06/27/ZszVmCL4.png)
 
 表示图的方法：
 
@@ -199,14 +199,14 @@ Dijkstra 算法的不同实现与复杂度：
 
 原图、流量网络、残量网络：
 
-![JqjrvJZe.png|543](https://static.memset0.cn/img/v6/2024/06/27/JqjrvJZe.png)
+![JqjrvJZe.png|543](https://img.memset0.cn/2024/06/27/JqjrvJZe.png)
 
 ### Biconnected Components
 
 - **关节点(articulation point)**：割点
 - **双联通分量(biconnected component)**：（点）双联通分量，可能有一个点在多个双联通分量内。每个双联通分量是一个极大的不存在割点的联通子图。
 
-![1ea511cf45d1859ed13ab477402cdd7.png](https://static.memset0.cn/img/v6/2024/06/27/hxaVC1OY.png)
+![1ea511cf45d1859ed13ab477402cdd7.png](https://img.memset0.cn/2024/06/27/hxaVC1OY.png)
 
 用 Tarjan 算法找点双的方法：
 

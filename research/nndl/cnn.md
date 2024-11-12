@@ -17,7 +17,7 @@ sticker: emoji//1f5bc-fe0f
 
 ### 3.1. LeNet-5
 
-![2QweKtbO.png|742](https://static.memset0.cn/img/v6/2024/08/30/2QweKtbO.png)
+![2QweKtbO.png|742](https://img.memset0.cn/2024/08/30/2QweKtbO.png)
 
 ### 3.2. AlexNet
 

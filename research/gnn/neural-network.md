@@ -3,11 +3,11 @@ sync: /research/gnn/neural-network.md
 sticker: emoji//1f30f
 ---
 
-![](https://static.memset0.cn/img/v6/2024/09/29/M5eTwfhw.png)
+![](https://img.memset0.cn/2024/09/29/M5eTwfhw.png)
 
 ## GCN
 
-![](https://static.memset0.cn/img/v6/2024/09/29/buw7kj7S.png)
+![](https://img.memset0.cn/2024/09/29/buw7kj7S.png)
 
 $$
 \mathbf{H}^{(l+1)} = \sigma(\tilde{D}^{-1/2} \tilde{A} \tilde{D}^{-1/2} \mathbf{H}^{(l)} \mathbf{W}^{(l)})

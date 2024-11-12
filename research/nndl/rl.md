@@ -10,7 +10,7 @@ sticker: emoji//1f9be
 
 > [!tip]- 强化学习的典型问题
 >
-> ![DLnNg0Ky.png|545](https://static.memset0.cn/img/v6/2024/08/29/DLnNg0Ky.png)
+> ![DLnNg0Ky.png|545](https://img.memset0.cn/2024/08/29/DLnNg0Ky.png)
 
 形式化地，在强化学习中，我们有两个可以交互的对象：
 
@@ -91,7 +91,7 @@ $$
 
 **深度强化学习(deep reinforcement learning)** 是将强化学习和深度学习结合在一起了，用强化学习来定义问题和优化目标，用深度学习来解决策略和值函数的建模问题。
 
-![4 种强化学习算法优化步骤的比较|600](https://static.memset0.cn/img/v6/2024/08/30/p3ujxO9v.png)
+![4 种强化学习算法优化步骤的比较|600](https://img.memset0.cn/2024/08/30/p3ujxO9v.png)
 
 ## 2. 基于值函数的学习方法
 
@@ -109,7 +109,7 @@ $$
 
 这里 $\alpha_{t}\in(0,1]$ 是步长。
 
-![Iwj4tQXa.png|625](https://static.memset0.cn/img/v6/2024/08/30/Iwj4tQXa.png)
+![Iwj4tQXa.png|625](https://img.memset0.cn/2024/08/30/Iwj4tQXa.png)
 
 ### 2.3. 深度 Q 网络（DQN）
 

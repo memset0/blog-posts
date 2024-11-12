@@ -47,11 +47,11 @@ sync: /course/dm/quick-review.md
 
 - sequence: **通项写成立条件** e.g. $(n\ge 1)$
 
-![](https://static.memset0.cn/img/v6/2024/06/23/osC1RdBC.png)
+![](https://img.memset0.cn/2024/06/23/osC1RdBC.png)
 
-![](https://static.memset0.cn/img/v6/2024/06/23/AwpFEi55.png)
+![](https://img.memset0.cn/2024/06/23/AwpFEi55.png)
 
-![](https://static.memset0.cn/img/v6/2024/06/23/wb5HJopD.png)
+![](https://img.memset0.cn/2024/06/23/wb5HJopD.png)
 
 ## 6. Relations
 

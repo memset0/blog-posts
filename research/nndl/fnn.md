@@ -26,13 +26,13 @@ $$
 \operatorname{sigmoid} (x) = \dfrac{1}{1+\exp(-x)}
 $$
 
-![](https://static.memset0.cn/img/v6/2024/08/16/IT5EEGwO.png)
+![](https://img.memset0.cn/2024/08/16/IT5EEGwO.png)
 
 > [!note]- sigmoid 函数的导函数
 >
 > $$\dfrac{\text{d}}{\text{d}x} \operatorname{sigmoid}(x) = \dfrac{\exp(-x)}{(1+\exp(-x))^2} = \operatorname{sigmoid} (x) (1-\operatorname{sigmoid}(x))$$
 >
-> ![](https://static.memset0.cn/img/v6/2024/08/16/s5aear0Z.png)
+> ![](https://img.memset0.cn/2024/08/16/s5aear0Z.png)
 
 ### 1.2. tanh 函数
 
@@ -42,7 +42,7 @@ $$
 \tanh(x) = \dfrac{1-\exp(-2x)}{1+\exp(-2x)}
 $$
 
-![](https://static.memset0.cn/img/v6/2024/08/16/7Czp4YNT.png)
+![](https://img.memset0.cn/2024/08/16/7Czp4YNT.png)
 
 - 当输入在 $0$ 附近时，tanh 函数接近于线性变换。
 
@@ -50,7 +50,7 @@ $$
 >
 > $$\dfrac{\text{d}}{\text{d}x} \tanh(x) = 1-\tanh^2(x)$$
 >
-> ![](https://static.memset0.cn/img/v6/2024/08/16/VrWr5Pxr.png)
+> ![](https://img.memset0.cn/2024/08/16/VrWr5Pxr.png)
 
 ### 1.3. ReLU 函数
 
@@ -121,7 +121,7 @@ $$
 
 **多层感知机(multi-layer perceptron, MLP)**，或者称为 **前馈神经网络(feedforward neural network, FNN)** 是最早发明的简单人工神经网络。其通过多层的神经网络依次产生信号并输出到下一层。第 $0$ 层被称为输入层，最后一层被称为输出层。其余层被称为 **隐藏层(hidden-layer)**。
 
-![uuDXYiBU.png|480](https://static.memset0.cn/img/v6/2024/08/29/uuDXYiBU.png)
+![uuDXYiBU.png|480](https://img.memset0.cn/2024/08/29/uuDXYiBU.png)
 
 | 记号                                                                                                           | 含义                                   |
 | -------------------------------------------------------------------------------------------------------------- | -------------------------------------- |
@@ -143,7 +143,7 @@ $$
 >
 > $1$-hidden-layer MLP with sufficiently-large hidden dimensionality and appropriate non-linearity $\sigma(\cdot)$ can approximate any continous function to an arbitrary accuracy.
 >
-> ![|600](https://static.memset0.cn/img/v6/2024/08/29/E7o291ty.png)
+> ![|600](https://img.memset0.cn/2024/08/29/E7o291ty.png)
 
 通用近似定理是多层感知机的理论基础，其指出：单隐藏层的“多层感知机”只要有足够多的非线性的神经元，可以近似任意连续函数的。不过一般的做法是通过多层的神经网络，每一层可以用较少的神经元。
 
@@ -219,7 +219,7 @@ $$
 
 以最简单的 1-1-1 结构的两层神经网络 $y=\sigma(w_{2} \sigma(w_{1} x))$ 为例。这里无论是采用平方误差还是交叉熵损失函数，得到的目标函数都是关于参数的非凸函数：
 
-![V99YZkve.png|584](https://static.memset0.cn/img/v6/2024/08/29/V99YZkve.png)
+![V99YZkve.png|584](https://img.memset0.cn/2024/08/29/V99YZkve.png)
 
 ### 4.1. 梯度消失问题
 
@@ -227,7 +227,7 @@ $$
 
 sigmoid 函数是导致梯度消失的一个常见原因之一，因为他在距离 $x=0$ 较远的位置梯度会趋近于 $0$。当我们的网络有很多层时，我们必须很小心，否则可能在中间的某一层切断梯度。这也是为什么 ReLU 系列函数已经代替 sigmoid 函数成为机器学习的默认选择之一。
 
-![BPQNna7A.png|317](https://static.memset0.cn/img/v6/2024/08/17/BPQNna7A.png)
+![BPQNna7A.png|317](https://img.memset0.cn/2024/08/17/BPQNna7A.png)
 
 ## 5. 误差分析
 
@@ -248,7 +248,7 @@ sigmoid 函数是导致梯度消失的一个常见原因之一，因为他在距
 
 **欠拟合(underfitting)**：训练误差和验证误差都很严重，但它们之间仅有一点差距。如果模型不能降低训练误差，这可能意味着模型过于简单（即表达能力不足），无法捕获试图学习的模式。此外，由于我们的训练和验证误差之间的泛化误差很小，我们有理由相信可以用一个更复杂的模型降低训练误差。
 
-![LKU7k9Ap.png|490](https://static.memset0.cn/img/v6/2024/08/28/LKU7k9Ap.png)
+![LKU7k9Ap.png|490](https://img.memset0.cn/2024/08/28/LKU7k9Ap.png)
 
 ## 6. 权重衰减
 
@@ -275,7 +275,7 @@ $$
 
 通过应用暂退法，我们可以保证输出层的计算不过度依赖于 $h_{1},\dots ,h_{5}$ 中的任意一个神经元。
 
-![dropout 前后的多层感知机|497](https://static.memset0.cn/img/v6/2024/08/16/wx5sDoTV.png)
+![dropout 前后的多层感知机|497](https://img.memset0.cn/2024/08/16/wx5sDoTV.png)
 
 ## 8. 数值稳定性
 

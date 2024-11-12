@@ -9,7 +9,7 @@ sync: /course/cs224w/note/knowledge-graph.md
 
 **异质图(heterogeneous graph)** 是一种有向、点和边都有类型的图。其可以被定义为 $G(V, E, R, T)$，节点 $v_{i}$ 的类型为 $T(v_{i})$；每条边记录为 $(v_{i},r,v_{j})$，这里 $r\in R$ 表示这条边的类型。
 
-![D6qhpf8z.png|708](https://static.memset0.cn/img/v6/2024/08/30/D6qhpf8z.png)
+![D6qhpf8z.png|708](https://img.memset0.cn/2024/08/30/D6qhpf8z.png)
 
 ### 1.2. 知识图谱
 
@@ -19,11 +19,11 @@ sync: /course/cs224w/note/knowledge-graph.md
 
 知识图谱中的常见 **模式(pattern)** 如下。对于后文提到的知识图谱相关算法，我们会考察他们在这些特定模式下的表达能力。
 
-![8F0CDDR9.png|464](https://static.memset0.cn/img/v6/2024/08/30/8F0CDDR9.png)
+![8F0CDDR9.png|464](https://img.memset0.cn/2024/08/30/8F0CDDR9.png)
 
 ## 2. Relational GCN
 
-![lBzTHnVQ.png|446](https://static.memset0.cn/img/v6/2024/08/30/lBzTHnVQ.png)
+![lBzTHnVQ.png|446](https://img.memset0.cn/2024/08/30/lBzTHnVQ.png)
 
 为了应对边也有类型的问题，**Relation GCN** 的做法是对每一条类型的边都用一个不同的神经网络训练出一套权重。
 
@@ -39,7 +39,7 @@ $$
 
 限制非 0 元素的数量，让权重矩阵变成如图的若干对角块矩阵的形式，从而让参数量从 $d^{(l+1)} \times d^{(l)}$ 降低到 $B \times \dfrac{d^{(l+1)}}{B} \times \dfrac{d^{(l)}}{B}$。但是这样的话——只有相邻的神经元/嵌入维度可以与权重矩阵交互。
 
-![LOaEKJqW.png|142](https://static.memset0.cn/img/v6/2024/08/30/LOaEKJqW.png)
+![LOaEKJqW.png|142](https://img.memset0.cn/2024/08/30/LOaEKJqW.png)
 
 #### 2.1.2. Basis Learning
 
@@ -65,7 +65,7 @@ $$
 
 **知识图谱补全(knowledge graph completion)** 任务：已知 $(\text{head}, \text{relation})$，预测 $\text{tails}$。
 
-![WjEAOubJ.png|576](https://static.memset0.cn/img/v6/2024/08/30/WjEAOubJ.png)
+![WjEAOubJ.png|576](https://img.memset0.cn/2024/08/30/WjEAOubJ.png)
 
 - 本节用 shallow encoding 而不是 GNN 的方式来进行图表示学习，即用固定向量表示图数据。
 
@@ -81,7 +81,7 @@ $$
 
 并应用 SGD 算法。
 
-![Iv7mspYj.png|650](https://static.memset0.cn/img/v6/2024/08/30/Iv7mspYj.png)
+![Iv7mspYj.png|650](https://img.memset0.cn/2024/08/30/Iv7mspYj.png)
 
 - 在 symmetric relations 上失效：欲使 $||\mathbf{h}+\mathbf{r}-\mathbf{t}||=0$ 和 $||\mathbf{t}+\mathbf{r}-\mathbf{h}||$ 同时成立，需要 $\mathbf{r}=0$（没有学习到 $\mathbf{r}$ 的嵌入）或 $\mathbf{h}=\mathbf{t}$（两个实体的 embedding 相同），都是不行的。
 - 在 1-to-N relations 上失效：欲使 $||\mathbf{h}+\mathbf{r}-\mathbf{t}_{1}||=0$ 和 $||\mathbf{h}+\mathbf{r}-\mathbf{t}_{2}||=0$ 同时成立，需要 $\mathbf{t}_{1} = \mathbf{t}_{2}$，而两个实体的 embedding 相同是不行的。
@@ -106,13 +106,13 @@ $$
 
 评分函数可以看做是 $\mathbf{h}\cdot \mathbf{r}$ 与 $\mathbf{t}$ 之间的 cosine similarity —— $\mathbf{h} \cdot \mathbf{t}$ 与 $\mathbf{t}$ 同侧且靠近时 score 高。
 
-![kq0d6sTq.png|281](https://static.memset0.cn/img/v6/2024/08/30/kq0d6sTq.png)
+![kq0d6sTq.png|281](https://img.memset0.cn/2024/08/30/kq0d6sTq.png)
 
 - 在 antisymmetric relations 上失效：在 $f_r(h,t)=\text{<} \mathbf{h},\mathbf{r},\mathbf{t} \text{>} = \text{<} \mathbf{t},\mathbf{r},\mathbf{h} \text{>} = f_r(t,h)$ 永远成立。
 - 在 inverse relations 上失效：欲使 $\text{<} \mathbf{h},\mathbf{r}_{1},\mathbf{t} \text{>} = \text{<} \mathbf{h}, \mathbf{r}_{2}, \mathbf{t} \text{>}$ 成立，必须有 $\mathbf{r}_{1} = \mathbf{r}_{2}$，而这显然没有意义。
 - 在 composition relations 上失效：对多跳关系产生的超平面的联合（如 $(\mathbf{r}_{1},\mathbf{r}_{2})$）无法用单一超平面（$\mathbf{r}_{3}$）表示。
 
-  ![O7tAoGeG.png|118](https://static.memset0.cn/img/v6/2024/08/30/O7tAoGeG.png)
+  ![O7tAoGeG.png|118](https://img.memset0.cn/2024/08/30/O7tAoGeG.png)
 
 ### 3.4. ComplEx
 
@@ -130,7 +130,7 @@ TransE 和 TransR 等评分函数都是 $L_{1}$ 或 $L_{2}$ 距离的相反数�
 
 四种算法的表示能力对比：
 
-![dou5FzsL.png|645](https://static.memset0.cn/img/v6/2024/08/30/dou5FzsL.png)
+![dou5FzsL.png|645](https://img.memset0.cn/2024/08/30/dou5FzsL.png)
 
 ## 4. 知识图谱推理
 

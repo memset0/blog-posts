@@ -7,7 +7,7 @@ sync: /course/c-programming/note.md
 
 ### 1.1. 隐式类型转换
 
-![|433](https://static.memset0.cn/img/v6/2024/02/08/350EXKIx.png)
+![|433](https://img.memset0.cn/2024/02/08/350EXKIx.png)
 
 - 水平方向：自动转换
 - 垂直方向：低->高（短->长，有符号->无符号）
@@ -20,11 +20,11 @@ sync: /course/c-programming/note.md
 
 ### 2.1. 优先级
 
-![Pasted image 20240103225527|678](https://static.memset0.cn/img/v6/2024/02/08/eu54EX0G.png)
+![Pasted image 20240103225527|678](https://img.memset0.cn/2024/02/08/eu54EX0G.png)
 
-![|720](https://static.memset0.cn/img/v6/2024/02/08/kpoaJNvm.png)
+![|720](https://img.memset0.cn/2024/02/08/kpoaJNvm.png)
 
-![|720](https://static.memset0.cn/img/v6/2024/02/08/P8WtKyi5.png)
+![|720](https://img.memset0.cn/2024/02/08/P8WtKyi5.png)
 
 ## 3. 函数
 
@@ -61,7 +61,7 @@ static int y; // 定义仅在file2.c中使用的变量y
 
 ### 5.1. 动态内存分配
 
-![|371](https://static.memset0.cn/img/v6/2024/02/08/bRKOoSDg.png)
+![|371](https://img.memset0.cn/2024/02/08/bRKOoSDg.png)
 
 ### 5.2. 指针数组
 
@@ -79,7 +79,7 @@ const char *pcolor[ ] = {"red", "blue", "yellow", "green", "black"};
 // ccolor[0][0] = 'x' 可以但 pcolor[0][0] = 'x' 不可以
 ```
 
-![Pasted image 20240103210052|648](https://static.memset0.cn/img/v6/2024/02/08/qgsofRUX.png)
+![Pasted image 20240103210052|648](https://img.memset0.cn/2024/02/08/qgsofRUX.png)
 
 #### 5.2.3. 命令行参数
 
@@ -131,7 +131,7 @@ a+i <=> &a[i] int (*)[4]
 
 编译器改写规则：将（最外层的）数组改写为指针。
 
-![Pasted image 20240103221019|647](https://static.memset0.cn/img/v6/2024/02/08/TtgN226c.png)
+![Pasted image 20240103221019|647](https://img.memset0.cn/2024/02/08/TtgN226c.png)
 
 ```cpp
 int a[10][20];
@@ -156,9 +156,9 @@ void func(int (*a)[20]);  // √
 - 使用 `FILE *fopen(char *文件名, char *模式)` 打开文件，返回对应的文件指针。如果返回值为 `NULL` 说明文件打开失败。
 - 使用 `int fclose(FILE *文件指针)` 关闭文件，如果返回值非 0 说明文件关闭失败。
 
-![|509](https://static.memset0.cn/img/v6/2024/02/08/PCJUQXDp.png)
+![|509](https://img.memset0.cn/2024/02/08/PCJUQXDp.png)
 
-![|514](https://static.memset0.cn/img/v6/2024/02/08/lsb9VGdd.png)
+![|514](https://img.memset0.cn/2024/02/08/lsb9VGdd.png)
 
 ### 6.2. 文件读写
 
@@ -174,9 +174,9 @@ while ((ch = fgetc(file1)) != EOF) {
 ```
 
 - 使用 `char *fgets(char *s, int n, FILE* file)` **读取字符串**：
-    - 连续读取至多 n-1 个字符并将其保存到 s 中。
-    - 如果遇到换行符（会保留换行符）或 EOF（不保留）则截止，并自动往末尾添加 `\0`。
-    - 执行成功时返回读取到的字符串，否则返回 NULL。
+  - 连续读取至多 n-1 个字符并将其保存到 s 中。
+  - 如果遇到换行符（会保留换行符）或 EOF（不保留）则截止，并自动往末尾添加 `\0`。
+  - 执行成功时返回读取到的字符串，否则返回 NULL。
 - 使用 `char *fputs(char *s, FILE *file)` **写入字符串**：
 
 还可以使用 `fscanf` 与 `fprintf`，第一个参数是文件指针，后面参数和 `scanf` 与 `printf` 的使用方法相同。
@@ -245,9 +245,9 @@ extern void g(); // 外部全局函数，可以在其他文件中访问
 | 浮点型 | `%f`<br />`%e`<br />`%g`           | 以小数形式输出，默认小数位数为 6 位<br />以指数形式输出，数字部分默认为 6 位<br />以优化的小数或指数形式输出（去掉无意义的零后所占宽度较小的） |
 | 字符型 | `%c`<br />`%s`                     | 输出字符<br />输出字符串                                                                                                                       |
 
-![|720](https://static.memset0.cn/img/v6/2024/02/08/TJjvwgCW.png)
+![|720](https://img.memset0.cn/2024/02/08/TJjvwgCW.png)
 
-![|720](https://static.memset0.cn/img/v6/2024/02/08/y0nSA3kD.png)
+![|720](https://img.memset0.cn/2024/02/08/y0nSA3kD.png)
 
 ### 8.3. `abs()` 函数与 C++ 不同
 

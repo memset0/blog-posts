@@ -8,13 +8,13 @@ sync: /course/cs224w/note/graph-augmentation.md
 进行 **图增强(graph augmentation)** 的动机：输入图很难恰好是适宜于 GNN 的最优计算图。
 
 - 特征层面：
-    - 输入图可能缺少特征
-    - 特征很难编码
-    - GNN 难以学习到特定的图结构
+  - 输入图可能缺少特征
+  - 特征很难编码
+  - GNN 难以学习到特定的图结构
 - 结构层面：
-    - 图过度稀疏：message passing 效率太低——增加虚拟节点/边
-    - 图过度稠密：message passing 代价太高——对邻居抽样
-    - 图太大：放不进 GPU——在 embedding 时对子图抽样
+  - 图过度稀疏：message passing 效率太低——增加虚拟节点/边
+  - 图过度稠密：message passing 代价太高——对邻居抽样
+  - 图太大：放不进 GPU——在 embedding 时对子图抽样
 
 ## 2. 图特征增强
 
@@ -23,13 +23,13 @@ sync: /course/cs224w/note/graph-augmentation.md
 - constant node feature：给所有点赋相同常量作为特征。所有点的特征是相同的，但是 GNN 仍然可以从图结构中学到信息。
 - one-hot node feature：给每个点分配编号，并编码成 one-hot 向量。
 
-![o2smfZD7.png|603](https://static.memset0.cn/img/v6/2024/08/30/o2smfZD7.png)
+![o2smfZD7.png|603](https://img.memset0.cn/2024/08/30/o2smfZD7.png)
 
 ### 2.2. GNN 难以学习特定图结构
 
 多元环的计算图都是二叉树，无法进行区分。类似的问题在特定图结构上也会出现。
 
-![74MVmsYr.png|600](https://static.memset0.cn/img/v6/2024/08/30/74MVmsYr.png)
+![74MVmsYr.png|600](https://img.memset0.cn/2024/08/30/74MVmsYr.png)
 
 需要把此类图结构特征给编码到节点当中（可以加一维也可以是添加一个 one-hot 向量）。常用的有：
 

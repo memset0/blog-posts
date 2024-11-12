@@ -30,21 +30,21 @@ $$
 - 与一个两层的前馈神经网络相比，SRN 添加了循环层到循环层的反馈连接，即净输入中多了一项 $\boldsymbol{U}\boldsymbol{h}_{t-1}$。
 - 可以证明，所有的图灵机都可以被一个使用 Sigmoid 型激活函数的神经元构成的全连接循环网络进行模拟。
 
-![xAtlLVws.png|495](https://static.memset0.cn/img/v6/2024/08/29/xAtlLVws.png)
+![xAtlLVws.png|495](https://img.memset0.cn/2024/08/29/xAtlLVws.png)
 
 根据循环神经网络的通用近似定理，一个完全连接的循环网络如果具有足够数量的神经元，可以近似任何非线性动力系统。
 
 > [!important]- 循环神经网络的通用近似定理
 >
-> ![|600](https://static.memset0.cn/img/v6/2024/08/29/TtMeYetN.png)
+> ![|600](https://img.memset0.cn/2024/08/29/TtMeYetN.png)
 
 ### 1.2. 应用到机器学习任务
 
-| 模式                                    | 说明                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **序列到类别模式**<br>（预测是单个标量）<br>          | 我们可以最后时刻的状态作为整个序列的表示送到分类器中，即 $\hat{y} = g(\boldsymbol{h}_{T})$；也可以将整个序列的所有状态求平均，并以平均状态作为整个序列的表示，即 $\hat{y} = g\left( \frac{1}{T} \sum_{t=1}^{T} \boldsymbol{h}_{t} \right)$。<br><br>![](https://static.memset0.cn/img/v6/2024/08/29/V9GIVh7E.png)<br><br>                                                                                                                                                                      |
-| **序列到序列模式**<br>（预测是序列，且长度与原序列相同）<br>  | 可以将每一个时刻的隐藏状态代表当前时刻和历史的信息，即 $\hat{y}_{t} = g(\boldsymbol{h}_{t}),\ \forall 1\leq t\leq T$。<br><br>![](https://static.memset0.cn/img/v6/2024/08/29/kedU3Kv4.png)<br><br>                                                                                                                                                                                                                                                        |
-| **异步的序列到序列模式**<br>（预测是序列，但长度不必与原序列相同） | 一般是先将样本输入到一个循环神经网络——**编码器(encoder)** 中，并得到其编码 $\boldsymbol{h}_{T}$，然后再使用另一个循环神经网络——**解码器(decoder)** 得到输出，即 $\boldsymbol{h}_{t} = f_{1} (\boldsymbol{h}_{{t-1}}, \boldsymbol{x}_{t}),\ \forall t\in [1,T]$；$\boldsymbol{h}_{T+t} = f_{2}(\boldsymbol{h}_{T+t-1}, \hat{y}_{t-1}),\ \hat{y}_{t} = g(\boldsymbol{h}_{T+t}),\ \forall t\in [1,M]$。<br><br><br><br>![](https://static.memset0.cn/img/v6/2024/08/29/vpz6ZeQL.png)<br> |
+| 模式                                                               | 说明                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| ------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **序列到类别模式**<br>（预测是单个标量）<br>                       | 我们可以最后时刻的状态作为整个序列的表示送到分类器中，即 $\hat{y} = g(\boldsymbol{h}_{T})$；也可以将整个序列的所有状态求平均，并以平均状态作为整个序列的表示，即 $\hat{y} = g\left( \frac{1}{T} \sum_{t=1}^{T} \boldsymbol{h}_{t} \right)$。<br><br>![](https://img.memset0.cn/2024/08/29/V9GIVh7E.png)<br><br>                                                                                                                                                             |
+| **序列到序列模式**<br>（预测是序列，且长度与原序列相同）<br>       | 可以将每一个时刻的隐藏状态代表当前时刻和历史的信息，即 $\hat{y}_{t} = g(\boldsymbol{h}_{t}),\ \forall 1\leq t\leq T$。<br><br>![](https://img.memset0.cn/2024/08/29/kedU3Kv4.png)<br><br>                                                                                                                                                                                                                                                                                   |
+| **异步的序列到序列模式**<br>（预测是序列，但长度不必与原序列相同） | 一般是先将样本输入到一个循环神经网络——**编码器(encoder)** 中，并得到其编码 $\boldsymbol{h}_{T}$，然后再使用另一个循环神经网络——**解码器(decoder)** 得到输出，即 $\boldsymbol{h}_{t} = f_{1} (\boldsymbol{h}_{{t-1}}, \boldsymbol{x}_{t}),\ \forall t\in [1,T]$；$\boldsymbol{h}_{T+t} = f_{2}(\boldsymbol{h}_{T+t-1}, \hat{y}_{t-1}),\ \hat{y}_{t} = g(\boldsymbol{h}_{T+t}),\ \forall t\in [1,M]$。<br><br><br><br>![](https://img.memset0.cn/2024/08/29/vpz6ZeQL.png)<br> |
 
 ## 2. 参数学习
 
@@ -70,7 +70,7 @@ TBD
 
 ### 3.1. 长短期记忆网络（LSTM）
 
-![AzTK9Sbk.png|545](https://static.memset0.cn/img/v6/2024/08/17/AzTK9Sbk.png)
+![AzTK9Sbk.png|545](https://img.memset0.cn/2024/08/17/AzTK9Sbk.png)
 
 **长短期存储器(Long Short-Term Memory, LSTM)** 引入了 **记忆元(memory cell)** 或者说 **内部状态(internal state)** $\boldsymbol{c}_{t} \in \mathbb{R}^D$ 专门进行线性的循环消息传递，同时非线性地输出信息给隐藏层的外部状态 $\boldsymbol{h}_{t} \in \mathbb{R}^{D}$。记忆元会通过 **门控机制(gating mechanism)** 从 **候选记忆元(candidate memory cell)** 继承信息：
 
@@ -114,7 +114,7 @@ $$
 
 ### 3.2. 门控循环单元网络（GRU）
 
-![ysUJrmZG.png|544](https://static.memset0.cn/img/v6/2024/08/29/ysUJrmZG.png)
+![ysUJrmZG.png|544](https://img.memset0.cn/2024/08/29/ysUJrmZG.png)
 
 **门控循环单元(Gated Recurrent Unit, GRU)** 是一种比 LSTM 网络更为简单的循环神经网络。GRN 通过在公式 $\boldsymbol{h}_{t} = \boldsymbol{h}_{t-1} + g(\boldsymbol{x}_{t}, \boldsymbol{h}_{t-1}; \theta)$ 中引入一个 **更新门(update gate)** $\boldsymbol{z}_{t}\in [0,1]^{D}$ 来控制当前状态需要从历史状态 $\boldsymbol{h}_{t-1}$ 中保留多少信息，以及从候选状态 $\tilde{\boldsymbol{h}}_{t}$ 中接受多少新信息，即
 
@@ -138,7 +138,7 @@ $$
 
 ### 4.1. 堆叠循环神经网络（SRNN）
 
-![Bojqy1tQ.png|454](https://static.memset0.cn/img/v6/2024/08/29/Bojqy1tQ.png)
+![Bojqy1tQ.png|454](https://img.memset0.cn/2024/08/29/Bojqy1tQ.png)
 
 **堆叠循环神经网络(Stacked Recurrent Neural Network, SRNN)** 通过将多个循环神经网络堆叠起来来增加循环神经网络的深度。一个堆叠的简单循环网络（Stacked SRN）也被称为 **循环多层感知器(Recurrent Multi-Layer Perception, RMLP)**。定义 $\boldsymbol{h}_{t}^{(l)}$ 为时刻 $t$ 第 $l$ 层的隐状态，特别地有 $\boldsymbol{h}_{t}^{(0)} = \boldsymbol{x}_{t}$，那么
 
@@ -148,7 +148,7 @@ $$
 
 ### 4.2. 双向循环伸进网络（Bi-RNN）
 
-![TYn0AVpw.png|415](https://static.memset0.cn/img/v6/2024/08/29/TYn0AVpw.png)
+![TYn0AVpw.png|415](https://img.memset0.cn/2024/08/29/TYn0AVpw.png)
 
 **双向循环神经网络(Bidirectional Recurrent Neural Network, Bi-RNN)** 由两层循环神经网络构成，且他们的输入相同，只是信息传递的方向不同。
 
@@ -158,7 +158,7 @@ $$
 
 **递归神经网络(Recursive Neural Network, RecNN)** 是循环神经网络在有向无环图上的拓展。
 
-![4NbGDttq.png|530](https://static.memset0.cn/img/v6/2024/08/29/4NbGDttq.png)
+![4NbGDttq.png|530](https://img.memset0.cn/2024/08/29/4NbGDttq.png)
 
 ## 6. 参考资料
 

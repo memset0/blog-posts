@@ -49,25 +49,25 @@ F
 
 > Insert {1,2,3,4,5,6,7} into an initially empty splay tree, then delete 5. Which one of the following statements is FALSE?
 >
-> -   A.4 is the root
+> - A.4 is the root
 >
-> -   B.3 and 6 are siblings
+> - B.3 and 6 are siblings
 >
-> -   C.1 is the left child of 2
+> - C.1 is the left child of 2
 >
-> -   D.3 is the right child of 2
+> - D.3 is the right child of 2
 
 D
 
 > If there are 21 nodes in an AVL tree, then the maximum depth of the tree is \_\_. The depth of an empty tree is defined to be 0.
 >
-> -   A.6
+> - A.6
 >
-> -   B.4
+> - B.4
 >
-> -   C.7
+> - C.7
 >
-> -   D.5
+> - D.5
 
 A
 
@@ -79,113 +79,113 @@ A
 >
 > Which of the following is FALSE?
 >
-> -   A.The amortized running time of merge is $O(\log  n)$.
+> - A.The amortized running time of merge is $O(\log  n)$.
 >
-> -   B.There are at most $O(\log n)$ light nodes in the right path of a $n$-node tree.
+> - B.There are at most $O(\log n)$ light nodes in the right path of a $n$-node tree.
 >
-> -   C.The only nodes whose heavy/light status can change are nodes that are initially on the right path.
+> - C.The only nodes whose heavy/light status can change are nodes that are initially on the right path.
 >
-> -   D.All heavy nodes in the right path of A and B will become the light nodes after merging.
+> - D.All heavy nodes in the right path of A and B will become the light nodes after merging.
 
 D
 
 > Which of the following binomial trees can represent a binomial queue of size 103?
 >
-> -   A.$B_0B_1B_3B_5B_6$
+> - A.$B_0B_1B_3B_5B_6$
 >
-> -   B.$B_0B_1B_2B_5B_6$
+> - B.$B_0B_1B_2B_5B_6$
 >
-> -   C.$B_0B_1B_2B_4B_5B_6$
+> - C.$B_0B_1B_2B_4B_5B_6$
 >
-> -   D.$B_0B_1B_2B_3B_4B_6$
+> - D.$B_0B_1B_2B_3B_4B_6$
 
 B
 
 > After deleting 15 from the red-black tree given in the figure, which one of the following statements must be FALSE?
 >
-> ![](https://static.memset0.cn/img/v6/2024/10/31/sVmAuNHM.png)
+> ![](https://img.memset0.cn/2024/10/31/sVmAuNHM.png)
 >
-> -   A.13 is the parent of 14, and 11 is red
+> - A.13 is the parent of 14, and 11 is red
 >
-> -   B.14 is the parent of 13, and 13 and 17 are siblings
+> - B.14 is the parent of 13, and 13 and 17 are siblings
 >
-> -   C.11 and 17 are siblings, and 17 is the parent of 14
+> - C.11 and 17 are siblings, and 17 is the parent of 14
 >
-> -   D.13 is the parent of 17, and 14 is red
+> - D.13 is the parent of 17, and 14 is red
 
 A
 
 > Assume that there are 10000 documents in the database, and the statistical data for one query are shown in the following table. One metric for evaluating the relevancy of the query is F-α score, which is defined as $\frac{((1+ \alpha)\cdot(precision\cdot recall))}{(\alpha\cdot precision+recall)}$. Then the F-0.5 ($\alpha$=0.5) score for this query is:
 >
-> ![|300](https://static.memset0.cn/img/v6/2024/10/31/2uXWhSDJ.png)
+> ![|300](https://img.memset0.cn/2024/10/31/2uXWhSDJ.png)
 >
-> -   A.0.62
+> - A.0.62
 >
-> -   B.0.57
+> - B.0.57
 >
-> -   C.0.52
+> - C.0.52
 >
-> -   D.0.60
+> - D.0.60
 
 B
 
 > Insert { 5, 6, 1, 7, 0, 4, 2, 3, 8 } into an initially empty 2-3 B tree (with splitting). Which one of the following statements is FALSE?
 >
-> -   A.the key stored in the root is 4
+> - A.the key stored in the root is 4
 >
-> -   B.6 and 7 are in the same node
+> - B.6 and 7 are in the same node
 >
-> -   C.the node containing 6 has 2 children
+> - C.the node containing 6 has 2 children
 >
-> -   D.there are 5 leaf nodes
+> - D.there are 5 leaf nodes
 
 D
 
 > Given the following game tree, if node b is pruned with α-β pruning algorithm, which of the following statements about the value of node a is correct?
 >
-> ![a-b剪枝-1.jpg|361](https://static.memset0.cn/img/v6/2024/10/31/apqmzUbq.png)
+> ![a-b剪枝-1.jpg|361](https://img.memset0.cn/2024/10/31/apqmzUbq.png)
 >
-> -   A.greater than 68
+> - A.greater than 68
 >
-> -   B.less than 65
+> - B.less than 65
 >
-> -   C.less than 68
+> - C.less than 68
 >
-> -   D.greater than 65
+> - D.greater than 65
 
 A
 
 > In the context of Divide and Conquer algorithms, which of the following statements is true regarding the "Merge Sort" algorithm?
 >
-> -   A.Merge Sort has a worst-case time complexity of $O(n^2)$ and employs a greedy strategy to sort elements efficiently.
+> - A.Merge Sort has a worst-case time complexity of $O(n^2)$ and employs a greedy strategy to sort elements efficiently.
 >
-> -   B.Merge Sort performs sorting by repeatedly partitioning the array into subarrays and selecting pivot elements for comparison.
+> - B.Merge Sort performs sorting by repeatedly partitioning the array into subarrays and selecting pivot elements for comparison.
 >
-> -   C.Merge Sort is not suitable for sorting large datasets due to its inefficient memory usage.
+> - C.Merge Sort is not suitable for sorting large datasets due to its inefficient memory usage.
 >
-> -   D.Merge Sort has a best-case time complexity of $O(n \log n)$ and uses a divide-and-conquer approach to sort a list of elements.
+> - D.Merge Sort has a best-case time complexity of $O(n \log n)$ and uses a divide-and-conquer approach to sort a list of elements.
 
 D
 
 > Which one of the following statements is FALSE about skew heaps?
 >
-> -   A.Comparing to leftist heaps, skew heaps are always more efficient in space
+> - A.Comparing to leftist heaps, skew heaps are always more efficient in space
 >
-> -   B.Skew heaps have $O(log N)$ worst-case cost for merging
+> - B.Skew heaps have $O(log N)$ worst-case cost for merging
 >
-> -   C.Skew heaps have $O(log N)$ amortized cost per operation
+> - C.Skew heaps have $O(log N)$ amortized cost per operation
 >
-> -   D.Skew heaps do not need to maintain the null path length of any node
+> - D.Skew heaps do not need to maintain the null path length of any node
 
 B
 
 > Given two words `word1` and `word2`, the minimum number of operations required to transform `word1` into `word2` is defined as the edit distance between the two words.The operations include:
 >
-> -   Inserting a character
+> - Inserting a character
 >
-> -   Deleting a character
+> - Deleting a character
 >
-> -   Replacing a character
+> - Replacing a character
 >
 > Example:
 >
@@ -197,18 +197,18 @@ B
 >
 > We can use dynamic programming to solve it.Definition:
 >
-> -   `dp[i][j]` represents the minimum edit distance between the substring of word1 ending at index i-1, and the substring of word2 ending at index j-1.
-> -   `word[i]` represents the i-th character of the word
+> - `dp[i][j]` represents the minimum edit distance between the substring of word1 ending at index i-1, and the substring of word2 ending at index j-1.
+> - `word[i]` represents the i-th character of the word
 >
 > Which one of the following statements is FALSE?
 >
-> -   A.The edit distance between "intention" and "execution" is 5.
+> - A.The edit distance between "intention" and "execution" is 5.
 >
-> -   B.When two words have the same suffix, the edit distance remains unchanged after removing the suffix.
+> - B.When two words have the same suffix, the edit distance remains unchanged after removing the suffix.
 >
-> -   C.When `word1[i - 1`] and `word2[j - 1]` are not equal, `dp[i][j] = min { dp[i - 1][j], dp[i][j - 1] } + 1`.
+> - C.When `word1[i - 1`] and `word2[j - 1]` are not equal, `dp[i][j] = min { dp[i - 1][j], dp[i][j - 1] } + 1`.
 >
-> -   D.When $i$ is less than the length of `word 1`, `dp[i][0] = i`.
+> - D.When $i$ is less than the length of `word 1`, `dp[i][0] = i`.
 
 C
 

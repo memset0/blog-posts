@@ -17,7 +17,7 @@ There exists an AVL tree of depth 6 (the depth of the root is 0) containing 31 n
 >
 > 课件也有提到：
 >
-> ![|500](https://static.memset0.cn/img/v6/2024/06/23/f11AlUw9.png)
+> ![|500](https://img.memset0.cn/2024/06/23/f11AlUw9.png)
 
 ## Ch02 Red Black Tree & B+ Tree
 
@@ -64,7 +64,7 @@ For the Turnpike reconstruction algorithm of $N$ points, assuming that the dista
 
 Given the following game tree, the red node will be pruned with $\alpha$-$\beta$ pruning algorithm if and only if \_\_\_.
 
-![|279](https://static.memset0.cn/img/v6/2024/11/07/713RJSWP.png)
+![|279](https://img.memset0.cn/2024/11/07/713RJSWP.png)
 
 - A. $6\leq x\leq13$
 - B. $x\geq13$
@@ -95,7 +95,7 @@ Recall that, to solve the cloest pair problem, the first step of the divide-and-
 > [!quote]- Answer
 > F。只检查了是否会小于 $\delta$，有可能最小的一对比这个大，直接没检查过。
 
-![](https://static.memset0.cn/img/v6/2024/06/23/8e5fbQEu.png)
+![](https://img.memset0.cn/2024/06/23/8e5fbQEu.png)
 
 > [!quote]- Answer
 > D。
@@ -103,7 +103,7 @@ Recall that, to solve the cloest pair problem, the first step of the divide-and-
 > $$T(n)=4T(\dfrac{n}{2})+n\sqrt{n}=\sum_{k=1}^{\log n} 4^k (\dfrac{n}{2^k})^{\frac{3}{2}}=\sum_{k=1}^{\log n} 2^{2k-1.5k} n^{1.5}=n^{1.5}\sum_{k=1}^{\log n} 2^{0.5k}$$
 > 应用等比数列求和公式可证 $T(n)=O(n^2)$。
 
-![](https://static.memset0.cn/img/v6/2024/06/24/MZgljPz5.png)
+![](https://img.memset0.cn/2024/06/24/MZgljPz5.png)
 
 > [!quote]- Answer
 > A。可以直接应用主定理。
@@ -153,11 +153,11 @@ The following problem is in co-NP. (T/F)
 > [!quote]- Answer
 > T。$\text{P} = \text{co-P}$；$\text{P}\subseteq \text{co-NP}$。
 >
-> ![|360](https://static.memset0.cn/img/v6/2024/06/24/Vukh5JM9.png)
+> ![|360](https://img.memset0.cn/2024/06/24/Vukh5JM9.png)
 
 ## Ch11 Approximation
 
-![](https://static.memset0.cn/img/v6/2024/06/24/Q8FZRqud.png)
+![](https://img.memset0.cn/2024/06/24/Q8FZRqud.png)
 
 > [!quote]- Answer
 > 2。pre-order 和 post-order 都是可行的。因为最小生成树的边权和一定小于 OPT，而这两种 travelsal 每条边最多走两次，所以是一个 2-approximation。
@@ -167,7 +167,7 @@ As we know there is a 2-approximation algorithm for the Vertex Cover problem. Th
 > [!quote]- Answer
 > F。虽然这两个问题是可以互相规约的，但是计算近视率时除的最优解不同，稍微构造一下即可推翻：
 >
-> ![](https://static.memset0.cn/img/v6/2024/06/24/BpnJnRlM.png)
+> ![](https://img.memset0.cn/2024/06/24/BpnJnRlM.png)
 
 ## Ch12 Local Search
 
@@ -181,7 +181,7 @@ Max-cut problem: Given an undirected graph $G = (V, E)$ with positive integer ed
 > [!quote]- Answer
 > A。直接代入公式：
 >
-> ![|400](https://static.memset0.cn/img/v6/2024/06/24/hiHIZw13.png)
+> ![|400](https://img.memset0.cn/2024/06/24/hiHIZw13.png)
 
 ## Ch14 Parallel
 
@@ -195,8 +195,8 @@ Which one of the following statements about the Maximum Finding is False?
 > [!quote]- Answer
 > A。
 >
-> -   A 选项 workload 无论怎么说至少得有 $O(n)$
-> -   B 选项会遇到要同时写的问题，但写的数是同一个，所以实际上不会冲突（？）
+> - A 选项 workload 无论怎么说至少得有 $O(n)$
+> - B 选项会遇到要同时写的问题，但写的数是同一个，所以实际上不会冲突（？）
 
 When we solve the summation problem via designing the parallel algorithms, we shorten the aasymptotic time complexity but take more asymptotic work loads comparing with the sequential algorithms.
 
@@ -230,9 +230,9 @@ Given 100,000,000 records, each 256 bytes, and an internal memory size of 128MB,
 > [!quote]- Answer
 > B。pass 数量是 log (runs 数量)+1（根据课件公式）
 >
-> ![|300](https://static.memset0.cn/img/v6/2024/06/24/i4dnKHlD.png)
+> ![|300](https://img.memset0.cn/2024/06/24/i4dnKHlD.png)
 >
-> ![](https://static.memset0.cn/img/v6/2024/06/24/OuRZm3b0.png)
+> ![](https://img.memset0.cn/2024/06/24/OuRZm3b0.png)
 
 We have 4 tapes for 3-way external merge sorting. How shall we distribute 31 runs into 3 tapes, such that the total number of passes is minimized?
 
@@ -261,7 +261,7 @@ Use 2-way merge with 4 input buffers and 2 output buffers for parallel operation
 >
 > https://blog.csdn.net/HGGshiwo/article/details/118362764
 >
-> ![](https://static.memset0.cn/img/v6/2024/06/24/wiSthFVt.png)
+> ![](https://img.memset0.cn/2024/06/24/wiSthFVt.png)
 
 ## Ex01 Amortized Analysis
 
@@ -314,8 +314,8 @@ Which of the following potential function $\Phi(D_i)$ can help us achieve $O(1)$
 > [!quote]- Answer
 > C。可以这样分析，设 $\Phi(D_i)= \alpha \cdot num(T)+\beta \cdot size(T)$。
 >
-> -   简单加入一个数，$c_i = 1$，$\Phi(D_i)-\Phi(D_{i-1}) = \alpha$。
-> -   加入一个数并拓展，$c_i=5n+1$，$\Phi(D_i)-\Phi(D_{i-1}) = \alpha + \beta \cdot 4 n$。
+> - 简单加入一个数，$c_i = 1$，$\Phi(D_i)-\Phi(D_{i-1}) = \alpha$。
+> - 加入一个数并拓展，$c_i=5n+1$，$\Phi(D_i)-\Phi(D_{i-1}) = \alpha + \beta \cdot 4 n$。
 >
 > 现在让 $O(1)=1+\alpha=\alpha+\beta\cdot 4n$，所以有 $\beta = -\dfrac{1}{4}$。再由于 $\Phi(D_i)\ge 0$，可得 $\alpha\ge \dfrac{5}{4}$。所以选 C。
 

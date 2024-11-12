@@ -9,7 +9,7 @@ sync: /course/dd/tool/logisim.md
 
 `Ctrl + 1/2/.../9` 对应工具栏的常用工具，参见下图
 
-![SgAO9fzz.png|488](https://static.memset0.cn/img/v6/2024/03/16/SgAO9fzz.png)
+![SgAO9fzz.png|488](https://img.memset0.cn/2024/03/16/SgAO9fzz.png)
 
 ### 1.2. 自定义器件
 
@@ -21,7 +21,7 @@ sync: /course/dd/tool/logisim.md
 
 可以将一路信号分流为多路，或将多路信号汇总为一路。无论分流还是汇总，使用的分流器都是同一个模块，只不过连接方向不同，可以选中模块然后点击方向键修改。
 
-![3PpJZPOr.png|344](https://static.memset0.cn/img/v6/2024/03/16/3PpJZPOr.png)
+![3PpJZPOr.png|344](https://img.memset0.cn/2024/03/16/3PpJZPOr.png)
 
 分流器的输入位宽和输出位宽要对应，否则连线颜色会变成橙色并标有大大的位宽数字作为提示。
 

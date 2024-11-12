@@ -12,7 +12,7 @@ query（自主提示）和 key（非自主提示）之间的交互形成了 **�
 
 考虑非线性函数 $y_{i} = 2 \sin(x_{i}) +x_{i}^{0.8} + \epsilon$ 构成的人工数据集，其中加入了噪声项 $\epsilon \sim N(0,0.5^{2})$。如果我们直接使用平均汇聚函数 $\displaystyle{f(x)=\dfrac{1}{n} \sum_{i=1}^{n} y_{i}}$，则预测效果与真实函数明显差距较大：
 
-![sfUoWK8M.png|318](https://static.memset0.cn/img/v6/2024/08/17/sfUoWK8M.png)
+![sfUoWK8M.png|318](https://img.memset0.cn/2024/08/17/sfUoWK8M.png)
 
 显然，我们的平均汇聚器中忽略了输入 $x_{i}$。如果我们能在样本 $(x_{i},y_{i})$ 附近“集中注意力”，效果应当会更好。
 
@@ -34,7 +34,7 @@ $$
 
 这样，即使是仍使用平均汇聚，效果仍会好上不少。
 
-![11mNihQ8.png|331](https://static.memset0.cn/img/v6/2024/08/17/11mNihQ8.png)
+![11mNihQ8.png|331](https://img.memset0.cn/2024/08/17/11mNihQ8.png)
 
 - 非参数的 Nadaraya-Watson 核回归具有 **一致性(consistency)** 的优点：如果有足够的数据，此模型会收敛到最优结果。
 
@@ -50,7 +50,7 @@ $$
 
 ## 2. 注意力评分
 
-![WRfO2Df9.png|475](https://static.memset0.cn/img/v6/2024/08/17/WRfO2Df9.png)
+![WRfO2Df9.png|475](https://img.memset0.cn/2024/08/17/WRfO2Df9.png)
 
 形式化地，设有一个查询 $\boldsymbol{q}\in \mathbb{R}^{q}$ 和 $m$ 个键-值对 $(\boldsymbol{k}_{1},\boldsymbol{v}_{1}),\dots,(\boldsymbol{k}_{m},\boldsymbol{v}_{m})$，其中 $\boldsymbol{k}_{i}\in \mathbb{R}^{k}$，$\boldsymbol{v}_{i}\in \mathbb{R}^{v}$，则注意力聚合函数 $f$ 就可以被表示成值的加权和：
 
@@ -117,7 +117,7 @@ $$
 
 ## 4. Transformer
 
-![qeAWVeXY.png|437](https://static.memset0.cn/img/v6/2024/08/26/qeAWVeXY.png)
+![qeAWVeXY.png|437](https://img.memset0.cn/2024/08/26/qeAWVeXY.png)
 
 ## 5. 参考资料
 

@@ -9,7 +9,7 @@ sync: /course/cs224w/note/community-detection.md
 
 现实生活中的图往往会长成这样：**社区(community)** 内部边相对稠密，而向外部的边比较稀疏。
 
-![0FefXPrO.png|172](https://static.memset0.cn/img/v6/2024/09/01/0FefXPrO.png)
+![0FefXPrO.png|172](https://img.memset0.cn/2024/09/01/0FefXPrO.png)
 
 ### 1.2. 模块度
 
@@ -39,21 +39,21 @@ $$
 Louvain 算法的过程如下：
 
 - _Phase 1_: (Modularity is optimized by allowing only local changes to node-communities memberships)
-    - _Step 1_. 将每个节点单独划分为一个社区
-    - _Step 2_. 对于每个节点，计算将其放到另一社区的**模块度增益**，如果有 $>0$ 的就选择其中最大的放过去。
-    - _Step 3_. 一直循环第二步直到划分不发生变化。
+  - _Step 1_. 将每个节点单独划分为一个社区
+  - _Step 2_. 对于每个节点，计算将其放到另一社区的**模块度增益**，如果有 $>0$ 的就选择其中最大的放过去。
+  - _Step 3_. 一直循环第二步直到划分不发生变化。
 - _Phase 2_: (The identified communities are aggregated into super-nodes to build a new network)
-    - 将划分到一个社区的点合并成一个 super-node，从而得到一个新的网络。
+  - 将划分到一个社区的点合并成一个 super-node，从而得到一个新的网络。
 
 这样一个完整的过程称为一个 PASS，有必要的话可以执行多个 PASS。
 
-![P2cHnTeO.png|547](https://static.memset0.cn/img/v6/2024/09/01/P2cHnTeO.png)
+![P2cHnTeO.png|547](https://img.memset0.cn/2024/09/01/P2cHnTeO.png)
 
 ### 2.2. BigCLAM
 
 > BigCLAM 算法可以解决社区之间有重叠的情况。
 >
-> ![9f1zpP7F.png|399](https://static.memset0.cn/img/v6/2024/09/01/9f1zpP7F.png)
+> ![9f1zpP7F.png|399](https://img.memset0.cn/2024/09/01/9f1zpP7F.png)
 
 TBD
 

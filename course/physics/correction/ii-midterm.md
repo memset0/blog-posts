@@ -11,19 +11,19 @@ sync: /course/physics/correction/ii-midterm.md
 
 > [!quote]- 解析
 >
-> ![|720](https://static.memset0.cn/img/v6/2024/11/02/fCzBKdc3.png)
+> ![|720](https://img.memset0.cn/2024/11/02/fCzBKdc3.png)
 
 ### 1.2. 大物甲课本 例题 10.2
 
 如图所示，一半径为 $R_1$ 的导体球 $A$，带有电量 $q$，球外有一内、外半径分别为 $R_2$ 和 $R_3$ 的同心球壳 $B$，带有电量 $Q$。（1）求球 $A$ 和球壳 $B$ 的电势；（2）若用细导线连接球 $A$ 和球壳 $B$，再求其电势；（3）若未连接时使外球接地，此时其电势又是多少？（4）如果外球接地后再拆除，然后将内球接地，此时其电势又是多少？（设外球离地很远）
 
-![|387](https://static.memset0.cn/img/v6/2024/11/02/h5QWrBfR.png)
+![|387](https://img.memset0.cn/2024/11/02/h5QWrBfR.png)
 
 > [!quote]- 解析
 >
-> ![|720](https://static.memset0.cn/img/v6/2024/11/02/ppcr5jTp.png)
+> ![|720](https://img.memset0.cn/2024/11/02/ppcr5jTp.png)
 >
-> ![|720](https://static.memset0.cn/img/v6/2024/11/02/vBMF9kOX.png)
+> ![|720](https://img.memset0.cn/2024/11/02/vBMF9kOX.png)
 
 ### 1.3. Savia7582 例题 10.4
 
@@ -31,16 +31,16 @@ sync: /course/physics/correction/ii-midterm.md
 
 > [!warning] 注意
 >
-> -   这里因为插入了电介质，所以不能直接使用原版的高斯定理。实际上两电介质中的电位移是相同的 $\boldsymbol{D}_{1} = \boldsymbol{D}_{2}$，但是电场并不相同 $\boldsymbol{E}_1 \neq \boldsymbol{E}_{2}$。（可以结合下一题更好理解）
-> -   极化电荷面密度需要点乘表面的法向量，这里就需要分析 $\boldsymbol{P}$ 的方向和法向量的方向（最后是一正一负）。
+> - 这里因为插入了电介质，所以不能直接使用原版的高斯定理。实际上两电介质中的电位移是相同的 $\boldsymbol{D}_{1} = \boldsymbol{D}_{2}$，但是电场并不相同 $\boldsymbol{E}_1 \neq \boldsymbol{E}_{2}$。（可以结合下一题更好理解）
+> - 极化电荷面密度需要点乘表面的法向量，这里就需要分析 $\boldsymbol{P}$ 的方向和法向量的方向（最后是一正一负）。
 
 > [!quote]- 解析
 >
 > （第一问也可以等效成电容器串联来做）
 >
-> ![|720](https://static.memset0.cn/img/v6/2024/11/02/naJ0vfst.png)
+> ![|720](https://img.memset0.cn/2024/11/02/naJ0vfst.png)
 >
-> ![](https://static.memset0.cn/img/v6/2024/11/02/4NFwALDf.png)
+> ![](https://img.memset0.cn/2024/11/02/4NFwALDf.png)
 
 ### 1.4. Savia7582 例题 10.5
 
@@ -48,13 +48,13 @@ sync: /course/physics/correction/ii-midterm.md
 
 > [!warning] 解析
 >
-> -   注意右侧的电介质产生的极化电荷和导体板上的自由电荷会相互影响。
-> -   这题里又变成了左右的电场相等而不是电位移矢量相等。这主要是因为上题确定了自由电荷的分布（为给定的带电量 $\pm q$），而这题里自由电荷会因为电介质的影响而重新分布。
-> -   这里又体现了严谨使用高斯定理的必要性。就是我们假设极板是有厚度的，高斯面只框一侧的电荷。因为如果我们框两侧的话，实际上已经假设了左右的电场/电位移矢量相同，自然就可能得出错误的结论。
+> - 注意右侧的电介质产生的极化电荷和导体板上的自由电荷会相互影响。
+> - 这题里又变成了左右的电场相等而不是电位移矢量相等。这主要是因为上题确定了自由电荷的分布（为给定的带电量 $\pm q$），而这题里自由电荷会因为电介质的影响而重新分布。
+> - 这里又体现了严谨使用高斯定理的必要性。就是我们假设极板是有厚度的，高斯面只框一侧的电荷。因为如果我们框两侧的话，实际上已经假设了左右的电场/电位移矢量相同，自然就可能得出错误的结论。
 
 > [!quote]- 解析
 >
-> ![|720](https://static.memset0.cn/img/v6/2024/11/02/OepviQ0J.png)
+> ![|720](https://img.memset0.cn/2024/11/02/OepviQ0J.png)
 
 ### 1.5. Savia7582 例题 10.6 (改)
 
@@ -62,8 +62,8 @@ sync: /course/physics/correction/ii-midterm.md
 
 > [!note] 评注
 >
-> -   此类问题需要关注电源是否断开，如果电源断开则 $Q$ 不变，电源不断开则 $U$ 不变。
-> -   像在这一题中，无论电源是否断开，算出来的电容值都是一样的。（这也很好理解）
+> - 此类问题需要关注电源是否断开，如果电源断开则 $Q$ 不变，电源不断开则 $U$ 不变。
+> - 像在这一题中，无论电源是否断开，算出来的电容值都是一样的。（这也很好理解）
 
 > [!quote]- 答案
 >
@@ -93,7 +93,7 @@ sync: /course/physics/correction/ii-midterm.md
 
 > [!quote]- 解析
 >
-> ![](https://static.memset0.cn/img/v6/2024/11/03/BkcNlp4W.png)
+> ![](https://img.memset0.cn/2024/11/03/BkcNlp4W.png)
 
 ### 1.8. 2020-2021 秋冬期中 T7【先得到电场 vs. 电位移？】
 
@@ -105,7 +105,7 @@ sync: /course/physics/correction/ii-midterm.md
 
 > [!quote]- 解析
 >
-> ![](https://static.memset0.cn/img/v6/2024/11/03/O1gWu1rq.png)
+> ![](https://img.memset0.cn/2024/11/03/O1gWu1rq.png)
 
 ### 1.9. 2021-2022 秋冬期中 T6【读题】
 
@@ -117,7 +117,7 @@ sync: /course/physics/correction/ii-midterm.md
 
 > [!quote]- 解析
 >
-> ![|250](https://static.memset0.cn/img/v6/2024/11/03/uqT8uQts.png)
+> ![|250](https://img.memset0.cn/2024/11/03/uqT8uQts.png)
 
 ### 1.10. 2021-2022 秋冬期中 解答题 T2
 
@@ -133,7 +133,7 @@ sync: /course/physics/correction/ii-midterm.md
 
 > [!quote]- 解析
 >
-> ![|720](https://static.memset0.cn/img/v6/2024/11/03/rdloCUJT.png)
+> ![|720](https://img.memset0.cn/2024/11/03/rdloCUJT.png)
 
 ## 2. 静磁学
 
@@ -141,35 +141,35 @@ sync: /course/physics/correction/ii-midterm.md
 
 在半径为 $R$ 的无限长半圆筒形金属薄壁中，自上而下通过电流 $I$，设电流均匀地分布在薄壁上，求轴线上 $P$ 点的磁感应强度。
 
-![|80](https://static.memset0.cn/img/v6/2024/11/02/wX2XXYil.png)
+![|80](https://img.memset0.cn/2024/11/02/wX2XXYil.png)
 
 > [!warning] 注意
 >
-> -   无限长直导线产生的磁场分母的系数是 $2\pi$ 而不是 $4\pi$，因为乘了个 $(\cos 0-\cos \pi)$，不要搞错了！
+> - 无限长直导线产生的磁场分母的系数是 $2\pi$ 而不是 $4\pi$，因为乘了个 $(\cos 0-\cos \pi)$，不要搞错了！
 
 > [!quote]- 解析
 >
-> ![|579](https://static.memset0.cn/img/v6/2024/11/02/6CwLRxXQ.png)
+> ![|579](https://img.memset0.cn/2024/11/02/6CwLRxXQ.png)
 >
-> ![|600](https://static.memset0.cn/img/v6/2024/11/02/pg3Qj2qR.png)
+> ![|600](https://img.memset0.cn/2024/11/02/pg3Qj2qR.png)
 
 ### 2.2. Savia7582 例题 12.9
 
-![|704](https://static.memset0.cn/img/v6/2024/11/02/1Lj36Tpd.png)
+![|704](https://img.memset0.cn/2024/11/02/1Lj36Tpd.png)
 
 > [!note] 等效环形电流
 > 半径 $r$ 处的等效环形电流为：$I=\dfrac{\text{ d}Q}{\text{ d}t}=\dfrac{\sigma (r\text{d} \theta \cdot \text{d}r)}{\text{d}t}=\sigma \omega r \text{d}r$。
 
 > [!quote]- 解析
 >
-> ![|580](https://static.memset0.cn/img/v6/2024/11/02/glXVYhFJ.png)
+> ![|580](https://img.memset0.cn/2024/11/02/glXVYhFJ.png)
 
 ### 2.3. Savia7582 例题 12.11【非均匀磁场中的磁力矩】
 
 如图所示，两根相互绝缘的无限长直导线 $1$ 和 $2$ 绕接于 $o$ 点，两导线间的夹角为 $90\degree$，通有相同的电流 $I$，求距导线 $2$ 距离 $r$ 处，导线 $1$ 的单位长度线段所受磁力对点 $o$ 的力矩大小。
 
-![|114](https://static.memset0.cn/img/v6/2024/11/03/99v6enQy.png)
+![|114](https://img.memset0.cn/2024/11/03/99v6enQy.png)
 
 > [!quote]- 解析
 >
-> ![|640](https://static.memset0.cn/img/v6/2024/11/03/Dpc5SMRQ.png)
+> ![|640](https://img.memset0.cn/2024/11/03/Dpc5SMRQ.png)

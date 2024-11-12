@@ -99,9 +99,9 @@ $$
 >
 > 线性代数中的范数是指将向量映射到标量的函数 $f$，对于任意向量 $\boldsymbol{x}$，范数 $f(x)$ 满足一下性质：
 >
-> -   $f(\alpha \boldsymbol{x}) = |\alpha|f(\boldsymbol{x})$；
-> -   三角不等式：$f(\boldsymbol{x}+\boldsymbol{y})\le f(\boldsymbol{x})+f(\boldsymbol{y})$；
-> -   非负性：$f(\boldsymbol{x})\ge 0$．
+> - $f(\alpha \boldsymbol{x}) = |\alpha|f(\boldsymbol{x})$；
+> - 三角不等式：$f(\boldsymbol{x}+\boldsymbol{y})\le f(\boldsymbol{x})+f(\boldsymbol{y})$；
+> - 非负性：$f(\boldsymbol{x})\ge 0$．
 >
 > $L_p$ 范数被定义为：
 >
@@ -152,7 +152,7 @@ $$
 
 在线性回归问题中，我们假设输出 $y$ 是输入特征 $\boldsymbol{x}\in\mathbb{R}^{d}$ 的一个仿射变换．我们往往会给出 $n$ 对样本 $(\boldsymbol{x}_{i},y_{i})$，可以用 $\boldsymbol{X} \in \mathbb{R}^{n\times d}$ 和 $\boldsymbol{y}\in\mathbb{R}^{n}$ 样本集合，并寻找权重 $\boldsymbol{w}$ 和偏置 $b$，使得预测结果 $\hat{y}=w_{1} x_{1} + \dots + w_{d} x_{d} + b = \boldsymbol{w}^{\text{T}}\boldsymbol{x} + b$ 尽可能地接近真实值．
 
-![qwEZq3QH.png|263](https://static.memset0.cn/img/v6/2024/08/17/qwEZq3QH.png)
+![qwEZq3QH.png|263](https://img.memset0.cn/2024/08/17/qwEZq3QH.png)
 
 为了衡量预测结果和真实值的接近程度，我们在这里引入平方误差的概念（这里引入的 $\frac 12$ 是为了方便得到更简洁的导数形式）：
 
