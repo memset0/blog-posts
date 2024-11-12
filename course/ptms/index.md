@@ -1,6 +1,6 @@
 ---
 tags:
-  - courses
+  - makemd/courses
 sticker: emoji//1f4c8
 title: 概率论与数理统计
 sync: /course/ptms/index.md
