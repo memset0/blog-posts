@@ -5,9 +5,9 @@ sync: /course/na/note/ch1.md
 
 ## Roundoff Errors and Computer Arithmetic
 
-**截断误差(truncation error)**：the error involved in using a truncated, or finite, summation to approximate the sum of an infinite series.
+**截断误差(truncation error)**：
 
-**舍入误差(roundoff error)**：the error produced when performing real number calculations. It occurs because the arithmetic performed in a machine involves numbers with only a finite number of digits.
+**舍入误差(roundoff error)**：
 
 ![|517](https://img.memset0.cn/2024/09/10/6f5prldK.png)
 
