@@ -6,9 +6,12 @@ nav:
   - Note:
       - note/1.md
       - note/2.md
+      - note/3.md
 ---
 
 ## 评分标准
+
+TBD
 
 ## 教材
 
