@@ -7,7 +7,7 @@ sync: /course/co/hw/chap3.md
 
 > [5] <§3.2> Assume 185 and 122 are signed 8-bit decimal integers stored in **原码(sign-magnitude)** format. Calculate 185 + 122. Is there overflow, underflow, or neither?
 
-- 185 的二进制为：10111001，符号位为 1，表示 -57（==注意这题里的负数不是补码表示而是原码表示！==）；
+- 185 的二进制为：10111001，符号位为 1，表示 -57<span style="color:red">（注意这题里的负数不是补码表示而是原码表示！）</span>；
 - 122 的二进制为：01111010，符号位为 0，表示 +122。
 
 两者的和为 $-57+122=+65$，没有发生 overflow 或 underflow。
@@ -72,3 +72,6 @@ normalize (no need to shift bits), throw the guard bit
 ```
 
 所以，最终结果为 $1.1011101100 \times 2^{10}$，对应十进制表示为 $1772$。
+
+> [!note]
+> Sticky bit 就是用来实现 round to the nearest even 的，详见笔记。
