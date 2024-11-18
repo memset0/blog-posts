@@ -136,16 +136,12 @@ $$
 ## 1.13
 
 > Another pitfall cited in Section 1.10 is expecting to improve the overall performance of a computer by improving only one aspect of the computer. Consider a computer running a program that requires 250 s, with 70 s spent executing FP instructions, 85 s executed L/S instructions, and 40 s spent executing branch instructions.
-
-### 1.13.1
-
-> [5] <§1.10> By how much is the total time reduced if the time for FP operations is reduced by 20%?
+>
+> **(1)** [5] <§1.10> By how much is the total time reduced if the time for FP operations is reduced by 20%?
 
 减少了 $1-\dfrac{70\times 0.8+(250-70)}{250} = 5.6 \%$。
 
-### 1.13.2
-
-> [5] <§1.10> By how much is the time for INT operations reduced if the total time is reduced by 20%?
+> **(2)** [5] <§1.10> By how much is the time for INT operations reduced if the total time is reduced by 20%?
 
 设变化系数为 $k$，则应有：
 
@@ -155,8 +151,6 @@ $$
 
 故 INT 操作的时间减少了约 $58.8\%$。
 
-### 1.13.3
-
-> [5] <§1.10> Can the total time can be reduced by 20% by reducing only the time for branch instructions?
+> **(3)** [5] <§1.10> Can the total time can be reduced by 20% by reducing only the time for branch instructions?
 
 即使分支操作的时间为 $0$，则新耗时关于原耗时的比率为 $\dfrac{250-40}{250}=0.84$，故不可能通过仅优化分支操作让总时间减少 $20\%$。
