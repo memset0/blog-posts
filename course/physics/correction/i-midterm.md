@@ -1,6 +1,6 @@
 ---
 title: 期中 I 错题
-sync: /course/physics/correction/i-midterm.md
+slug: /course/physics/correction/i-midterm
 ---
 
 ## 1. 质点力学

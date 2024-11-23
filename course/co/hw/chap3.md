@@ -5,7 +5,7 @@ sync: /course/co/hw/chap3.md
 
 ## 3.7
 
-> [5] <§3.2> Assume 185 and 122 are signed 8-bit decimal integers stored in **原码(sign-magnitude)** format. Calculate 185 + 122. Is there overflow, underflow, or neither?
+> [5] <§3.2> Assume 185 and 122 are signed 8-bit decimal integers stored in sign-magnitude format. Calculate 185 + 122. Is there overflow, underflow, or neither?
 
 - 185 的二进制为：10111001，符号位为 1，表示 -57<span style="color:red">（注意这题里的负数不是补码表示而是原码表示！）</span>；
 - 122 的二进制为：01111010，符号位为 0，表示 +122。

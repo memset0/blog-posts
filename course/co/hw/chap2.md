@@ -219,21 +219,21 @@ FIB:
 	beq a0, t0, RETURN     // if (n == 1) return 1
 
 	addi sp, sp, -16
-	sd a0, 0
-	sd ra, 8
+	sd a0, 0(sp)
+	sd ra, 8(sp)
 	addi a0, a0, -1
 	jal ra, FIB
 	mv t0, a0
-	ld a0, 0
-	sd t0, 0
+	ld a0, 0(sp)
+	sd t0, 0(sp)
 	addi a0, a0, -2
 	jal ra, FIB
-	ld t0, 0
-	ld ra, 8
+	ld t0, 0(sp)
+	ld ra, 8(sp)
 	add a0, a0, t0         // ret value = fib(n - 1) + fib(n - 2)
 
 RETURN:
-	jalr x0, ra            // return
+	jalr x0, 0(ra)            // return
 ```
 
 > [!note] Note

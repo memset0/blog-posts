@@ -3,9 +3,9 @@ title: Correction
 sync: /course/java/correction.md
 ---
 
-## Java 语言基础
+## 1. Java 语言基础
 
-### 数值提升与自动类型转化
+### 1.1. 数值提升与自动类型转化
 
 > 设有变量定义: `short a = 300;` 则以下哪一条语句会导致编译错误？
 >
@@ -20,7 +20,7 @@ sync: /course/java/correction.md
 
 而 C 选项虽然将结果强制转换成了 `byte`，丢失了一些位，但 `byte` 到 `short` 因为是位数变多，可以自动转化，所以这条语句并不会导致编译错误。
 
-### 二维数组的声明
+### 1.2. 二维数组的声明
 
 > 以下二维数组的定义正确的是（ ）
 >
@@ -31,7 +31,7 @@ sync: /course/java/correction.md
 
 ==B==。B 选项语句的含义为创建第一维长度为 3 的二维数组，但是其中的每一维还没有声明，需要在使用时声明，如 `a[0] = new int[5]`。A 选项如果不是 `int a[3][2]` 而是 `int a[][]` 则正确。
 
-### 字符串方法
+### 1.3. 字符串方法
 
 > For code below, the result would be?
 >
@@ -48,7 +48,7 @@ sync: /course/java/correction.md
 
 ==B==。Java 的这些字符串方法不在原串上做修改，应写成 `s = s.trim()` 输出才为 `true`。
 
-### Switch 可选的参数类型
+### 1.4. Switch 可选的参数类型
 
 > Which switch-case below is **NOT** correct?
 >
@@ -59,7 +59,7 @@ sync: /course/java/correction.md
 
 ==D==。`switch` 中的参数只可以是 `byte`、`short`、`char`、`int` 、`enum` 或 `String` 类型，诸如 `long` 等其他类型是不可以的（会编译错误）。
 
-### main() 方法的定义
+### 1.5. main() 方法的定义
 
 > Given code below:
 >
@@ -80,7 +80,7 @@ sync: /course/java/correction.md
 
 ==D==。`main()` 方法应该定义为 `public static` 的，否则 JVM 会找不到。
 
-### 命令行参数
+### 1.6. 命令行参数
 
 > What will be printed out if this code is run with the following command line?
 >
