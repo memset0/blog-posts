@@ -10,6 +10,7 @@ nav:
       - note/1.md
       - note/2.md
       - note/3.md
+      - note/4.md
 ---
 
 ## 1. 学习规划
