@@ -95,7 +95,25 @@ Recall that, to solve the cloest pair problem, the first step of the divide-and-
 > [!quote]- Answer
 > F。只检查了是否会小于 $\delta$，有可能最小的一对比这个大，直接没检查过。
 
-![](https://img.memset0.cn/2024/06/23/8e5fbQEu.png)
+Consider the following pseudo-code.
+
+strang($a_{1},\ldots,a_{n}$):
+
+1. if $n\le 2022$ then return
+2. strange($a_{1},\ldots,a_{\lfloor n/2 \rfloor}$)
+3. strange($a_{\lfloor n/4 \rfloor},\ldots,a_{\lfloor 3n/4 \rfloor}$)
+4. for $i=1$ to $n$:
+5. $\quad$for $j=1$ to $\lfloor \sqrt n \rfloor$:
+6. $\quad\quad$print($a_{i}+a_{j}$)
+7. strange($a_{\lfloor n/4 + 1 \rfloor},\ldots,a_{\lfloor 3n/4 \rfloor}$)
+8. strange($a_{\lfloor n/2  + 1\rfloor},\ldots,a_{n}$)
+
+What is the running time of this pseudo-code? Your answer should be as tight as possible. (You may assume that $n$ is a power of 2.)
+
+- A. None of the order options is correct.
+- B. $O(n^{1.5})$
+- C. $O(n^{1.5}) \log n$
+- D. $O(n^{2})$
 
 > [!quote]- Answer
 > D。
@@ -103,10 +121,26 @@ Recall that, to solve the cloest pair problem, the first step of the divide-and-
 > $$T(n)=4T(\dfrac{n}{2})+n\sqrt{n}=\sum_{k=1}^{\log n} 4^k (\dfrac{n}{2^k})^{\frac{3}{2}}=\sum_{k=1}^{\log n} 2^{2k-1.5k} n^{1.5}=n^{1.5}\sum_{k=1}^{\log n} 2^{0.5k}$$
 > 应用等比数列求和公式可证 $T(n)=O(n^2)$。
 
-![](https://img.memset0.cn/2024/06/24/MZgljPz5.png)
+Consider the following pseudo-code.
+
+strange($a_{1},\ldots,a_{n}$)
+
+1. if $n\leq2022$ then return
+2. strange($a_{1},\ldots,a_{\lfloor n/2 \rfloor}$)
+3. for $i=1$ to $n$:
+4. $\quad$for $j=1$ to $\lfloor \sqrt n \rfloor$:
+5. $\quad\quad$print($a_{i}+a_{j}$)
+6. strange($a_{\lfloor n/2 +1\rfloor}, \ldots, a_{n}$)
+
+What is the running time of this pseudo-code? Your answer should be as tight as possible. (You may assume that $n$ is a power of 2.)
+
+- A. None of the order options is correct.
+- B. $O(n^{1.5})$
+- C. $O(n^{1.5}) \log n$
+- D. $O(n^{2})$
 
 > [!quote]- Answer
-> A。可以直接应用主定理。
+> B。可以直接应用主定理。
 
 When solving a problem with input size $N$ by divide and conquer, if at each stage the problem is divided into $7$ sub-problems of equal size $N/3$, and the conquer step takes $O(\log N)$ to form the solution from the sub-solutions, then the overall time complexity is \_\_\_.
 
@@ -157,7 +191,23 @@ The following problem is in co-NP. (T/F)
 
 ## Ch11 Approximation
 
-![](https://img.memset0.cn/2024/06/24/Q8FZRqud.png)
+Assume that you are a real world Chinese postman, which have learned an awesome course "Advanced Data Structures and Algorithm Analysis" (ADS). Given a 2-dimensional map indicating $N$ positions $p_i(x_i,y_i)$ of your post office and all the addresses you must visit, you'd like to find a shortest path starting and finishing both at your post office, and visit all the addresses at least once in the circuit. Fortunately, you have a magic item "Bamboo copter & Hopter" from "Doraemon", which makes sure that you can fly between two positions using the directed distance (or displacement).
+
+However, reviewing the knowledge in the ADS course, it is an $NPC$ problem! Wasting too much time in finding the shortest path is unwise, so you decided to design a $2-approximation$ algorithm as follows, to achieve an acceptable solution.
+
+```plain
+Compute a minimum spanning tree T connecting all the addresses.
+Regard the post office as the root of T.
+Start at the post office.
+Visit the addresses in order of a _____ of T.
+Finish at the post office.
+```
+
+There are serveral methods of traversal which can be filled in the blank of the above algorithm. Assume that $P\neq NP$, how many methods of traversal listed below can fulfill the requirement?
+
+- Level-Order Traversal
+- Pre-Order Traversal
+- Post-Order Traversal
 
 > [!quote]- Answer
 > 2。pre-order 和 post-order 都是可行的。因为最小生成树的边权和一定小于 OPT，而这两种 travelsal 每条边最多走两次，所以是一个 2-approximation。
@@ -195,8 +245,8 @@ Which one of the following statements about the Maximum Finding is False?
 > [!quote]- Answer
 > A。
 >
-> - A 选项 workload 无论怎么说至少得有 $O(n)$
-> - B 选项会遇到要同时写的问题，但写的数是同一个，所以实际上不会冲突（？）
+> -   A 选项 workload 无论怎么说至少得有 $O(n)$
+> -   B 选项会遇到要同时写的问题，但写的数是同一个，所以实际上不会冲突（？）
 
 When we solve the summation problem via designing the parallel algorithms, we shorten the aasymptotic time complexity but take more asymptotic work loads comparing with the sequential algorithms.
 
@@ -314,8 +364,8 @@ Which of the following potential function $\Phi(D_i)$ can help us achieve $O(1)$
 > [!quote]- Answer
 > C。可以这样分析，设 $\Phi(D_i)= \alpha \cdot num(T)+\beta \cdot size(T)$。
 >
-> - 简单加入一个数，$c_i = 1$，$\Phi(D_i)-\Phi(D_{i-1}) = \alpha$。
-> - 加入一个数并拓展，$c_i=5n+1$，$\Phi(D_i)-\Phi(D_{i-1}) = \alpha + \beta \cdot 4 n$。
+> -   简单加入一个数，$c_i = 1$，$\Phi(D_i)-\Phi(D_{i-1}) = \alpha$。
+> -   加入一个数并拓展，$c_i=5n+1$，$\Phi(D_i)-\Phi(D_{i-1}) = \alpha + \beta \cdot 4 n$。
 >
 > 现在让 $O(1)=1+\alpha=\alpha+\beta\cdot 4n$，所以有 $\beta = -\dfrac{1}{4}$。再由于 $\Phi(D_i)\ge 0$，可得 $\alpha\ge \dfrac{5}{4}$。所以选 C。
 
