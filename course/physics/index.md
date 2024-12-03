@@ -1,4 +1,7 @@
 ---
+tags:
+  - makemd/courses
+sticker: emoji//269b-fe0f
 title: 大学物理（乙）
 sync: /course/physics/index.md
 nav:
@@ -11,6 +14,7 @@ nav:
       - note/5.md
       - note/6.md
       - note/7.md
+      - note/8.md
   - 习题集:
       - correction/i-midterm.md
       - correction/ii-midterm.md
