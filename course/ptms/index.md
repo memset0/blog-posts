@@ -11,6 +11,7 @@ nav:
       - note/2.md
       - note/3.md
       - note/4.md
+      - note/5.md
 ---
 
 ## 1. 成绩占比
