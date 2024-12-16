@@ -29,7 +29,7 @@ sync: /course/index.md
 
 Stored here are the notes I took down during my studies at Zhejiang University, which I am delighted to share with everyone. If you encounter any questions or problems during your reading, or if the content of the notes infringes upon your intellectual property rights, please contact me via comments or email.
 
-**培养方案**：[浙江大学 2023 级计算机科学与技术培养方案](https://pan.memset0.cn/Share/2024/02/12/%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A62023%E7%BA%A7%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%8E%E6%8A%80%E6%9C%AF%E4%B8%93%E4%B8%9A%E5%9F%B9%E5%85%BB%E6%96%B9%E6%A1%88.pdf)
+**培养方案**：[浙江大学 2023 级计算机科学与技术培养方案](https://pan.memset0.cn/Share/2024/12/14/%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A62023%E7%BA%A7%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%8E%E6%8A%80%E6%9C%AF%E4%B8%93%E4%B8%9A%E5%9F%B9%E5%85%BB%E6%96%B9%E6%A1%88.pdf)
 
 **当前学期**：大二秋冬（2024.9）
 
