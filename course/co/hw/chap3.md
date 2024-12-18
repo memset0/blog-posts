@@ -1,6 +1,6 @@
 ---
 title: Chapter 3
-sync: /course/co/hw/chap3.md
+slug: /course/co/hw/chap3
 ---
 
 ## 3.7

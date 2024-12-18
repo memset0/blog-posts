@@ -102,3 +102,11 @@ sync: /course/java/correction.md
 > -   D. Exception raised: "java.lang.ArrayIndexOutOfBoundsException: 2"
 
 ==D==。以这个例子为例，命令行参数 `argv` 应为 `{"good", "morning"}`，即 `java` 还有类名都是不算在参数列表内的。所以 `argv[2]` 是越界访问。
+
+## Java 面向对象基础
+
+### Java 内存管理
+
+> Some Java objects are put in the heap, while some are in stack. (T/F)
+
+==F==。Java语言的一大特点就是对象都创建在堆上（并且在创建的时候会清零再初始化等等），只有局部的基本数据类型变量和对象引用变量会放在栈上。
