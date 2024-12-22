@@ -62,8 +62,8 @@ Stored here are the notes I took down during my studies at Zhejiang University, 
 
 - 🔮 [高级数据结构与算法分析 - 王灿 - 大一春夏 - 4.8(94)](/course/ads/)
 - 🎯 [计算机组成 - 赵莎 - 大二秋冬](/course/co/)
-- 数据库系统
-- 计算机体系结构
+- 数据库系统 - 孙建伶 - 大二春夏
+- 计算机体系结构 - 陈文智 - 大二春夏
 - 计算理论
 - 操作系统
 - 计算机网络
@@ -72,21 +72,17 @@ Stored here are the notes I took down during my studies at Zhejiang University, 
 
 ## 4. 专业模块课程
 
-这里先列举一下计划修读的专业模块课程。
-
 - 🎯 [数值分析 - 许威威 - 大二秋冬](/course/na/)
-- 🎯 [Java 应用技术 - 鲁伟明 - 大二秋冬](/course/java/)
-- 算法设计与分析
 - 数据挖掘导论
-- 多媒体技术
+- 🎯 [Java 应用技术 - 鲁伟明 - 大二秋冬](/course/java/)
 - B/S 体系软件设计
-- 软件工程实践
+- 多媒体技术
 
 ## 5. 专业选修课程
 
 这里先列举一下计划修读的专业选修课程。
 
-- 图像信息处理
+- 计算医疗
 - 计算机图形学
 - 计算机游戏程序设计
 

@@ -8,6 +8,7 @@ nav:
   - Intro: index.md
   - Note:
       - note/1.md
+      - note/2.md
 ---
 
 ## 学长笔记
