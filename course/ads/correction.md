@@ -157,7 +157,15 @@ Is this asymptotic upper bound for the following recursive $T(n)$ is correct?
 - $T(n) = T(n^{1/3}) + T(n^{2/3}) + \log n$. Then $T(n) = O(\log n \log \log n)$.
 
 > [!quote]- Answer
-> T。归纳法。
+> T。
+>
+> 可以直接做：
+>
+> -   设 $k=\log n$，则 $T(2^{k}) = T(2^{k / 3}) + T(2^{2k / 3}) + k$；
+> -   设 $t(k)=T(2^{k})$，则 $t(k) = t(k / 3) + t(2k / 3) + k = O(k \log k)$；
+> -   故 $T(n)=t(k)=\log n \log \log n$。
+>
+> 也可以归纳法：
 >
 > $$n\log n \log \log n = \dfrac{1}{3} \log n (\log \dfrac{1}{3} + \log \log n)+\dfrac{2}{3}\log n (\log \dfrac{2}{3} + \log \log n) + \epsilon \log n$$
 >
