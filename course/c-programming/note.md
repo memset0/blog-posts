@@ -20,7 +20,7 @@ sync: /course/c-programming/note.md
 
 ### 2.1. 优先级
 
-![Pasted image 20240103225527|678](https://img.memset0.cn/2024/02/08/eu54EX0G.png)
+![|678](https://img.memset0.cn/2024/02/08/eu54EX0G.png)
 
 ![|720](https://img.memset0.cn/2024/02/08/kpoaJNvm.png)
 
@@ -79,7 +79,7 @@ const char *pcolor[ ] = {"red", "blue", "yellow", "green", "black"};
 // ccolor[0][0] = 'x' 可以但 pcolor[0][0] = 'x' 不可以
 ```
 
-![Pasted image 20240103210052|648](https://img.memset0.cn/2024/02/08/qgsofRUX.png)
+![|648](https://img.memset0.cn/2024/02/08/qgsofRUX.png)
 
 #### 5.2.3. 命令行参数
 
@@ -131,7 +131,7 @@ a+i <=> &a[i] int (*)[4]
 
 编译器改写规则：将（最外层的）数组改写为指针。
 
-![Pasted image 20240103221019|647](https://img.memset0.cn/2024/02/08/TtgN226c.png)
+![|647](https://img.memset0.cn/2024/02/08/TtgN226c.png)
 
 ```cpp
 int a[10][20];
