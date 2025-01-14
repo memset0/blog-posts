@@ -1,6 +1,4 @@
 ---
-tags:
-  - makemd/courses
 aliases: []
 sticker: emoji//2668-fe0f
 slug: /course/java/
