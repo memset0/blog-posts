@@ -22,7 +22,6 @@ sync: /course/fasm/index.md
 - 作业 50%
 - 期末 50%
 
-
 ## 2. 环境配置
 
 一般来说有三种方式调试运行汇编代码，博主推荐第三种，也是我自己学习时使用的方式。
@@ -41,12 +40,11 @@ sync: /course/fasm/index.md
 
 ## 3. 修读体验
 
-这门课的内容以 8086 汇编（16位）为主，会涉及到一定 80386 汇编（32位）的知识，但不是考察重点。
+这门课的内容以 8086 汇编（16 位）为主，会涉及到一定 80386 汇编（32 位）的知识，但不是考察重点。
 
 小白老师非常注重对汇编指令的理解与应用，而不是简单的记忆与背诵。对于每一条指令的用法及细节，小白老师都会举出若干个例子并用写程序 + 调试的方式验证说明。所以对于有一定汇编基础或者只想粗略了解汇编的同学，完整地听小白老师的课可能就有点枯燥了。博主因为前半学期准备各类比赛比较忙，调试器相关的部分没搞明白，到后面上课就有一半听的云里雾里，还好最后通过智云课堂还是补回来了。
 
 这门课的给分较为良好。占总评分一半的平时作业，除了最后一个贪吃蛇 Lab 外的作业都放在 PTA 上，支持多次提交，只要不抄袭作业分都能刷满（没有“互评”这种遥遥领先的评分形式）。期末考虽然按小白老师的原话讲有“为班里学过汇编语言专业课的高手准备的高手题”，但以我的实际体验来说掌握了上课讲的基础的东西就已经够用了。不过这门课对于编程方面基础较差的同学来说可能就比较吃力了，期末考签到的时候发现点名册上过半的都是退课或弃修的同学。
-
 
 ## 4. 复习经验
 
@@ -56,19 +54,20 @@ sync: /course/fasm/index.md
 
 - mov, xchg, push, pop, pushf, popf, lea, lds, les
 - cbw, cwd, add, adc, sub, sbb, inc, dec
-- mul, div, imul, idiv, xlat, in, out, 
+- mul, div, imul, idiv, xlat, in, out,
 - and, or, xor, not, neg, shl, shr, sal, sar, rol, ror, rcl, rcr
-- test, cmp, jxx（条件跳转指令）: ja, jb, jae, jbe, jc jnc jz jnz js jns jo jno 
+- test, cmp, jxx（条件跳转指令）: ja, jb, jae, jbe, jc jnc jz jnz js jns jo jno
 - loop
 - clc, stc, cli, sti, cld, std
 - call, ret（近调用和近返回）
 - call far ptr, retf（远调用和远返回）
 - int, iret
-- jmp short, jmp near ptr, jmp far ptr, 
+- jmp short, jmp near ptr, jmp far ptr,
 - jmp dword ptr
 - 字符串指令：repne/repe scasb, repe/repne cmpsb, rep movsb, lodsb, stosb, rep stosb
 - 用堆栈传递参数时, 如何用 `[bp+?]` 实现对参数的引用
 - 调试器的使用（Debug、Tubro Debug、Soft-ICE）
 
 > [!quote] Useful Links
-> - [x86汇编 - Mini Babel Library (ruoxining.github.io)](https://ruoxining.github.io/OBvault/CS/x86assm/)
+>
+> -   [x86 汇编 - Mini Babel Library (ruoxining.github.io)](https://ruoxining.github.io/notebook/docs/1-cs/assembly-x86/)
