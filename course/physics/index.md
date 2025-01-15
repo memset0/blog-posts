@@ -1,6 +1,4 @@
 ---
-tags:
-  - makemd/courses
 sticker: emoji//269b-fe0f
 title: 大学物理（乙）
 sync: /course/physics/index.md
