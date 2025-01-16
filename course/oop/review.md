@@ -3,7 +3,7 @@ title: OOP 一站式速通笔记
 date: 2025-01-11 07:00:00
 slug: /course/oop/review
 published-title: 「面向对象程序设计」期末复习
-cover: https://img.memset0.cn/2025/01/17/SrHeO9SW.png
+cover: https://img.memset0.cn/2025/01/17/nzSwyMxX.png
 ---
 
 > 本篇笔记全面总结了面向对象程序设计课程的核心内容，包括 C++ 的基础特性（引用、常量、内存管理）、类的概念（构造、继承、多态）、运算符重载、模板编程和异常处理机制。笔记重点关注了一些易错细节，如构造顺序、虚函数机制、类型转换等，并提供了大量实用的代码示例和考试要点提示。适合有 C++ 基础的同学快速掌握 OOP 的核心概念和重要细节。<small style="font-style: italic; opacity: 0.5">（由 claude-3.5-sonnet 生成摘要）</small>
