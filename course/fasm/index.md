@@ -1,6 +1,7 @@
 ---
-title: 汇编程序设计基础
-section: 汇编程序设计基础
+title: 汇编语言程序设计基础
+section: 汇编语言程序设计基础
+sticker: emoji//2328-fe0f
 props:
   绩点: 5.0 (99)
   学分: "2.0"
