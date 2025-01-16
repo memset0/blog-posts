@@ -2,7 +2,12 @@
 title: Numberical Analysis
 sticker: emoji//1f9ee
 sync: /course/na/index.md
-nav: []
+tags:
+  - makemd/courses
+nav:
+  - Intro: index.md
+  - Note:
+      - Ch1 Mathematical Preliminaries: note/1.md
 ---
 
 ![cyll 放在课件里的|600](https://img.memset0.cn/2024/12/10/FN6yuC4q.png)
