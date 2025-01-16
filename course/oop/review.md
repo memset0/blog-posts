@@ -3,7 +3,7 @@ title: OOP 一站式速通笔记
 date: 2025-01-11 07:00:00
 slug: /course/oop/review
 published-title: 「面向对象程序设计」期末复习
-cover: https://img.memset0.cn/2025/01/17/nzSwyMxX.png
+cover: https://img.memset0.cn/2025/01/17/TzVU22d8.png
 ---
 
 > 本篇笔记全面总结了面向对象程序设计课程的核心内容，包括 C++ 的基础特性（引用、常量、内存管理）、类的概念（构造、继承、多态）、运算符重载、模板编程和异常处理机制。笔记重点关注了一些易错细节，如构造顺序、虚函数机制、类型转换等，并提供了大量实用的代码示例和考试要点提示。适合有 C++ 基础的同学快速掌握 OOP 的核心概念和重要细节。<small style="font-style: italic; opacity: 0.5">（由 claude-3.5-sonnet 生成摘要）</small>
@@ -14,7 +14,7 @@ cover: https://img.memset0.cn/2025/01/17/nzSwyMxX.png
 >
 > 仅推荐有一定 C++ 基础（但没有 OOP 基础）的同学阅读此笔记，否则你可能会错过一些语言细节。
 
-## 1. C++特性
+## 1. C++ Features
 
 - 引用&
     - 必须立即进行初始化，不能声明完后再赋值。
@@ -34,14 +34,14 @@ cover: https://img.memset0.cn/2025/01/17/nzSwyMxX.png
         - `class Array{ const int size = 10; int array[size]; };` 不能通过编译
         - 可以声明为 `static`：`static const int size = 10;`
         - 可以使用 `enum`：`enum {size = 10};`
-    - 注意一下：![|447](https://img.memset0.cn/2025/01/10/P6qrYh1P.png)
+    - 注意一下：![|410](https://img.memset0.cn/2025/01/10/P6qrYh1P.png)
 - `new` & `delete`
     - 对空地址 `nullptr` 使用 `delete` 是安全的
     - 对不是 `new` 分配的空间或已经 delete 的指针使用 `delete` 会引发错误。
     - `new int[10]()` 或 `new int[10]{}` 这种写法会初始化（Pitfall：不能写成 `new int[10](0)`）
 - ![|647](https://img.memset0.cn/2025/01/11/Aof9NG9F.png)
 
-## 2. 类
+## 2. Class
 
 - 构造顺序：==静态成员、虚基类、基类、成员变量、（自己的）构造函数==
 - **代理构造(delegating constructor)**：可以在构造函数中调用另一个构造函数
@@ -75,7 +75,7 @@ cover: https://img.memset0.cn/2025/01/17/nzSwyMxX.png
     - 场景：函数传参（特例：构造函数传参：`Class a = c;`，注意 `Class a; a = c` 并不会拷贝构造）。
     - 如果不需要拷贝构造，可以将其声明为 private，在外部调用时就会报错。这种情况下不需要函数实现（`private: Person(const Person &);`）
 
-## 3. 重载
+## 3. Overload & Casting
 
 - 重载
     - 不能被重载的运算符：`.`、`.*`、`::`、`?:`、`sizeof`、`typeid`、四种 cast（注意 `,` 是可以重载的）
@@ -129,13 +129,13 @@ cover: https://img.memset0.cn/2025/01/17/nzSwyMxX.png
         - `volatile` 属性指的是变量不能被优化在寄存器中，每次修改必须访问内存
     - `reinterpret_cast`：低级别的、无类型检查的转换。可以在几乎任何类型间转换，但是非常危险。
 
-## 4. 模板
+## 4. Template
 
 - 模板可以从实例类继承，可以从类模板继承。实例类只能从实例类继承。
 - 对于静态成员变量，同样在类里只能先声明，然后使用 `template<typename T> int Derived<T>::size = 10;` 创建。这样实际调用时，会为每个不同的 `T` 生成一个 `size` 变量。
 - 模板函数和普通函数同时存在的情况：模板函数不能进行自动类型转换但普通函数可以。
 
-## 5. 异常
+## 5. Exception
 
 - `catch` 的括号内 `ErrorType& e` 表示捕获 `ErrorType` 及其子类（如果是基本类型就不考虑子类）。使用 `...` 表示捕捉任何异常。
     - ![|700](https://img.memset0.cn/2025/01/10/QZSWliuV.png)
@@ -170,7 +170,7 @@ cover: https://img.memset0.cn/2025/01/17/nzSwyMxX.png
     - 在构造函数内对基本变量赋值
     - 任何需要申请资源和空间的操作，在显式的 `init()` 函数内执行
 
-## 6. 细节
+## 6. Others
 
 - `class` 中的权限控制默认为 `private`、`struct` 中的权限控制默认为 `public`
 - 构造和析构的顺序是相反的。
@@ -180,7 +180,7 @@ cover: https://img.memset0.cn/2025/01/17/nzSwyMxX.png
 - `extern` 说明全局变量或函数会在另一个文件中有（并链接过来）；`static` 修饰的全局变量或函数只能在当前文件中使用。
 - volatile：表示变量或对象的值可能会在程序控制之外被改变，例如由硬件或操作系统修改。它用于告诉编译器不要对涉及 volatile 变量的代码进行优化，以确保每次访问 volatile 变量时都从内存中读取其值.
 
-## 7. 最后注意
+## 7. Pitfalls
 
 - 几个名词
     - **封装(encapsulation)**
