@@ -5,7 +5,7 @@ props:
   timeline:
     - type: award
       date: 11/2024
-      href: https://board.xcpcio.com/icpc/49th/kunming
+      href: https://board.xcpcio.com/icpc%2F49th%2Fecfinal?group=official
       color: bronze
       background: gold
       name:
@@ -16,7 +16,7 @@ props:
         - 3rd Place, Gold Metal
     - type: award
       date: 11/2024
-      href: https://board.xcpcio.com/icpc/49th/kunming
+      href: https://board.xcpcio.com/icpc%2F49th%2Fkunming?group=official
       name:
         - 第 49 届 ICPC 国际大学生程序设计竞赛区域赛昆明站
         - 2024 - 2025 International Collegiate Programming Contest, Kunming Site
@@ -26,7 +26,7 @@ props:
         - Gold Metal
     - type: award
       date: 11/2024
-      href: https://board.xcpcio.com/icpc/49th/shanghai
+      href: https://board.xcpcio.com/icpc%2F49th%2Fshanghai?group=official
       background: gold
       name:
         - 第 49 届 ICPC 国际大学生程序设计竞赛区域赛上海站
@@ -36,7 +36,7 @@ props:
         - Gold Metal
     - type: award
       date: 11/2024
-      href: https://board.xcpcio.com/ccpc/10th/chongqing
+      href: https://board.xcpcio.com/ccpc%2F10th%2Fchongqing?group=official
       background: gold
       name:
         - 第 10 届 CCPC 中国大学生程序设计竞赛区域赛重庆站
@@ -46,7 +46,7 @@ props:
         - Gold Metal
     - type: award
       date: 10/2024
-      href: https://board.xcpcio.com/ccpc/10th/jinan
+      href: https://board.xcpcio.com/ccpc%2F10th%2Fjinan?group=official
       name:
         - 第 10 届 CCPC 中国大学生程序设计竞赛区域赛济南站
         - 2024 - 2025 China Collegiate Programming Contest, Jinan Site
@@ -56,7 +56,7 @@ props:
         - Gold Metal
     - type: award
       date: 11/2023
-      href: https://board.xcpcio.com/icpc/48th/hefei
+      href: https://board.xcpcio.com/icpc%2F48th%2Fhefei?group=official
       name:
         - 第 48 届 ICPC 国际大学生程序设计竞赛区域赛合肥站
         - 2023 - 2024 International Collegiate Programming Contest, Hefei Site
@@ -67,7 +67,7 @@ props:
         - Runner-up, Gold Metal
     - type: award
       date: 11/2023
-      href: https://board.xcpcio.com/icpc/48th/nanjing
+      href: https://board.xcpcio.com/icpc%2F48th%2Fnanjing?group=official
       name:
         - 第 48 届 ICPC 国际大学生程序设计竞赛区域赛南京站
         - 2023 - 2024 International Collegiate Programming Contest, Nanjing Site
@@ -78,7 +78,7 @@ props:
         - 3rd Place, Gold Metal
     - type: award
       date: 10/2023
-      href: https://board.xcpcio.com/ccpc/9th/qinhuangdao
+      href: https://board.xcpcio.com/ccpc%2F9th%2Fqinhuangdao?group=official
       name:
         - 第 9 届 CCPC 中国大学生程序设计竞赛秦皇岛站
         - 2023 - 2024 China Collegiate Programming Contest, Qinhuangdao Site
