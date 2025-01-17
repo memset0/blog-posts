@@ -11,7 +11,7 @@ sync: /course/dd/tool/verilog.md
 
 在 `always` 模块中，我们应尽量使用 `<=` 进行非阻塞赋值。
 
-### generate for
+### 1.2. generate for
 
 可以用来循环的方式简化代码，实现通过 1 位全加器 8 位行波全加器的示例如下：
 
@@ -27,8 +27,6 @@ sync: /course/dd/tool/verilog.md
 
 值得注意的是 `genvar` 和 `generate` 语句不能在 `always` 模块中使用。
 
-<br />
+## 2. Useful Links
 
-> [!quote] Useful Links
->
-> -   [走近 FPGA 之矩阵键盘 @flyjancy (zhihu.com)](https://zhuanlan.zhihu.com/p/26037203)
+- [走近 FPGA 之矩阵键盘 @flyjancy (zhihu.com)](https://zhuanlan.zhihu.com/p/26037203)

@@ -43,8 +43,6 @@ sync: /course/dd/tool/logisim.md
 - 点击 `Settings` 按钮，修改 Hardware discription language used for FPGA commander 为 `Verilog`
 - 点击 `Execute` 并在随后的弹出窗口中点击 `Done` 完成。_可以忽略这一步给出的 Design is not completely mapped 的警告。—— [TA](https://guahao31.github.io/2024_DD/warmup/lab4/)_
 
-<br />
+## 4. Useful Links
 
-> [!quote] Useful Links
->
-> - [Logisim 教程 @USTC](https://vlab.ustc.edu.cn/guide/doc_logisim.html)
+- [Logisim 教程 @USTC](https://vlab.ustc.edu.cn/guide/doc_logisim.html)
