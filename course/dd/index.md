@@ -1,6 +1,7 @@
 ---
 title: 数字逻辑设计
 section: 数字逻辑设计
+sticker: emoji//1f4bd
 sync: /course/dd/index.md
 nav:
   - Intro: index.md
@@ -14,7 +15,6 @@ nav:
       - quiz/1.md
   - "Tools & Tutorials":
       - tool/logisim.md
-      - tool/vivado.md
       - tool/verilog.md
 ---
 
@@ -43,8 +43,6 @@ nav:
 ## 4. 参考资料
 
 - [词汇表 - Jiepeng's notes](https://note.jiepeng.tech/CS/DigitalDesign/glossary/)
-
-<br />
 
 > [!quote] Useful Links
 >
