@@ -24,13 +24,13 @@ sync: /course/index.md
 > [!important] 欢迎评论
 > 如果你对于笔记的内容有疑问或建议，欢迎通过评论等方式反馈，让我们一同构建这个笔记站点！
 
-此处存放的是博主在浙江大学学习期间所记录的笔记，非常高兴能与大家分享。若您在阅读过程中发现任何问题，或笔记内容侵犯了您的知识产权，请通过评论或电子邮件的方式与我取得联系。
-
-Stored here are the notes I took down during my studies at Zhejiang University, which I am delighted to share with everyone. If you encounter any questions or problems during your reading, or if the content of the notes infringes upon your intellectual property rights, please contact me via comments or email.
+> 此处存放的是博主在浙江大学学习期间所记录的笔记，非常高兴能与大家分享。若您在阅读过程中发现任何问题，或笔记内容侵犯了您的知识产权，请通过评论或电子邮件的方式与我取得联系。
+>
+> <i><small>Stored here are the notes I took down during my studies at Zhejiang University, which I am delighted to share with everyone. If you encounter any questions or problems during your reading, or if the content of the notes infringes upon your intellectual property rights, please contact me via comments or email.</small></i>
 
 **培养方案**：[浙江大学 2023 级计算机科学与技术培养方案](https://pan.memset0.cn/Share/2024/12/14/%E6%B5%99%E6%B1%9F%E5%A4%A7%E5%AD%A62023%E7%BA%A7%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6%E4%B8%8E%E6%8A%80%E6%9C%AF%E4%B8%93%E4%B8%9A%E5%9F%B9%E5%85%BB%E6%96%B9%E6%A1%88.pdf)
 
-**当前学期**：大二秋冬（2024.9）
+**当前学期**：大二春夏（2025.2）
 
 | 🔮               | ✨             | 🎯                 | 🚧           | 🕊️           |
 | ---------------- | -------------- | ------------------ | ------------ | ------------ |
