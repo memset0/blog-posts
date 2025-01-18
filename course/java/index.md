@@ -17,7 +17,7 @@ nav:
     - wk 的平时分根据平时作业（10 次左右，因为 GUI 部分没有）和 1 个 lab 确定（据说往年是 2 个）；
     - lwm 的平时分根据 4 个 lab 确定（据说往年是 5 个），分别是：
         - Lab 1：实现异型数独求解与生成
-            ![|300](https://img.memset0.cn/2025/01/18/jMx3zj2L.png)
+            ![|400](https://img.memset0.cn/2025/01/18/jMx3zj2L.png)
         - Lab 2：基于可变类/不可变类实现矩阵类，要求支持链式计算
         - Lab 3：实现网络爬虫和搜索引擎，除了解析 html 还要求调用第三方库解析二进制文件的 metadata。
         - Lab 4：实现任意 Client/Server 应用程序，要求使用 Socket 通信（Bonus：使用数据库）。
