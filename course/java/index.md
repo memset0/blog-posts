@@ -3,13 +3,12 @@ title: "Java Application Design"
 aliases: []
 sticker: emoji//2668-fe0f
 slug: /course/java/
-tags:
-  - makemd/courses
 nav:
   - Intro: index.md
   - Note:
       - note/1.md
       - note/2.md
+      - note/3.md
 ---
 
 ## 学长笔记
