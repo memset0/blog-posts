@@ -4,23 +4,28 @@ date: 2025-01-25 14:00:33
 slug: /research/paper-reading/deepwalk
 tags:
   - GNN
-  - Random Walk
-  - Hierarchical Softmax
+  - Random-Walk
+  - Skip-Gram
+  - Hierarchical-Softmax
 ---
-
-- 论文：[[Bryan Perozzi, et al., 2014. DeepWalk - Online Learning of Social Representations]]
 
 ## 1. Features
 
-## 2. Insights
+## 2. Notations
 
-### 2.1. Power Laws & Scale-free Graphs
+- 一个社交网络可被表示为 $G_{L}(V,E,X,Y)$，其中 $V$ 表示点集，$E \subseteq (V \times V)$ 表示边集，$X \in \mathbb{R}^{|V| \times S}$ 是节点特征矩阵（其中 $S$ 是属性向量的特征空间大小），$Y \in \mathbb{R}^{|V| \times |\mathcal{Y}|}$（其中 $\mathcal{Y}$ 是标签集）。不过，我们的 DeepWalk 算法在表示学习时只用到了节点的链接信息。
+- $\mathcal{V}$：词典，对应本论文中图的点集 $V$，$\mathcal{V} = V$。
+- $\mathcal{D}$：**语料库(corpus)**，即句子集合，对应本论文中通过随机游走采样的路径。
+
+## 3. Insights
+
+### 3.1. Power Laws & Scale-free Graphs
 
 **幂律分布(Power Law)** 指 $P(k)\propto k^{-\gamma}$ 的概率分布，也叫长尾分布。在 NLP 中常用于指出大部分单词出现概率极低，只有少量单词出现概率较高。而在图中，用 **无标度(scale-free)** 图的特点则是网络中存在少数高度连接的枢纽节点和大量低度节点，典型例子包括社交网络、互联网、蛋白质相互作用网络等。即大部分节点度数极低，但存在少量度数极高的节点，也服从幂律分布。
 
 ![|675](https://img.memset0.cn/2025/01/25/KGchde3u.png)
 
-### 2.2. Skip-Gram
+### 3.2. Skip-Gram
 
 在 NLP 中有两个关于 **词袋模型(bag of words)** 的常用算法：
 
@@ -30,20 +35,22 @@ tags:
 因为我们研究的无标度图及在无标度图上采样的短随机游走路径也服从幂律分布，故应采用 Skip-Gram 算法，其目标函数为：
 
 $$
-\operatorname*{minimize}_{\Phi}\space-\log\Pr\left(\{v_{i-w},\cdots,v_{i-1},v_{i+1},\cdots,v_{i+w}\}\mid\Phi(v_i)\right)
+\min_{\Phi}\space-\log\Pr\left(\{v_{i-w},\cdots,v_{i-1},v_{i+1},\cdots,v_{i+w}\}\mid\Phi(v_i)\right)
 $$
 
 出于计算复杂度和实际可行性的考虑，我们假设上下文节点之间是相互独立的，从而可将目标函数简化为：
 
 $$
-\operatorname*{\text{minimize}}_{\Phi}\space - \sum_{u_{k} \in \text{window}(v_{i})} \log \text{Pr} \left( u_{k}\mid \Phi(v_{i}) \right)
+\min_{\Phi}\space - \sum_{u_{k} \in \text{window}(v_{i})} \log \text{Pr} \left( u_{k}\mid \Phi(v_{i}) \right)
 $$
 
-优化后的目标函数也方便使用层次化 softmax 算法进行优化。
+简化后的目标函数可以使用层次化 Softmax 算法进行优化。
 
-另外，Skip-Gram 算法也可采用 **负采样(negative sampling)** 技术优化，虽然在论文中没有提及。
+### 3.3. Hierarchical Softmax
 
-### 2.3. Hierarchical Softmax
+$$
+\dfrac{\exp{(\mathbf{w}\cdot \mathbf{c})}}{\sum_{c'} \exp(\mathbf{w}\cdot \mathbf{c}')}
+$$
 
 Skip-Gram 中要求我们得到“根据上下文填入单词”的似然概率，也就是“在随机游走路径填入节点”的似然概率，这里需要一个 **归一化因子(partition function)** 以从所有节点中选择（即词典就是点集，$\mathcal{V} = V$），而节点的总个数是很多的，这在节点数量很大时，会带来很大的计算代价。论文使用了 **层次化 Softmax(Hierarchical Softmax)** 的方式，根据节点在随机游走路径中出现的频率构建霍夫曼树，并通过树形结构计算 Softmax 函数。将 $|V|$ 分类问题转化为若干个二分类问题，从而将单次计算的复杂度从 $O(|V|)$ 降低到 $O(\log |V|)$。
 
@@ -212,7 +219,25 @@ $$
 > print(f"Hierarchical Loss: {loss.item():.4f}")
 > ```
 
-## 3. References
+- 霍夫曼树的每个节点都对应一个 sigmoid 函数，因为 sigmoid 函数实际上和 2-分类的 softmax 是等价的。
 
-- 原论文。
+## 4. Experiments
+
+### 4.1. Setup
+
+### 4.2. Analysis: Parameter Sensitivity
+
+![|913](https://img.memset0.cn/2025/01/27/yQfN9W4t.png)
+
+- $d$：嵌入维度
+- $\gamma$：从每个点开始采样的随机路径条数
+- $T_{R}$：训练集占原始数据的比例。
+
+增加维度 $d$ 可提升性能，但边际收益递减。一定程度以后增加 $\gamma$ 基本不影响性能，表明少量游走即可捕获有效结构信息。
+
+## 5. References
+
+- 原始论文：[[Bryan Perozzi, et al., 2014. DeepWalk - Online Learning of Social Representations]]。
 - [word2vec 中 cbow 与 skip-gram 的比较 - 知乎](https://zhuanlan.zhihu.com/p/37477611)
+- [DeepWalk 算法（个人理解）-CSDN 博客](https://blog.csdn.net/gsq0854/article/details/117587606)
+- [#机器学习 Micro-F1 和 Macro-F1 详解\_micro f1-CSDN 博客](https://blog.csdn.net/qq_43190189/article/details/105778058)
