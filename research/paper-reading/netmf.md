@@ -20,7 +20,7 @@ tags:
 
 [[SGNS]] 论文指出，LINE/PTE、DeepWalk、node2vec 等算法实际上是在执行 **隐式矩阵分解(implicit matrix factorization)**，即我们通过统计学习节点嵌入的实际上是在近似一个矩阵 $M$。
 
-#### 2.1.3. Closed Formula of DeepWalk
+#### 2.1.1. Closed Formula of DeepWalk
 
 ![|454](https://img.memset0.cn/2025/01/25/xisKGrV3.png)
 
@@ -69,10 +69,34 @@ $$
 $$
 
 - 由此也可以发现 LINE 即 DeepWalk 取 $T=1$ 的特例。
+- SGNS 算法实际上就是隐式分解 $\log( \mathbf{M}) - \log b$ 矩阵。
 
-### NetMF
+### 2.2. NetMF
 
-![|499](https://img.memset0.cn/2025/01/30/HfK44RA8.png)
+小窗口的 NetMF 算法：
+
+- 基本上就是暴力计算矩阵乘法。
+- 为了解决 $\mathbf{M}$ **不良定义(ill-defined)** 的问题，定义 $\mathbf{M}'=\max \{ \mathbf{M},1 \}$（类似 Shifted PPMI）。
+
+![|500](https://img.memset0.cn/2025/01/30/pBTywcSl.png)
+
+大窗口的 NetMF 算法：
+
+- 使用前 $h$ 个特征值用 $\mathbf{D}^{- 1/2} \mathbf{A} \mathbf{D}^{1 / 2}$ 近似 $\mathbf{U}_{h} \mathbf{\Lambda}_{h} \mathbf{U}_{h}^{\top}$，通过 Arnoldi 方法（==？==）。
+- 这样矩阵求幂的时候只要对中间 $h$ 维的矩阵求幂即可，可以大大降低计算复杂度。
+- 同样需要取 $\hat{\mathbf{M}}'=\max\{\hat{\mathbf{M}},1\}$。
+
+![|500](https://img.memset0.cn/2025/01/30/DPHnatZR.png)
+
+无论大小窗口的 NetMF 算法，其最后一步与 SGNS-SVD 算法相同：进行截断 SVD 分解，取 $\mathbf{U}_{d}\sqrt{\mathbf{\Sigma}_{d}}$ 作为嵌入矩阵返回。
+
+> [!success] 误差界
+>
+> 可证明误差使用大窗口的 NetMF 算法得到的 $\log \mathbf{M}'$ 的误差界如下：
+>
+> $$\begin{gathered}{\parallel}\mathbf{M} - \hat{\mathbf{M}}{\parallel_{F}}\leq\frac{\operatorname{vol}\left( G\right) }{b{d}_{\min }}\sqrt{\mathop{\sum }\limits_{{j = k + 1}}^{n}{\left| \frac{1}{T}\mathop{\sum }\limits_{{r = 1}}^{T}{\lambda }_{j}^{r}\right| }^{2}};\\{\begin{Vmatrix}\log {\mathbf{M}}^{\prime } - \log {\hat{\mathbf{M}}}^{\prime }\end{Vmatrix}}_{F}\leq{\begin{Vmatrix}{\mathbf{M}}^{\prime } - {\hat{\mathbf{M}}}^{\prime }\end{Vmatrix}}_{F}\leq{\parallel}\mathbf{M} - \hat{\mathbf{M}}{\parallel }_{F}.\end{gathered}$$
+>
+> -   $\parallel \cdot \parallel_{F}$ 为 Frobenius 范数，${\parallel}\mathbf{X}{\parallel}_{F} = \sqrt{\sum_{i} \sum_{j}\mathbf{X}_{i,j}^{2}}$。
 
 ## 3. References
 
