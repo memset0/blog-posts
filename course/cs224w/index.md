@@ -4,6 +4,7 @@ sync: /course/cs224w/index.md
 nav:
   - Intro: index.md
   - Notes:
+      - note/node-embedding.md
       - note/graph-neural-networks.md
       - note/graph-augmentation.md
       - note/knowledge-graph.md

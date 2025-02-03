@@ -4,7 +4,7 @@ date: 2025-01-25 14:00:33
 slug: /research/paper-reading/deepwalk
 tags:
   - GNN
-  - Random-Walk
+  - DeepWalk
   - Skip-Gram
   - Hierarchical-Softmax
 ---
