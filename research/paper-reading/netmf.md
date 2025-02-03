@@ -2,6 +2,7 @@
 title: NetMF 精读
 date: 2025-01-30 02:43:04
 slug: /research/paper-reading/netmf
+indexed: true
 tags:
   - GNN
   - DeepWalk
@@ -92,7 +93,7 @@ $$\begin{aligned}\mathbf{M} &= \frac{\operatorname{vol}(G)}{2T}\left( {\mathop{\
 >
 > $$\begin{gathered}{\parallel}\mathbf{M} - \hat{\mathbf{M}}{\parallel_{F}}\leq\frac{\operatorname{vol}\left( G\right) }{b{d}_{\min }}\sqrt{\mathop{\sum }\limits_{{j = k + 1}}^{n}{\left| \frac{1}{T}\mathop{\sum }\limits_{{r = 1}}^{T}{\lambda }_{j}^{r}\right| }^{2}};\\{\begin{Vmatrix}\log {\mathbf{M}}^{\prime } - \log {\hat{\mathbf{M}}}^{\prime }\end{Vmatrix}}_{F}\leq{\begin{Vmatrix}{\mathbf{M}}^{\prime } - {\hat{\mathbf{M}}}^{\prime }\end{Vmatrix}}_{F}\leq{\parallel}\mathbf{M} - \hat{\mathbf{M}}{\parallel }_{F}.\end{gathered}$$
 >
-> -   $\parallel \cdot \parallel_{F}$ 为 Frobenius 范数，${\parallel}\mathbf{X}{\parallel}_{F} = \sqrt{\sum_{i} \sum_{j}\mathbf{X}_{i,j}^{2}}$。
+> - $\parallel \cdot \parallel_{F}$ 为 Frobenius 范数，${\parallel}\mathbf{X}{\parallel}_{F} = \sqrt{\sum_{i} \sum_{j}\mathbf{X}_{i,j}^{2}}$。
 
 ## 2. References
 
