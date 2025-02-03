@@ -1,14 +1,20 @@
 ---
+title: '「论文精读 #2」Neural Word Embedding as Implicit Matrix Factorization'
 slug: /research/paper-reading/sgns
+indexed: true
 tags:
   - NLP
   - GNN
+  - Skip-Gram
+  - Negative-Sampling
   - SVD
   - PMI
-  - Skip-Gram
   - DeepWalk
-  - Negative-Sampling
 ---
+
+> 本篇笔记系统剖析了 Skip-Gram with Negative Sampling (SGNS) 算法的核心原理及其与矩阵分解的深层联系。重点推导了 SGNS 目标函数与点互信息（PMI）的数学等价性，揭示了通过 Shifted PPMI 矩阵的 SVD 分解实现词向量生成的机制，并对比了 SGNS、SPPMI 和 SVD 方法在不同 NLP 任务中的性能差异。最后通过 DeepWalk 案例展示了该理论在图嵌入中的实际应用。<small style="font-style: italic; opacity: 0.5">（由 deepseek-r1 生成摘要）</small>
+
+<!-- more -->
 
 ## 1. Insights
 

@@ -3,8 +3,14 @@ title: '「论文精读 #4」NetSMF: Large-Scale Network Embedding as Sparse Mat
 slug: /research/paper-reading/netsmf
 indexed: true
 tags:
-  - Randomized-SVD
+  - GNN
+  - Node-Embeddings
+  - Spectrum-Graph-Theory
   - Matrix-Factorization
+  - Skip-Gram
+  - Negative-Sampling
+  - SVD
+  - Randomized-SVD
   - DeepWalk
 create-date: 2025-01-30 02:55:23
 update-date: 2025-02-02 16:07:00
@@ -22,11 +28,9 @@ cover: https://img.memset0.cn/2025/02/01/nYD7xfTJ.png
 
 ## 1. Insights
 
-### 1.1. Preliminaries
+### 1.1. A NetMF Matrix Sparsifier
 
-#### 1.1.1. The NetMF Matrix
-
-根据 [「论文精读 #3」Network Embedding as Matrix Factorization: Unifying DeepWalk, LINE, PTE, and node2vec](/research/paper-reading/netmf/) 论文，[DeepWalk 精读](/research/paper-reading/deepwalk/) 算法可以看作隐式分解以下矩阵：
+根据 [「论文精读 #3」Network Embedding as Matrix Factorization: Unifying DeepWalk, LINE, PTE, and node2vec](/research/paper-reading/netmf/) 论文，[「论文精读 #1」DeepWalk: Online Learning of Social Representations](/research/paper-reading/deepwalk/) 算法可以看作隐式分解以下矩阵：
 
 $$
 \text{trunc\_log}\degree \left( \dfrac{\text{vol}(G)}{b} \mathbf{M} \right),\quad
@@ -35,15 +39,13 @@ $$
 
 然而，在现实世界的图中（符合小世界模型），这一矩阵是稠密的，从而导致计算成本增长至 $O(n^{3})$，导致 NetMF 算法无法用来处理大型网络。
 
-#### 1.1.2. Spectral Sparsifier & Similarity
+- **稀疏化器(sparsifier)**：通过特定技术（如谱稀疏化）对原始密集矩阵进行近似，生成一个非零元素显著减少但关键信息保留的稀疏矩阵。
+- **谱相似(spectral similarity)**：设 $G = \left( {V,E,\mathbf{A}}\right)$ 和 $\widetilde{G} = \left( {V,\widetilde{E},\widetilde{A}}\right)$ 两个加权无向网络。令 $\mathbf{L} = {D}_{G} - A$ 和 $\widetilde{L} = {D}_{\widetilde{G}} - \widetilde{A}$ 分别为它们的拉普拉斯矩阵。我们定义 $G$ 和 $\widetilde{G}$ 是 $\left( {1 + \epsilon }\right)$ -谱相似的，如果
+    $$
+     \forall \mathbf{x} \in  {\mathbb{R}}^{n},\space \left( {1 - \epsilon }\right)  \cdot  {\mathbf{x}}^{\top }\widetilde{\mathbf{L}}\mathbf{x} \leq  {\mathbf{x}}^{\top }\mathbf{L}\mathbf{x} \leq  \left( {1 + \epsilon }\right)  \cdot  {\mathbf{x}}^{\top }\widetilde{\mathbf{L}}\mathbf{x}.
+    $$
 
-**稀疏化器(sparsifier)**：通过特定技术（如谱稀疏化）对原始密集矩阵进行近似，生成一个非零元素显著减少但关键信息保留的稀疏矩阵。
-
-**谱相似(spectral similarity)**：设 $G = \left( {V,E,\mathbf{A}}\right)$ 和 $\widetilde{G} = \left( {V,\widetilde{E},\widetilde{A}}\right)$ 两个加权无向网络。令 $\mathbf{L} = {D}_{G} - A$ 和 $\widetilde{L} = {D}_{\widetilde{G}} - \widetilde{A}$ 分别为它们的拉普拉斯矩阵。我们定义 $G$ 和 $\widetilde{G}$ 是 $\left( {1 + \epsilon }\right)$ -谱相似的，如果
-
-$$
-\forall \mathbf{x} \in  {\mathbb{R}}^{n},\space \left( {1 - \epsilon }\right)  \cdot  {\mathbf{x}}^{\top }\widetilde{\mathbf{L}}\mathbf{x} \leq  {\mathbf{x}}^{\top }\mathbf{L}\mathbf{x} \leq  \left( {1 + \epsilon }\right)  \cdot  {\mathbf{x}}^{\top }\widetilde{\mathbf{L}}\mathbf{x}.
-$$
+论文用了[[Spectral Sparsification of Random-Walk Matrix Polynomials]] 中提出的稀疏化器，说实在我看不懂这个，这一部分的笔记没法写，等学了图谱理论再来探索吧。
 
 ### 1.2. Randomized SVD
 
@@ -66,13 +68,16 @@ NetSMF 算法采用了 **随机化奇异值分解(Randomized SVD)** 这一现代
 - **Line 7**: Compute sample matrix of $\mathbf{Z} = \mathbf{B}\mathbf{P}\quad(\mathbf{Z} \in \mathbb{R}^{n \times d})$
 - **Line 8**: Orthonormalize $\mathbf{Z}$
 - **Line 9**: Compute $\mathbf{C} = \mathbf{Z}^{\top} \mathbf{B}\quad(\mathbf{C} \in \mathbb{R}^{d \times d})$
-    - 这几步都是类似的，再做了一遍。
+    - 这几步都是类似的，相当于是再做了一遍。
 - **Line 10**: Run Jacobi SVD on $\mathbf{C} = \mathbf{U} \mathbf{\Sigma} \mathbf{V}^{\top}$
     - 由于 $\mathbf{C}$ 是 $d \times d$ 的小矩阵，就可以在上面应用精确的 SVD 分解方法如 Jacobi SVD。
 - **Line 11**: return $\mathbf{Z U}$, $\mathbf{\Sigma}$, $\mathbf{YV}$
     - $\mathbf{C} = \mathbf{Z}^{\top} \mathbf{A} \mathbf{Y} = \mathbf{U} \mathbf{\Sigma} \mathbf{V}^{\top} \implies \mathbf{A} = \left( \mathbf{Z}^{\top} \right)^{-1} \mathbf{U} \mathbf{\Sigma} \mathbf{V}^{\top} \mathbf{Y}^{-1} = (\mathbf{Z} \mathbf{U}) \mathbf{\Sigma} (\mathbf{Y}\mathbf{V})^{\top}$，利用了正交矩阵的性质。
 
 论文中还提到可以通过 Cattell’s Scree Test 辅助确定嵌入维度 $d$，参加实验结果部分。
+
+> -   注意到我们其实做的是对称 SVD 分解，只需要知道一侧的结果。所以可以不用像论文中一样做两次矩阵投影，只做一次并对 $n \times d$ 的矩阵（也有比较高效的算法）做精确 SVD 分解，这样效果更好。
+> -   这里用随机投影的方法不一定会找到最大的 $d$ 个奇异值，一种思路是 over sampling，即投影时维度设为 $d+10$，在对小矩阵做精确 SVD 分解的时候再找出最大的 $d$ 个。
 
 ### 1.3. NetSMF
 
@@ -95,7 +100,7 @@ $$
 
 ![|450](https://img.memset0.cn/2025/02/01/93DAyXrG.png)
 
-每一步的时空复杂度：
+每一步的时空复杂度（自己写论文的时候也可以通过这种表格的形式来呈现算法的复杂度，一目了然）：
 
 ![|450](https://img.memset0.cn/2025/02/01/KdRSvwWC.png)
 

@@ -5,9 +5,12 @@ slug: /research/paper-reading/netmf
 indexed: true
 tags:
   - GNN
+  - Node-Embeddings
+  - Matrix-Factorization
+  - Spectrum-Graph-Theory
   - DeepWalk
   - Skip-Gram
-  - Matrix-Factorization
+  - Negative-Sampling
   - SVD
 ---
 

@@ -1,31 +1,40 @@
 ---
-title: DeepWalk 精读
+title: '「论文精读 #1」DeepWalk: Online Learning of Social Representations'
 date: 2025-01-25 14:00:33
 slug: /research/paper-reading/deepwalk
+indexed: true
 tags:
   - GNN
+  - Node-Embeddings
   - DeepWalk
   - Skip-Gram
   - Hierarchical-Softmax
 ---
 
-## 1. Features
+> 本篇笔记系统解析了 DeepWalk 算法在图表征学习中的应用，重点阐述了其通过随机游走生成节点序列并运用 Skip-Gram 模型进行嵌入学习的核心机制。笔记深入探讨了幂律分布在无标度图与自然语言处理中的相似性，揭示了层次化 Softmax 如何通过霍夫曼树编码将计算复杂度从 $O(|V|)$ 降至 $O(\log |V|)$，并通过代码实例对比了传统 Softmax 与层次化实现的差异。实验部分展示了嵌入维度、游走次数等参数对模型性能的影响曲线，最后指出该方法仅利用图结构信息而忽略节点属性的特点。<small style="font-style: italic; opacity: 0.5">（由 deepseek-r1 生成摘要）</small>
 
-## 2. Notations
+<!-- more -->
 
-- 一个社交网络可被表示为 $G_{L}(V,E,X,Y)$，其中 $V$ 表示点集，$E \subseteq (V \times V)$ 表示边集，$X \in \mathbb{R}^{|V| \times S}$ 是节点特征矩阵（其中 $S$ 是属性向量的特征空间大小），$Y \in \mathbb{R}^{|V| \times |\mathcal{Y}|}$（其中 $\mathcal{Y}$ 是标签集）。不过，我们的 DeepWalk 算法在表示学习时只用到了节点的链接信息。
-- $\mathcal{V}$：词典，对应本论文中图的点集 $V$，$\mathcal{V} = V$。
-- $\mathcal{D}$：**语料库(corpus)**，即句子集合，对应本论文中通过随机游走采样的路径。
+| Notation                                       | Descripition                 | Comment                            |
+| ---------------------------------------------- | ---------------------------- | ---------------------------------- |
+| $V$                                            | 点集                           |                                    |
+| $E\subseteq \vert V \vert \times \vert V\vert$ | 边集                           |                                    |
+| $\mathbf{X} \in \mathbb{R}^{n \times d}$       | 嵌入矩阵                         |                                    |
+| $d$                                            | 嵌入维度，即 **嵌入(embedding)** 的大小 |                                    |
+| $\mathcal{V}$                                  | NLP 任务中的词典                   | 对应本论文中图的点集 $V$，即 $\mathcal{V} = V$ |
+| $\mathcal{D}$                                  | NLP 任务中的 **语料库(corpus)**     | 对应本论文中通过随机游走采样的路径集合                |
+| $w$                                            | 中心词                          |                                    |
+| $c$                                            | 上下文的单词                       |                                    |
 
-## 3. Insights
+## 1. Insights
 
-### 3.1. Power Laws & Scale-free Graphs
+### 1.1. Power Laws & Scale-free Graphs
 
 **幂律分布(Power Law)** 指 $P(k)\propto k^{-\gamma}$ 的概率分布，也叫长尾分布。在 NLP 中常用于指出大部分单词出现概率极低，只有少量单词出现概率较高。而在图中，用 **无标度(scale-free)** 图的特点则是网络中存在少数高度连接的枢纽节点和大量低度节点，典型例子包括社交网络、互联网、蛋白质相互作用网络等。即大部分节点度数极低，但存在少量度数极高的节点，也服从幂律分布。
 
 ![|675](https://img.memset0.cn/2025/01/25/KGchde3u.png)
 
-### 3.2. Skip-Gram
+### 1.2. Skip-Gram
 
 在 NLP 中有两个关于 **词袋模型(bag of words)** 的常用算法：
 
@@ -46,7 +55,7 @@ $$
 
 简化后的目标函数可以使用层次化 Softmax 算法进行优化。
 
-### 3.3. Hierarchical Softmax
+### 1.3. Hierarchical Softmax
 
 $$
 \dfrac{\exp{(\mathbf{w}\cdot \mathbf{c})}}{\sum_{c'} \exp(\mathbf{w}\cdot \mathbf{c}')}
@@ -221,11 +230,13 @@ $$
 
 - 霍夫曼树的每个节点都对应一个 sigmoid 函数，因为 sigmoid 函数实际上和 2-分类的 softmax 是等价的。
 
-## 4. Experiments
+## 2. Experiments
 
-### 4.1. Setup
+### 2.1. Exp. Methods
 
-### 4.2. Analysis: Parameter Sensitivity
+TBD
+
+### 2.2. Parameter Sensitivity
 
 ![|913](https://img.memset0.cn/2025/01/27/yQfN9W4t.png)
 
@@ -235,7 +246,7 @@ $$
 
 增加维度 $d$ 可提升性能，但边际收益递减。一定程度以后增加 $\gamma$ 基本不影响性能，表明少量游走即可捕获有效结构信息。
 
-## 5. References
+## 3. References
 
 - 原始论文：[[Bryan Perozzi, et al., 2014. DeepWalk - Online Learning of Social Representations]]。
 - [word2vec 中 cbow 与 skip-gram 的比较 - 知乎](https://zhuanlan.zhihu.com/p/37477611)
