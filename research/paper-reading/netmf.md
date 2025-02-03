@@ -11,19 +11,19 @@ tags:
   - SVD
 ---
 
-| Notation                                                                                   | Description                         | Comment                                                                                                                                                                                                                                                                                                                          |
-| ------------------------------------------------------------------------------------------ | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| $\mathbf{A} \in \mathbb{R}_{+}^{\|\mathbf{V}\| \times \|\mathbf{V}\|}$                     | 图的 **邻接矩阵(adjacency matrix)** |                                                                                                                                                                                                                                                                                                                                  |
-| $\mathbf{D}$                                                                               | 图的度数矩阵                        | $\mathbf{D}_{\text{col}} = \operatorname*{diag}(\mathbf{A}^{\top}\mathbf{e})$ 是 $\mathbf{A}$ 的列和的对角矩阵，$\mathbf{D}_{\text{row}} = \operatorname*{diag}(\mathbf{A}\mathbf{e})$ 是 $\mathbf{A}$ 的行和的对角矩阵。因为我们研究的是无向图，$\mathbf{D}_{\text{col}} = \mathbf{D}_{\text{row}}$，统一用 $\mathbf{D}$ 表示。 |
-| $\operatorname*{vol}(G) = \sum\limits_{i} \sum\limits_{j} A_{i,j} = \sum\limits_{i} d_{i}$ | 加权图 $G$ 的 **体积(volume)**      | 就是图的==总边权和==                                                                                                                                                                                                                                                                                                             |
-| $T$                                                                                        | 上下文窗口大小                      | 基于随机游走的上下文一般是是 $v_{i-T},\cdots,v_{i+T}$                                                                                                                                                                                                                                                                            |
-| $b$                                                                                        | 负采样次数                          | 在有的论文中也用 $k$ 表示                                                                                                                                                                                                                                                                                                        |
+| Notation                                                               | Description                         | Comment                                                                                                                                                                                                                                                                                                                        |
+| ---------------------------------------------------------------------- | ----------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| $\mathbf{A} \in \mathbb{R}_{+}^{\|\mathbf{V}\| \times \|\mathbf{V}\|}$ | 图的 **邻接矩阵(adjacency matrix)** |                                                                                                                                                                                                                                                                                                                                |
+| $\mathbf{D}$                                                           | 图的度数矩阵                        | $\mathbf{D}_{\text{col}} = \operatorname*{diag}(\mathbf{A}^{\top}\mathbf{e})$ 是 $\mathbf{A}$ 的列和的对角矩阵，$\mathbf{D}_{\text{row}} = \operatorname*{diag}(\mathbf{A}\mathbf{e})$ 是 $\mathbf{A}$ 的行和的对角矩阵。因为我们研究的是无向图，$\mathbf{D}_{\text{col}} = \mathbf{D}_{\text{row}}$，统一用 $\mathbf{D}$ 表示 |
+| $\operatorname*{vol}(G)$                                               | 加权图 $G$ 的 **体积(volume)**      | $\operatorname*{vol}(G) = \sum\limits_{i} \sum\limits_{j} A_{i,j} = \sum\limits_{i} d_{i}$，就是图的==总边权和==                                                                                                                                                                                                               |
+| $T$                                                                    | 上下文窗口大小                      | 基于随机游走的上下文一般是是 $v_{i-T},\cdots,v_{i+T}$                                                                                                                                                                                                                                                                          |
+| $b$                                                                    | 负采样次数                          | 在有的论文中也用 $k$ 表示                                                                                                                                                                                                                                                                                                      |
 
 ## 1. Insights
 
 论文指出，LINE/PTE、DeepWalk、node2vec 等算法实际上是在执行 **隐式矩阵分解(implicit matrix factorization)**，即我们“通过统计学习节点嵌入”的过程实际上是在近似一个矩阵 $\mathbf{M}$ 的分解 $\mathbf{M}=\mathbf{X}\mathbf{X}^{\top}$。
 
-#### 1.1.1. Closed Formula of DeepWalk
+### 1.1.1. Closed Formula of DeepWalk
 
 ![|460](https://img.memset0.cn/2025/01/25/xisKGrV3.png)
 
@@ -63,7 +63,9 @@ $$
 
 写成矩阵形式即：
 
-$$\begin{aligned}\mathbf{M} &= \frac{\operatorname{vol}(G)}{2T}\left( {\mathop{\sum }\limits_{{r = 1}}^{T}{\mathbf{P}}^{r}{\mathbf{D}}^{-1} + \mathop{\sum }\limits_{{r = 1}}^{T}{\mathbf{D}}^{-1}{\left( {\mathbf{P}}^{r}\right) }^{\top }}\right)\\&= \frac{\operatorname{vol}(G) }{2T}\left( {\mathop{\sum }\limits_{{r = 1}}^{T}\underset{r\text{ terms }}{\underbrace{{\mathbf{D}}^{-1}\mathbf{A} \times \cdots \times {\mathbf{D}}^{-1}\mathbf{A}}}{\mathbf{D}}^{-1} + \mathop{\sum }\limits_{{r = 1}}^{T}{\mathbf{D}}^{-1}\underset{r\text{ terms }}{\underbrace{\mathbf{A}{\mathbf{D}}^{-1}\times\cdots \times A{\mathbf{D}}^{-1}}}}\right)\\&= \frac{\operatorname{vol}(G) }{T}\mathop{\sum }\limits_{{r = 1}}^{T}\underset{r\text{ terms }}{\underbrace{{\mathbf{D}}^{-1}\mathbf{A} \times \cdots \times {\mathbf{D}}^{-1}\mathbf{A}}}{\mathbf{D}}^{-1} = \text{vol}(G) \left( {\frac{1}{T}\mathop{\sum }\limits_{{r = 1}}^{T}{\mathbf{\mathbf{P}}}^{r}}\right) {b}^{-1}.\end{aligned}$$
+$$
+\begin{aligned}\mathbf{M} &= \frac{\operatorname{vol}(G)}{2T}\left( {\mathop{\sum }\limits_{{r = 1}}^{T}{\mathbf{P}}^{r}{\mathbf{D}}^{-1} + \mathop{\sum }\limits_{{r = 1}}^{T}{\mathbf{D}}^{-1}{\left( {\mathbf{P}}^{r}\right) }^{\top }}\right)\\&= \frac{\operatorname{vol}(G) }{2T}\left( {\mathop{\sum }\limits_{{r = 1}}^{T}\underset{r\text{ terms }}{\underbrace{{\mathbf{D}}^{-1}\mathbf{A} \times \cdots \times {\mathbf{D}}^{-1}\mathbf{A}}}{\mathbf{D}}^{-1} + \mathop{\sum }\limits_{{r = 1}}^{T}{\mathbf{D}}^{-1}\underset{r\text{ terms }}{\underbrace{\mathbf{A}{\mathbf{D}}^{-1}\times\cdots \times A{\mathbf{D}}^{-1}}}}\right)\\&= \frac{\operatorname{vol}(G) }{T}\mathop{\sum }\limits_{{r = 1}}^{T}\underset{r\text{ terms }}{\underbrace{{\mathbf{D}}^{-1}\mathbf{A} \times \cdots \times {\mathbf{D}}^{-1}\mathbf{A}}}{\mathbf{D}}^{-1} = \text{vol}(G) \left( {\frac{1}{T}\mathop{\sum }\limits_{{r = 1}}^{T}{\mathbf{\mathbf{P}}}^{r}}\right) {b}^{-1}.\end{aligned}
+$$
 
 - 由此也可以发现 LINE 即 DeepWalk 取 $T=1$ 的特例。
 - SGNS 算法实际上就是隐式分解 $\log( \mathbf{M}) - \log b$ 矩阵。
@@ -91,9 +93,11 @@ $$\begin{aligned}\mathbf{M} &= \frac{\operatorname{vol}(G)}{2T}\left( {\mathop{\
 >
 > 可证明使用大窗口的 NetMF 算法得到的 $\log \mathbf{M}'$ 的误差界如下：
 >
-> $$\begin{gathered}{\parallel}\mathbf{M} - \hat{\mathbf{M}}{\parallel_{F}}\leq\frac{\operatorname{vol}\left( G\right) }{b{d}_{\min }}\sqrt{\mathop{\sum }\limits_{{j = k + 1}}^{n}{\left| \frac{1}{T}\mathop{\sum }\limits_{{r = 1}}^{T}{\lambda }_{j}^{r}\right| }^{2}};\\{\begin{Vmatrix}\log {\mathbf{M}}^{\prime } - \log {\hat{\mathbf{M}}}^{\prime }\end{Vmatrix}}_{F}\leq{\begin{Vmatrix}{\mathbf{M}}^{\prime } - {\hat{\mathbf{M}}}^{\prime }\end{Vmatrix}}_{F}\leq{\parallel}\mathbf{M} - \hat{\mathbf{M}}{\parallel }_{F}.\end{gathered}$$
+> $$
+> \begin{gathered}{\parallel}\mathbf{M} - \hat{\mathbf{M}}{\parallel_{F}}\leq\frac{\operatorname{vol}\left( G\right) }{b{d}_{\min }}\sqrt{\mathop{\sum }\limits_{{j = k + 1}}^{n}{\left| \frac{1}{T}\mathop{\sum }\limits_{{r = 1}}^{T}{\lambda }_{j}^{r}\right| }^{2}};\\{\begin{Vmatrix}\log {\mathbf{M}}^{\prime } - \log {\hat{\mathbf{M}}}^{\prime }\end{Vmatrix}}_{F}\leq{\begin{Vmatrix}{\mathbf{M}}^{\prime } - {\hat{\mathbf{M}}}^{\prime }\end{Vmatrix}}_{F}\leq{\parallel}\mathbf{M} - \hat{\mathbf{M}}{\parallel }_{F}.\end{gathered}
+> $$
 >
-> - $\parallel \cdot \parallel_{F}$ 为 Frobenius 范数，${\parallel}\mathbf{X}{\parallel}_{F} = \sqrt{\sum_{i} \sum_{j}\mathbf{X}_{i,j}^{2}}$。
+> -   $\parallel \cdot \parallel_{F}$ 为 Frobenius 范数，${\parallel}\mathbf{X}{\parallel}_{F} = \sqrt{\sum_{i} \sum_{j}\mathbf{X}_{i,j}^{2}}$。
 
 ## 2. References
 
