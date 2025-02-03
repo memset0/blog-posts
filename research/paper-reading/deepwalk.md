@@ -15,16 +15,16 @@ tags:
 
 <!-- more -->
 
-| Notation                                       | Descripition                 | Comment                            |
-| ---------------------------------------------- | ---------------------------- | ---------------------------------- |
-| $V$                                            | 点集                           |                                    |
-| $E\subseteq \vert V \vert \times \vert V\vert$ | 边集                           |                                    |
-| $\mathbf{X} \in \mathbb{R}^{n \times d}$       | 嵌入矩阵                         |                                    |
-| $d$                                            | 嵌入维度，即 **嵌入(embedding)** 的大小 |                                    |
-| $\mathcal{V}$                                  | NLP 任务中的词典                   | 对应本论文中图的点集 $V$，即 $\mathcal{V} = V$ |
-| $\mathcal{D}$                                  | NLP 任务中的 **语料库(corpus)**     | 对应本论文中通过随机游走采样的路径集合                |
-| $w$                                            | 中心词                          |                                    |
-| $c$                                            | 上下文的单词                       |                                    |
+| Notation                                       | Descripition                            | Comment                                        |
+| ---------------------------------------------- | --------------------------------------- | ---------------------------------------------- |
+| $V$                                            | 点集                                    |                                                |
+| $E\subseteq \vert V \vert \times \vert V\vert$ | 边集                                    |                                                |
+| $\mathbf{X} \in \mathbb{R}^{n \times d}$       | 嵌入矩阵                                |                                                |
+| $d$                                            | 嵌入维度，即 **嵌入(embedding)** 的大小 |                                                |
+| $\mathcal{V}$                                  | NLP 任务中的词典                        | 对应本论文中图的点集 $V$，即 $\mathcal{V} = V$ |
+| $\mathcal{D}$                                  | NLP 任务中的 **语料库(corpus)**         | 对应本论文中通过随机游走采样的路径集合         |
+| $w$                                            | 中心词                                  |                                                |
+| $c$                                            | 上下文的单词                            |                                                |
 
 ## 1. Insights
 

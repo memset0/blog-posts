@@ -14,7 +14,7 @@ tags:
   - SVD
 ---
 
-> 本篇笔记系统分析了 NetMF 论文的核心贡献：通过理论推导证明 DeepWalk、LINE 等图嵌入算法本质是隐式矩阵分解，并提出了显式的矩阵分解框架 NetMF。笔记详细推导了基于随机游走的 PMI 矩阵闭式解 $\mathbf{M} = \text{vol}(G)(\frac{1}{T}\sum_{r=1}^T \mathbf{P}^r)\mathbf{D}^{-1}$，阐述了 NetMF 通过截断 SVD 分解该矩阵的实现方案，其中小窗口直接计算矩阵幂，大窗口采用特征值分解近似。笔记还记录了算法中 Shifted PPMI 处理、误差界理论证明等关键技术细节，最终通过矩阵分解视角统一了多种图嵌入方法。<small style="font-style: italic; opacity: 0.5">（由 deepseek-r1 生成摘要）</small>
+> 本篇笔记系统分析了 NetMF 论文的核心贡献：通过理论推导证明 DeepWalk、LINE 等图嵌入算法本质是隐式矩阵分解，并提出了显式的矩阵分解框架 NetMF。笔记详细推导了基于随机游走的 PMI 矩阵闭式解 $\displaystyle{\mathbf{M} = \text{vol}(G)\left(\frac{1}{T}\sum_{r=1}^T \mathbf{P}^r\right)\mathbf{D}^{-1}}$，阐述了 NetMF 通过截断 SVD 分解该矩阵的实现方案，其中小窗口直接计算矩阵幂，大窗口采用特征值分解近似。笔记还记录了算法中 Shifted PPMI 处理、误差界理论证明等关键技术细节，最终通过矩阵分解视角统一了多种图嵌入方法。<small style="font-style: italic; opacity: 0.5">（由 deepseek-r1 生成摘要）</small>
 
 <!-- more -->
 
@@ -30,7 +30,7 @@ tags:
 
 论文指出，LINE/PTE、DeepWalk、node2vec 等算法实际上是在执行 **隐式矩阵分解(implicit matrix factorization)**，即我们“通过统计学习节点嵌入”的过程实际上是在近似一个矩阵 $\mathbf{M}$ 的分解 $\mathbf{M}=\mathbf{X}\mathbf{X}^{\top}$。
 
-### 1.1.1. Closed Formula of DeepWalk
+### 1.1. Closed Formula of DeepWalk
 
 ![|460](https://img.memset0.cn/2025/01/25/xisKGrV3.png)
 

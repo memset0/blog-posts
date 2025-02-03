@@ -106,19 +106,19 @@ $$
 
 ## 2. Experiments
 
-### 2.1. Methods
+### 2.1. Exp. Methods
 
 - 窗口大小 $T$ 设定为 $10$，这也是 DeepWalk 和 node2vec 的默认设置。
 - 嵌入维度 $d$ 设定为 $128$。
 - 对于各方法的超参数，设定如下：
     - LINE：使用 LINE 的二阶近似，边样本数量为 100 亿，负样本大小为 5。
     - DeepWalk：游走长度为 40，每个顶点的游走次数为 80，负样本大小为 5。
-    - node2vec：对于返回参数 $p$ 和进出参数 $q$，如果有作者提供的默认设置，我们采用该设置。否则，在 $p,q \in \{0.25, 0.5, 1, 2, 4\}$ 中进行网格搜索。为了公平比较，使用与 DeepWalk 相同的游走长度和每个顶点的游走次数 $\gamma$。
+    - node2vec：对于返回参数 $p$ 和进出参数 $q$，如果有作者提供的默认设置则采用该设置。否则，在 $p,q \in \{0.25, 0.5, 1, 2, 4\}$ 中进行网格搜索。为了公平比较，使用与 DeepWalk 相同的游走长度和每个顶点的游走次数 $\gamma$。
     - NetMF：超参数 $h$ 表示用于近似 NetMF 矩阵的特征对数量。对于 BlogCatalog、PPI 和 Flickr 数据集，我们选择 $h = {256}$。
     - NetSMF：为了达到理想的性能，我们为 PPI、Flickr 和 YouTube 数据集设置样本数量为 $M = {10}^{3} \times T \times m$，为 BlogCatalog 设置为 $M = {10}^{4} \times T \times m$，为 OAG 设置为 $M = {10} \times T \times m$。对于 NetMF 和 NetSMF，我们都有 $b = 1$。
 - 对于下游分类任务，同样使用 one-vs-rest logistic regression model 完成。
 
-### 2.2. Results
+### 2.2. Exp. Results
 
 ![|850](https://img.memset0.cn/2025/02/01/dv6l5SOD.png)
 

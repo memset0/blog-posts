@@ -2,6 +2,7 @@
 title: '「论文精读 #2」Neural Word Embedding as Implicit Matrix Factorization'
 slug: /research/paper-reading/sgns
 indexed: true
+date: 2025-01-27 10:33:50
 tags:
   - NLP
   - GNN
@@ -30,7 +31,7 @@ P(\mathcal{D}=0 \mid (w,c)) &= 1 - P(\mathcal{D} = 1 \mid (w,c)) = \dfrac{e^{-\m
 \end{aligned}
 $$
 
-- $w$ 表示当前 **单词(word)**，$c$ 表示作为 $w$ 的 **上下文(context)** 出现过的节点。
+- $w$ 表示当前 **单词(word)**（中心词），$c$ 表示作为 $w$ 的 **上下文(context)** 出现过的节点。
 
 以 $c_{N} \sim P_{\mathcal{D}}$ 分布进行负样本采样，采样概率设置为每个点在语料库 $\mathcal{D}$ 中出现的概率（即 $\displaystyle{P_{\mathcal{D}}(c) = \dfrac{\#(c)}{\mathcal{D}}}$，其中 $\#(c)$ 表示单词 $c$ 在 $\mathcal{D}$ 中出现的频率），故单个负采样的似然即：
 
