@@ -13,16 +13,20 @@ tags:
 cover: https://img.memset0.cn/2025/02/07/U2xOTtuL.png
 ---
 
-| Notation                                             | Description                              |
-| ---------------------------------------------------- | ---------------------------------------- |
-| $\mathbf{R}_{d} \in \mathbb{R}^{n \times d}$         | 节点嵌入矩阵                             |
-| $\mathbf{I}_{n} \in \mathbb{R}^{n \times n}$         | $n \times n$ 的单位矩阵                  |
-| $\widetilde{\mathbf{L}} \in \mathbb{R}^{n \times n}$ | **拉普拉斯滤波器(Laplacian filter)**     |
-| $T_{i}(x)$                                           | **切比雪夫多项式(Chebyshev polynomial)** |
+> 本篇笔记详细介绍了 ProNE 这一高效的网络表示学习方法。ProNE 主要包含两个关键步骤：基于稀疏矩阵分解的快速嵌入初始化，以及基于谱传播的嵌入增强。笔记重点阐述了谱传播部分的理论基础，包括调制网络的构建、带通滤波器的设计，以及如何通过切比雪夫多项式展开来提高计算效率。通过这种方法，ProNE 能够在保持高效计算的同时，同时捕获网络的局部结构信息和全局社区特征。<small style="font-style: italic; opacity: 0.5">（由 claude-3.5-sonnet 生成摘要）</small>
+
+<!-- more -->
+
+| Notation                                             | Description                              | Comment                                 |
+| ---------------------------------------------------- | ---------------------------------------- | --------------------------------------- |
+| $\mathbf{R}_{d} \in \mathbb{R}^{n \times d}$         | 节点嵌入矩阵                             |                                         |
+| $\mathbf{I}_{n} \in \mathbb{R}^{n \times n}$         | $n \times n$ 的单位矩阵                  |                                         |
+| $\widetilde{\mathbf{L}} \in \mathbb{R}^{n \times n}$ | **拉普拉斯滤波器(Laplacian filter)**     |                                         |
+| $T_{i}(x)$                                           | **切比雪夫多项式(Chebyshev polynomial)** | 迭代公式：$T_{0}(x)=1$，$T_{1}(x)=x$,$$ |
 
 ## 1. Motivation
 
-高效处理大规模网络。（上亿节点）
+高效处理大规模（上亿节点）网络。
 
 ## 2. Insights
 
@@ -51,13 +55,13 @@ $$
 
 > [!note]- 具体解释
 >
-> GCN 部分的引文中其实介绍了，图 Fourier 变换实际上是一次图 Fourier 变换加一次逆变换，这个过程可以理解为：先由拉普拉斯矩阵的特征向量组 U 将 X 映射到对应向量空间，用特征值 lambda*k 缩放 X ，再被逆变换处理；然后，在 **图分割理论(graph partition)** 中有一个 k-way Cheeger 常量 $\rho_{G}(k)$，这个常量越小表示图的划分越好，直观的表述大概是"子图聚合程度越高，该常量对应越小，相对的划分就越好"；最后我们通过高阶 Cheeger 不等式将拉普拉斯矩阵的特征值和这个常量联系起来
-> 
+> GCN 部分的引文中其实介绍了，图 Fourier 变换实际上是一次图 Fourier 变换加一次逆变换，这个过程可以理解为：先由拉普拉斯矩阵的特征向量组 U 将 X 映射到对应向量空间，用特征值 lambda\*k 缩放 X ，再被逆变换处理；然后，在 **图分割理论(graph partition)** 中有一个 k-way Cheeger 常量 $\rho_{G}(k)$，这个常量越小表示图的划分越好，直观的表述大概是"子图聚合程度越高，该常量对应越小，相对的划分就越好"；最后我们通过高阶 Cheeger 不等式将拉普拉斯矩阵的特征值和这个常量联系起来
+>
 > $$
->\frac{\lambda_k}2\leq\rho_G(k)\leq O(k^2)\sqrt{\lambda_k}
+> \frac{\lambda_k}2\leq\rho_G(k)\leq O(k^2)\sqrt{\lambda_k}
 > $$
-> 
-> 上式表明Cheeger 常量对应着特征值的上下界，更小的常量对应更小的特征值，也对应着更 **内聚(clustering)** 的子图，反之对应更大的特征值，此时图结构中的子图更为 **平滑(smoothing)**；因此，在这部分里，作者设计了一个函数 g 用于控制特征值的取值范围……——[网络表示学习（ProNE-2019IJCAI ）- cheeger 不等式 - CSDN 博客](https://blog.csdn.net/qq_43390809/article/details/107546823)
+>
+> 上式表明 Cheeger 常量对应着特征值的上下界，更小的常量对应更小的特征值，也对应着更 **内聚(clustering)** 的子图，反之对应更大的特征值，此时图结构中的子图更为 **平滑(smoothing)**；因此，在这部分里，作者设计了一个函数 g 用于控制特征值的取值范围……——[网络表示学习（ProNE-2019IJCAI ）- cheeger 不等式 - CSDN 博客](https://blog.csdn.net/qq_43390809/article/details/107546823)
 
 因此我们选用了一个 **带通滤波器(band-pass filter)** 作为谱调制器：
 
