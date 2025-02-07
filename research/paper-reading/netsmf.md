@@ -9,7 +9,6 @@ tags:
   - Matrix-Factorization
   - Skip-Gram
   - Negative-Sampling
-  - SVD
   - Randomized-SVD
   - DeepWalk
 create-date: 2025-01-30 02:55:23
