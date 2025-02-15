@@ -2,8 +2,6 @@
 title: Numberical Analysis
 sticker: emoji//1f9ee
 sync: /course/na/index.md
-tags:
-  - makemd/courses
 nav:
   - Intro: index.md
   - Note:

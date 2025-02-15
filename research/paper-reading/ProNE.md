@@ -17,12 +17,12 @@ cover: https://img.memset0.cn/2025/02/07/U2xOTtuL.png
 
 <!-- more -->
 
-| Notation                                             | Description                              | Comment                                 |
-| ---------------------------------------------------- | ---------------------------------------- | --------------------------------------- |
-| $\mathbf{R}_{d} \in \mathbb{R}^{n \times d}$         | 节点嵌入矩阵                             |                                         |
-| $\mathbf{I}_{n} \in \mathbb{R}^{n \times n}$         | $n \times n$ 的单位矩阵                  |                                         |
-| $\widetilde{\mathbf{L}} \in \mathbb{R}^{n \times n}$ | **拉普拉斯滤波器(Laplacian filter)**     |                                         |
-| $T_{i}(x)$                                           | **切比雪夫多项式(Chebyshev polynomial)** | 迭代公式：$T_{0}(x)=1$，$T_{1}(x)=x$,$$ |
+| Notation                                             | Description                              | Comment                                                                    |
+| ---------------------------------------------------- | ---------------------------------------- | -------------------------------------------------------------------------- |
+| $\mathbf{R}_{d} \in \mathbb{R}^{n \times d}$         | 节点嵌入矩阵                             |                                                                            |
+| $\mathbf{I}_{n} \in \mathbb{R}^{n \times n}$         | $n \times n$ 的单位矩阵                  |                                                                            |
+| $\widetilde{\mathbf{L}} \in \mathbb{R}^{n \times n}$ | **拉普拉斯滤波器(Laplacian filter)**     |                                                                            |
+| $T_{i}(x)$                                           | **切比雪夫多项式(Chebyshev polynomial)** | 迭代公式：$T_{0}(x)=1$，$T_{1}(x)=x$，$T_i(x) = 2xT_{i-1}(x) - T_{i-2}(x)$ |
 
 ## 1. Motivation
 

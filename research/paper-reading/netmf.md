@@ -50,7 +50,7 @@ $$
 \quad(L\to \infty)
 $$
 
-- 这里作者基于“起点根据 $P_{\mathcal{D}}$ 分布决定”的假设证明，随后又说明了采用 DeepWalk 原始论文的均匀分布决定起点（即每个点作为起点都采样 $\gamma$ 条路径）时该定理仍然成立。
+> -   这里作者基于“起点根据 $P_{\mathcal{D}}$ 分布决定”的假设证明，随后又说明了采用 DeepWalk 原始论文的均匀分布决定起点（即每个点作为起点都采样 $\gamma$ 条路径）时该定理仍然成立。
 
 基于一个观察：$\dfrac{|\mathcal{D}_{\overrightarrow{r}}|}{|\mathcal{D}|} = \dfrac{|\mathcal{D}_{\overleftarrow{r}}|}{|\mathcal{D}|} = \dfrac{1}{2T}$，代入即可得到下式：
 
@@ -74,8 +74,8 @@ $$
 \begin{aligned}\mathbf{M} &= \frac{\operatorname{vol}(G)}{2T}\left( {\mathop{\sum }\limits_{{r = 1}}^{T}{\mathbf{P}}^{r}{\mathbf{D}}^{-1} + \mathop{\sum }\limits_{{r = 1}}^{T}{\mathbf{D}}^{-1}{\left( {\mathbf{P}}^{r}\right) }^{\top }}\right)\\&= \frac{\operatorname{vol}(G) }{2T}\left( {\mathop{\sum }\limits_{{r = 1}}^{T}\underset{r\text{ terms }}{\underbrace{{\mathbf{D}}^{-1}\mathbf{A} \times \cdots \times {\mathbf{D}}^{-1}\mathbf{A}}}{\mathbf{D}}^{-1} + \mathop{\sum }\limits_{{r = 1}}^{T}{\mathbf{D}}^{-1}\underset{r\text{ terms }}{\underbrace{\mathbf{A}{\mathbf{D}}^{-1}\times\cdots \times A{\mathbf{D}}^{-1}}}}\right)\\&= \frac{\operatorname{vol}(G) }{T}\mathop{\sum }\limits_{{r = 1}}^{T}\underset{r\text{ terms }}{\underbrace{{\mathbf{D}}^{-1}\mathbf{A} \times \cdots \times {\mathbf{D}}^{-1}\mathbf{A}}}{\mathbf{D}}^{-1} = \text{vol}(G) \left( {\frac{1}{T}\mathop{\sum }\limits_{{r = 1}}^{T}{\mathbf{\mathbf{P}}}^{r}}\right) {b}^{-1}.\end{aligned}
 $$
 
-- 由此也可以发现 LINE 即 DeepWalk 取 $T=1$ 的特例。
-- SGNS 算法实际上就是隐式分解 $\log( \mathbf{M}) - \log b$ 矩阵。
+> -   由此也可以发现 LINE 即 DeepWalk 取 $T=1$ 的特例。
+> -   SGNS 算法实际上就是隐式分解 $\log( \mathbf{M}) - \log b$ 矩阵。
 
 ### 1.2. NetMF
 
@@ -108,4 +108,4 @@ $$
 
 ## 2. References
 
-- 原始论文：[[Jiezhong Qiu, et al., 2018. Network Embedding as Matrix Factorization - Unifying DeepWalk, LINE, PTE, and node2vec]]
+- 原始论文

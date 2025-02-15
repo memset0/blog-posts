@@ -1,6 +1,4 @@
 ---
-tags:
-  - makemd/courses
 sticker: emoji//1f5a5-fe0f
 title: Computer Organization
 sync: /course/co/index.md
