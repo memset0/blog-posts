@@ -193,7 +193,8 @@ $$
 L_{t-1} = D_{KL}(q(\mathbf{x}_{t-1}|\mathbf{x}_t, \mathbf{x}_0) || p_\theta(\mathbf{x}_{t-1}|\mathbf{x}_t)) = \mathbb{E}_{q(\mathbf{x}_{0:T})} \left[ \frac{1}{2\sigma_t^2} || \boldsymbol{\mu}_{t}(\mathbf{x}_t, \mathbf{x}_0) - \boldsymbol{\mu}_\theta(\mathbf{x}_t, t) ||^2 \right] + C
 $$
 
-> -   这里作者通过实验发现训练 $\boldsymbol{\mu}_{\theta}(\mathbf{x}_{t},t)$ 时给定时间戳 $t$ 能取得更好的效果（即 $\boldsymbol{\mu}_{\theta}$ 是一个不仅关于 $\mathbf{x}_{t}$ 还关于 $t$ 的函数），这其实也更符合直觉。
+> -   这里作者通过实验发现训练 $\boldsymbol{\mu}_{\theta}(\mathbf{x}_{t},t)$ 时给时间戳 $t$ 能取得更好的效果（即 $\boldsymbol{\mu}_{\theta}$ 是一个不仅关于 $\mathbf{x}_{t}$ 还关于 $t$ 的函数），这其实也符合直觉。
+> -   换句话说，我们每一步的 $\boldsymbol{\mu}_{\theta}$ 都理应是不同的，故将时间戳 $t$ 作为模型输入传入，可以避免训练 $T$ 个模型，而用一个模型表示（共用参数）。
 
 > [!note]- Proof
 >
@@ -233,6 +234,8 @@ $$
 $$
 
 这里引入了噪声项 $\boldsymbol{\epsilon}$。注意：在训练过程中，$\mathbf{x}_{0}$ 是已知的，则 $\mathbf{x}_{t}$ 是关于 $\mathbf{x}_{0}$ 和 $\boldsymbol{\epsilon}$ 的函数（所以表示为 $\mathbf{x}_{t}(\mathbf{x}_{0}, \boldsymbol{\epsilon})$）；而在推理过程中，$\mathbf{x}_{t}$ 是已知的，$\mathbf{x}_{0}$ 确是未知的（所以训练项是 $\boldsymbol{\mu}_{\theta}(\mathbf{x}_{t},t)$，关于 $\mathbf{x}_{t}$ 和 $t$ 的函数）。因此 $L_{t-1}$ 中的 $\mathbf{x}_{0}$ 一项需用 $\mathbf{x}_{0} = \dfrac{1}{\sqrt{\bar{\alpha}_{t}}} \mathbf{x}_{t}(\mathbf{x}_{0},\boldsymbol{\epsilon}) - \dfrac{\sqrt{1-\bar{\alpha}_{t}} }{\sqrt{\bar{\alpha}_{t}} } \boldsymbol{\epsilon}$ 替换，如此可得：
+
+> 换句话说，我们先前只是得到了 $q(\mathbf{x}_{t-1}|\mathbf{x}_{t},\mathbf{x}_{0})$，既然多一个 $\mathbf{x}_{0}$ 没法做，我们在提出噪声项的情况下就可以把 $\mathbf{x}_{0}$ 用含 $\mathbf{x}_{t}$ 的式子代换，从而得到了 $\mathbb{E}_{\boldsymbol{\epsilon} \sim \mathcal{N}(\boldsymbol{0},\boldsymbol{I})}\left[ q(\mathbf{x}_{t-1}|\mathbf{x}_t) \right]$，这个式子就可以应用在推理过程中了，故我们把这个式子作为真正的目标函数。当然在训练过程中 $\mathbf{x}_{t}$ 本身也是由 $\mathbf{x}_{0}$ 和 $\mathbf{\epsilon}$ 所得到的，故记为 $\mathbf{x}_{t}(\mathbf{x}_{0},\boldsymbol{\epsilon})$。
 
 $$
 \begin{aligned}
