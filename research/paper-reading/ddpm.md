@@ -1,9 +1,19 @@
 ---
 title: "「论文精读 #7」Denoising Diffusion Probabilistic Models"
 date: 2025-02-13 20:06:52
+update-time: 2025-02-16 01:57:00
 slug: /research/paper-reading/ddpm
 indexed: true
+tags:
+  - Diffusion-Model
+  - Gaussian-distribution
+  - Markov-chain
+  - KL-Divergence
 ---
+
+> 本篇笔记深入解析了 Denoising Diffusion Probabilistic Models (DDPM) 的原理。首先介绍了数学符号和基本概念，包括正向扩散过程（前向马尔可夫过程）以及逆向去噪过程（反向马尔可夫过程）。然后详细推导了变分下界（VLB）的推导过程，并分析了模型的损失函数构造，特别是 KL 散度优化目标。笔记还涵盖了训练过程的优化策略，并给出了反向采样算法的实现方法，帮助读者理解扩散模型的实际运作方式。最后，附上相关链接供进一步阅读。<small style="font-style: italic; opacity: 0.5">（由 gpt-4o 生成摘要）</small>
+
+<!--more-->
 
 | Notation                                                    | Description                                                              | Comment                                                                                    |
 | ----------------------------------------------------------- | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
@@ -80,7 +90,7 @@ $$
 > \mathbf{x}_{t} = \sqrt{\bar{\alpha}_{t}}  \mathbf{x}_{0} + \sqrt{1-\bar{\alpha}_{t}} \boldsymbol{\epsilon}_{t}
 > $$
 
-### DDPM
+### 1.2. DDPM
 
 扩散模型是==通过寻找使训练数据的可能性最大化反向马尔可夫转移来训练的==。在实践中，这等同于将目标函数设定为==最小化负对数似然的变分上界==。
 
@@ -248,13 +258,13 @@ $$
 > \end{aligned}
 > $$
 
-而因为 $\mathbf{x}_{t}$ 其实是模型的输入，所以我们的模型 $\boldsymbol{\mu}_{\theta}$ 实际上需要去学习噪声项，即 $\boldsymbol{\mu}_{\theta}(\mathbf{x}_{t},t)$ 中 $\mathbf{x}_{t}$ 项的系数应设定为 $\dfrac{1}{\sqrt{\alpha_{t}}}$，即和 $\tilde{\boldsymbol{\mu}}_{t}$ 项中 $\mathbf{x}_{t}$ 项的系数相同，而训练模型 $\boldsymbol{\epsilon}_{\theta}$ 来学习噪声项，即：
+而因为 $\mathbf{x}_{t}$ 其实是模型的输入，直觉是让我们的模型 $\boldsymbol{\mu}_{\theta}$ 去学习噪声项，即 $\boldsymbol{\mu}_{\theta}(\mathbf{x}_{t},t)$ 中 $\mathbf{x}_{t}$ 项的系数应设定为 $\dfrac{1}{\sqrt{\alpha_{t}}}$，即和 $\tilde{\boldsymbol{\mu}}_{t}$ 项中 $\mathbf{x}_{t}$ 项的系数相同，详见抵消。故可以表示成训练模型 $\boldsymbol{\epsilon}_{\theta}$ 来学习噪声项 $\boldsymbol{\epsilon}$，即设：
 
 $$
 \boldsymbol{\mu}_{\theta}(\mathbf{x}_{t}, t) = \frac{1}{\sqrt{{\alpha }_{t}}}\left( {{\mathbf{x}}_{t} - \frac{{\beta }_{t}}{\sqrt{1 - {\bar{\alpha }}_{t}}}{\boldsymbol{\epsilon}}_{\theta }\left( {{\mathbf{x}}_{t},t}\right) }\right)
 $$
 
-这样，便可消掉 $\mathbf{x}_{t}$ 并提出噪声项的系数，从而进一步简化的损失函数：
+消掉 $\mathbf{x}_{t}$ 并提出噪声项的系数，得到进一步简化的损失函数：
 
 $$
 L_{t-1} - C = {\mathbb{E}}_{{\mathbf{x}}_{0},\boldsymbol{\epsilon}}\left\lbrack  {\frac{{\beta }_{t}^{2}}{2{\sigma }_{t}^{2}{\alpha }_{t}\left( {1 - {\bar{\alpha }}_{t}}\right) }{\begin{Vmatrix}\boldsymbol{\epsilon} - {\boldsymbol{\epsilon}}_{\theta }\left( \sqrt{{\bar{\alpha }}_{t}}{\mathbf{x}}_{0} + \sqrt{1 - {\bar{\alpha }}_{t}}\boldsymbol{\epsilon},t\right) \end{Vmatrix}}^{2}}\right\rbrack
@@ -262,7 +272,7 @@ $$
 
 此外还有 $L_{0} = -\log p_{\theta}(\mathbf{x_{0}|\mathbf{x}_{1}})$ 的一项没有处理，论文的做法是：
 
-![|685](https://img.memset0.cn/2025/02/16/WyfS9cAL.png)
+![|695](https://img.memset0.cn/2025/02/16/WyfS9cAL.png)
 
 ## 2. Implementation
 
