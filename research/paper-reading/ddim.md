@@ -7,13 +7,17 @@ tags:
   - Diffusion-Model
 ---
 
+> 本篇笔记对论文 _Denoising Diffusion Implicit Models (DDIM)_ 进行了深入解读，重点分析其相较于 DDPM 的改进之处。DDIM 通过放宽马尔科夫链假设，构造了一个非马尔科夫的随机过程，并利用设定的边际分布推导逆过程，使得在相同参数条件下仍可遵循高斯分布。该方法允许跳步采样，从而大幅减少生成步数，加速推理过程，同时保持图像质量。DDIM 的方法与 DDPM 兼容，因此可直接复用 DDPM 的训练模型。此外，笔记还探讨了损失函数的优化对模型效果的影响，并提供了详细的数学推导与直觉解释。<small style="font-style: italic; opacity: 0.5">（由 gpt-4o 生成摘要）</small>
+
+<!-- more -->****
+
 ## 1. Insights
 
 ### 1.1. Non-Markov Process
 
 > 在 DDPM 论文中，我们利用马尔科夫链的性质，使用贝叶斯公式推导出了逆过程的分布 $q(\mathbf{x}_{t-1}|\mathbf{x}_{t},\mathbf{x}_{0})$，而在本文中，我们将试图在保持 $q(\mathbf{x}_{t}|\mathbf{x}_{0})$ 仍服从相同参数的高斯分布的前提下，使用边际分布的定义式推导出逆过程的分布。
 
-引入一个新的记号 $q_{\boldsymbol{\sigma}}(\cdot)$，表示由实向量 $\boldsymbol{\sigma} \in \mathbb{R}^T_{\geq 0}$ 索引的推断分布族 $\mathcal{Q}$ 下的分布，通俗点说就是我们手动构造了一个分布，且这一分布有 $T$ 个自由参数 $\sigma_1, \sigma_2, \cdots, \sigma_T$，这些参数控制了逆过程的方差，同时仍要保证：
+引入一个新的记号 $q_{\boldsymbol{\sigma}}(\cdot)$，表示由实向量 $\boldsymbol{\sigma} \in \mathbb{R}^T_{\geq 0}$ 索引的推断分布族 $\mathcal{Q}$ 下的分布，通俗点说就是我们手动构造了一个分布，且这一分布有 $T$ 个自由参数 $\sigma_1, \sigma_2, \cdots, \sigma_T$，这些参数控制了条件分布 $q_{\boldsymbol{\sigma}}(\mathbf{x}_{t-1}|\mathbf{x}_{t},\mathbf{x}_{0})$ 的方差，从而影响了逆过程的随机性，同时仍要保证：
 
 $$
 q_{\boldsymbol{\sigma}}(\mathbf{x}_T|\mathbf{x}_0) = \mathcal{N}(\sqrt{\bar{\alpha}_T}\mathbf{x}_0, (1-\bar{\alpha}_T)\mathbf{I})
@@ -25,7 +29,7 @@ $$
 {q}_{\boldsymbol{\sigma} }\left( {{\mathbf{x}}_{t - 1} \mid  {\mathbf{x}}_{t},{\mathbf{x}}_{0}}\right)  = \mathcal{N}\left( {\sqrt{{\bar{\alpha} }_{t - 1}}{\mathbf{x}}_{0} + \sqrt{1 - {\bar{\alpha} }_{t - 1} - {\sigma }_{t}^{2}} \cdot  \frac{{\mathbf{x}}_{t} - \sqrt{{\bar{\alpha} }_{t}}{\mathbf{x}}_{0}}{\sqrt{1 - {\bar{\alpha} }_{t}}},{\sigma }_{t}^{2}\mathbf{I}}\right)
 $$
 
-> -   特别地，当 $\sigma_{t}^{2} = \dfrac{1-\bar{\alpha}_{t-1}}{1-\bar{\alpha}_{t}} \beta_{t} =  \dfrac{1-\bar{\alpha}_{t-1}}{1-\bar{\alpha}_{t}}\cdot \left( 1-\dfrac{\bar{\alpha}_{t}}{\bar{\alpha}_{t-1}} \right)$ 时，DDIM 与 DDPM 等价。
+> -   特别地，当 $\sigma_{t}^{2} = \dfrac{1-\bar{\alpha}_{t-1}}{1-\bar{\alpha}_{t}} \beta_{t} =  \dfrac{1-\bar{\alpha}_{t-1}}{1-\bar{\alpha}_{t}}\cdot \left( 1-\dfrac{\bar{\alpha}_{t}}{\bar{\alpha}_{t-1}} \right)$ 时，DDIM 与 DDPM 的训练目标等价。
 
 > [!quote]- 原论文证明（对这一公式的验证）
 >
@@ -78,7 +82,7 @@ $$
 >
 > ![|720](https://img.memset0.cn/2025/02/16/CdM924wP.png)
 
-论文指出利用这一分布可以用贝叶斯公式反过来解出“正向过程”的条件分布（打双引号是因为这里已经不基于马尔科夫链的假设了），其仍是一个高斯分布，但我们并不需要用到这一结果。
+论文指出利用这一分布可以用贝叶斯公式反过来解出“正向过程”的条件分布（打双引号是因为这里已经不再是马尔可夫链意义下的前向过程，而是一种基于贝叶斯公式反推得到的条件分布），其仍是一个高斯分布，但我们并不需要用到这一结果。
 
 根据 $q_{\boldsymbol{\sigma}}(\mathbf{x}_{t-1}|\mathbf{x}_{t},\mathbf{x}_{0})$，使用与 DDPM 相同的方法可以推导出 DDIM 的目标函数：
 
@@ -121,9 +125,9 @@ $$
 \mathcal{L}_{t-1} - C \propto ||\boldsymbol{\epsilon}(\mathbf{x}_{t},t) - \boldsymbol{\epsilon}_{\theta}(\mathbf{x}_{t},t)||^{2}
 $$
 
-故根据前面的结论，我们仍可复用同一个模型，而无需关心其在训练时是否基于这一跳步策略 $\tau$。这样，我们得到不改变 DDPM 的训练过程而对推理过程进行加速的方法。
+故根据前面的结论，我们仍可复用同一个模型，而无需关心其在训练时是否基于这一跳步策略 $\tau$。这样，我们得到==不改变 DDPM 的训练过程而对推理过程进行加速的方法==。
 
-最后作者经过实验发现，减小采样步数加速生成，使图片更加平滑，但会损失多样性；而减小 $\sigma_{\tau_{n}}^{2}$ 能增加多样性；所以在减少采样步数的同时，应适当减小 $\sigma_{\tau_{n}}^{2}$ 的值，来保证图片生成质量。反过来想，如果在采样步数少的情况下还增大 $\sigma_{\tau_{n}}^{2}$，增加了噪声的影响，那么生成的质量感觉也会不尽人意了。
+作者经过实验发现，减小采样步数加速生成会损失多样性；而增加 $\sigma_{\tau_{n}}^{2}$ 能增加多样性，但会降低样本质量。总的来说，DDIM 可以通过调整 $S$ 与 $\boldsymbol{\sigma}$ 来灵活权衡样本质量、多样性与生成效率。
 
 ## 2. References
 
