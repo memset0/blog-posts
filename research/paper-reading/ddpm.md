@@ -190,7 +190,7 @@ $$
 基于这一固定方差的假设，我们可以进一步推导损失函数中的 $L_{t-1}$ 项（根据前文，这是通过 KL 散度定义的），由于这里的 $q\left( {{\mathbf{x}}_{t - 1} | {\mathbf{x}}_{t},{\mathbf{x}}_{0}}\right)$ 和 ${p}_{\theta }\left( {{\mathbf{x}}_{t - 1}|{\mathbf{x}}_{t}}\right)$ 都是高斯分布且方差为常数项，可简化得到：
 
 $$
-L_{t-1} = D_{KL}(q(\mathbf{x}_{t-1}|\mathbf{x}_t, \mathbf{x}_0) || p_\theta(\mathbf{x}_{t-1}|\mathbf{x}_t)) = \mathbb{E}_{q(\mathbf{x}_{0:T})} \left[ \frac{1}{2\sigma_t^2} || \boldsymbol{\mu}_{t}(\mathbf{x}_t, \mathbf{x}_0) - \boldsymbol{\mu}_\theta(\mathbf{x}_t, t) ||^2 \right] + C
+\mathcal{L}_{t-1} = D_{KL}(q(\mathbf{x}_{t-1}|\mathbf{x}_t, \mathbf{x}_0) || p_\theta(\mathbf{x}_{t-1}|\mathbf{x}_t)) = \mathbb{E}_{q(\mathbf{x}_{0:T})} \left[ \frac{1}{2\sigma_t^2} || \boldsymbol{\mu}_{t}(\mathbf{x}_t, \mathbf{x}_0) - \boldsymbol{\mu}_\theta(\mathbf{x}_t, t) ||^2 \right] + C
 $$
 
 > -   这里作者通过实验发现训练 $\boldsymbol{\mu}_{\theta}(\mathbf{x}_{t},t)$ 时给时间戳 $t$ 能取得更好的效果（即 $\boldsymbol{\mu}_{\theta}$ 是一个不仅关于 $\mathbf{x}_{t}$ 还关于 $t$ 的函数），这其实也符合直觉。
@@ -239,7 +239,7 @@ $$
 
 $$
 \begin{aligned}
-{L}_{t - 1} - C &= {\mathbb{E}}_{{\mathbf{x}}_{0},\boldsymbol{\epsilon} }\left\lbrack  {\frac{1}{2{\sigma }_{t}^{2}}{\begin{Vmatrix}{\widetilde{\mathbf{\mu }}}_{t}\left( {\mathbf{x}}_{t}\left( {\mathbf{x}}_{0},\boldsymbol{\epsilon}\right) ,\dfrac{1}{\sqrt{{\bar{\alpha }}_{t}}}\left( {\mathbf{x}}_{t}\left( {\mathbf{x}}_{0},\boldsymbol{\epsilon}\right)  - \sqrt{1 - {\bar{\alpha }}_{t}}\boldsymbol{\epsilon}\right) \right)  - {\mathbf{\mu }}_{\theta }\left( {\mathbf{x}}_{t}\left( {\mathbf{x}}_{0},\boldsymbol{\epsilon}\right) ,t\right) \end{Vmatrix}}^{2}}\right\rbrack\\
+\mathcal{L}_{t - 1} - C &= {\mathbb{E}}_{{\mathbf{x}}_{0},\boldsymbol{\epsilon} }\left\lbrack  {\frac{1}{2{\sigma }_{t}^{2}}{\begin{Vmatrix}{\widetilde{\mathbf{\mu }}}_{t}\left( {\mathbf{x}}_{t}\left( {\mathbf{x}}_{0},\boldsymbol{\epsilon}\right) ,\dfrac{1}{\sqrt{{\bar{\alpha }}_{t}}}\left( {\mathbf{x}}_{t}\left( {\mathbf{x}}_{0},\boldsymbol{\epsilon}\right)  - \sqrt{1 - {\bar{\alpha }}_{t}}\boldsymbol{\epsilon}\right) \right)  - {\mathbf{\mu }}_{\theta }\left( {\mathbf{x}}_{t}\left( {\mathbf{x}}_{0},\boldsymbol{\epsilon}\right) ,t\right) \end{Vmatrix}}^{2}}\right\rbrack\\
  &= {\mathbb{E}}_{{\mathbf{x}}_{0},\boldsymbol{\epsilon}}\left\lbrack  {\frac{1}{2{\sigma }_{t}^{2}}{\begin{Vmatrix}\dfrac{1}{\sqrt{{\alpha }_{t}}}\left( {\mathbf{x}}_{t}\left( {\mathbf{x}}_{0},\boldsymbol{\epsilon}\right)  - \dfrac{{\beta }_{t}}{\sqrt{1 - {\bar{\alpha }}_{t}}}\boldsymbol{\epsilon}\right)  - {\mathbf{\mu }}_{\theta }\left( {\mathbf{x}}_{t}\left( {\mathbf{x}}_{0},\boldsymbol{\epsilon}\right) ,t\right) \end{Vmatrix}}^{2}}\right\rbrack
 \end{aligned}
 $$
@@ -276,10 +276,10 @@ $$
 消掉 $\mathbf{x}_{t}$ 并提出噪声项的系数，得到进一步简化的损失函数：
 
 $$
-L_{t-1} - C = {\mathbb{E}}_{{\mathbf{x}}_{0},\boldsymbol{\epsilon}}\left\lbrack  {\frac{{\beta }_{t}^{2}}{2{\sigma }_{t}^{2}{\alpha }_{t}\left( {1 - {\bar{\alpha }}_{t}}\right) }{\begin{Vmatrix}\boldsymbol{\epsilon} - {\boldsymbol{\epsilon}}_{\theta }\left( \sqrt{{\bar{\alpha }}_{t}}{\mathbf{x}}_{0} + \sqrt{1 - {\bar{\alpha }}_{t}}\boldsymbol{\epsilon},t\right) \end{Vmatrix}}^{2}}\right\rbrack
+\mathcal{L}_{t-1} - C = {\mathbb{E}}_{{\mathbf{x}}_{0},\boldsymbol{\epsilon}}\left\lbrack  {\frac{{\beta }_{t}^{2}}{2{\sigma }_{t}^{2}{\alpha }_{t}\left( {1 - {\bar{\alpha }}_{t}}\right) }{\begin{Vmatrix}\boldsymbol{\epsilon} - {\boldsymbol{\epsilon}}_{\theta }\left( \sqrt{{\bar{\alpha }}_{t}}{\mathbf{x}}_{0} + \sqrt{1 - {\bar{\alpha }}_{t}}\boldsymbol{\epsilon},t\right) \end{Vmatrix}}^{2}}\right\rbrack
 $$
 
-此外还有 $L_{0} = -\log p_{\theta}(\mathbf{x_{0}|\mathbf{x}_{1}})$ 的一项没有处理，论文的做法是：
+此外还有 $\mathcal{L}_{0} = -\log p_{\theta}(\mathbf{x_{0}|\mathbf{x}_{1}})$ 的一项没有处理，论文的做法是：
 
 ![|695](https://img.memset0.cn/2025/02/16/WyfS9cAL.png)
 
