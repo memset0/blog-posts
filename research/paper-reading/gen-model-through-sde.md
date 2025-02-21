@@ -33,7 +33,15 @@ $$
 
 ### 1.2. SMLD & VE-SDE
 
-SMLD 的离散正向过程为：
+**Denoising Score Matching with Langevin Dynamics (SMLD)**（在原论文中称为 **Noise Conditional Score Network (NCSN)**）的原始假设为：
+
+$$
+\mathbf{x}_{t}  \sim \mathcal{N}(\mathbf{x}_{0}, \sigma^{2}_{t} \mathbf{I})
+\quad\Longleftrightarrow\quad
+\mathbf{x}_{t} = \mathbf{x}_{0} + \sigma_{t} \boldsymbol{\epsilon},\space \text{where } \boldsymbol{\epsilon} \sim \mathcal{N}(\boldsymbol{0}, \mathbf{I})
+$$
+
+通过正态分布的性质改写为离散正向过程：
 
 $$
 \mathbf{x}_{t+\Delta t} = \mathbf{x}_{t} + \sqrt{\sigma^{2}(t+\Delta t) - \sigma^{2}(t)} \mathbf{z}_{t}
@@ -91,5 +99,7 @@ $$
 
 ## 2. Reference
 
+- 原始论文
+- [Generative Modeling by Estimating Gradients of the Data Distribution | Yang Song](https://yang-song.net/blog/2021/score/)
 - [生成扩散模型漫谈（五）：一般框架之 SDE 篇 - 苏剑林 - 知乎](https://zhuanlan.zhihu.com/p/551139290)
 - [Diffusion 学习笔记（三）——随机微分方程（SDE） - Hammour Yue - 知乎](https://zhuanlan.zhihu.com/p/619188621)
