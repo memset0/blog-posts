@@ -1,11 +1,31 @@
 ---
+# %% begin matters %%
 title: "「论文精读 #8」Improved Denoising Diffusion Probabilistic Models"
-date: 2025-02-16 11:09:13
+create-date: 2025-02-16 11:09:13
 slug: /research/paper-reading/iddpm
 indexed: true
 tags:
+  - makemd/paper/diffusion
   - Diffusion-Model
+# %% end matters %%
+citekey: nicholImprovedDenoisingDiffusion2021
+doi: "10.48550/arXiv.2102.09672" 
+export-date: 2025-02-23 01:58:40
 ---
+
+<!-- begin-private-notes -->
+
+> [!summary] Metadata
+>
+> **Title**: [Improved Denoising Diffusion Probabilistic Models](zotero://open-pdf/library/items/HXJDBYJQ)
+>
+> **Tags**: #zotero/tag/Computer-Science---Machine-Learning, #zotero/tag/Computer-Science---Artificial-Intelligence, #zotero/tag/Statistics---Machine-Learning
+>
+> **Authors**: #zotero/author/Alex-Nichol, #zotero/author/Prafulla-Dhariwal
+
+%% begin notes %%
+
+<!-- end-private-notes -->
 
 > 本篇笔记深入解析了论文 _Improved Denoising Diffusion Probabilistic Models_，探讨了扩散生成模型 DDPM 的改进方法。笔记强调了优化对数似然的重要性，并回顾了 DDPM 的关键公式。并详细阐述了 IDDPM 的三大改进：1) 通过引入可学习参数预测逆向过程的方差；2) 采用基于余弦函数的噪声调度，使去噪过程更加平滑；3) 通过重要性采样减少梯度噪声。<small style="font-style: italic; opacity: 0.5">（由 gpt-4o 生成摘要）</small>
 
@@ -114,3 +134,22 @@ $$
 - 原始论文
 - [Improved Denoising Diffusion Probabilistic Models (IDDPM) - 妖妖 - 知乎](https://zhuanlan.zhihu.com/p/654388872)
 - [IDDPM（Improved Denoising Diffusion Probabilistic Models） - 不许打针 - 知乎](https://zhuanlan.zhihu.com/p/650838026)
+
+<!-- begin-private-notes -->
+
+%% end notes %%
+
+## Word Table
+
+| Word | Explain |
+| ---: | :------ |
+
+## Annotations
+
+## Questions
+
+## Marks
+
+<!-- end-private-notes -->
+
+%% Import Date: 2025-02-23T01:59:01.001+08:00 %%

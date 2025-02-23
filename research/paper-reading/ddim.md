@@ -1,12 +1,32 @@
 ---
+# %% begin matters %%
 title: '「论文精读 #9」Denoising Diffusion Implicit Models'
-date: 2025-02-16 11:09:13
+create-date: 2025-02-16 11:09:13
 update-time: 2025-02-18 13:02:51
 slug: /research/paper-reading/ddim
 indexed: true
 tags:
   - Diffusion-Model
+link-chat: https://chat.memset0.cn/chat?session=ssn_uaicSGbAMyYz&topic=tpc_kbPugMPIrqoa
+# %% end matters %%
+citekey: songDenoisingDiffusionImplicit2022
+doi: "10.48550/arXiv.2010.02502" 
+export-date: 2025-02-23 01:58:40
 ---
+
+<!-- begin-private-notes -->
+
+> [!summary] Metadata
+>
+> **Title**: [Denoising Diffusion Implicit Models](zotero://open-pdf/library/items/DFJXJMLI)
+>
+> **Tags**: #zotero/tag/Computer-Science---Machine-Learning, #zotero/tag/Computer-Science---Computer-Vision-and-Pattern-Recognition
+>
+> **Authors**: #zotero/author/Jiaming-Song, #zotero/author/Chenlin-Meng, #zotero/author/Stefano-Ermon
+
+%% begin notes %%
+
+<!-- end-private-notes -->
 
 > 本篇笔记对论文 _Denoising Diffusion Implicit Models (DDIM)_ 进行了深入解读，重点分析其相较于 DDPM 的改进之处。DDIM 通过放宽马尔科夫链假设，构造了一个非马尔科夫的随机过程，并利用设定的边际分布推导逆过程，使得在相同参数条件下仍可遵循高斯分布。该方法允许跳步采样，从而大幅减少生成步数，加速推理过程，同时保持图像质量。DDIM 的方法与 DDPM 兼容，因此可直接复用 DDPM 的训练模型。此外，笔记还探讨了损失函数的优化对模型效果的影响，并提供了详细的数学推导与直觉解释。<small style="font-style: italic; opacity: 0.5">（由 gpt-4o 生成摘要）</small>
 
@@ -233,3 +253,110 @@ $$
 - [一文读懂 DDIM 凭什么可以加速 DDPM 的采样效率 - 李 Nik - 知乎](https://zhuanlan.zhihu.com/p/627616358)
 - [扩散模型之 DDIM - 小小将 - 知乎](https://zhuanlan.zhihu.com/p/565698027)
 - [一文带你看懂 DDPM vs DDIM 原理 - 蓟梗 - 知乎](https://zhuanlan.zhihu.com/p/657136157)
+
+<!-- begin-private-notes -->
+
+%% end notes %%
+
+## Word Table
+
+| Word | Explain |
+| ---: | :------ |
+
+## Annotations
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=1&annotation=4J86EJ5U" style="color:inherit!important;text-decoration:none!important"><span style="color:#facd5a;background:#facd5a40;border-radius:2px">4J86EJ5U</span> We generalize DDPMs via a class of non-Markovian diffusion processes that lead to the same training objective.</a>
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=1&annotation=CMPA2ME3" style="color:inherit!important;text-decoration:none!important"><span style="color:#2ea8e5;background:#2ea8e540;border-radius:2px">CMPA2ME3</span> DDIMs are implicit probabilistic models (Mohamed & Lakshminarayanan, 2016) and are closely related to DDPMs, in the sense that they are trained with the same objective function.</a>
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=2&annotation=959JT8UR" style="color:inherit!important;text-decoration:none!important"><span style="color:#2ea8e5;background:#2ea8e540;border-radius:2px">959JT8UR</span> In particular, we are able to use non-Markovian diffusion processes which lead to ”short” generative Markov chains (Section 4.2) that can be simulated in a small number of steps. This can massively increase sample efficiency only at a minor cost in sample quality</a>
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=2&annotation=X3TQNIUU" style="color:inherit!important;text-decoration:none!important"><span style="color:#facd5a;background:#facd5a40;border-radius:2px">X3TQNIUU</span> mθax Eq(x0)[log pθ(x0)] ≤ mθax Eq(x0,x1,...,xT ) [log pθ(x0:T ) − log q(x1:T |x0)] (2)</a>
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=3&annotation=FQGQIICJ" style="color:inherit!important;text-decoration:none!important"><span style="color:#facd5a;background:#facd5a40;border-radius:2px">FQGQIICJ</span> In Ho et al. (2020), the objective with γ = 1 is optimized instead to maximize generation performance of the trained model;</a>
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=3&annotation=CMEXTUIL" style="color:inherit!important;text-decoration:none!important"><span style="color:#facd5a;background:#facd5a40;border-radius:2px">CMEXTUIL</span> rethink the inference process in order to reduce the number of iterations required by the generative model.</a>
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=3&annotation=CXANY8HY" style="color:inherit!important;text-decoration:none!important"><span style="color:#69b0f1;background:#69b0f140;border-radius:2px">CXANY8HY</span> DDPM objective</a>
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=3&annotation=L36YBMA8" style="color:inherit!important;text-decoration:none!important"><span style="color:#7cc868;background:#7cc86840;border-radius:2px">L36YBMA8</span> These non-Markovian inference process lead to the same surrogate objective function as DDPM,</a>
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=3&annotation=YSZBXQP7" style="color:inherit!important;text-decoration:none!important"><span style="color:#7cc868;background:#7cc86840;border-radius:2px">YSZBXQP7</span> indexed by a real vector σ ∈ RT ≥0:</a>
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=3&annotation=NTWJR37G" style="color:inherit!important;text-decoration:none!important"><span style="color:#facd5a;background:#facd5a40;border-radius:2px">NTWJR37G</span> qσ(xt|xt−1, x0) = qσ(xt−1|xt, x0)qσ(xt|x0) qσ(xt−1|x0)</a>
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=4&annotation=LIUNAWGR" style="color:inherit!important;text-decoration:none!important"><span style="color:#7cc868;background:#7cc86840;border-radius:2px">LIUNAWGR</span> which is also Gaussian (although we do not use this fact for the remainder of this paper)</a>
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=4&annotation=QSWLBEKV" style="color:inherit!important;text-decoration:none!important"><span style="color:#facd5a;background:#facd5a40;border-radius:2px">QSWLBEKV</span> Intuitively, given a noisy observation xt, we first make a prediction4 of the corresponding x0, and then use it to obtain a sample xt−1 through the reverse conditional distribution qσ(xt−1|xt, x0), which we have defined.</a>
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=4&annotation=WDSQGZUM" style="color:inherit!important;text-decoration:none!important"><span style="color:#facd5a;background:#facd5a40;border-radius:2px">WDSQGZUM</span> { N (f (1) θ (x1), σ12I)</a>
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=4&annotation=XBPUKSWW" style="color:inherit!important;text-decoration:none!important"><span style="color:#facd5a;background:#facd5a40;border-radius:2px">XBPUKSWW</span> We add some Gaussian noise (with covariance σ12I) for the case of t = 1 to ensure that the generative process is supported everywhere.</a>
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=4&annotation=BHDV9NLE" style="color:inherit!important;text-decoration:none!important"><span style="color:#facd5a;background:#facd5a40;border-radius:2px">BHDV9NLE</span> Theorem 1. For all σ &gt; 0, there exists γ ∈ RT&gt;0 and C ∈ R, such that Jσ = Lγ + C.</a>
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=4&annotation=55TPPUWE" style="color:inherit!important;text-decoration:none!important"><span style="color:#facd5a;background:#facd5a40;border-radius:2px">55TPPUWE</span> The variational objective Lγ is special in the sense that if parameters θ of the models (t) θ are not shared across different t, then the optimal solution for θ will not depend on the weights γ (as global optimum is achieved by separately maximizing each term in the sum).</a>
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=4&annotation=V3QKFUZM" style="color:inherit!important;text-decoration:none!important"><span style="color:#facd5a;background:#facd5a40;border-radius:2px">V3QKFUZM</span> the optimal solution of Jσ is also the same as that of L1</a>
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=5&annotation=5LLDJC6G" style="color:inherit!important;text-decoration:none!important"><span style="color:#facd5a;background:#facd5a40;border-radius:2px">5LLDJC6G</span> Different choices of σ values results in different generative processes, all while using the same model θ</a>
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=5&annotation=L7DRKKHM" style="color:inherit!important;text-decoration:none!important"><span style="color:#7cc868;background:#7cc86840;border-radius:2px">L7DRKKHM</span> We note another special case when σt = 0 for all t5; the forward process becomes deterministic given xt−1 and x0</a>
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=5&annotation=X4HTQ8XX" style="color:inherit!important;text-decoration:none!important"><span style="color:#facd5a;background:#facd5a40;border-radius:2px">X4HTQ8XX</span> an implicit probabilistic model trained with the DDPM objective (despite the forward process no longer being a diffusion).</a>
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=6&annotation=N9CDVTQI" style="color:inherit!important;text-decoration:none!important"><span style="color:#facd5a;background:#facd5a40;border-radius:2px">N9CDVTQI</span> (x/√α) with x ̄.</a>
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=6&annotation=35JFITEQ" style="color:inherit!important;text-decoration:none!important"><span style="color:#facd5a;background:#facd5a40;border-radius:2px">35JFITEQ</span> optimal model (t) θ</a>
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=1" style="color:inherit!important;text-decoration:none!important"><span style="color:#f9cd59;background:#f9cd5940;border-radius:2px">highlight-p1x143y500</span> We generalize DDPMs via a class of non-Markovian diffusion processes that lead to the same training objective.</a>
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=2" style="color:inherit!important;text-decoration:none!important"><span style="color:#f9cd59;background:#f9cd5940;border-radius:2px">highlight-p2x146y274</span> max Eq(x0 ) [log pθ (x0 )] ≤ max Eq(x0 ,x1 ,...,xT ) [log pθ (x0:T ) − log q(x1:T |x0 )] θ θ (2)</a>
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=3" style="color:inherit!important;text-decoration:none!important"><span style="color:#f9cd59;background:#f9cd5940;border-radius:2px">highlight-p3x108y549</span> In Ho et al. (2020), the objective with γ = 1 is optimized instead to maximize generation performance of the trained model;</a>
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=3" style="color:inherit!important;text-decoration:none!important"><span style="color:#f9cd59;background:#f9cd5940;border-radius:2px">highlight-p3x108y370</span> rethink the inference process in order to reduce the number of iterations required by the generative model.</a>
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=3" style="color:inherit!important;text-decoration:none!important"><span style="color:#69aff0;background:#69aff040;border-radius:2px">highlight-p3x234y358</span> DDPM objective</a>
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=3" style="color:inherit!important;text-decoration:none!important"><span style="color:#7cc867;background:#7cc86740;border-radius:2px">highlight-p3x108y315</span> These non-Markovian inference process lead to the same surrogate objective function as DDPM,</a>
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=3" style="color:inherit!important;text-decoration:none!important"><span style="color:#7cc867;background:#7cc86740;border-radius:2px">highlight-p3x322y257</span> indexed by a real vector σ ∈ RT ≥0:</a>
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=3" style="color:inherit!important;text-decoration:none!important"><span style="color:#f9cd59;background:#f9cd5940;border-radius:2px">highlight-p3x209y100</span> qσ (xt |xt−1 , x0 ) = qσ (xt−1 |xt , x0 )qσ (xt |x0 ) , q (x |x ) (8) qσ (xt−1 |x0 )</a>
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=4" style="color:inherit!important;text-decoration:none!important"><span style="color:#7cc867;background:#7cc86740;border-radius:2px">highlight-p4x108y698</span> which is also Gaussian (although we do not use this fact for the remainder of this paper).</a>
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=4" style="color:inherit!important;text-decoration:none!important"><span style="color:#f9cd59;background:#f9cd5940;border-radius:2px">highlight-p4x108y573</span> −| Intuitively, given a noisy observation xt, we first make a prediction4 −| of the corresponding x0, and then use it to obtain a sample xt−1 through the reverse conditional distribution qσ(xt−1|xt, x0), which we have defined.</a>
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=4" style="color:inherit!important;text-decoration:none!important"><span style="color:#f9cd59;background:#f9cd5940;border-radius:2px">highlight-p4x265y476</span> (1) 2 N (fθ (x1 ), σ1 I)</a>
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=4" style="color:inherit!important;text-decoration:none!important"><span style="color:#f9cd59;background:#f9cd5940;border-radius:2px">highlight-p4x108y416</span> We add some −| Gaussian noise (with covariance σ2 1I) for the case of t = 1 to ensure that the generative process is supported everywhere.</a>
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=4" style="color:inherit!important;text-decoration:none!important"><span style="color:#f9cd59;background:#f9cd5940;border-radius:2px">highlight-p4x108y273</span> Theorem 1. For all σ &gt; 0, there exists γ ∈ RT &gt;0 and C ∈ R, such that Jσ = Lγ + C.</a>
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=4" style="color:inherit!important;text-decoration:none!important"><span style="color:#f9cd59;background:#f9cd5940;border-radius:2px">highlight-p4x108y228</span> The variational objective Lγ is special in the sense that if parameters θ of the models ϵ(t) θ are not θ ( shared across different t, then the optimal solution for ϵθ will not depend on the weights γ (as global optimum is achieved by separately maximizing each term in the sum).</a>
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=4" style="color:inherit!important;text-decoration:none!important"><span style="color:#f9cd59;background:#f9cd5940;border-radius:2px">highlight-p4x157y195</span> the optimal solution of Jσ is also the same as that of L1.</a>
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=5" style="color:inherit!important;text-decoration:none!important"><span style="color:#f9cd59;background:#f9cd5940;border-radius:2px">highlight-p5x108y478</span> Different ∼ N choices of σ values results in different generative processes, all while using the same model ϵθ, � �</a>
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=5" style="color:inherit!important;text-decoration:none!important"><span style="color:#7cc867;background:#7cc86740;border-radius:2px">highlight-p5x108y427</span> We note another special case when σt = 0 for all t5; the forward process becomes deterministic given xt−1 and x0,</a>
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=5" style="color:inherit!important;text-decoration:none!important"><span style="color:#f9cd59;background:#f9cd5940;border-radius:2px">highlight-p5x108y373</span> an implicit probabilistic model trained with the DDPM objective (despite the forward process no longer being a diffusion).</a>
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=6" style="color:inherit!important;text-decoration:none!important"><span style="color:#f9cd59;background:#f9cd5940;border-radius:2px">highlight-p6x108y606</span> √ (x/ α) with x̄.</a>
+
+> <a href="zotero://open-pdf/library/items/DFJXJMLI?page=6" style="color:inherit!important;text-decoration:none!important"><span style="color:#f9cd59;background:#f9cd5940;border-radius:2px">highlight-p6x292y436</span> (t) optimal model ϵθ</a>
+
+## Questions
+
+- P4. [Theorem 1. For all σ > 0, there exists γ ∈ RT>0 and C ∈ R, such that Jσ = Lγ + C.](zotero://open-pdf/library/items/DFJXJMLI?page=4&annotation=4LRSTXEU)
+- P14. [Theorem 1. For all σ > 0, there exists γ ∈ RT>0 and C ∈ R, such that Jσ = Lγ + C.](zotero://open-pdf/library/items/DFJXJMLI?page=14&annotation=DFSC49D6)
+- P14. [Proposition 1. The ODE in Eq. (14) with the optimal model (t) θ has an equivalent probability flow ODE corresponding to the “Variance-Exploding” SDE in Song et al. (2020).](zotero://open-pdf/library/items/DFJXJMLI?page=14&annotation=GIFZAMKZ)
+
+## Marks
+
+<!-- end-private-notes -->
+
+%% Import Date: 2025-02-23T01:59:01.474+08:00 %%

@@ -1,13 +1,32 @@
 ---
+# %% begin matters %%
 title: "「论文精读 #10」Score-based Generative Modeling through Stochastic Differential Equations"
-date: 2025-02-17 17:09:48
+create-date: 2025-02-17 17:09:48
 slug: /research/paper-reading/gen-model-through-sde
 tags:
   - Diffusion-Model
   - Stochastic Differential Equation
   - score-base model
 cover: https://img.memset0.cn/2025/02/17/HOrnk1ku.png
+# %% end matters %%
+citekey: songScoreBasedGenerativeModeling2021w
+doi: "10.48550/arXiv.2011.13456" 
+export-date: 2025-02-23 01:58:40
 ---
+
+<!-- begin-private-notes -->
+
+> [!summary] Metadata
+>
+> **Title**: [Score-Based Generative Modeling through Stochastic Differential Equations](zotero://open-pdf/library/items/VEZSUJIH)
+>
+> **Tags**: #zotero/tag/Computer-Science---Machine-Learning, #zotero/tag/Statistics---Machine-Learning
+>
+> **Authors**: #zotero/author/Yang-Song, #zotero/author/Jascha-Sohl-Dickstein, #zotero/author/Diederik-P.-Kingma, #zotero/author/Abhishek-Kumar, #zotero/author/Stefano-Ermon, #zotero/author/Ben-Poole
+
+%% begin notes %%
+
+<!-- end-private-notes -->
 
 ## 1. Insights
 
@@ -103,3 +122,59 @@ $$
 - [Generative Modeling by Estimating Gradients of the Data Distribution | Yang Song](https://yang-song.net/blog/2021/score/)
 - [生成扩散模型漫谈（五）：一般框架之 SDE 篇 - 苏剑林 - 知乎](https://zhuanlan.zhihu.com/p/551139290)
 - [Diffusion 学习笔记（三）——随机微分方程（SDE） - Hammour Yue - 知乎](https://zhuanlan.zhihu.com/p/619188621)
+
+<!-- begin-private-notes -->
+
+%% end notes %%
+
+## 3. Word Table
+
+| Word | Explain |
+| ---: | :------ |
+
+## 4. Annotations
+
+> <a href="zotero://open-pdf/library/items/VEZSUJIH?page=3&annotation=AB74SI2M" style="color:inherit!important;text-decoration:none!important"><span style="color:#facd5a;background:#facd5a40;border-radius:2px">AB74SI2M</span> Given sufficient data and model capacity, the optimal score-based model sθ ̊ px, σq matches ∇x log pσpxq almost everywhere for σ P tσiuN i“1.</a>
+
+> <a href="zotero://open-pdf/library/items/VEZSUJIH?page=7&annotation=WYHWB9EU" style="color:inherit!important;text-decoration:none!important"><span style="color:#facd5a;background:#facd5a40;border-radius:2px">WYHWB9EU</span> Exact likelihood computation Leveraging the connection to neural ODEs, we can compute the density defined by Eq. (13) via the instantaneous change of variables formula</a>
+
+> <a href="zotero://open-pdf/library/items/VEZSUJIH?page=9&annotation=3V7FXL9Y" style="color:inherit!important;text-decoration:none!important"><span style="color:#facd5a;background:#facd5a40;border-radius:2px">3V7FXL9Y</span> dx “ tf px, tq ́ gptq2r∇x log ptpxq `∇x log ptpy | xqsudt` gptqdw ̄ .</a>
+
+> <a href="zotero://open-pdf/library/items/VEZSUJIH?page=18&annotation=4DXJSCQ6" style="color:inherit!important;text-decoration:none!important"><span style="color:#facd5a;background:#facd5a40;border-radius:2px">4DXJSCQ6</span> log p0pxp0qq “ log pT pxpT qq `</a>
+
+> <a href="zotero://open-pdf/library/items/VEZSUJIH?page=18&annotation=67SG8Q4B" style="color:inherit!important;text-decoration:none!important"><span style="color:#facd5a;background:#facd5a40;border-radius:2px">67SG8Q4B</span> żT 0</a>
+
+> <a href="zotero://open-pdf/library/items/VEZSUJIH?page=18&annotation=G9P9AUT4" style="color:inherit!important;text-decoration:none!important"><span style="color:#facd5a;background:#facd5a40;border-radius:2px">G9P9AUT4</span> xi “ p2 ́ a1 ́ βi`1qxi`1 ` 1 2 βi`1sθ ̊ pxi`1, i ` 1q, i “ 0, 1, ̈ ̈ ̈ , N ́ 1.</a>
+
+> <a href="zotero://open-pdf/library/items/VEZSUJIH?page=19&annotation=3G4FPL6P" style="color:inherit!important;text-decoration:none!important"><span style="color:#facd5a;background:#facd5a40;border-radius:2px">3G4FPL6P</span> no corrector is used</a>
+
+> <a href="zotero://open-pdf/library/items/VEZSUJIH?page=29&annotation=N2RYZU8Y" style="color:inherit!important;text-decoration:none!important"><span style="color:#facd5a;background:#facd5a40;border-radius:2px">N2RYZU8Y</span> ∇x log ptpxptq | yq “ ∇x log ptpxptqq ` ∇x log ppy | xptqq.</a>
+
+> <a href="zotero://open-pdf/library/items/VEZSUJIH?page=3" style="color:inherit!important;text-decoration:none!important"><span style="color:#f9cd59;background:#f9cd5940;border-radius:2px">highlight-p3x108y609</span> Given sufficient data and model capacity, the optimal score-based model sθ ˚ px, σq matchesN ∇x log pσ pxq almost everywhere for σ P tσi uN i“1 .</a>
+
+> <a href="zotero://open-pdf/library/items/VEZSUJIH?page=7" style="color:inherit!important;text-decoration:none!important"><span style="color:#f9cd59;background:#f9cd5940;border-radius:2px">highlight-p7x108y302</span> Exact likelihood computation Leveraging the connection to neural ODEs, we can compute the density defined by Eq. (13) via the instantaneous change of variables formula</a>
+
+> <a href="zotero://open-pdf/library/items/VEZSUJIH?page=9" style="color:inherit!important;text-decoration:none!important"><span style="color:#f9cd59;background:#f9cd5940;border-radius:2px">highlight-p9x163y474</span> dx “ tfpx, tq ´ gptq2r∇x log ptpxq `∇x log ptpy | xqsudt` gptqd ¯w.</a>
+
+> <a href="zotero://open-pdf/library/items/VEZSUJIH?page=18" style="color:inherit!important;text-decoration:none!important"><span style="color:#f9cd59;background:#f9cd5940;border-radius:2px">highlight-p18x328y568</span> ż T ż 0 ∇ ¨ ˜fθpxptq, tqdt,</a>
+
+> <a href="zotero://open-pdf/library/items/VEZSUJIH?page=18" style="color:inherit!important;text-decoration:none!important"><span style="color:#f9cd59;background:#f9cd5940;border-radius:2px">highlight-p18x198y575</span> log p0 pxp0qq “ log pT pxpT qq `</a>
+
+> <a href="zotero://open-pdf/library/items/VEZSUJIH?page=18" style="color:inherit!important;text-decoration:none!important"><span style="color:#f9cd59;background:#f9cd5940;border-radius:2px">highlight-p18x147y55</span> xi “ p2 ´ 1 ´ βi`1 qxi`1 ` βi`1 sθ ˚ pxi`1 , i ` 1q, i “ 0, 1, ¨ ¨ ¨ , N ´ 1. 2</a>
+
+> <a href="zotero://open-pdf/library/items/VEZSUJIH?page=19" style="color:inherit!important;text-decoration:none!important"><span style="color:#f9cd59;background:#f9cd5940;border-radius:2px">highlight-p19x356y576</span> no corrector is used</a>
+
+> <a href="zotero://open-pdf/library/items/VEZSUJIH?page=29" style="color:inherit!important;text-decoration:none!important"><span style="color:#f9cd59;background:#f9cd5940;border-radius:2px">highlight-p29x184y348</span> ∇x log ptpxptq | yq “ ∇x log ptpxptqq ` ∇x log ppy | xptqq.</a>
+
+## 5. Questions
+
+- P5. [Interestingly, the SDE of Eq. (9) always gives a process with exploding variance when t Ñ 8, whilst the SDE of Eq. (11) yields a process with a fixed variance of one when the initial distribution has unit variance (proof in Appendix B)](zotero://open-pdf/library/items/VEZSUJIH?page=5&annotation=JK2BPPYT)
+- P7. [](zotero://open-pdf/library/items/VEZSUJIH?page=7&annotation=5NCR8YQT)
+- P5. [Interestingly, the SDE of Eq. (9) always gives a process with exploding variance when t Ñ 8, whilst the SDE of Eq. (11) yields a process with a fixed variance of one when the initial Ñ 8 distribution has unit variance (proof in Appendix B)](zotero://open-pdf/library/items/VEZSUJIH?page=5)
+- P7. [](zotero://open-pdf/library/items/VEZSUJIH?page=7)
+
+## 6. Marks
+
+<!-- end-private-notes -->
+
+%% Import Date: 2025-02-23T01:59:01.638+08:00 %%
