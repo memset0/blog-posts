@@ -14,19 +14,7 @@ doi: "10.48550/arXiv.1907.05600"
 export-date: 2025-02-23 01:58:40
 ---
 
-<!-- begin-private-notes -->
 
-> [!summary] Metadata
->
-> **Title**: [Generative Modeling by Estimating Gradients of the Data Distribution](zotero://open-pdf/library/items/9MJIBIKN)
->
-> **Tags**: #zotero/tag/Computer-Science---Machine-Learning, #zotero/tag/Statistics---Machine-Learning
->
-> **Authors**: #zotero/author/Yang-Song, #zotero/author/Stefano-Ermon
-
-%% begin notes %%
-
-<!-- end-private-notes -->
 
 ## 1. Insights
 
@@ -109,25 +97,6 @@ $$
 - [图像生成别只知道扩散模型(Diffusion Models)，还有基于梯度去噪的分数模型：NCSN(Noise Conditional Score Networks) - 知乎](https://zhuanlan.zhihu.com/p/597490389)
 - [Generative Modeling by Estimating Gradients of the Data Distribution(二) - 知乎](https://zhuanlan.zhihu.com/p/667190905)
 
-<!-- begin-private-notes -->
 
-%% end notes %%
-
-## 3. Word Table
-
-| Word | Explain |
-| ---: | :------ |
-
-## 4. Annotations
-
-## 5. Questions
-
-- P1. [Yang Song](zotero://open-pdf/library/items/9MJIBIKN?page=1&annotation=UG7T3TEZ)
-- P2. [Different from the typical usage of score matching, we opt not to use the gradient of an energy-based model as the score network to avoid extra computation due to higher-order gradients.](zotero://open-pdf/library/items/9MJIBIKN?page=2&annotation=ZA8YE3LD)
-- P2. [The objective minimizes 1 2 Epdata [‖sθ(x) − ∇x log pdata(x)‖2 2], which can be shown equivalent to the following up to a constant Epdata (x) [ tr(∇xsθ(x)) + 1 2 ‖sθ(x)‖2 2 ] , (1) where ∇xsθ(x) denotes the Jacobian of sθ(x).](zotero://open-pdf/library/items/9MJIBIKN?page=2&annotation=8RMNPKGU)
-
-## 6. Marks
-
-<!-- end-private-notes -->
 
 %% Import Date: 2025-02-23T01:59:01.490+08:00 %%

@@ -14,19 +14,7 @@ doi: 10.48550/arXiv.2006.11239
 export-date: 2025-02-23 01:58:40
 ---
 
-<!-- begin-private-notes -->
 
-> [!summary] Metadata
->
-> **Title**: [Denoising Diffusion Probabilistic Models](zotero://open-pdf/library/items/V37FIZ93)
->
-> **Tags**: #zotero/tag/Computer-Science---Machine-Learning, #zotero/tag/Statistics---Machine-Learning
->
-> **Authors**: #zotero/author/Jonathan-Ho, #zotero/author/Ajay-Jain, #zotero/author/Pieter-Abbeel
-
-%% begin notes %%
-
-<!-- end-private-notes -->
 
 > 本篇笔记深入解析了 Denoising Diffusion Probabilistic Models (DDPM) 的原理。首先介绍了数学符号和基本概念，包括正向扩散过程（前向马尔可夫过程）以及逆向去噪过程（反向马尔可夫过程）。然后详细推导了变分下界（VLB）的推导过程，并分析了模型的损失函数构造，特别是 KL 散度优化目标。笔记还涵盖了训练过程的优化策略，并给出了反向采样算法的实现方法，帮助读者理解扩散模型的实际运作方式。最后，附上相关链接供进一步阅读。<small style="font-style: italic; opacity: 0.5">（由 gpt-4o 生成摘要）</small>
 
@@ -326,79 +314,6 @@ $$
 - [What are Diffusion Models? | Lil'Log](https://lilianweng.github.io/posts/2021-07-11-diffusion-models/)
 - [小白也可以清晰理解 diffusion 原理: DDPM - 知乎](https://zhuanlan.zhihu.com/p/693535104)
 
-<!-- begin-private-notes -->
 
-%% end notes %%
-
-## 4. Word Table
-
-| Word | Explain |
-| ---: | :------ |
-
-## 5. Annotations
-
-> <a href="zotero://open-pdf/library/items/V37FIZ93?page=2&annotation=CAAPGHZT" style="color:inherit!important;text-decoration:none!important"><span style="color:#2ea8e5;background:#2ea8e540;border-radius:2px">CAAPGHZT</span> A diffusion probabilistic model (which we will call a “diffusion model” for brevity) is a parameterized Markov chain trained using variational inference to produce samples matching the data after finite time. Transitions of this chain are learned to reverse a diffusion process, which is a Markov chain that gradually adds noise to the data in the opposite direction of sampling until signal is destroyed. When the diffusion consists of small amounts of Gaussian noise, it is sufficient to set the sampling chain transitions to conditional Gaussians too, allowing for a particularly simple neural network parameterization.</a>
-
-🔤 扩散概率模型（我们简称为“扩散模型”）是一个参数化的马尔可夫链，通过变分推断进行训练，以在有限时间内生成与数据匹配的样本。该链的转移是学习到的，以逆转扩散过程，该过程是一个逐渐向数据添加噪声的马尔可夫链，沿着与采样相反的方向，直到信号被破坏。当扩散由小量的高斯噪声组成时，只需将采样链的转移设置为条件高斯，这样可以实现特别简单的神经网络参数化。🔤
-
-> <a href="zotero://open-pdf/library/items/V37FIZ93?page=2&annotation=5M6N58EL" style="color:inherit!important;text-decoration:none!important"><span style="color:#facd5a;background:#facd5a40;border-radius:2px">5M6N58EL</span> pθ(x0:T ) is called the reverse process,</a>
-
-> <a href="zotero://open-pdf/library/items/V37FIZ93?page=2&annotation=PB8TWSFT" style="color:inherit!important;text-decoration:none!important"><span style="color:#facd5a;background:#facd5a40;border-radius:2px">PB8TWSFT</span> Markov chain</a>
-
-> <a href="zotero://open-pdf/library/items/V37FIZ93?page=2&annotation=XW3KLGL2" style="color:inherit!important;text-decoration:none!important"><span style="color:#facd5a;background:#facd5a40;border-radius:2px">XW3KLGL2</span> q(xt|xt−1) := N (xt; √1 − βtxt−1, βtI)</a>
-
-> <a href="zotero://open-pdf/library/items/V37FIZ93?page=2&annotation=IQX9TIXY" style="color:inherit!important;text-decoration:none!important"><span style="color:#facd5a;background:#facd5a40;border-radius:2px">IQX9TIXY</span> αt := 1 − βt and α ̄t := ∏t s=1 αs, we have q(xt|x0) = N (xt; √α ̄tx0, (1 − α ̄t)I)</a>
-
-> <a href="zotero://open-pdf/library/items/V37FIZ93?page=3&annotation=KUEE7RM5" style="color:inherit!important;text-decoration:none!important"><span style="color:#facd5a;background:#facd5a40;border-radius:2px">KUEE7RM5</span> q(xt−1|xt, x0) = N (xt−1; ̃μt(xt, x0), β ̃tI), (6) where ̃μt(xt, x0) := √α ̄t−1βt 1 − α ̄t x0 + √</a>
-
-> <a href="zotero://open-pdf/library/items/V37FIZ93?page=3&annotation=MC7GNQHF" style="color:inherit!important;text-decoration:none!important"><span style="color:#a28ae5;background:#a28ae540;border-radius:2px">MC7GNQHF</span> p</a>
-
-> <a href="zotero://open-pdf/library/items/V37FIZ93?page=3&annotation=4LKZTXAT" style="color:inherit!important;text-decoration:none!important"><span style="color:#2ea8e5;background:#2ea8e540;border-radius:2px">4LKZTXAT</span> We ignore the fact that the forward process variances βt are learnable by reparameterization and instead fix them to constants</a>
-
-🔤 我们忽略了前向过程方差 βt 可以通过重参数化学习的事实，而是将它们固定为常数。🔤
-
-> <a href="zotero://open-pdf/library/items/V37FIZ93?page=3&annotation=PAYBHELR" style="color:inherit!important;text-decoration:none!important"><span style="color:#2ea8e5;background:#2ea8e540;border-radius:2px">PAYBHELR</span> The first choice is optimal for x0 ∼ N (0, I), and the second is optimal for x0 deterministically set to one point. These are the two extreme choices corresponding to upper and lower bounds on reverse process entropy for data with coordinatewise unit variance</a>
-
-🔤 第一个选择对于 x0 ∼ N (0, I) 是最优的，第二个选择对于 x0 确定性设置为一个点是最优的。这两种极端选择分别对应于具有坐标单位方差的数据的逆过程熵的上界和下界。🔤
-
-> <a href="zotero://open-pdf/library/items/V37FIZ93?page=4&annotation=T238PN4T" style="color:inherit!important;text-decoration:none!important"><span style="color:#2ea8e5;background:#2ea8e540;border-radius:2px">T238PN4T</span> to</a>
-
-> <a href="zotero://open-pdf/library/items/V37FIZ93?page=4&annotation=PXJUEADS" style="color:inherit!important;text-decoration:none!important"><span style="color:#facd5a;background:#facd5a40;border-radius:2px">PXJUEADS</span> To summarize, we can train the reverse process mean function approximator μθ to predict ̃μt, or by modifying its parameterization, we can train it to predict . (There is also the possibility of predicting x0, but we found this to lead to worse sample quality early in our experiments.</a>
-
-> <a href="zotero://open-pdf/library/items/V37FIZ93?page=5&annotation=YG5CAYB3" style="color:inherit!important;text-decoration:none!important"><span style="color:#facd5a;background:#facd5a40;border-radius:2px">YG5CAYB3</span> Unconditional CIFAR10 reverse process parameterization and training objective ablation. Blank entries were unstable to train and generated poor samples with out-ofrange scores.</a>
-
-> <a href="zotero://open-pdf/library/items/V37FIZ93?page=6&annotation=IEMCZQ34" style="color:inherit!important;text-decoration:none!important"><span style="color:#facd5a;background:#facd5a40;border-radius:2px">IEMCZQ34</span> We find that the baseline option of predicting ̃μ works well only when trained on the true variational bound instead of unweighted mean squared error, a simplified objective akin to Eq. (14)</a>
-
-> <a href="zotero://open-pdf/library/items/V37FIZ93?page=6&annotation=NPER9S5U" style="color:inherit!important;text-decoration:none!important"><span style="color:#facd5a;background:#facd5a40;border-radius:2px">NPER9S5U</span> but much better when trained with our simplified objective.</a>
-
-> <a href="zotero://open-pdf/library/items/V37FIZ93?page=2" style="color:inherit!important;text-decoration:none!important"><span style="color:#f9cd59;background:#f9cd5940;border-radius:2px">highlight-p2x108y315</span> pθ(x0:T ) is called the reverse process,</a>
-
-> <a href="zotero://open-pdf/library/items/V37FIZ93?page=2" style="color:inherit!important;text-decoration:none!important"><span style="color:#f9cd59;background:#f9cd5940;border-radius:2px">highlight-p2x353y315</span> � ∼ Markov chain w</a>
-
-> <a href="zotero://open-pdf/library/items/V37FIZ93?page=2" style="color:inherit!important;text-decoration:none!important"><span style="color:#f9cd59;background:#f9cd5940;border-radius:2px">highlight-p2x295y202</span> q(xt |xt−1 ) := N (xt ; 1 − βt xt−1 , βt I)</a>
-
-> <a href="zotero://open-pdf/library/items/V37FIZ93?page=2" style="color:inherit!important;text-decoration:none!important"><span style="color:#f9cd59;background:#f9cd5940;border-radius:2px">highlight-p2x321y73</span> n αt := 1 − βt and ᾱt := s=1 αs , x , (1 − ᾱ )I)</a>
-
-> <a href="zotero://open-pdf/library/items/V37FIZ93?page=3" style="color:inherit!important;text-decoration:none!important"><span style="color:#f9cd59;background:#f9cd5940;border-radius:2px">highlight-p3x154y599</span> q(xt−1 |xt , x0 ) = N (xt−1 ; μ̃t (xt , x0 ), β̃t I), √ √</a>
-
-> <a href="zotero://open-pdf/library/items/V37FIZ93?page=4" style="color:inherit!important;text-decoration:none!important"><span style="color:#f9cd59;background:#f9cd5940;border-radius:2px">highlight-p4x107y386</span> To summarize, we can train the reverse process mean function approximator µθ to predict ˜µt, or by modifying its parameterization, we can train it to predict ϵ. (There is also the possibility of predicting x0, but we found this to lead to worse sample quality early in our experiments.)</a>
-
-> <a href="zotero://open-pdf/library/items/V37FIZ93?page=5" style="color:inherit!important;text-decoration:none!important"><span style="color:#f9cd59;background:#f9cd5940;border-radius:2px">highlight-p5x343y651</span> Unconditional CIFAR10 reverse process parameterization and training objective ablation. Blank entries were unstable to train and generated poor samples with out-ofrange scores.</a>
-
-> <a href="zotero://open-pdf/library/items/V37FIZ93?page=6" style="color:inherit!important;text-decoration:none!important"><span style="color:#f9cd59;background:#f9cd5940;border-radius:2px">highlight-p6x108y352</span> We find that the baseline option of predicting ˜µ works well only when trained on the true variational bound instead of unweighted mean squared error, a simplified objective akin to Eq. (14).</a>
-
-> <a href="zotero://open-pdf/library/items/V37FIZ93?page=6" style="color:inherit!important;text-decoration:none!important"><span style="color:#f9cd59;background:#f9cd5940;border-radius:2px">highlight-p6x107y308</span> but much better when trained with our simplified objective.</a>
-
-## 6. Questions
-
-- P2. [E [− log pθ(x0)] ≤ Eq [ − log pθ(x0:T ) q(x1:T |x0) ]](zotero://open-pdf/library/items/V37FIZ93?page=2&annotation=QVSD4QRV)
-- P3. [Efficient training is therefore possible by optimizing random terms of L with stochastic gradient descent. Further improvements come from variance reduction by rewriting L (3) as: Eq [ DKL(q(xT |x0) ‖ p(xT )) } {{ } LT + ∑ t>1 DKL(q(xt−1|xt, x0) ‖ pθ(xt−1|xt)) } {{ } Lt−1 − log pθ(x0|x1) } {{ } L0 ]](zotero://open-pdf/library/items/V37FIZ93?page=3&annotation=WEI7TBZT)
-- P3. [stochastic](zotero://open-pdf/library/items/V37FIZ93?page=3&annotation=ELK4K7RG)
-- P14. [All models have two convolutional residual blocks per resolution level and self-attention blocks at the 16 × 16 resolution between the convolutional blocks [6]. Diffusion time t is specified by adding the Transformer sinusoidal position embedding [60] into each residual block.](zotero://open-pdf/library/items/V37FIZ93?page=14&annotation=U3YU73JE)
-- P14. [× All models have two convolutional residual blocks at the 16 × 16 resolution between the convolutional × × per resolution level and self-attention blocks at the 16 × 16 resolution between the convolutional blocks [6]. Diffusion time t is specified by adding the Transformer sinusoidal position embedding [60] × blocks [6]. Diffusion time t is specified by adding the Transformer sinusoidal position embedding [60] into each residual block.](zotero://open-pdf/library/items/V37FIZ93?page=14)
-
-## 7. Marks
-
-<!-- end-private-notes -->
 
 %% Import Date: 2025-02-23T01:59:00.698+08:00 %%
