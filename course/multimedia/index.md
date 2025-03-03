@@ -8,4 +8,5 @@ nav:
   - Intro: index.md
   - Note:
       - note/2.md
+      - note/4.md
 ---
