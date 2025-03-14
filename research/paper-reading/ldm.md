@@ -9,8 +9,8 @@ tags: []
 link-chat: https://chat.memset0.cn/chat?session=ssn_uaicSGbAMyYz&topic=tpc_pKVd6UxgZRBx
 # %% end matters %%
 citekey: rombachHighResolutionImageSynthesis2022
-doi: '10.48550/arXiv.2112.10752'
-export-date: 2025-02-23 01:58:40
+doi: "10.48550/arXiv.2112.10752" 
+export-date: 2025-03-13 15:11:37
 ---
 
 
@@ -40,7 +40,7 @@ export-date: 2025-02-23 01:58:40
 
 ## 2. Methods
 
-LDM 采用了常用的 encode-decode 架构，具体来说：设原始图像为 $\mathbf{x} \in \mathbb{R}^{H \times W \times 3}$（三维 RGB 空间），编码器将其编码为潜在表示 $\mathbf{z} = \mathcal{E}(\mathbf{x}) \in \mathbb{R}^{h \times w \times c}$，再通过解码器得到采样结果 $\tilde{\mathbf{x}} = \mathcal{D}(\mathbf{z}) = \mathcal{D}(\mathcal{E}(\mathbf{x}))$；注意这里进行了一个 **降采样(dowmsampling)**，以一定比例 $f=\dfrac{H}{h}=\dfrac{W}{w}$ 缩小了图片大小。
+LDM 采用 encoder-decoder 架构，具体来说：设原始图像为 $\mathbf{x} \in \mathbb{R}^{H \times W \times 3}$（三维 RGB 空间），编码器将其编码为潜在表示 $\mathbf{z} = \mathcal{E}(\mathbf{x}) \in \mathbb{R}^{h \times w \times c}$，再通过解码器得到采样结果 $\tilde{\mathbf{x}} = \mathcal{D}(\mathbf{z}) = \mathcal{D}(\mathcal{E}(\mathbf{x}))$；注意这里进行了一个 **降采样(dowmsampling)**，以一定比例 $f=\dfrac{H}{h}=\dfrac{W}{w}$ 缩小了图片大小。
 
 LDM 在传统扩散模型噪声预测器的基础上引入了条件信息作为参数：$\boldsymbol{\epsilon}_{\theta}(\mathbf{z}_{t}, t,y)$，并应用了交叉注意力机制：
 
@@ -69,4 +69,5 @@ $$
 
 
 
-%% Import Date: 2025-02-23T01:59:01.301+08:00 %%
+
+%% Import Date: 2025-03-13T15:11:42.588+08:00 %%

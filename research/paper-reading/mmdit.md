@@ -12,7 +12,7 @@ link-chat: https://chat.memset0.cn/chat?session=ssn_uaicSGbAMyYz&topic=tpc_czNyV
 # %% end matters %%
 citekey: esserScalingRectifiedFlow2024
 doi: "10.48550/arXiv.2403.03206" 
-export-date: 2025-03-05 14:57:32
+export-date: 2025-03-13 15:11:37
 ---
 
 
@@ -133,4 +133,5 @@ $$
 
 
 
-%% Import Date: 2025-03-05T14:57:35.543+08:00 %%
+
+%% Import Date: 2025-03-13T15:11:42.567+08:00 %%
