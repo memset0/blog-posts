@@ -20,13 +20,15 @@ export-date: 2025-03-13 15:12:02
 
 ## 1. Abstract
 
+> 通过替换生成过程中 LDM/SD 的 UNet 中的交叉注意力层实现图像编辑任务。
+
 近期的大规模文本驱动合成模型因其能够生成高度多样化且符合给定文本提示的图像的卓越能力而备受关注。这种基于文本的合成方法尤其吸引那些习惯用语言描述自己意图的人。因此，将文本驱动的图像合成扩展到文本驱动的 **图像编辑(image editing)** 是很自然的。对于这些生成模型来说，编辑是一项具有挑战性的任务，因为编辑技术的一个固有特性是保留原始图像的大部分内容，而在基于文本的模型中，即使对文本提示进行微小的修改，通常也会导致完全不同的结果。目前最先进的方法通过要求用户提供空间掩码来定位编辑区域，从而忽略了掩码区域内的原始结构和内容。在本文中，我们探索了一种直观的提示到提示编辑框架，其中==编辑仅由文本控制==。为此，我们深入分析了一个文本条件模型，并==观察到交叉注意力层是控制图像空间布局与提示中每个单词之间关系的关键==。基于这一观察，我们==提出了几个仅通过编辑文本提示来监控图像合成的应用==。这包括通过替换一个单词进行局部编辑、通过添加说明进行全局编辑，甚至可以精细控制一个单词在图像中的体现程度。我们在不同的图像和提示上展示了我们的结果，证明了高质量的合成效果以及对编辑后提示的忠实度。
 
 ![|676](https://img.memset0.cn/2025/03/13/X0rxdtWL.png)
 
-## 2. Methods
+## 2. Method
 
-![|598](https://img.memset0.cn/2025/03/13/P2i3KNeo.png)
+![|637](https://img.memset0.cn/2025/03/13/P2i3KNeo.png)
 
 设 $\mathcal{I}$ 是一张由扩散模型根据文本提示 $\mathcal{P}$ 生成的图像，现在我们希望根据编辑后的提示 $\mathcal{P}^{\ast}$ 图像 $\mathcal{I}$ 进行编辑，得到编辑后的图像 $\mathcal{I}^{\ast}$。简单但不成功的尝试是固定随机种子并根据 $\mathcal{P}^{\ast}$ 重新生成，但这样实际上会得到完全不同的图像。
 
@@ -61,11 +63,45 @@ export-date: 2025-03-13 15:12:02
     $$
 
 > [!note] Note
-> 按照对代码的理解，后面两种编辑函数也有必要应用软性注意力约束，即只替换时间步的一个前缀，论文里的表述可能容易引人误解。
+> 按照对代码的理解，后面两种编辑函数也有必要应用软性注意力约束，即只在一个前缀的时间步进行替换，论文里的表述可能有些引人误解。
 
 ## 3. Code
 
-### 3.1. Trick
+- 官方实现：[google/prompt-to-prompt](https://github.com/google/prompt-to-prompt)
+
+### 3.1. 实现注意力替换
+
+可以看到代码在 `register_attention_control` 中实现了对原 `CrossAttention` 的前向传播函数的替换，从而引入了对注意力的插入。
+
+```plain
+text2image_ldm_stable()
+└─ diffusion_step()
+   └─ UNet.forward()
+      └─ CrossAttention.forward() (被 register_attention_control 修改)
+         └─ controller.forward()
+            └─ replace_cross_attention()
+```
+
+`register_attention_control` 函数==负责把不同的注意力类（取决于具体实现）替换掉原 `CrossAttention` 注意力类==，即在模型正向传播过程中原本对 `CrossAttention.forward()` 的调用会变为对 `controller.forward()` 的调用。
+
+在 `replace_cross_attention` 中注意力通过 `alpha_words` 张量控制混合，这是因为 prompt to prompt 论文中还提出了对不同 token 设置不同替换时间步右端点的策略。
+
+```python
+h = attn.shape[0] // (self.batch_size)
+attn = attn.reshape(self.batch_size, h, *attn.shape[1:])
+attn_base, attn_repalce = attn[0], attn[1:]
+if is_cross:
+	alpha_words = self.cross_replace_alpha[self.cur_step]
+	attn_repalce_new = self.replace_cross_attention(attn_base, attn_repalce) * alpha_words + (1 - alpha_words) * attn_repalce # 这里使用 alpha_words 控制替换强度从而根据token控制注意力是否替换
+	attn[1:] = attn_repalce_new
+else:
+	attn[1:] = self.replace_self_attention(attn_base, attn_repalce)
+attn = attn.reshape(self.batch_size * h, *attn.shape[2:])
+```
+
+### 3.2. Tricks
+
+#### 3.2.1. `torch.einsum` 方法
 
 ![6eqbCjrb.png|697](https://img.memset0.cn/2025/03/15/6eqbCjrb.png)
 
