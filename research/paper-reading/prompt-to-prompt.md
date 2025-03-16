@@ -12,7 +12,19 @@ doi: "10.48550/arXiv.2208.01626"
 export-date: 2025-03-13 15:12:02
 ---
 
+<!-- begin-private-notes -->
 
+> [!summary] Metadata
+>
+> **Title**: [Prompt-to-Prompt Image Editing with Cross Attention Control](zotero://open-pdf/library/items/85ESRCIY)
+>
+> **Tags**: #zotero/tag/Computer-Science---Computation-and-Language, #zotero/tag/Computer-Science---Computer-Vision-and-Pattern-Recognition, #zotero/tag/Computer-Science---Machine-Learning, #zotero/tag//unread, #zotero/tag/Computer-Science---Graphics
+>
+> **Authors**: #zotero/author/Amir-Hertz, #zotero/author/Ron-Mokady, #zotero/author/Jay-Tenenbaum, #zotero/author/Kfir-Aberman, #zotero/author/Yael-Pritch, #zotero/author/Daniel-Cohen-Or
+
+%% begin notes %%
+
+<!-- end-private-notes -->
 
 > 本篇笔记总结了一种基于文本的图像编辑方法，该方法利用扩散模型中的交叉注意力层来实现仅通过修改文本提示进行图像编辑。相比于传统的基于掩码的方法，该方法能够更自然地保留原始图像的结构，同时实现局部或全局的编辑。笔记详细介绍了该方法的核心思想，并列举了三种不同的编辑方式：单词替换、添加新短语以及注意力重新加权。通过这些方法，用户可以更精细地控制文本对图像生成的影响，从而实现高质量的编辑效果。 <small style="font-style: italic; opacity: 0.5">（由 gpt-4o 生成摘要）</small>
 
@@ -20,7 +32,7 @@ export-date: 2025-03-13 15:12:02
 
 ## 1. Abstract
 
-> 通过替换生成过程中 LDM/SD 的 UNet 中的交叉注意力层实现图像编辑任务。
+> 通过替换生成过程中 LDM 的 UNet 中的交叉注意力层实现图像编辑任务。
 
 近期的大规模文本驱动合成模型因其能够生成高度多样化且符合给定文本提示的图像的卓越能力而备受关注。这种基于文本的合成方法尤其吸引那些习惯用语言描述自己意图的人。因此，将文本驱动的图像合成扩展到文本驱动的 **图像编辑(image editing)** 是很自然的。对于这些生成模型来说，编辑是一项具有挑战性的任务，因为编辑技术的一个固有特性是保留原始图像的大部分内容，而在基于文本的模型中，即使对文本提示进行微小的修改，通常也会导致完全不同的结果。目前最先进的方法通过要求用户提供空间掩码来定位编辑区域，从而忽略了掩码区域内的原始结构和内容。在本文中，我们探索了一种直观的提示到提示编辑框架，其中==编辑仅由文本控制==。为此，我们深入分析了一个文本条件模型，并==观察到交叉注意力层是控制图像空间布局与提示中每个单词之间关系的关键==。基于这一观察，我们==提出了几个仅通过编辑文本提示来监控图像合成的应用==。这包括通过替换一个单词进行局部编辑、通过添加说明进行全局编辑，甚至可以精细控制一个单词在图像中的体现程度。我们在不同的图像和提示上展示了我们的结果，证明了高质量的合成效果以及对编辑后提示的忠实度。
 
@@ -47,7 +59,7 @@ export-date: 2025-03-13 15:12:02
     M_{t} \quad& \text{otherwise.}
     \end{cases}
     $$
-- _添加新短语（adding a new phrase）_：需要一个 **对齐函数(alignment function)** $A$ 构建 $\mathcal{P}^{\ast}$ 中的 token 在 $\mathcal{P}$ 中的原位置。
+- _添加新短语(adding a new phrase)_：需要一个 **对齐函数(alignment function)** $A$ 构建 $\mathcal{P}^{\ast}$ 中的 token 在 $\mathcal{P}$ 中的原位置。
     $$
         (Edit(M_{t},M_{t}^{\ast},t))_{i,j} := \begin{cases}
     (M_{t}^{\ast})_{i,j} \quad& \text{if }A(j)=None \\
@@ -69,7 +81,7 @@ export-date: 2025-03-13 15:12:02
 
 - 官方实现：[google/prompt-to-prompt](https://github.com/google/prompt-to-prompt)
 
-### 3.1. 实现注意力替换
+### 3.1. Replacing Attention Layer
 
 可以看到代码在 `register_attention_control` 中实现了对原 `CrossAttention` 的前向传播函数的替换，从而引入了对注意力的插入。
 
@@ -99,12 +111,60 @@ else:
 attn = attn.reshape(self.batch_size * h, *attn.shape[2:])
 ```
 
-### 3.2. Tricks
+### 3.2. Replacement of Self-Attention
 
-#### 3.2.1. `torch.einsum` 方法
+实际上，`google/prompt-to-prompt` 的实现中还对 Transformer 部分 _自注意力(self attention)_ 层进行了替换，这是论文的正文部分没有提到的。在上面的代码中，我们已经看到了对 `AttentionControlEdit.replace_self_attention` 方法的调用：
 
-![6eqbCjrb.png|697](https://img.memset0.cn/2025/03/15/6eqbCjrb.png)
+```python
+def replace_self_attention(self, attn_base, attn_replace):
+	if att_replace.shape[2] <= 16 ** 2:
+		return attn_base.unsqueeze(0).expand(attn_replace.shape[0], *attn_base.shape)
+		# 这里是将 attn_base 原地缩放到 attn_replace 的尺寸，如果相同直接返回 attn_base 也是一样的效果（我的实现就是这样）
+	else:
+		return attn_replace
+```
 
+对于 Google 给出的示例，只替换交叉注意力层的效果如下：
 
+![|600](https://img.memset0.cn/2025/03/17/uOnDdEoI.png)
+
+而同时替换前 40% 的中间的自注意力层的结果如下：
+
+![|600](https://img.memset0.cn/2025/03/17/lM5NSko2.png)
+
+可以看出，这样的方法会有一些微小的改进但帮助不大。
+
+### 3.3. Tricks
+
+#### 3.3.1. `torch.einsum` 方法
+
+![6eqbCjrb.png|649](https://img.memset0.cn/2025/03/15/6eqbCjrb.png)
+
+#### 3.3.2. `einops.rearrange`
+
+类似于 `Tensor.reshape`（和 `Tensor.view`），但是语法上更简洁。如在我们的代码实现中，为了将两个 batch 分开（从而把第一个的注意力矩阵给第二个）使用了如下的实现：
+
+```python
+attn = rearrange(attn, '(b h) n m -> b h n m', h=attn.shape[0] // 2)
+attn[1] = attn[0] # 暂不考虑mapping的情况
+attn = rearrange(attn, 'b h n m -> (b h) n m')
+```
+
+<!-- begin-private-notes -->
+
+%% end notes %%
+
+## 4. Word Table
+
+| Word | Explain |
+| ---: | :------ |
+
+## 5. Annotations
+
+## 6. Questions
+
+## 7. Marks
+
+<!-- end-private-notes -->
 
 %% Import Date: 2025-03-13T15:12:05.894+08:00 %%
