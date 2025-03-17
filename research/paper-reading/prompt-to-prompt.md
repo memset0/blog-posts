@@ -12,19 +12,7 @@ doi: "10.48550/arXiv.2208.01626"
 export-date: 2025-03-13 15:12:02
 ---
 
-<!-- begin-private-notes -->
 
-> [!summary] Metadata
->
-> **Title**: [Prompt-to-Prompt Image Editing with Cross Attention Control](zotero://open-pdf/library/items/85ESRCIY)
->
-> **Tags**: #zotero/tag/Computer-Science---Computation-and-Language, #zotero/tag/Computer-Science---Computer-Vision-and-Pattern-Recognition, #zotero/tag/Computer-Science---Machine-Learning, #zotero/tag//unread, #zotero/tag/Computer-Science---Graphics
->
-> **Authors**: #zotero/author/Amir-Hertz, #zotero/author/Ron-Mokady, #zotero/author/Jay-Tenenbaum, #zotero/author/Kfir-Aberman, #zotero/author/Yael-Pritch, #zotero/author/Daniel-Cohen-Or
-
-%% begin notes %%
-
-<!-- end-private-notes -->
 
 > 本篇笔记总结了一种基于文本的图像编辑方法，该方法利用扩散模型中的交叉注意力层来实现仅通过修改文本提示进行图像编辑。相比于传统的基于掩码的方法，该方法能够更自然地保留原始图像的结构，同时实现局部或全局的编辑。笔记详细介绍了该方法的核心思想，并列举了三种不同的编辑方式：单词替换、添加新短语以及注意力重新加权。通过这些方法，用户可以更精细地控制文本对图像生成的影响，从而实现高质量的编辑效果。 <small style="font-style: italic; opacity: 0.5">（由 gpt-4o 生成摘要）</small>
 
@@ -140,7 +128,7 @@ def replace_self_attention(self, attn_base, attn_replace):
 
 ![6eqbCjrb.png|649](https://img.memset0.cn/2025/03/15/6eqbCjrb.png)
 
-#### 3.3.2. `einops.rearrange`
+#### 3.3.2. `einops.rearrange` 方法
 
 类似于 `Tensor.reshape`（和 `Tensor.view`），但是语法上更简洁。如在我们的代码实现中，为了将两个 batch 分开（从而把第一个的注意力矩阵给第二个）使用了如下的实现：
 
@@ -150,21 +138,6 @@ attn[1] = attn[0] # 暂不考虑mapping的情况
 attn = rearrange(attn, 'b h n m -> (b h) n m')
 ```
 
-<!-- begin-private-notes -->
 
-%% end notes %%
-
-## 4. Word Table
-
-| Word | Explain |
-| ---: | :------ |
-
-## 5. Annotations
-
-## 6. Questions
-
-## 7. Marks
-
-<!-- end-private-notes -->
 
 %% Import Date: 2025-03-13T15:12:05.894+08:00 %%
