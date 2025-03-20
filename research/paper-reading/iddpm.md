@@ -1,5 +1,5 @@
 ---
-# %% begin matters %%
+# 
 title: "「论文精读 #8」Improved Denoising Diffusion Probabilistic Models"
 create-date: 2025-02-16 11:09:13
 slug: /research/paper-reading/iddpm
@@ -7,7 +7,7 @@ indexed: true
 tags:
   - makemd/paper/diffusion
   - Diffusion-Model
-# %% end matters %%
+# 
 citekey: nicholImprovedDenoisingDiffusion2021
 doi: "10.48550/arXiv.2102.09672" 
 export-date: 2025-02-23 01:58:40
@@ -125,4 +125,4 @@ $$
 
 
 
-%% Import Date: 2025-02-23T01:59:01.001+08:00 %%
+

@@ -1,5 +1,5 @@
 ---
-# %% begin matters %%
+# 
 title: 'High-Resolution Image Synthesis with Latent Diffusion Models'
 create-date: 2025-02-23 01:58:40
 update-date: 2025-02-23 01:58:40
@@ -7,7 +7,7 @@ slug: /research/paper-reading/ldm
 # indexed: true
 tags: []
 link-chat: https://chat.memset0.cn/chat?session=ssn_uaicSGbAMyYz&topic=tpc_pKVd6UxgZRBx
-# %% end matters %%
+# 
 citekey: rombachHighResolutionImageSynthesis2022
 doi: "10.48550/arXiv.2112.10752" 
 export-date: 2025-03-13 15:11:37
@@ -70,4 +70,4 @@ $$
 
 
 
-%% Import Date: 2025-03-13T15:11:42.588+08:00 %%
+

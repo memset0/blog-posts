@@ -1,12 +1,12 @@
 ---
-# %% begin matters %%
+# 
 title: "「论文精读 #15」Prompt-to-Prompt Image Editing with Cross Attention Control"
 create-date: 2025-03-13 15:11:37
 update-date: 2025-03-13 15:11:37
 slug: /research/paper-reading/prompt-to-prompt
 indexed: true
 tags: []
-# %% end matters %%
+# 
 citekey: hertzPrompttoPromptImageEditing2022
 doi: "10.48550/arXiv.2208.01626" 
 export-date: 2025-03-13 15:12:02
@@ -140,4 +140,4 @@ attn = rearrange(attn, 'b h n m -> (b h) n m')
 
 
 
-%% Import Date: 2025-03-13T15:12:05.894+08:00 %%
+

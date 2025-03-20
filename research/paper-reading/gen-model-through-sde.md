@@ -1,5 +1,5 @@
 ---
-# %% begin matters %%
+# 
 title: "「论文精读 #10」Score-based Generative Modeling through Stochastic Differential Equations"
 create-date: 2025-02-17 17:09:48
 slug: /research/paper-reading/gen-model-through-sde
@@ -8,7 +8,7 @@ tags:
   - Stochastic Differential Equation
   - score-base model
 cover: https://img.memset0.cn/2025/02/17/HOrnk1ku.png
-# %% end matters %%
+# 
 citekey: songScoreBasedGenerativeModeling2021w
 doi: "10.48550/arXiv.2011.13456" 
 export-date: 2025-02-23 01:58:40
@@ -113,4 +113,4 @@ $$
 
 
 
-%% Import Date: 2025-02-23T01:59:01.638+08:00 %%
+

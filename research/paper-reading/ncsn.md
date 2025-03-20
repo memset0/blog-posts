@@ -1,5 +1,5 @@
 ---
-# %% begin matters %%
+# 
 title: '「论文精读 #11」Generative Modeling by Estimating Gradients of the Data Distribution'
 create-date: 2025-02-21 00:18:24
 slug: /research/paper-reading/ncsn
@@ -8,7 +8,7 @@ tags:
   - Langevin Dynamics
   - score-base model
 cover: https://img.memset0.cn/2025/02/17/HOrnk1ku.png
-# %% end matters %%
+# 
 citekey: songGenerativeModelingEstimating2020
 doi: "10.48550/arXiv.1907.05600" 
 export-date: 2025-02-23 01:58:40
@@ -99,4 +99,4 @@ $$
 
 
 
-%% Import Date: 2025-02-23T01:59:01.490+08:00 %%
+

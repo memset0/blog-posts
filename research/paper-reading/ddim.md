@@ -1,5 +1,5 @@
 ---
-# %% begin matters %%
+# 
 title: '「论文精读 #9」Denoising Diffusion Implicit Models'
 create-date: 2025-02-16 11:09:13
 update-time: 2025-02-18 13:02:51
@@ -8,7 +8,7 @@ indexed: true
 tags:
   - Diffusion-Model
 link-chat: https://chat.memset0.cn/chat?session=ssn_uaicSGbAMyYz&topic=tpc_kbPugMPIrqoa
-# %% end matters %%
+# 
 citekey: songDenoisingDiffusionImplicit2022
 doi: "10.48550/arXiv.2010.02502" 
 export-date: 2025-02-23 01:58:40
@@ -244,4 +244,4 @@ $$
 
 
 
-%% Import Date: 2025-02-23T01:59:01.474+08:00 %%
+
