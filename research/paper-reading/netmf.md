@@ -1,6 +1,8 @@
 ---
+# 
 title: '「论文精读 #3」Network Embedding as Matrix Factorization: Unifying DeepWalk, LINE, PTE, and node2vec'
-date: 2025-01-30 02:43:04
+create-date: 2025-01-30 02:43:04
+update-date: 2025-01-30 02:43:04
 slug: /research/paper-reading/netmf
 indexed: true
 tags:
@@ -9,10 +11,15 @@ tags:
   - Matrix-Factorization
   - Spectrum-Graph-Theory
   - DeepWalk
-  - Skip-Gram
-  - Negative-Sampling
   - SVD
+  - topic/GNN
+# 
+citekey: qiuNetworkEmbeddingMatrix2018
+doi: "10.1145/3159652.3159706" 
+export-date: 2025-03-20 23:19:31
 ---
+
+
 
 > 本篇笔记系统分析了 NetMF 论文的核心贡献：通过理论推导证明 DeepWalk、LINE 等图嵌入算法本质是隐式矩阵分解，并提出了显式的矩阵分解框架 NetMF。笔记详细推导了基于随机游走的 PMI 矩阵闭式解 $\displaystyle{\mathbf{M} = \text{vol}(G)\left(\frac{1}{T}\sum_{r=1}^T \mathbf{P}^r\right)\mathbf{D}^{-1}}$，阐述了 NetMF 通过截断 SVD 分解该矩阵的实现方案，其中小窗口直接计算矩阵幂，大窗口采用特征值分解近似。笔记还记录了算法中 Shifted PPMI 处理、误差界理论证明等关键技术细节，最终通过矩阵分解视角统一了多种图嵌入方法。<small style="font-style: italic; opacity: 0.5">（由 deepseek-r1 生成摘要）</small>
 
@@ -26,7 +33,7 @@ tags:
 | $T$                                                                    | 上下文窗口大小                      | 基于随机游走的上下文一般是是 $v_{i-T},\cdots,v_{i+T}$                                                                                                                                                                                                                                                                          |
 | $b$                                                                    | 负采样次数                          | 在有的论文中也用 $k$ 表示                                                                                                                                                                                                                                                                                                      |
 
-## 1. Insights
+## 1. Method
 
 论文指出，LINE/PTE、DeepWalk、node2vec 等算法实际上是在执行 **隐式矩阵分解(implicit matrix factorization)**，即我们“通过统计学习节点嵌入”的过程实际上是在近似一个矩阵 $\mathbf{M}$ 的分解 $\mathbf{M}=\mathbf{X}\mathbf{X}^{\top}$。
 
@@ -109,3 +116,9 @@ $$
 ## 2. References
 
 - 原始论文
+
+
+
+
+
+

@@ -1,23 +1,29 @@
 ---
+# 
 title: '「论文精读 #2」Neural Word Embedding as Implicit Matrix Factorization'
+create-date: 2025-01-27 10:33:50
+update-date: 2025-01-27 10:33:50
 slug: /research/paper-reading/sgns
 indexed: true
-date: 2025-01-27 10:33:50
 tags:
   - NLP
   - GNN
   - Skip-Gram
-  - Negative-Sampling
   - SVD
   - PMI
-  - DeepWalk
+  - topic/GNN
+# 
+citekey: levyNeuralWordEmbedding2014
+export-date: 2025-03-20 23:18:16
 ---
+
+
 
 > 本篇笔记系统剖析了 Skip-Gram with Negative Sampling (SGNS) 算法的核心原理及其与矩阵分解的深层联系。重点推导了 SGNS 目标函数与点互信息（PMI）的数学等价性，揭示了通过 Shifted PPMI 矩阵的 SVD 分解实现词向量生成的机制，并对比了 SGNS、SPPMI 和 SVD 方法在不同 NLP 任务中的性能差异。最后通过 DeepWalk 案例展示了该理论在图嵌入中的实际应用。<small style="font-style: italic; opacity: 0.5">（由 deepseek-r1 生成摘要）</small>
 
 <!-- more -->
 
-## 1. Insights
+## 1. Method
 
 ### 1.1. SGNS
 
@@ -119,7 +125,7 @@ $$
 
 ## 2. Experiments
 
-这里我其实没太读懂实验方式。我的理解是 SGNS 就是直接通过负采样进行梯度下降得到节点嵌入；SPPMI 是通过 $\mathbf{M}^{\text{PMI}}-\log b$ 与 $0$ 取 max 来导出 $\mathbf{M}^{\text{SPPMI}}$ 用于计算损失函数并做梯度下降得到节点嵌入；SVD 是将 $\mathbf{M}^{\text{SPPMI}}$ 做截断 SVD 分解节点嵌入。这三者得到的嵌入再交给下游分类器得到准确率。
+这里没太读懂实验方式。我的理解是 SGNS 就是直接通过负采样进行梯度下降得到节点嵌入；SPPMI 是通过 $\mathbf{M}^{\text{PMI}}-\log b$ 与 $0$ 取 max 来导出 $\mathbf{M}^{\text{SPPMI}}$ 用于计算损失函数并做梯度下降得到节点嵌入；SVD 是将 $\mathbf{M}^{\text{SPPMI}}$ 做截断 SVD 分解节点嵌入。这三者得到的嵌入再交给下游分类器得到准确率。
 
 ![|785](https://img.memset0.cn/2025/01/27/KJx60Gj6.png)
 
@@ -128,7 +134,13 @@ $$
 
 ## 3. References
 
-- 原始论文：[[Bryan Perozzi, et al., 2014. DeepWalk - Online Learning of Social Representations]]
+- 原始论文
 - [论文解读：词向量作为隐式矩阵分解（SGNS）-CSDN 博客](https://blog.csdn.net/rosefun96/article/details/108413273)
 - [SGNS - 知乎](https://zhuanlan.zhihu.com/p/53250696)
 - [Softmax 函数和 Sigmoid 函数的区别与联系 - 知乎](https://zhuanlan.zhihu.com/p/356976844)
+
+
+
+
+
+

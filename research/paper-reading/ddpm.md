@@ -1,5 +1,5 @@
 ---
-title: "「论文精读 #7」Denoising Diffusion Probabilistic Models"
+title: '「论文精读 #7」Denoising Diffusion Probabilistic Models'
 create-date: 2025-02-13 20:06:52
 update-date: 2025-02-16 01:57:00
 slug: /research/paper-reading/ddpm
@@ -9,6 +9,7 @@ tags:
   - Gaussian-distribution
   - Markov-chain
   - KL-Divergence
+  - topic/diffusion
 citekey: hoDenoisingDiffusionProbabilistic2020
 doi: 10.48550/arXiv.2006.11239
 export-date: 2025-02-23 01:58:40
@@ -54,8 +55,8 @@ $$
 q(\mathbf{x}_{1:T}|\mathbf{x}_0) := \prod_{t=1}^T q(\mathbf{x}_t|\mathbf{x}_{t-1}), \quad \text{where} \space q(\mathbf{x}_t|\mathbf{x}_{t-1}) := \mathcal{N}(\mathbf{x}_t; \sqrt{1 - \beta_t} \mathbf{x}_{t-1}, \beta_t \mathbf{I})
 $$
 
-> -   $\sqrt{1 - \beta_t}$ 因子用于在每一步中对信号进行缩放，以保持数据和噪声的相对比例。
-> -   右式可以根据高斯分布的定义展开：$\mathbf{x}_{t} = \sqrt{1-\beta_{t}} \mathbf{x}_{t-1} +\sqrt{\beta_{t}} \boldsymbol{\epsilon}_{t}$，其中 $\boldsymbol{\epsilon} \sim \mathcal{N}(\mathbf{0},\mathbf{I})$。
+> - $\sqrt{1 - \beta_t}$ 因子用于在每一步中对信号进行缩放，以保持数据和噪声的相对比例。
+> - 右式可以根据高斯分布的定义展开：$\mathbf{x}_{t} = \sqrt{1-\beta_{t}} \mathbf{x}_{t-1} +\sqrt{\beta_{t}} \boldsymbol{\epsilon}_{t}$，其中 $\boldsymbol{\epsilon} \sim \mathcal{N}(\mathbf{0},\mathbf{I})$。
 
 为方便，记 $\alpha_{t} = 1-\beta_{t}$，$\bar{\alpha}_{t}\mathrel{\text{:=}} \prod_{s = 1}^{t}{\alpha }_{s}$，可以推导出 $q(\mathbf{x}_{t}|\mathbf{x}_{0})$ 的==封闭形式==；这表明我们可以通过这一封闭形式在任意时间步 $t$ 对 $\mathbf{x}_{t}$ 进行采样；通俗点说，这一推导指出马尔科夫正向过程的任意时刻都可以一步到位。后面也会多次用到这个封闭形式。
 
@@ -105,7 +106,7 @@ p_\theta(\mathbf{x}_0) &=\int p_\theta(\mathbf{x}_{0:T}) d\mathbf{x}_{1:T} =\int
 &\geq \mathbb{E}_{q(\mathbf{x}_{1:T}\vert \mathbf{x}_{0})} \left[ \frac{p_\theta(\mathbf{x}_{0:T})}{q(\mathbf{x}_{1:T}\vert \mathbf{x}_{0})} \right] =: \mathcal{L}_{\mathrm{VLB}} \\ \end{aligned}
 $$
 
-> -   最后一步利用了 [Jensen's inequality](https://en.wikipedia.org/wiki/Jensen's_inequality)。
+> - 最后一步利用了 [Jensen's inequality](https://en.wikipedia.org/wiki/Jensen's_inequality)。
 
 $$
 \mathcal{L} := \mathbb{E}(-\log p_{\theta}(\mathbf{x}_{0})) = - \log \mathcal{L}_{\mathrm{VLB}} = \mathbb{E}_{q(\mathbf{x}_{1:T}\vert \mathbf{x}_{0})}[-\log \frac{p_\theta(\mathbf{x}_{0:T})}{q(\mathbf{x}_{1:T}\vert \mathbf{x}_{0})}]=\mathbb{E}_{q(\mathbf{x}_{1:T}\vert \mathbf{x}_{0})}[\log \frac{q(\mathbf{x}_{1:T}\vert \mathbf{x}_{0})}{p_\theta(\mathbf{x}_{0:T})}]
@@ -117,7 +118,7 @@ $$
 \mathcal{L}:={\mathbb{E}}_{q}\left\lbrack {\underset{{L}_{T}}{\underbrace{{D}_{\mathrm{{KL}}}\left( {q\left( {{\mathbf{x}}_{T} | {\mathbf{x}}_{0}}\right) \parallel p\left( {\mathbf{x}}_{T}\right) }\right) }} + \mathop{\sum }\limits_{{t > 1}}\underset{{L}_{t - 1}}{\underbrace{{D}_{\mathrm{{KL}}}\left( {q\left( {{\mathbf{x}}_{t - 1} | {\mathbf{x}}_{t},{\mathbf{x}}_{0}}\right) \parallel {p}_{\theta }\left( {{\mathbf{x}}_{t - 1}|{\mathbf{x}}_{t}}\right) }\right) }}\underset{{L}_{0}}{\underbrace{-\log {p}_{\theta }\left( {{\mathbf{x}}_{0}|{\mathbf{x}}_{1}}\right) }}}\right\rbrack
 $$
 
-> -   训练时 $L_{T}$ 是一个常数，可以忽略。
+> - 训练时 $L_{T}$ 是一个常数，可以忽略。
 
 > [!quote]- Proof
 >
@@ -198,8 +199,8 @@ $$
 \mathcal{L}_{t-1} = D_{KL}(q(\mathbf{x}_{t-1}|\mathbf{x}_t, \mathbf{x}_0) || p_\theta(\mathbf{x}_{t-1}|\mathbf{x}_t)) = \mathbb{E}_{q(\mathbf{x}_{0:T})} \left[ \frac{1}{2\sigma_t^2} || \boldsymbol{\mu}_{t}(\mathbf{x}_t, \mathbf{x}_0) - \boldsymbol{\mu}_\theta(\mathbf{x}_t, t) ||^2 \right] + C
 $$
 
-> -   这里作者通过实验发现训练 $\boldsymbol{\mu}_{\theta}(\mathbf{x}_{t},t)$ 时给时间戳 $t$ 能取得更好的效果（即 $\boldsymbol{\mu}_{\theta}$ 是一个不仅关于 $\mathbf{x}_{t}$ 还关于 $t$ 的函数），这其实也符合直觉。
-> -   换句话说，我们每一步的 $\boldsymbol{\mu}_{\theta}$ 都理应是不同的，故将时间戳 $t$ 作为模型输入传入，可以避免训练 $T$ 个模型，而用一个模型表示（共用参数）。
+> - 这里作者通过实验发现训练 $\boldsymbol{\mu}_{\theta}(\mathbf{x}_{t},t)$ 时给时间戳 $t$ 能取得更好的效果（即 $\boldsymbol{\mu}_{\theta}$ 是一个不仅关于 $\mathbf{x}_{t}$ 还关于 $t$ 的函数），这其实也符合直觉。
+> - 换句话说，我们每一步的 $\boldsymbol{\mu}_{\theta}$ 都理应是不同的，故将时间戳 $t$ 作为模型输入传入，可以避免训练 $T$ 个模型，而用一个模型表示（共用参数）。
 
 > [!note]- Proof
 >

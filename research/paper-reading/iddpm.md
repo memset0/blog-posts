@@ -1,15 +1,16 @@
 ---
 # 
-title: "「论文精读 #8」Improved Denoising Diffusion Probabilistic Models"
+title: '「论文精读 #8」Improved Denoising Diffusion Probabilistic Models'
 create-date: 2025-02-16 11:09:13
 slug: /research/paper-reading/iddpm
 indexed: true
 tags:
   - makemd/paper/diffusion
   - Diffusion-Model
+  - topic/diffusion
 # 
 citekey: nicholImprovedDenoisingDiffusion2021
-doi: "10.48550/arXiv.2102.09672" 
+doi: '10.48550/arXiv.2102.09672'
 export-date: 2025-02-23 01:58:40
 ---
 
@@ -83,8 +84,8 @@ $$
 \boldsymbol{\Sigma}_{\theta}(\mathbf{x}_{t},t) = \exp(v \log \beta_{t} + (1-v) \log \tilde{\beta}_{t}) \mathbf{I}
 $$
 
-> -   其中 $v$ 是可学习参数。
-> -   这里我们没有对 $v$ 的范围进行限制，所以理论上模型可以学习到任意范围的方差值，但在实验中并未观察到模型学习到超出插值范围的方差的情况。
+> - 其中 $v$ 是可学习参数。
+> - 这里我们没有对 $v$ 的范围进行限制，所以理论上模型可以学习到任意范围的方差值，但在实验中并未观察到模型学习到超出插值范围的方差的情况。
 
 但由于 $L_{\mathrm{simple}}$ 与 $\boldsymbol{\Sigma}_{\theta}(\mathbf{x}_{t},t)$ 项无关，我们定义了一个新的混合目标函数：
 

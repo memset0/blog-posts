@@ -1,7 +1,7 @@
 ---
 sync: /travelogue/2023-hefei.md
 title: '2023 ICPC 合肥站游记'
-date: 2023-11-29 19:08:00
+create-date: 2023-11-29 19:08:00
 publish: false
 cover: https://img.memset0.cn/2023/11/29/1ndAyF7Q.jpeg
 travelogue-title: '2023 · 合肥'

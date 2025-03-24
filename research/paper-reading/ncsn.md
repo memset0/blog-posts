@@ -7,10 +7,11 @@ tags:
   - Diffusion-Model
   - Langevin Dynamics
   - score-base model
+  - topic/diffusion
 cover: https://img.memset0.cn/2025/02/17/HOrnk1ku.png
 # 
 citekey: songGenerativeModelingEstimating2020
-doi: "10.48550/arXiv.1907.05600" 
+doi: '10.48550/arXiv.1907.05600'
 export-date: 2025-02-23 01:58:40
 ---
 
@@ -28,9 +29,9 @@ $$
 
 > 举个简单的 1 维例子：假设 $p(x)$ 是一个单峰高斯分布的概率密度函数，其中心在 $x=0$ 附近。
 >
-> -   当 $x < 0$ 时，概率密度函数 $p(x)$ 在 $x$ 增大的方向上是上升的，即向着峰值方向，因此 $\frac{\text{d} }{\text{d} x}\log p(x) > 0$，score function 指向正方向（右侧，密度增大的方向）。
-> -   当 $x > 0$ 时，概率密度函数 $p(x)$ 在 $x$ 增大的方向上是下降的，即远离峰值方向，因此 $\frac{\text{d} }{\text{d} x}\log p(x)< 0$，score function 指向负方向（左侧，密度增大的方向）。
-> -   当 $x = 0$ 时（峰值处），概率密度函数 $p(x)$ 的梯度为零（局部最大值点导数为零），因此 $\frac{\text{d} }{\text{d} x}\log p(x) \log p(x) = 0$，score function 为零向量。
+> - 当 $x < 0$ 时，概率密度函数 $p(x)$ 在 $x$ 增大的方向上是上升的，即向着峰值方向，因此 $\frac{\text{d} }{\text{d} x}\log p(x) > 0$，score function 指向正方向（右侧，密度增大的方向）。
+> - 当 $x > 0$ 时，概率密度函数 $p(x)$ 在 $x$ 增大的方向上是下降的，即远离峰值方向，因此 $\frac{\text{d} }{\text{d} x}\log p(x)< 0$，score function 指向负方向（左侧，密度增大的方向）。
+> - 当 $x = 0$ 时（峰值处），概率密度函数 $p(x)$ 的梯度为零（局部最大值点导数为零），因此 $\frac{\text{d} }{\text{d} x}\log p(x) \log p(x) = 0$，score function 为零向量。
 
 ![|634](https://img.memset0.cn/2025/02/20/pevLTPFj.png)
 
@@ -42,7 +43,7 @@ $$
 \mathbb{E}_{p_{\text{data}}(\mathbf{x})} \left[ \|\mathbf{s}_{\theta}(\mathbf{x}) - \nabla_{\mathbf{x}} \log p_{\text{data}}(\mathbf{x}) \|_{2}^{2} \right]
 $$
 
-> -   这里的 $p_{\text{data}}(\mathbf{x})$，表示原始数据分布。
+> - 这里的 $p_{\text{data}}(\mathbf{x})$，表示原始数据分布。
 
 可以证明这（在相差一个常数项的情况下）等价于（在 SSM 中会用到）：
 
@@ -64,7 +65,7 @@ $$
 \frac{1}{2}{\mathbb{E}}_{{q}_{\sigma }\left( {\widetilde{\mathbf{x}} \mid \mathbf{x}}\right) {p}_{\text{data }}(\mathbf{x})} \left\lbrack {\begin{Vmatrix}{\mathbf{s}}_{\mathbf{\theta }}\left( \widetilde{\mathbf{x}}\right) - {\nabla }_{\widetilde{\mathbf{x}}}\log {q}_{\sigma }\left( \widetilde{\mathbf{x}} \mid \mathbf{x}\right) \end{Vmatrix}}_{2}^{2}\right\rbrack
 $$
 
-> -   对于最优解 $\theta^{\ast}$ 则有 ${\mathrm{s}}_{{\mathbf{\theta }}^{ * }}\left( \mathbf{x}\right) = {\nabla }_{\mathbf{x}}\log {q}_{\sigma }\left( \mathbf{x}\right) \approx {\nabla }_{\mathbf{x}}\log {p}_{\text{data }}\left( \mathbf{x}\right)$ 成立，这绕过计算计算雅可比矩阵的迹而进行了对分数模型的训练。
+> - 对于最优解 $\theta^{\ast}$ 则有 ${\mathrm{s}}_{{\mathbf{\theta }}^{ * }}\left( \mathbf{x}\right) = {\nabla }_{\mathbf{x}}\log {q}_{\sigma }\left( \mathbf{x}\right) \approx {\nabla }_{\mathbf{x}}\log {p}_{\text{data }}\left( \mathbf{x}\right)$ 成立，这绕过计算计算雅可比矩阵的迹而进行了对分数模型的训练。
 
 ### 1.3. Noise Conditional Score Network
 

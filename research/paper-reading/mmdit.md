@@ -1,6 +1,6 @@
 ---
 # 
-title: "Scaling Rectified Flow Transformers for High-Resolution Image Synthesis"
+title: '「论文精读 #14」Scaling Rectified Flow Transformers for High-Resolution Image Synthesis'
 create-date: 2025-02-23 01:58:40
 update-date: 2025-02-23 01:58:40
 slug: /research/paper-reading/mmdit
@@ -8,10 +8,11 @@ slug: /research/paper-reading/mmdit
 tags:
   - Diffusion Model
   - cross attention
+  - topic/diffusion
 link-chat: https://chat.memset0.cn/chat?session=ssn_uaicSGbAMyYz&topic=tpc_czNyVDHdEOGL
 # 
 citekey: esserScalingRectifiedFlow2024
-doi: "10.48550/arXiv.2403.03206" 
+doi: '10.48550/arXiv.2403.03206'
 export-date: 2025-03-13 15:11:37
 ---
 

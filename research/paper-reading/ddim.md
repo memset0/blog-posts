@@ -7,10 +7,11 @@ slug: /research/paper-reading/ddim
 indexed: true
 tags:
   - Diffusion-Model
+  - topic/diffusion
 link-chat: https://chat.memset0.cn/chat?session=ssn_uaicSGbAMyYz&topic=tpc_kbPugMPIrqoa
 # 
 citekey: songDenoisingDiffusionImplicit2022
-doi: "10.48550/arXiv.2010.02502" 
+doi: '10.48550/arXiv.2010.02502'
 export-date: 2025-02-23 01:58:40
 ---
 
@@ -38,8 +39,8 @@ $$
 {q}_{\boldsymbol{\sigma} }\left( {{\mathbf{x}}_{t - 1}| {\mathbf{x}}_{t},{\mathbf{x}}_{0}}\right)  = \mathcal{N}\left( {\sqrt{{\bar{\alpha} }_{t - 1}}{\mathbf{x}}_{0} + \sqrt{1 - {\bar{\alpha} }_{t - 1} - {\sigma }_{t}^{2}} \cdot  \frac{{\mathbf{x}}_{t} - \sqrt{{\bar{\alpha} }_{t}}{\mathbf{x}}_{0}}{\sqrt{1 - {\bar{\alpha} }_{t}}},{\sigma }_{t}^{2}\mathbf{I}}\right)
 $$
 
-> -   特别地，当 $\sigma_{t}^{2} = \dfrac{1-\bar{\alpha}_{t-1}}{1-\bar{\alpha}_{t}} \beta_{t} =  \dfrac{1-\bar{\alpha}_{t-1}}{1-\bar{\alpha}_{t}}\cdot \left( 1-\dfrac{\bar{\alpha}_{t}}{\bar{\alpha}_{t-1}} \right)$ 时，DDIM 与 DDPM 的训练目标等价。
-> -   可以在根据上式通过贝叶斯公式反过来解出“正向过程”的条件分布（打双引号是因为这里已经不再是马尔可夫链意义下的前向过程，而是一种基于贝叶斯公式反推得到的条件分布），其仍是一个高斯分布，但我们并不需要用到这一结果。
+> - 特别地，当 $\sigma_{t}^{2} = \dfrac{1-\bar{\alpha}_{t-1}}{1-\bar{\alpha}_{t}} \beta_{t} =  \dfrac{1-\bar{\alpha}_{t-1}}{1-\bar{\alpha}_{t}}\cdot \left( 1-\dfrac{\bar{\alpha}_{t}}{\bar{\alpha}_{t-1}} \right)$ 时，DDIM 与 DDPM 的训练目标等价。
+> - 可以在根据上式通过贝叶斯公式反过来解出“正向过程”的条件分布（打双引号是因为这里已经不再是马尔可夫链意义下的前向过程，而是一种基于贝叶斯公式反推得到的条件分布），其仍是一个高斯分布，但我们并不需要用到这一结果。
 
 > [!quote]- 原论文证明（对这一公式的验证）
 >
@@ -123,7 +124,7 @@ $$
 \end{aligned}
 $$
 
-> -   到这里为止的推导其实都和 DDPM 类似，同方差高斯分布的 KL 散度可以转化为 MSE 的结论进行推导。
+> - 到这里为止的推导其实都和 DDPM 类似，同方差高斯分布的 KL 散度可以转化为 MSE 的结论进行推导。
 
 $$
 \begin{aligned}
@@ -132,7 +133,7 @@ $$
 \end{aligned}
 $$
 
-> -   这里就是把“对 $\mathbf{x}_{0}$ 的预测”代入目标函数中，并进行化简，剩下的形式就和 DDPM 目标函数差不多，我们将在后文利用这一点。
+> - 这里就是把“对 $\mathbf{x}_{0}$ 的预测”代入目标函数中，并进行化简，剩下的形式就和 DDPM 目标函数差不多，我们将在后文利用这一点。
 
 再推导 $t=1$ 的情况：
 
@@ -213,24 +214,24 @@ $$
 ### 2.1. Parameter Analysis
 
 - **噪声控制参数** $\boldsymbol{\sigma}$ (或 $\boldsymbol{\eta}$)：控制生成过程的随机程度。
-    - \*\*${\sigma}_{t} = 0$：确定性 DDIM
-        - PROS
-            - 采样速度更快：由于不需要采样随机噪声 ${\epsilon}_{t}$，计算上更高效。
-            - 样本一致性：对于相同的 ${\mathbf{x}}_{T}$ 总是生成相同的图像。 这使得 DDIM 能够实现如 **隐空间插值(latent space interpolation)** 和 **样本重建(reconstruction)** 等特性。
-            - 在高步数的情况下，可以达到与 DDPM 相当甚至略好的样本质量；在少量步数下，通常能显著优于同等步数的随机 DDPM。
-        - CONS
-            - 可能损失部分多样性：由于确定性，可能无法完全覆盖数据分布的所有模态。 然而，实验表明，即使是确定性 DDIM，也能生成高质量和多样化的样本，尤其是在步数足够多的情况下。
-    - \*\*${\sigma}_{t} > 0$：随机 DDIM
-        - PROS
-            - 增加样本多样性。
-            - 可以通过调整 ${\sigma}_{t}$ 平衡质量和多样性。
-        - CONS
-            - 采样速度较慢。
-            - 失去样本一致性。
-            - 在少量步数情况下，样本质量通常不如确定性 DDIM。
+  - \*\*${\sigma}_{t} = 0$：确定性 DDIM
+    - PROS
+      - 采样速度更快：由于不需要采样随机噪声 ${\epsilon}_{t}$，计算上更高效。
+      - 样本一致性：对于相同的 ${\mathbf{x}}_{T}$ 总是生成相同的图像。 这使得 DDIM 能够实现如 **隐空间插值(latent space interpolation)** 和 **样本重建(reconstruction)** 等特性。
+      - 在高步数的情况下，可以达到与 DDPM 相当甚至略好的样本质量；在少量步数下，通常能显著优于同等步数的随机 DDPM。
+    - CONS
+      - 可能损失部分多样性：由于确定性，可能无法完全覆盖数据分布的所有模态。 然而，实验表明，即使是确定性 DDIM，也能生成高质量和多样化的样本，尤其是在步数足够多的情况下。
+  - \*\*${\sigma}_{t} > 0$：随机 DDIM
+    - PROS
+      - 增加样本多样性。
+      - 可以通过调整 ${\sigma}_{t}$ 平衡质量和多样性。
+    - CONS
+      - 采样速度较慢。
+      - 失去样本一致性。
+      - 在少量步数情况下，样本质量通常不如确定性 DDIM。
 - **采样步数** $S = \dim(\tau)$
-    - 较少的采样步数 (较小的 $S$, 稀疏的 $\tau$)，采样速度显著加快。
-    - 较多的采样步数 (较大的 $S$, 密集的 $\tau$, 趋近 $T$)，更高的样本质量。
+  - 较少的采样步数 (较小的 $S$, 稀疏的 $\tau$)，采样速度显著加快。
+  - 较多的采样步数 (较大的 $S$, 密集的 $\tau$, 趋近 $T$)，更高的样本质量。
 
 ## 3. References
 

@@ -1,8 +1,10 @@
 ---
+# 
 title: '「论文精读 #5」ProNE: Fast and Scalable Network Representation Learning'
-slug: /research/paper-reading/ProNE
+cover: https://img.memset0.cn/2025/02/07/U2xOTtuL.png
 create-date: 2025-02-04 00:51:54
 update-date: 2025-02-07 18:09:11
+slug: /research/paper-reading/ProNE
 indexed: true
 tags:
   - GNN
@@ -10,8 +12,14 @@ tags:
   - Spectrum-Graph-Theory
   - Spectral-Propagation
   - Chebyshev-Expansion
-cover: https://img.memset0.cn/2025/02/07/U2xOTtuL.png
+  - topic/GNN
+# 
+citekey: zhangProNEFastScalable2019
+doi: "10.24963/ijcai.2019/594" 
+export-date: 2025-03-21 00:11:02
 ---
+
+
 
 > 本篇笔记详细介绍了 ProNE 这一高效的网络表示学习方法。ProNE 主要包含两个关键步骤：基于稀疏矩阵分解的快速嵌入初始化，以及基于谱传播的嵌入增强。笔记重点阐述了谱传播部分的理论基础，包括调制网络的构建、带通滤波器的设计，以及如何通过切比雪夫多项式展开来提高计算效率。通过这种方法，ProNE 能够在保持高效计算的同时，同时捕获网络的局部结构信息和全局社区特征。<small style="font-style: italic; opacity: 0.5">（由 claude-3.5-sonnet 生成摘要）</small>
 
@@ -133,3 +141,9 @@ $$
 - [GNN 教程：漫谈谱图理论和 GCN 的起源 - ArchWalker](https://archwalker.github.io/blog/2019/06/16/GNN-Spectral-Graph.html)
 - [图神经网络中的谱图理论基础 - 知乎](https://zhuanlan.zhihu.com/p/368729415?utm_campaign=shareopn&utm_medium=social&utm_psn=1870459771569704960&utm_source=wechat_session)
 - [网络表示学习（ProNE-2019IJCAI ）\_cheeger 不等式-CSDN 博客](https://blog.csdn.net/qq_43390809/article/details/107546823)
+
+
+
+
+
+

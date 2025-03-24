@@ -1,7 +1,7 @@
 ---
 sync: /travelogue/2024-beijing.md
 title: '2024 · 北京 · THU Camp'
-date: 2023-11-06 00:25:00
+create-date: 2023-11-06 00:25:00
 publish: false
 cover: https://img.memset0.cn/2023/11/07/K3pfcvZY.jpg
 travelogue-title: '2024 · 北京'

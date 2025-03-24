@@ -1,16 +1,17 @@
 ---
 # 
-title: "「论文精读 #10」Score-based Generative Modeling through Stochastic Differential Equations"
+title: '「论文精读 #10」Score-based Generative Modeling through Stochastic Differential Equations'
 create-date: 2025-02-17 17:09:48
 slug: /research/paper-reading/gen-model-through-sde
 tags:
   - Diffusion-Model
   - Stochastic Differential Equation
   - score-base model
+  - topic/diffusion
 cover: https://img.memset0.cn/2025/02/17/HOrnk1ku.png
 # 
 citekey: songScoreBasedGenerativeModeling2021w
-doi: "10.48550/arXiv.2011.13456" 
+doi: '10.48550/arXiv.2011.13456'
 export-date: 2025-02-23 01:58:40
 ---
 
@@ -28,7 +29,7 @@ $$
 \text{d} \mathbf{x} = \mathbf{f}(\mathbf{x},t) \text{d}  t  + g(t) \text{d}  \mathbf{w}
 $$
 
-> -   这里需要用到均方微积分、扩散方程、Ito 积分的相关知识，博主根本不会。
+> - 这里需要用到均方微积分、扩散方程、Ito 积分的相关知识，博主根本不会。
 
 对于这一方程，我们称为 **正向 SDE 过程**（数据 $\to$ 噪声），论文推导出了其对应的 **反向 SDE 过程**（噪声 $\to$ 数据）用于生成过程：
 

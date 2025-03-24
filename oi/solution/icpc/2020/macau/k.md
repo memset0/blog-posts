@@ -1,7 +1,7 @@
 ---
 title: 「Macau 20 K」Candy Ads
 sync: /oi/solution/icpc/2020/macau/k.md
-date: 2024-03-26 21:01:56
+create-date: 2024-03-26 21:01:56
 link: https://qoj.ac/contest/1538/problem/8315
 publish: true
 tags:

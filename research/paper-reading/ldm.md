@@ -1,15 +1,16 @@
 ---
 # 
-title: 'High-Resolution Image Synthesis with Latent Diffusion Models'
+title: '「论文精读 #13」High-Resolution Image Synthesis with Latent Diffusion Models'
 create-date: 2025-02-23 01:58:40
 update-date: 2025-02-23 01:58:40
 slug: /research/paper-reading/ldm
 # indexed: true
-tags: []
+tags:
+  - topic/diffusion
 link-chat: https://chat.memset0.cn/chat?session=ssn_uaicSGbAMyYz&topic=tpc_pKVd6UxgZRBx
 # 
 citekey: rombachHighResolutionImageSynthesis2022
-doi: "10.48550/arXiv.2112.10752" 
+doi: '10.48550/arXiv.2112.10752'
 export-date: 2025-03-13 15:11:37
 ---
 
@@ -66,7 +67,6 @@ $$
 ## 3. References
 
 - 原始论文
-
 
 
 

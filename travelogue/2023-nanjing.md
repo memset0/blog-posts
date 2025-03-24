@@ -1,7 +1,7 @@
 ---
 sync: /travelogue/2023-nanjing.md
 title: '2023 ICPC 南京站游记'
-date: 2023-11-06 00:25:00
+create-date: 2023-11-06 00:25:00
 publish: true
 cover: https://img.memset0.cn/2023/11/07/K3pfcvZY.jpg
 travelogue-title: '2023 · 南京'

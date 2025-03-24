@@ -1,5 +1,9 @@
 ---
+# 
 title: '「论文精读 #4」NetSMF: Large-Scale Network Embedding as Sparse Matrix Factorization'
+cover: https://img.memset0.cn/2025/02/01/nYD7xfTJ.png
+create-date: 2025-01-30 02:55:23
+update-date: 2025-02-02 16:07:00
 slug: /research/paper-reading/netsmf
 indexed: true
 tags:
@@ -11,10 +15,14 @@ tags:
   - Negative-Sampling
   - Randomized-SVD
   - DeepWalk
-create-date: 2025-01-30 02:55:23
-update-date: 2025-02-02 16:07:00
-cover: https://img.memset0.cn/2025/02/01/nYD7xfTJ.png
+  - topic/GNN
+# 
+citekey: qiuNetSMFLargeScaleNetwork2019
+doi: "10.1145/3308558.3313446" 
+export-date: 2025-03-21 00:06:08
 ---
+
+
 
 > 本篇笔记系统解析了 NetSMF 算法如何通过谱稀疏化与随机化矩阵分解技术，解决大规模网络嵌入中的计算瓶颈问题。核心创新在于将 NetMF 的稠密矩阵分解转化为稀疏矩阵分解，通过路径采样构建谱相似稀疏矩阵，结合随机化 SVD 实现高效低秩近似。实验部分对比了 LINE/DeepWalk/node2vec/NetMF 等主流方法，验证了 NetSMF 在保持多跳依赖建模能力的同时显著提升计算效率，参数分析揭示了样本数量与嵌入维度的边际效益特性。<small style="font-style: italic; opacity: 0.5">（由 deepseek-r1 生成摘要）</small>
 
@@ -29,7 +37,7 @@ cover: https://img.memset0.cn/2025/02/01/nYD7xfTJ.png
 
 ### 1.1. A NetMF Matrix Sparsifier
 
-根据 [「论文精读 #3」Network Embedding as Matrix Factorization: Unifying DeepWalk, LINE, PTE, and node2vec](/research/paper-reading/netmf/) 论文，[「论文精读 #1」DeepWalk: Online Learning of Social Representations](/research/paper-reading/deepwalk/) 算法可以看作隐式分解以下矩阵：
+根据 [[003. NetMF]] 论文，[[001. DeepWalk]] 算法可以看作隐式分解以下矩阵：
 
 $$
 \text{trunc\_log}\degree \left( \dfrac{\text{vol}(G)}{b} \mathbf{M} \right),\quad
@@ -144,3 +152,9 @@ $$
 - 原始论文
 - [Randomized Singular Value Decomposition (gregorygundersen.com)](https://gregorygundersen.com/blog/2019/01/17/randomized-svd/)
 - [Randomized Singular Value Decomposition (SVD) - Youtube](https://www.youtube.com/watch?v=fJ2EyvR85ro)
+
+
+
+
+
+

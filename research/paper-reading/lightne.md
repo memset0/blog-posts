@@ -1,15 +1,24 @@
 ---
+# 
 title: '「论文精读 #6」LightNE: A Lightweight Graph Processing System for Network Embedding'
-slug: /research/paper-reading/lightne
 cover: https://img.memset0.cn/2025/02/03/TDLw1w0p.png
 create-date: 2025-02-07 18:11:06
+update-date: 2025-02-07 18:11:06
+slug: /research/paper-reading/lightne
 # indexed: true
 tags:
   - GNN
   - Node-Embeddings
   - Spectrum-Graph-Theory
   - Spectral-Propagation
+  - topic/GNN
+# 
+citekey: qiuLightNELightweightGraph2021
+doi: "10.1145/3448016.3457329" 
+export-date: 2025-03-21 00:08:57
 ---
+
+
 
 ## 1. Insights
 
@@ -57,3 +66,10 @@ tags:
 TODO
 
 ## 2. Experiments
+
+
+
+
+
+
+

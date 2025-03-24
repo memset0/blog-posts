@@ -1,6 +1,8 @@
 ---
+# 
 title: '「论文精读 #1」DeepWalk: Online Learning of Social Representations'
-date: 2025-01-25 14:00:33
+create-date: 2025-01-25 14:00:33
+update-date: 2025-01-25 14:00:33
 slug: /research/paper-reading/deepwalk
 indexed: true
 tags:
@@ -9,7 +11,14 @@ tags:
   - DeepWalk
   - Skip-Gram
   - Hierarchical-Softmax
+  - topic/GNN
+# 
+citekey: perozziDeepWalkOnlineLearning2014
+doi: "10.1145/2623330.2623732" 
+export-date: 2025-03-20 23:17:27
 ---
+
+
 
 > 本篇笔记系统解析了 DeepWalk 算法在图表征学习中的应用，重点阐述了其通过随机游走生成节点序列并运用 Skip-Gram 模型进行嵌入学习的核心机制。笔记深入探讨了幂律分布在无标度图与自然语言处理中的相似性，揭示了层次化 Softmax 如何通过霍夫曼树编码将计算复杂度从 $O(|V|)$ 降至 $O(\log |V|)$，并通过代码实例对比了传统 Softmax 与层次化实现的差异。实验部分展示了嵌入维度、游走次数等参数对模型性能的影响曲线，最后指出该方法仅利用图结构信息而忽略节点属性的特点。<small style="font-style: italic; opacity: 0.5">（由 deepseek-r1 生成摘要）</small>
 
@@ -26,7 +35,7 @@ tags:
 | $w$                                            | 中心词                                  |                                                |
 | $c$                                            | 上下文的单词                            |                                                |
 
-## 1. Insights
+## 1. Background
 
 ### 1.1. Power Laws & Scale-free Graphs
 
@@ -34,7 +43,9 @@ tags:
 
 ![|675](https://img.memset0.cn/2025/01/25/KGchde3u.png)
 
-### 1.2. Skip-Gram
+## 2. Method
+
+### 2.1. Skip-Gram
 
 在 NLP 中有两个关于 **词袋模型(bag of words)** 的常用算法：
 
@@ -55,7 +66,7 @@ $$
 
 简化后的目标函数可以使用层次化 Softmax 算法进行优化。
 
-### 1.3. Hierarchical Softmax
+### 2.2. Hierarchical Softmax
 
 $$
 \dfrac{\exp{(\mathbf{w}\cdot \mathbf{c})}}{\sum_{c'} \exp(\mathbf{w}\cdot \mathbf{c}')}
@@ -230,13 +241,13 @@ $$
 
 - 霍夫曼树的每个节点都对应一个 sigmoid 函数，因为 sigmoid 函数实际上和 2-分类的 softmax 是等价的。
 
-## 2. Experiments
+## 3. Experiments
 
-### 2.1. Exp. Methods
+### 3.1. Exp. Method
 
 TBD
 
-### 2.2. Parameter Sensitivity
+### 3.2. Parameter Sensitivity
 
 ![|913](https://img.memset0.cn/2025/01/27/yQfN9W4t.png)
 
@@ -246,9 +257,15 @@ TBD
 
 增加维度 $d$ 可提升性能，但边际收益递减。一定程度以后增加 $\gamma$ 基本不影响性能，表明少量游走即可捕获有效结构信息。
 
-## 3. References
+## 4. References
 
-- 原始论文：[[Bryan Perozzi, et al., 2014. DeepWalk - Online Learning of Social Representations]]。
+- 原始论文：[「论文精读 #1」DeepWalk: Online Learning of Social Representations](/research/paper-reading/deepwalk/)。
 - [word2vec 中 cbow 与 skip-gram 的比较 - 知乎](https://zhuanlan.zhihu.com/p/37477611)
 - [DeepWalk 算法（个人理解）-CSDN 博客](https://blog.csdn.net/gsq0854/article/details/117587606)
 - [#机器学习 Micro-F1 和 Macro-F1 详解\_micro f1-CSDN 博客](https://blog.csdn.net/qq_43190189/article/details/105778058)
+
+
+
+
+
+
