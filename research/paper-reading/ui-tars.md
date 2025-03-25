@@ -10,8 +10,8 @@ tags:
   - topic/web-agent
 # 
 citekey: qinUITARSPioneeringAutomated2025
-doi: '10.48550/arXiv.2501.12326'
-export-date: 2025-03-20 18:44:55
+doi: "10.48550/arXiv.2501.12326" 
+export-date: 2025-03-25 15:20:48
 ---
 
 
@@ -115,6 +115,7 @@ $$
 
 - 原始论文
 - [UI-TARS：利用长期记忆和反思调整不断优化 | Breezedeus.com](https://www.breezedeus.com/article/ui-agent-uitars)
+
 
 
 

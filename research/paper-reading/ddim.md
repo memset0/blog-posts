@@ -11,11 +11,13 @@ tags:
 link-chat: https://chat.memset0.cn/chat?session=ssn_uaicSGbAMyYz&topic=tpc_kbPugMPIrqoa
 # 
 citekey: songDenoisingDiffusionImplicit2022
-doi: '10.48550/arXiv.2010.02502'
-export-date: 2025-02-23 01:58:40
+doi: "10.48550/arXiv.2010.02502" 
+export-date: 2025-03-25 15:20:48
 ---
 
 
+
+<!-- end-private-notes -->
 
 > 本篇笔记对论文 _Denoising Diffusion Implicit Models (DDIM)_ 进行了深入解读，重点分析其相较于 DDPM 的改进之处。DDIM 通过放宽马尔科夫链假设，构造了一个非马尔科夫的随机过程，并利用设定的边际分布推导逆过程，使得在相同参数条件下仍可遵循高斯分布。该方法允许跳步采样，从而大幅减少生成步数，加速推理过程，同时保持图像质量。DDIM 的方法与 DDPM 兼容，因此可直接复用 DDPM 的训练模型。此外，笔记还探讨了损失函数的优化对模型效果的影响，并提供了详细的数学推导与直觉解释。<small style="font-style: italic; opacity: 0.5">（由 gpt-4o 生成摘要）</small>
 
@@ -242,6 +244,7 @@ $$
 - [一文读懂 DDIM 凭什么可以加速 DDPM 的采样效率 - 李 Nik - 知乎](https://zhuanlan.zhihu.com/p/627616358)
 - [扩散模型之 DDIM - 小小将 - 知乎](https://zhuanlan.zhihu.com/p/565698027)
 - [一文带你看懂 DDPM vs DDIM 原理 - 蓟梗 - 知乎](https://zhuanlan.zhihu.com/p/657136157)
+
 
 
 

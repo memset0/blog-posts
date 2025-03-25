@@ -15,7 +15,7 @@ tags:
 # 
 citekey: perozziDeepWalkOnlineLearning2014
 doi: "10.1145/2623330.2623732" 
-export-date: 2025-03-20 23:17:27
+export-date: 2025-03-25 15:20:48
 ---
 
 
@@ -263,6 +263,7 @@ TBD
 - [word2vec 中 cbow 与 skip-gram 的比较 - 知乎](https://zhuanlan.zhihu.com/p/37477611)
 - [DeepWalk 算法（个人理解）-CSDN 博客](https://blog.csdn.net/gsq0854/article/details/117587606)
 - [#机器学习 Micro-F1 和 Macro-F1 详解\_micro f1-CSDN 博客](https://blog.csdn.net/qq_43190189/article/details/105778058)
+
 
 
 

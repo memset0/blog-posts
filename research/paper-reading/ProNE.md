@@ -16,7 +16,7 @@ tags:
 # 
 citekey: zhangProNEFastScalable2019
 doi: "10.24963/ijcai.2019/594" 
-export-date: 2025-03-21 00:11:02
+export-date: 2025-03-25 15:20:48
 ---
 
 
@@ -141,6 +141,7 @@ $$
 - [GNN 教程：漫谈谱图理论和 GCN 的起源 - ArchWalker](https://archwalker.github.io/blog/2019/06/16/GNN-Spectral-Graph.html)
 - [图神经网络中的谱图理论基础 - 知乎](https://zhuanlan.zhihu.com/p/368729415?utm_campaign=shareopn&utm_medium=social&utm_psn=1870459771569704960&utm_source=wechat_session)
 - [网络表示学习（ProNE-2019IJCAI ）\_cheeger 不等式-CSDN 博客](https://blog.csdn.net/qq_43390809/article/details/107546823)
+
 
 
 

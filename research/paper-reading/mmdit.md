@@ -12,11 +12,13 @@ tags:
 link-chat: https://chat.memset0.cn/chat?session=ssn_uaicSGbAMyYz&topic=tpc_czNyVDHdEOGL
 # 
 citekey: esserScalingRectifiedFlow2024
-doi: '10.48550/arXiv.2403.03206'
-export-date: 2025-03-13 15:11:37
+doi: "10.48550/arXiv.2403.03206" 
+export-date: 2025-03-25 15:20:48
 ---
 
 
+
+<!-- end-private-notes -->
 
 ## 1. Insights
 
@@ -131,6 +133,7 @@ $$
 1. 通过 **直接回归向量场 $u_t$** 进行无模拟训练，避免数值求解 ODE 的高计算代价。
 2. 通过 **CFM 目标**，引入条件噪声来稳定优化并避免边缘化计算的高成本问题。
 3. 最终转换为 **噪声预测目标**，使得该方法可以高效用于生成图像。
+
 
 
 

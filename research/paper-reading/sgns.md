@@ -14,7 +14,8 @@ tags:
   - topic/GNN
 # 
 citekey: levyNeuralWordEmbedding2014
-export-date: 2025-03-20 23:18:16
+
+export-date: 2025-03-25 15:20:48
 ---
 
 
@@ -138,6 +139,7 @@ $$
 - [论文解读：词向量作为隐式矩阵分解（SGNS）-CSDN 博客](https://blog.csdn.net/rosefun96/article/details/108413273)
 - [SGNS - 知乎](https://zhuanlan.zhihu.com/p/53250696)
 - [Softmax 函数和 Sigmoid 函数的区别与联系 - 知乎](https://zhuanlan.zhihu.com/p/356976844)
+
 
 
 

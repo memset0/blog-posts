@@ -10,12 +10,14 @@ tags:
   - topic/diffusion
 cover: https://img.memset0.cn/2025/02/17/HOrnk1ku.png
 # 
-citekey: songScoreBasedGenerativeModeling2021w
-doi: '10.48550/arXiv.2011.13456'
-export-date: 2025-02-23 01:58:40
+citekey: songScoreBasedGenerativeModeling2021
+doi: "10.48550/arXiv.2011.13456" 
+export-date: 2025-03-25 15:20:48
 ---
 
 
+
+<!-- end-private-notes -->
 
 ## 1. Insights
 
@@ -111,6 +113,7 @@ $$
 - [Generative Modeling by Estimating Gradients of the Data Distribution | Yang Song](https://yang-song.net/blog/2021/score/)
 - [生成扩散模型漫谈（五）：一般框架之 SDE 篇 - 苏剑林 - 知乎](https://zhuanlan.zhihu.com/p/551139290)
 - [Diffusion 学习笔记（三）——随机微分方程（SDE） - Hammour Yue - 知乎](https://zhuanlan.zhihu.com/p/619188621)
+
 
 
 

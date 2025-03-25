@@ -19,7 +19,7 @@ tags:
 # 
 citekey: qiuNetSMFLargeScaleNetwork2019
 doi: "10.1145/3308558.3313446" 
-export-date: 2025-03-21 00:06:08
+export-date: 2025-03-25 15:20:48
 ---
 
 
@@ -152,6 +152,7 @@ $$
 - 原始论文
 - [Randomized Singular Value Decomposition (gregorygundersen.com)](https://gregorygundersen.com/blog/2019/01/17/randomized-svd/)
 - [Randomized Singular Value Decomposition (SVD) - Youtube](https://www.youtube.com/watch?v=fJ2EyvR85ro)
+
 
 
 

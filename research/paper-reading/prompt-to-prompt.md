@@ -9,11 +9,13 @@ tags:
   - topic/diffusion
 # 
 citekey: hertzPrompttoPromptImageEditing2022
-doi: '10.48550/arXiv.2208.01626'
-export-date: 2025-03-20 16:24:38
+doi: "10.48550/arXiv.2208.01626" 
+export-date: 2025-03-25 19:39:48
 ---
 
 
+
+<!-- end-private-notes -->
 
 > 本篇笔记总结了一种基于文本的图像编辑方法，该方法利用扩散模型中的交叉注意力层来实现仅通过修改文本提示进行图像编辑。相比于传统的基于掩码的方法，该方法能够更自然地保留原始图像的结构，同时实现局部或全局的编辑。笔记详细介绍了该方法的核心思想，并列举了三种不同的编辑方式：单词替换、添加新短语以及注意力重新加权。通过这些方法，用户可以更精细地控制文本对图像生成的影响，从而实现高质量的编辑效果。 <small style="font-style: italic; opacity: 0.5">（由 gpt-4o 生成摘要）</small>
 
@@ -42,26 +44,26 @@ export-date: 2025-03-20 16:24:38
 对于不同的编辑任务，论文提出了不同的编辑函数设计：
 
 - _单词替换(word swap)_：在时间步的一个前缀替换注意力图，剩余步不替换，作者称为 **软性注意力约束(softer attention constrain)**。
-  $$
-  Edit(M_{t},M_{t}^{\ast},t) := \begin{cases}
-  M_{t}^{\ast}\quad &\text{if }t<\tau\\
-  M_{t} \quad& \text{otherwise.}
-  \end{cases}
-  $$
+    $$
+    Edit(M_{t},M_{t}^{\ast},t) := \begin{cases}
+    M_{t}^{\ast}\quad &\text{if }t<\tau\\
+    M_{t} \quad& \text{otherwise.}
+    \end{cases}
+    $$
 - _添加新短语(adding a new phrase)_：需要一个 **对齐函数(alignment function)** $A$ 构建 $\mathcal{P}^{\ast}$ 中的 token 在 $\mathcal{P}$ 中的原位置。
-  $$
-      (Edit(M_{t},M_{t}^{\ast},t))_{i,j} := \begin{cases}
-  (M_{t}^{\ast})_{i,j} \quad& \text{if }A(j)=None \\
-  (M_{t})_{i,A(j)} \quad& \text{otherwise.}
-  \end{cases}
-  $$
+    $$
+        (Edit(M_{t},M_{t}^{\ast},t))_{i,j} := \begin{cases}
+    (M_{t}^{\ast})_{i,j} \quad& \text{if }A(j)=None \\
+    (M_{t})_{i,A(j)} \quad& \text{otherwise.}
+    \end{cases}
+    $$
 - _注意力重新加权(attention re-weighting)_：此外，用户可能希望增强或减弱某个 token 对图像生成的影响程度，我们的做法是通过超参数 $c\in [-2,2]$ 对指定 token $j^{\ast}$ 的注意力图进行缩放。
-  $$
-  (Edit(M_{t},M_{t}^{\ast},t))_{i,j} = \begin{cases}
-  c \cdot(M_{t})_{i,j} \quad& \text{if }j=j^{\ast} \\
-  (M_{t})_{i,j} \quad& \text{otherwise.}
-  \end{cases}
-  $$
+    $$
+    (Edit(M_{t},M_{t}^{\ast},t))_{i,j} = \begin{cases}
+    c \cdot(M_{t})_{i,j} \quad& \text{if }j=j^{\ast} \\
+    (M_{t})_{i,j} \quad& \text{otherwise.}
+    \end{cases}
+    $$
 
 > [!note] Note
 > 按照对代码的理解，后面两种编辑函数也有必要应用软性注意力约束，即只在一个前缀的时间步进行替换，论文里的表述可能有些引人误解。
