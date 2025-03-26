@@ -93,6 +93,8 @@ $$
 
 ### 1.2. Group Relative Policy Optimizati(GRPO)
 
+- [[Zhihong Shao, et al., 2024. DeepSeekMath - Pushing the Limits of Mathematical Reasoning in Open Language Models]]
+
 > -   👍 利用同一问题下不同回答的相对好坏程度来指导策略的更新，更适用于奖励信号稀疏或难以设计的场景。
 
 **组相对策略优化(Group Relative Policy Optimization, GRPO)** 的核心思想在于摒弃了 PPO 的价值函数设计，转而==利用同一问题下不同回答之间的相对好坏程度==来估计优势函数。

@@ -2,7 +2,7 @@
 # 
 title: '「论文精读 #15」Prompt-to-Prompt Image Editing with Cross Attention Control'
 create-date: 2025-03-13 15:11:37
-update-date: 2025-03-13 15:11:37
+update-date: 2025-03-26 21:07:32
 slug: /research/paper-reading/prompt-to-prompt
 indexed: true
 tags:
@@ -104,7 +104,7 @@ attn = attn.reshape(self.batch_size * h, *attn.shape[2:])
 
 ### 3.2. Replacement of Self-Attention
 
-实际上，`google/prompt-to-prompt` 的实现中还对 Transformer 部分 _自注意力(self attention)_ 层进行了替换，这是论文的正文部分没有提到的。在上面的代码中，我们已经看到了对 `AttentionControlEdit.replace_self_attention` 方法的调用：
+实际上，`google/prompt-to-prompt` 的实现中==还对 Transformer 部分 _自注意力(self attention)_ 层进行了替换==，这是论文的正文部分没有提到的。在上面的代码中，我们已经看到了对 `AttentionControlEdit.replace_self_attention` 方法的调用：
 
 ```python
 def replace_self_attention(self, attn_base, attn_replace):
@@ -139,6 +139,28 @@ def replace_self_attention(self, attn_base, attn_replace):
 attn = rearrange(attn, '(b h) n m -> b h n m', h=attn.shape[0] // 2)
 attn[1] = attn[0] # 暂不考虑mapping的情况
 attn = rearrange(attn, 'b h n m -> (b h) n m')
+```
+
+## 4. Comments
+
+### 4.1. `AttnReplace` v.s. `AttnRefine`
+
+`google/prompt-to-prompt` 仓库中给出的代码的 `AttnReplace` 和 `AttnRefine` 算法略有不同。前者是直接将 source branch 的注意力矩阵换到 target branch 的注意力矩阵上，所以也要求 source prompt 和 target prompt 的长度完全一致（并且 token 的语义也应该能对应上）。
+
+而 `AttnRefine` 算法是实现了一个动态规划算法（[Needleman–Wunsch 算法](https://en.wikipedia.org/wiki/Needleman%E2%80%93Wunsch_algorithm)）来对 source prompt 和 target prompt 中相同的 token 进行匹配，而匹配不上的 token 则不替换他们对应的注意力矩阵，这是通过代码中的 `mapper` 和 `alphas` 两个张量控制的。
+
+具体来说，如果我们的编辑任务是从 `a horse in the forest` 到 `a dog in the forest`，则使用 `AttnReplace` 算法时控制注意力替换的张量如下（一一对应，全部替换）：
+
+```python
+mapper = [0, 1, 2, 3, 4]
+alphas = [1, 1, 1, 1, 1]
+```
+
+而如果使用 `AttnReplace` 算法，则会发现 `horse` 与 `dog` 匹配不上，用 `-1` 表示，并不让其影响注意力替换的计算：
+
+```python
+mapper = [0, -1, 2, 3, 4]
+alphas = [1, 0, 1, 1, 1]
 ```
 
 
