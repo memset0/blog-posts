@@ -93,7 +93,7 @@ $$
 
 ### 1.2. Group Relative Policy Optimizati(GRPO)
 
-- [[Zhihong Shao, et al., 2024. DeepSeekMath - Pushing the Limits of Mathematical Reasoning in Open Language Models]]
+- [「论文精读 #22」DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models](/research/paper-reading/deepseek-math/)
 
 > -   👍 利用同一问题下不同回答的相对好坏程度来指导策略的更新，更适用于奖励信号稀疏或难以设计的场景。
 
