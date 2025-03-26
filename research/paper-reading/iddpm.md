@@ -3,7 +3,7 @@
 title: '「论文精读 #8」Improved Denoising Diffusion Probabilistic Models'
 create-date: 2025-02-16 11:09:13
 slug: /research/paper-reading/iddpm
-indexed: true
+# indexed: true
 tags:
   - makemd/paper/diffusion
   - Diffusion-Model
@@ -86,8 +86,8 @@ $$
 \boldsymbol{\Sigma}_{\theta}(\mathbf{x}_{t},t) = \exp(v \log \beta_{t} + (1-v) \log \tilde{\beta}_{t}) \mathbf{I}
 $$
 
-> - 其中 $v$ 是可学习参数。
-> - 这里我们没有对 $v$ 的范围进行限制，所以理论上模型可以学习到任意范围的方差值，但在实验中并未观察到模型学习到超出插值范围的方差的情况。
+> -   其中 $v$ 是可学习参数。
+> -   这里我们没有对 $v$ 的范围进行限制，所以理论上模型可以学习到任意范围的方差值，但在实验中并未观察到模型学习到超出插值范围的方差的情况。
 
 但由于 $L_{\mathrm{simple}}$ 与 $\boldsymbol{\Sigma}_{\theta}(\mathbf{x}_{t},t)$ 项无关，我们定义了一个新的混合目标函数：
 
@@ -125,7 +125,6 @@ $$
 - 原始论文
 - [Improved Denoising Diffusion Probabilistic Models (IDDPM) - 妖妖 - 知乎](https://zhuanlan.zhihu.com/p/654388872)
 - [IDDPM（Improved Denoising Diffusion Probabilistic Models） - 不许打针 - 知乎](https://zhuanlan.zhihu.com/p/650838026)
-
 
 
 
