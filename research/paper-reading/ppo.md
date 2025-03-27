@@ -2,11 +2,14 @@
 # 
 title: "「论文精读 #24」Proximal Policy Optimization Algorithms"
 create-date: 2025-03-25 15:20:48
-update-date: 2025-03-25 15:20:48
+update-date: 2025-03-28 00:51:36
 slug: /research/paper-reading/ppo
 indexed: true
 tags:
   - Reinforcement-Learning
+  - policy-gradient-method
+  - generalized-advantage-estimation
+  - KL-divergence
   - topic/web-agent
 # 
 citekey: schulmanProximalPolicyOptimization2017
@@ -17,6 +20,10 @@ export-date: 2025-03-27 12:22:37
 
 
 
+
+> 本篇笔记详细解析了强化学习中的 Proximal Policy Optimization (PPO) 算法，包括其理论基础、关键方法及优化策略。首先，介绍了强化学习的基本概念，如策略梯度方法及其目标函数推导。随后，探讨了 Actor-Critic 方法，并引入广义优势估计以优化策略更新的稳定性。接着，笔记重点介绍了 PPO 算法的核心思想，包括重要性采样、裁剪目标函数以及自适应 KL 惩罚，以确保策略更新的稳定性和高效性。最后，提供了相关参考资料及个人笔记，以便进一步学习和理解。 <small style="font-style: italic; opacity: 0.5">（由 gpt-4o 生成摘要）</small>
+
+<!-- more -->
 
 ## 1. Background
 
